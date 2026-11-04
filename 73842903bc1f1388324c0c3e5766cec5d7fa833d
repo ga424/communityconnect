@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-11-04T06:12:44.092616+00:00",
+  "commit": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+  "record_type": "review_and_approval_preparation",
+  "stage": "07-review",
+  "ledger_entry": 10,
+  "paths": [
+    ".agentic-sdlc/artifacts/05-implementation.md",
+    ".agentic-sdlc/artifacts/07-review.md",
+    ".agentic-sdlc/feedback/PR4-F1-validation.json",
+    ".agentic-sdlc/ledgers/code-changes.jsonl",
+    ".agentic-sdlc/ledgers/decisions.jsonl",
+    ".agentic-sdlc/ledgers/evidence.jsonl",
+    ".agentic-sdlc/ledgers/risks.jsonl",
+    ".agentic-sdlc/ledgers/usage.jsonl",
+    ".agentic-sdlc/state/pipeline-state.json",
+    "LEDGER.md",
+    "README.md",
+    "docs/evidence/pr4-review/review-summary.json",
+    "docs/evidence/pr4-review/validation-probe.json",
+    "docs/evidence/pr4-review/validation-probe.py",
+    "docs/plans/AC-2-approval.md",
+    "docs/plans/S-1-plan.md",
+    "docs/reviews/PR-4-and-AC-2-2026-11-04.md",
+    "prompts/2026-11-04-pr4-ac2-review.txt"
+  ],
+  "pull_request": "https://github.com/ga424/communityconnect/pull/5",
+  "draft": true,
+  "reviewed_pr": "https://github.com/ga424/communityconnect/pull/4",
+  "reviewed_head": "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca",
+  "merged_commit": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+  "finding": "F1 P2: NUL/unpaired-surrogate description causes 500, no observed inserted row",
+  "finding_status": "open; no remediation performed",
+  "next_task": "COMC-55 AC2 packet v1, awaiting explicit approval",
+  "evidence_ids": [
+    "EV-PR4-REVIEW-20261104",
+    "EV-PR4-BRANCH-CLEANUP"
+  ],
+  "decision_ids": [
+    "DEC-AC2-PACKET-PROPOSED-20261104"
+  ],
+  "ci_run": "https://github.com/ga424/communityconnect/actions/runs/41782986869",
+  "ci_conclusion": "success",
+  "ci_result": {
+    "passed": 80,
+    "deferred_failures": 2,
+    "skipped": 5,
+    "errors": 0,
+    "pytest_exit_code": 1
+  },
+  "ci_junit_sha256": "2265dba14092fedaf6482d1ed21d519782dda3cd1096d9b2a687a0fd9715d033",
+  "verification": "Final-head CI JUnit downloaded and exact-test verifier passed. The diagnostic finding is outside this unchanged acceptance baseline. Protected source and JSONL prefixes unchanged.",
+  "jira_updated": [
+    "COMC-54",
+    "COMC-55",
+    "COMC-39",
+    "COMC-41",
+    "COMC-44"
+  ],
+  "branch_cleanup": "PR4 branch absent remotely; merged local copy deleted. Review branch retained until merge. Automatic branch deletion enabled.",
+  "human_review_status": "AI review only; no AC2 approval or teammate signoff inferred",
+  "services": "Task-owned disposable Docker services stopped and removed"
+}
