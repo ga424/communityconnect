@@ -41,3 +41,12 @@ review: Codex inspected typed design boundaries, migration foreign keys, destruc
 checks: pip check PASS; Python compile PASS; Docker Compose config PASS; shell syntax PASS; sensitive-data scan PASS after synthetic fixture correction. Docker execution unavailable locally; remote baseline pending.
 evidence: COMC-37; S-1 schema/fixture contract; no S-1 implementation
 risk: Migration update/rollback, Linux dependency installation and fresh-clone container execution remain unverified until actual runtime evidence. Latest Starlette warns that httpx TestClient support is deprecated; migration to its supported test client remains to review.
+
+## Entry 5
+artifact: tests/test_s1_requests.py, tests/test_s6_payments.py and tests/s6_harness.py
+ tool: OpenAI Codex, GPT-6 (exact build not exposed); 2026-11-03 session
+prompts: Initial feature check-ins request; prompts/2026-11-03-initial-checkins.txt
+review: Codex derived assertions from AC-1..6 and AC-18..22 and checked ID/name mapping. S-6 uses explicit AC skip reasons and a deferred fixture adapter contract. Cross-community tests are present before feature implementation. Sandeep's specification review remains pending.
+checks: APP_ENV=test .venv/bin/python -m pytest --collect-only -q: 15 tests collected (six S-1, five S-6, four harness); compileall PASS. Collection does not execute PostgreSQL assertions; runtime red evidence pending.
+evidence: COMC-39, COMC-40; S-1 AC-1..6; S-6 AC-18..22
+risk: S-6 test-only fixture adapter requires review and implementation before future payment tests can execute. No real provider, auth or payment persistence is present.
