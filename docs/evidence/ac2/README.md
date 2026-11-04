@@ -37,3 +37,9 @@ Liquibase update, repeat update, rollback and reapply succeeded with unchanged m
 Codex reviewed text-policy placement, Unicode range checks, no-write assertions, source/test hashes, manifest preservation and verifier negative controls. This is AI self-review, not teammate acceptance. Kundan reviews implementation; Sandeep reviews tests/gates; Gustavo reviews provenance/integration. Original designs, tests, AC1 evidence, models, dependencies, schema and controls are unchanged. No next task, merge, deployment, production identity or payments are authorized.
 
 Exact implementation/delivery SHAs and eventual CI/PR links are reconciled through AISE ledgers, Jira and append-only `refs/notes/ai-provenance`. Full S1 and final all-S1-green verification remain pending.
+
+## Published review checkpoint
+
+[PR6](https://github.com/ga424/communityconnect/pull/6) is open. [CI run 41930928316](https://github.com/ga424/communityconnect/actions/runs/41930928316) passed at `5d2c13ce5a36ce7eedfe5997324a3d214b4706ea`: 88 passed, two deferred failures, five unchanged skips and zero errors. All eight new cases pass. The downloaded [CI JUnit](ci-junit.xml) was reverified against the exact AC2 manifest; [summary](ci-summary.json) records its hash. The evidence-recording commit changes no application/test/workflow code. Its own CI result is recorded in Git provenance notes and Jira after execution.
+
+PR5 remained open at publication; its approved packet commit is preserved as an ancestor. Both unmerged branches are retained and automatic deletion is enabled. Task-owned disposable local Docker services were removed. No merge, deployment or next-task execution was performed. Human implementation review remains pending.

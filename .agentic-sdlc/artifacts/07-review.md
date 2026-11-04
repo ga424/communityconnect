@@ -2,7 +2,9 @@
 
 The prior PR4 F1 finding below is now addressed by the approved AC2 guard and eight regression cases. EV-AC2-LOCAL proves local 88/2/5 outcomes with no new errors and unchanged seeded data on rejection; RISK-PR4-F1-AC2-LOCAL supersedes the earlier open-risk interpretation for this implementation branch. The guard does not mask database failures or sanitize text. Original tests/designs/models/migrations/controls remain protected. AI self-review is recorded in docs/evidence/ac2/README.md.
 
-Remote CI and human implementation review are pending at this checkpoint. This is not independent teammate signoff or a production GO. Full-story design/gap/QA and AC4/6 remain incomplete; S6 is skipped. Do not treat the earlier proposed/awaiting-approval text as the current decision: DEC-AC2-APPROVED-20261104 records the actual bounded approval.
+Human implementation review is pending. This is not independent teammate signoff or a production GO. Full-story design/gap/QA and AC4/6 remain incomplete; S6 is skipped. Do not treat the earlier proposed/awaiting-approval text as the current decision: DEC-AC2-APPROVED-20261104 records the actual bounded approval.
+
+[PR6](https://github.com/ga424/communityconnect/pull/6) is open; [CI run 41930928316](https://github.com/ga424/communityconnect/actions/runs/41930928316) passed at `5d2c13ce5a36ce7eedfe5997324a3d214b4706ea`. See EV-CI-41930928316 and docs/evidence/ac2/ci-summary.json. Later recording-head CI is linked through Git provenance notes and Jira.
 
 ## Historical PR4 diagnostic checkpoint
 

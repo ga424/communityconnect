@@ -317,7 +317,8 @@
           "EV-CI-41780922018",
           "EV-AC2-APPROVAL",
           "EV-AC2-RED",
-          "EV-AC2-LOCAL"
+          "EV-AC2-LOCAL",
+          "EV-CI-41930928316"
         ],
         "approval": {
           "status": "pending",
@@ -384,7 +385,8 @@
           "EV-CI-41780922018",
           "EV-AC2-APPROVAL",
           "EV-AC2-RED",
-          "EV-AC2-LOCAL"
+          "EV-AC2-LOCAL",
+          "EV-CI-41930928316"
         ],
         "approval": {
           "status": "pending",
@@ -654,28 +656,31 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC2 F1 remediation passes local checks; remote CI and human implementation review remain pending.",
+      "AC2 F1 remediation and CI phase verified; human implementation review remains pending.",
       "Full S-1 design/gap/test peer reviews remain pending; AC-4/AC-6 still deferred and S-6 skipped."
     ],
-    "last_updated": "2026-11-04T21:26:19.449013+00:00",
+    "last_updated": "2026-11-04T23:08:35.601625+00:00",
     "scoped_work": {
       "issue": "COMC-55",
       "packet": "AC-2 v1",
       "scope_approval": "EV-AC2-APPROVAL",
       "approval_owner": "Gustavo",
-      "status": "in_progress",
+      "status": "review_ready",
       "pre_test_undo_commit": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
       "human_implementation_review": "pending",
-      "note": "AC2 local phase passes. Remote CI and human review remain pending; no next-AC or merge/deployment approval.",
+      "note": "AC2 local and CI phases pass. Human review pending; no next-AC or merge/deployment approval.",
       "test_first_undo_commit": "661a205dbfb4860d14194e54d75b46edec54cdca",
       "implementation_commit": "130af5d22bda7a98c4cff79e78904add49778b35",
-      "local_evidence": "EV-AC2-LOCAL"
+      "local_evidence": "EV-AC2-LOCAL",
+      "pull_request": "https://github.com/ga424/communityconnect/pull/6",
+      "ci_evidence": "EV-CI-41930928316",
+      "verified_ci_commit": "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea"
     },
     "next_bounded_task": {
       "issue": "COMC-55",
       "packet": "docs/plans/AC-2-approval.md",
       "version": 1,
-      "status": "approved",
+      "status": "implemented_pending_review",
       "decision": "DEC-AC2-APPROVED-20261104",
       "approval_owner": "Gustavo",
       "proposed_new_cases": 8,

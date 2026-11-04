@@ -4,7 +4,9 @@ Gustavo approved packet v1, the text-policy addendum, eight tests and CI phase c
 
 Local result: **88 passed, 2 deferred failures, 5 skips, zero errors**. All eight new tests pass; original 87 outcomes preserved. AC2 verifier and its 11 shared/7 extension negative controls pass; historical AC1 report and default self-test remain valid. Forty protected hashes and the new test hash match. Migration update/repeat/rollback/reapply passed. Source guard, structural, Compose and whitespace checks pass with pre-existing warnings documented.
 
-See [AC2 evidence](../../docs/evidence/ac2/README.md), EV-AC2-LOCAL and exact code-change records. F1 is locally remediated pending remote CI and human review; no full-story or production acceptance. Later CI/PR records are added only after actual execution. Kundan/Sandeep/Gustavo peer review remains pending. AC4/6, S6, subsequent task execution, merge and deployment remain outside approval.
+See [AC2 evidence](../../docs/evidence/ac2/README.md), EV-AC2-LOCAL and exact code-change records. F1 is locally remediated pending human review; no full-story or production acceptance. Later CI/PR records are added only after actual execution. Kundan/Sandeep/Gustavo peer review remains pending. AC4/6, S6, subsequent task execution, merge and deployment remain outside approval.
+
+[PR6](https://github.com/ga424/communityconnect/pull/6) is open; [CI run 41930928316](https://github.com/ga424/communityconnect/actions/runs/41930928316) passed at `5d2c13ce5a36ce7eedfe5997324a3d214b4706ea`. See EV-CI-41930928316 and docs/evidence/ac2/ci-summary.json. Later recording-head CI is linked through Git provenance notes and Jira.
 
 ## Historical AC-1 checkpoint
 
