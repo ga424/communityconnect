@@ -313,7 +313,8 @@
         "evidence_ids": [
           "EV-AC1-APPROVAL",
           "EV-AC1-RED",
-          "EV-AC1-LOCAL"
+          "EV-AC1-LOCAL",
+          "EV-CI-41780922018"
         ],
         "approval": {
           "status": "pending",
@@ -376,7 +377,8 @@
         "evidence_ids": [
           "EV-AC1-APPROVAL",
           "EV-AC1-RED",
-          "EV-AC1-LOCAL"
+          "EV-AC1-LOCAL",
+          "EV-CI-41780922018"
         ],
         "approval": {
           "status": "pending",
@@ -643,10 +645,10 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC-1 is implemented and locally verified; remote CI and human implementation review remain pending.",
+      "AC-1 implementation and CI phase verified; human implementation review remains pending.",
       "AC-4/AC-6 remain deferred 501 failures; S-6 remains skipped. Full S-1 design/gap/test peer-review tasks remain open."
     ],
-    "last_updated": "2026-11-04T05:38:24.699571+00:00",
+    "last_updated": "2026-11-04T05:45:01.709951+00:00",
     "scoped_work": {
       "issue": "COMC-54",
       "packet": "AC-1 v1",
@@ -654,10 +656,13 @@
       "approval_owner": "Gustavo",
       "test_first_undo_commit": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
       "implementation_commit": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
-      "status": "in_progress",
+      "status": "review_ready",
       "local_evidence": "EV-AC1-LOCAL",
       "human_implementation_review": "pending",
-      "note": "Current stage describes bounded AC-1 work only; no global stage approval/completion is inferred."
+      "note": "Current stage describes bounded AC-1 work only; no global stage approval/completion is inferred.",
+      "pull_request": "https://github.com/ga424/communityconnect/pull/4",
+      "ci_evidence": "EV-CI-41780922018",
+      "verified_ci_commit": "0f5562f42081aede341079d723b4848cc604c271"
     }
   }
 }

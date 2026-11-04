@@ -38,3 +38,9 @@ Codex inspected the diff, SQL parameters, transaction boundaries, error paths, l
 Human implementation review is pending. AC-2/3/5 pass because their guards are prerequisites for a safe first write; their individual review tasks remain open. AC-4/6 and all S-6 behavior are not implemented. Full-story design/gap review, course provenance reconciliation and final all-S-1-green fresh-clone verification remain pending. No provider integration, migration, dependency change, merge or deployment is included. The known Starlette TestClient deprecation warning remains for a separately scoped dependency review.
 
 The exact recording/result SHAs and eventual CI/PR links are reconciled in AISE ledgers, Jira and append-only `refs/notes/ai-provenance`. Remote CI evidence is only recorded after an actual run.
+
+## Published review checkpoint
+
+[PR #4](https://github.com/ga424/communityconnect/pull/4) is open for human review. [CI run 41780922018](https://github.com/ga424/communityconnect/actions/runs/41780922018) passed at `0f5562f42081aede341079d723b4848cc604c271` with 80 passes, 2 expected deferred failures, 5 unchanged skips and zero errors. The downloaded [CI JUnit](ci-junit.xml) was independently checked by the same phase verifier; [CI summary](ci-summary.json) preserves its hash. This final evidence update changes no application/test/CI code. Any subsequent run on its recording commit is linked in Git provenance notes and Jira without rewriting earlier evidence.
+
+PR #3 merged at `7eab79e229dd250d45c9041822a7f45f4d94958c`; its remote branch was automatically removed and its verified merged local branch was deleted. This feature branch stays until PR #4 is merged. Automatic branch deletion remains enabled. This task did not merge any PR.
