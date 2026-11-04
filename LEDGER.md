@@ -81,3 +81,15 @@ evidence: PR2 head 85e817ab73f8cfad5dc9caf5b950eedbdda614c7, merge dafd2ca71b89f
 risk: AC1 implementation, contract tests and CI promotion remain unapproved; full teammate review, original gap-check transfer, complete provenance and final all-S1-green verification remain pending. Supersession records require consumer interpretation; the bundled validator does not resolve them automatically.
 
 Entry 6 exact recording SHA: 85e817ab73f8cfad5dc9caf5b950eedbdda614c7, delivered in PR #2. Entry 6's earlier draft PR #1 reference preceded the separate evidence PR and is historical. Entry 7's own SHA is recorded in its Git provenance note and linked from Jira/PR after committing.
+
+## AC-1 approval and undo checkpoint
+Gustavo explicitly approved packet v1, its contract tests and CI transition; exact text: prompts/2026-11-04-ac1-approval.txt. Current main checkpoint is dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12. A new feature branch was created there and fast-forwarded to approved review commit 8ea0e80759ae06dc80cf5bf4bfa5666313074378 (PR #3 is still open). That commit is the pre-test undo point. No merge to main was performed. Existing tests/design/migrations/policies/settings/clock hashes are preserved in docs/evidence/ac1/protected-baseline.json. A separate red test commit will be made before application edits.
+
+## Entry 8
+artifact: tests/test_s1_contract.py; docs/evidence/ac1/red-junit.xml, red-summary.json, expected-tests.json, protected-baseline.json; actual approval record
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: Explicit AC-1 approval in prompts/2026-11-04-ac1-approval.txt; approved bounded execution recorded in prompts/2026-11-04-ac1-execution.txt and referenced packet v1.
+review: Codex derived 72 contract cases from existing design rules and the approved packet; inspected exact denial envelopes, unchanged persistence, validation order, self-only access and ordering. Preserved all existing tests and migrations. Human approval is for the packet's scope; no teammate execution/review is invented.
+checks: 72 new cases collect. Full container test run before application edits: 78 failed (all semantic 501 assertions), 4 passed, 5 skipped, zero errors; pytest exit 1. Hashes and exact phase expectations recorded.
+evidence: COMC-54; S-1 AC-1 plus binding invariants; EV-AC1-APPROVAL; EV-AC1-RED
+risk: Business behavior still unimplemented at this checkpoint; the expected incremental verifier has not yet been implemented or validated. Full-story peer review and course provenance reconciliation remain pending despite reaching eight genuine entries.

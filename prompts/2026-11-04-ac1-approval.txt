@@ -1,0 +1,4 @@
+Gustavo approval (verbatim):
+Approved. Go ahead with AC-1 packet v1, including the contract tests and CI phase change. Keep Jira and the AISE ledger updated, and open a PR when it's ready for review.
+
+Approved packet: docs/plans/AC-1-approval.md at 8ea0e80759ae06dc80cf5bf4bfa5666313074378. This approves AC-1 only, including contract tests and CI phase promotion. No merge, deployment or next-task approval is implied.
