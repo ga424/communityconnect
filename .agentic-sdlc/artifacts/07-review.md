@@ -1,3 +1,11 @@
+# AC-2 remediation review — human acceptance pending
+
+The prior PR4 F1 finding below is now addressed by the approved AC2 guard and eight regression cases. EV-AC2-LOCAL proves local 88/2/5 outcomes with no new errors and unchanged seeded data on rejection; RISK-PR4-F1-AC2-LOCAL supersedes the earlier open-risk interpretation for this implementation branch. The guard does not mask database failures or sanitize text. Original tests/designs/models/migrations/controls remain protected. AI self-review is recorded in docs/evidence/ac2/README.md.
+
+Remote CI and human implementation review are pending at this checkpoint. This is not independent teammate signoff or a production GO. Full-story design/gap/QA and AC4/6 remain incomplete; S6 is skipped. Do not treat the earlier proposed/awaiting-approval text as the current decision: DEC-AC2-APPROVED-20261104 records the actual bounded approval.
+
+## Historical PR4 diagnostic checkpoint
+
 # PR4 bounded review — finding open
 
 Scope: merged AC-1 increment and next S-1 approval preparation. [Full review](../../docs/reviews/PR-4-and-AC-2-2026-11-04.md); [AC-2 proposed packet](../../docs/plans/AC-2-approval.md).
