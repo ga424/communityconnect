@@ -15,7 +15,6 @@ Prerequisites: Git and a running Docker Engine with Docker Compose v2. No local 
 ```bash
 git clone https://github.com/ga424/communityconnect.git
 cd communityconnect
-git checkout feature/COMC-38-m1-aise-bootstrap
 docker compose run --build --rm test
 ```
 
@@ -52,3 +51,5 @@ The [pinned AISE source](docs/aise/FRAMEWORK.md) includes its deterministic vali
 Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This initial workflow only checks scaffold integrity and the expected red baseline.
 
 Private interviews, participant identities, consent/recording files and credentials are excluded from this public repository. Team contribution signatures and final submission are not fabricated by automation.
+
+Merged feature branches are deleted after merge; GitHub automatic branch deletion is enabled. Start each new task on a fresh branch from main. AC-1 awaits the [bounded approval packet](docs/plans/AC-1-approval.md).

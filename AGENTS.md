@@ -17,3 +17,6 @@ Read the AISE state and feature packet first. Commit an undo point before each a
 
 ## Team
 Kundan: S-1 requirements/implementation; Sandeep: harness and test specification; Gustavo: provenance and integration. Independent peer review remains required. Do not assign a reviewer a completed action they have not performed.
+
+## Branch lifecycle
+The user requires post-merge branch deletion. Keep GitHub delete_branch_on_merge enabled. Before manual cleanup, fetch current refs, confirm the branch's latest head is included in main and has no open PR, then delete that exact remote head with an expected-head lease and delete merged local copies. Never delete main, an unmerged head or a branch with uncommitted work. Preserve evidence with immutable commit/PR links and start new work on a fresh branch from main. A merge is not approval for a subsequent implementation task.

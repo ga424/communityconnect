@@ -32,8 +32,8 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "feature/COMC-38-m1-aise-bootstrap",
-      "commit": "47d553957ec95bb5d6428ef34364862f37cfaf25"
+      "branch": "main",
+      "commit": "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12"
     },
     "stage_status": [
       {
@@ -632,11 +632,13 @@
     },
     "open_questions": [
       "Kundan/Sandeep must review designs and test specification before S-1 task approval.",
-      "All Q entries remain open until an accountable human records a decision."
+      "All Q entries remain open until an accountable human records a decision.",
+      "Proposed AC1 contract-test and incremental-CI scope requires task-specific human approval; see docs/plans/AC-1-approval.md."
     ],
     "blockers": [
-      "Human requirements/design/test approval pending; S-1 feature implementation not started."
+      "AC1 packet v1 awaiting Gustavo approval; no feature implementation started.",
+      "Full S-1 design/gap/test peer-review tasks remain open; no teammate acceptance inferred."
     ],
-    "last_updated": "2026-11-04T04:55:57.377753+00:00"
+    "last_updated": "2026-11-04T05:18:34.432259+00:00"
   }
 }

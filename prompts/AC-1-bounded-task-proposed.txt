@@ -1,0 +1,5 @@
+PROPOSED PROMPT — NOT YET EXECUTED OR APPROVED
+
+Implement AC-1 from docs/design/S-1.md using docs/plans/AC-1-approval.md v1. Change only the paths allowed in that packet. Do not change existing tests, docs/design/, acceptance criteria, applied migration files, AGENTS.md or AISE policy controls. Show me a plan and wait. Stop when the packet's exact AC-1, invariant, harness and incremental-CI checks pass; keep the details route unimplemented and S-6 skipped. Record the real approval, undo commit, test-first baseline, diff/log/edge-case review and result evidence. Do not merge, deploy or start the next task.
+
+The full approval text must be saved separately when Gustavo actually provides it. This file is a proposed next prompt, not historical evidence of execution.

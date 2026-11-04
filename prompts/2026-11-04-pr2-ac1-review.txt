@@ -1,0 +1,7 @@
+User request (verbatim):
+Let's review PR #2 and the S-1 plan so I can approve the first implementation task, AC-1. Keep Jira and the AISE ledger updated as we go.
+
+User steering (verbatim):
+Please make sure that if a branch has been merged it's deleted post merge
+
+Authorized work: review, approval-plan preparation, accurate Jira/AISE records, and merged-branch cleanup. This request does not itself approve AC-1 implementation or establish teammate review.
