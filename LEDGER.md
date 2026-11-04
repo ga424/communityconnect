@@ -130,3 +130,12 @@ review: Derived exactly eight tests from the approved packet. JSON escapes reach
 checks: Eight cases collect. Full container run before app edits: 84 passed, 6 failed, 5 skipped; zero errors; exit 1. Four new semantic failures reproduce 500 responses or wrong precedence; four controls already pass. The two existing AC4/6 failures and five S6 skips remain unchanged. Source-sensitive guard and whitespace check pass. Protected hashes match.
 evidence: EV-AC2-APPROVAL; EV-AC2-RED; COMC-55; docs/evidence/ac2/red-summary.json. Exact test-baseline SHA is recorded after this commit in the implementation ledger/note.
 risk: F1 remains unfixed at this checkpoint. CI promotion and guard implementation have not started. Full S-1, S6 behavior, teammate review and production assurance remain pending.
+
+## Entry 12
+artifact: app/requests.py four-line guard; reusable AC1 gate parameter; AC2 verifier and CI phase; README and docs/evidence/ac2/ execution evidence
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: Actual AC2 approval and execution records in prompts/2026-11-04-ac2-approval.txt and prompts/2026-11-04-ac2-execution.txt
+review: Codex checked Unicode representability after blank/length and before category, preserved valid text, unchanged caller/access/transaction behavior and no broad exception masking. New tests prove rejection preserves seeded records/list. Verifier review confirms original expectations/hashes preserved and default AC1 behavior unchanged. AI self-review only; teammate acceptance pending.
+checks: Local full Docker suite 88 passed, 2 deferred failures, 5 skips, zero errors; exit 1. All eight new tests pass. Actual JUnit gate passed; 11 common and 7 extension negative checks rejected. Historical AC1 report/self-test passed. Liquibase update/repeat/rollback/reapply passed. All 40 protected hashes and the new test hash match. AISE structure, sensitive-data scan, Compose and diff checks pass, with pre-existing warnings retained.
+evidence: EV-AC2-LOCAL; docs/evidence/ac2/local-summary.json; test-first undo `661a205dbfb4860d14194e54d75b46edec54cdca`; COMC-55. Recording implementation SHA is in its Git provenance note and the next reconciliation entry.
+risk: F1 remediated locally, pending human review and remote CI at this checkpoint. AC4/6 remain deferred, S6 skipped, full-story review and release assurance incomplete. No next-task approval or merge/deployment claimed.

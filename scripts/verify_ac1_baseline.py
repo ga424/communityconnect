@@ -17,11 +17,13 @@ def test_id(case):
     return case.get("classname", "").replace(".", "/") + ".py::" + case.get("name", "")
 
 
-def verify(root, manifest, repo=REPO):
+def verify(root, manifest, repo=REPO, *, phase_counts=None):
+    counts = PHASE_COUNTS if phase_counts is None else phase_counts
     expected = manifest["tests"]
     errors = []
-    if dict(Counter(item["outcome"] for item in expected.values())) != PHASE_COUNTS:
-        errors.append("Manifest does not describe the approved 80/2/5 phase")
+    if dict(Counter(item["outcome"] for item in expected.values())) != counts:
+        label = "/".join(str(counts[key]) for key in ("passed", "stub_failure", "skipped"))
+        errors.append(f"Manifest does not describe the approved {label} phase")
     cases = root.findall(".//testcase")
     observed = Counter(test_id(case) for case in cases)
     for missing in sorted(expected.keys() - observed.keys()):
@@ -60,7 +62,7 @@ def verify(root, manifest, repo=REPO):
     return errors
 
 
-def self_test(manifest):
+def self_test(manifest, *, phase_counts=None):
     # Construct a known-valid report, then prove each distinct defect is rejected.
     valid = ET.Element("testsuites")
     suite = ET.SubElement(valid, "testsuite")
@@ -71,7 +73,7 @@ def self_test(manifest):
             ET.SubElement(case, "failure", message=rule["message_prefix"] + "\n + response is 501")
         elif rule["outcome"] == "skipped":
             ET.SubElement(case, "skipped", message=rule["reason"])
-    if verify(valid, manifest):
+    if verify(valid, manifest, phase_counts=phase_counts):
         raise ValueError("Verifier self-test valid control was rejected")
     mutations = {}
     altered = deepcopy(valid)
@@ -106,12 +108,12 @@ def self_test(manifest):
     stub.remove(stub.find("failure"))
     mutations["unexpected deferred pass"] = altered
     for label, root in mutations.items():
-        if not verify(root, manifest):
+        if not verify(root, manifest, phase_counts=phase_counts):
             raise ValueError(f"Verifier accepted defect: {label}")
     bad_manifest = deepcopy(manifest)
     first_file = next(iter(bad_manifest["test_file_sha256"]))
     bad_manifest["test_file_sha256"][first_file] = "0" * 64
-    if not any("Protected test file" in e for e in verify(valid, bad_manifest)):
+    if not any("Protected test file" in e for e in verify(valid, bad_manifest, phase_counts=phase_counts)):
         raise ValueError("Verifier accepted a test-file hash mismatch")
     print(json.dumps({"valid_control": "accepted", "rejected_defects": [*mutations, "test-file hash mismatch"]}, indent=2))
 

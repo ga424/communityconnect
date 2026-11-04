@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-11-04T21:25:03.053163+00:00",
+  "approval_commit": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+  "test_first_undo_commit": "661a205dbfb4860d14194e54d75b46edec54cdca",
+  "implementation_commit_ref": "Recording commit is identified in Git provenance notes and subsequent AISE reconciliation",
+  "command": "BUILDX_CONFIG=/tmp/communityconnect-buildx docker compose run --build --rm test",
+  "pytest_exit_code": 1,
+  "cases": 95,
+  "counts": {
+    "passed": 88,
+    "failed": 2,
+    "skipped": 5,
+    "errors": 0
+  },
+  "new_regression_cases": 8,
+  "new_regression_passes": 8,
+  "f1_disposition": "Locally remediated: unsupported description is rejected before insert with no change to seeded rows/list; human review pending",
+  "gate_verification": "AC2 real JUnit passed; 11 common negative checks and 7 AC2 extension checks rejected defective controls; valid controls accepted",
+  "ac1_compatibility": "Historical AC1 report and default self-test still pass; original 87 expected outcomes and file hashes preserved",
+  "migration_rehearsal": {
+    "command": "BUILDX_CONFIG=/tmp/communityconnect-buildx bash scripts/migration_rehearsal.sh",
+    "steps": [
+      "update",
+      "repeat update",
+      "rollback-count 1",
+      "reapply"
+    ],
+    "exit_code": 0
+  },
+  "protected_files": 40,
+  "new_test_file_sha256": "112965ee3e98fafd3981bfe6085c0e791ebaaba8c06a532fac92ef749d46455e",
+  "authored_source_hashes": {
+    "app/requests.py": "1f8d70084b840fa4288cc45e8201ee8026ccf23d30873b2420db9a08a7ba6afe",
+    "scripts/verify_ac1_baseline.py": "f0ac695cf6de8de2bbea3ed1e777b7e805a38e6d37b22ab0109badcb53483ec0",
+    "scripts/verify_ac2_baseline.py": "06ae4643a8b31e606d7e5815b7d889bce0c0e1fe063dd9451dbd35d376ea56ab",
+    ".github/workflows/scaffold-baseline.yml": "6c05a4fb3c4048f8ae73b4e9ec4e185543dba89a998f44c784f6892a4662a402"
+  },
+  "evidence_sha256": {
+    "local-junit.xml": "22dee737e680ecb1c25212665ad0f150bc40cfcdfaa02abc60788b0e8468c472",
+    "gate-self-test.json": "6516eef4958304c1e8e7187cb53816e5fde4189414f9508fb7501e6c3846d63f",
+    "ac1-compatibility-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+    "migration-output.txt": "39d2fd5875a19e44b77675027800d930f229b86934909b3f3bc51c400e8bf680"
+  },
+  "limitations": [
+    "AC4/AC6 remain deferred 501 failures; full S1 incomplete",
+    "Five S6 skips unchanged",
+    "Synthetic local/test identity only",
+    "Human peer review and remote CI pending at this checkpoint",
+    "Existing TestClient deprecation and historical EV-REPO-ROOT warning remain; no dependency/control changes"
+  ]
+}
