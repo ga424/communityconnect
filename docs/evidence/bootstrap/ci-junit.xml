@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="5" tests="15" time="0.373" timestamp="2026-11-04T04:50:21.428199+00:00" hostname="d51933ffb14c"><testcase classname="tests.test_harness" name="test_health_identifies_nonproduction_scaffold" time="0.033" /><testcase classname="tests.test_harness" name="test_liquibase_applied_schema_and_seeded_synthetic_memberships" time="0.027" /><testcase classname="tests.test_harness" name="test_schema_rejects_resident_unit_in_another_community" time="0.024" /><testcase classname="tests.test_harness" name="test_schema_rejects_resident_without_unit" time="0.024" /><testcase classname="tests.test_s1_requests" name="test_ac1_resident_submits_request_shown_as_open" time="0.022"><failure message="assert 501 == 201&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a37e9c0&gt;
+
+    def test_ac1_resident_submits_request_shown_as_open(client):
+        response = client.post("/communities/1/requests", headers=R1,
+            json={"category": settings.REQUEST_CATEGORIES[0], "description": "Kitchen sink leaks"})
+&gt;       assert response.status_code == 201
+E       assert 501 == 201
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:15: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac2_blank_description_rejected_and_list_unchanged" time="0.031"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a3a6cf0&gt;
+
+    def test_ac2_blank_description_rejected_and_list_unchanged(client):
+        seed_request()
+        before = client.get('/communities/1/requests', headers=R1)
+&gt;       assert before.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:34: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac3_other_community_resident_does_not_see_request" time="0.030"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a3aa060&gt;
+
+    def test_ac3_other_community_resident_does_not_see_request(client):
+        seed_request()
+        response = client.get('/communities/2/requests', headers=R2)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:49: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac4_other_community_direct_id_returns_not_found" time="0.030"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a3ef200&gt;
+
+    def test_ac4_other_community_direct_id_returns_not_found(client):
+        request_id = seed_request()
+        response = client.get(f'/requests/{request_id}', headers=R2)
+&gt;       assert response.status_code == 404
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:56: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac5_neighbor_in_same_community_does_not_see_request" time="0.031"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a3edbb0&gt;
+
+    def test_ac5_neighbor_in_same_community_does_not_see_request(client):
+        seed_request()
+        response = client.get('/communities/1/requests', headers=R3)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:63: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac6_resident_sees_in_progress_status" time="0.031"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x72e33a3f60f0&gt;
+
+    def test_ac6_resident_sees_in_progress_status(client):
+        request_id = seed_request(status='In progress')
+        response = client.get(f'/requests/{request_id}', headers=R1)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:70: AssertionError</failure></testcase><testcase classname="tests.test_s6_payments" name="test_ac18_schedule_returned_without_token" time="0.000"><skipped type="pytest.skip" message="AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:17: AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac19_due_day_charges_exactly_once" time="0.000"><skipped type="pytest.skip" message="AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:31: AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac20_restart_mid_run_keeps_one_payment" time="0.000"><skipped type="pytest.skip" message="AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:44: AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac21_manual_payment_prevents_scheduled_charge" time="0.000"><skipped type="pytest.skip" message="AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:58: AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac22_declined_charge_retried_after_delay" time="0.000"><skipped type="pytest.skip" message="AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:69: AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase></testsuite></testsuites>

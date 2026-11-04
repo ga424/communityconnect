@@ -50,3 +50,23 @@ review: Codex derived assertions from AC-1..6 and AC-18..22 and checked ID/name 
 checks: APP_ENV=test .venv/bin/python -m pytest --collect-only -q: 15 tests collected (six S-1, five S-6, four harness); compileall PASS. Collection does not execute PostgreSQL assertions; runtime red evidence pending.
 evidence: COMC-39, COMC-40; S-1 AC-1..6; S-6 AC-18..22
 risk: S-6 test-only fixture adapter requires review and implementation before future payment tests can execute. No real provider, auth or payment persistence is present.
+
+## Commit references for Entries 2–5
+
+- 21ff38c58657bb46f44e8cd703643834362a110e — chore(COMC-38): initialize pinned AISE governance workspace
+- 19eb9ea1c146830b4ccb043e06d646114aa6f7fd — docs(COMC-41): add S-1 and S-6 feature packets and bounded plan
+- 92634ffbc0dffb8c5087577628055f6d7c5638f1 — chore(COMC-37): add local PostgreSQL Liquibase and FastAPI scaffold
+- 47d553957ec95bb5d6428ef34364862f37cfaf25 — test(COMC-39): add S-1 red tests and deferred S-6 acceptance contracts
+
+## Entry 6
+artifact: AISE stage drafts/runtime evidence, commit manifest and Jira/PR handoff; its own full commit SHA is recorded in refs/notes/ai-provenance to avoid a self-referential tracked-file hash
+ tool: OpenAI Codex, GPT-6 (exact build not exposed); 2026-11-03 session
+prompts: Initial feature setup request and Docker availability update; prompts/2026-11-03-initial-checkins.txt and prompts/2026-11-03-docker-available.txt
+review: Codex inspected source/test/SQL boundaries, read actual CI outcomes and preserved all feature approvals as pending. Kundan/Sandeep peer review remains pending.
+checks: CI run 41775497234 on 47d553957ec95bb5d6428ef34364862f37cfaf25 succeeded: migration update/repeat/rollback/reapply; 4 harness passes, 6 expected semantic failures, 5 AC skips. Local result is recorded in docs/aise/test-baseline.md after execution.
+evidence: EV-CI-41775497234; COMC-37/38/39/40/41/44; draft PR #1
+risk: No business functionality, complete edge-case specification, human approval, production assurance, signed contribution or completed eight-entry milestone ledger is established.
+
+To read the recording commit's append-only provenance note: `git fetch origin refs/notes/ai-provenance:refs/notes/ai-provenance`, then `git log --show-notes=ai-provenance`. Notes name exact commit SHAs without rewriting the committed artifacts. Future review entries should also cite this recording commit in LEDGER.md.
+
+Entry 6 completion addendum: local Docker Desktop 29.2.1 fresh-clone run at 47d553957ec95bb5d6428ef34364862f37cfaf25 matched CI (4 passed, 6 failed, 5 skipped; no setup errors). Liquibase update/repeat/rollback/reapply passed. First build attempt hit a sandbox Buildx cache-write restriction; documented BUILDX_CONFIG in /tmp resolved it without changing permissions. Full compact evidence is docs/evidence/bootstrap/validation.json. Traceability CSV normalized a source line break after :: and updated the header to Test name; all 31 rows remain, with all 11 named test functions verified to exist. No test assertions or product decisions changed.

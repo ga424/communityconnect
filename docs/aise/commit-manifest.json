@@ -1,0 +1,25 @@
+{
+  "scope": "Initial substantive check-ins; the recording commit is identified in its Git provenance note and Jira/PR.",
+  "commits": [
+    {
+      "sha": "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d",
+      "subject": "docs(COMC-38): establish CommunityConnect milestone scope"
+    },
+    {
+      "sha": "21ff38c58657bb46f44e8cd703643834362a110e",
+      "subject": "chore(COMC-38): initialize pinned AISE governance workspace"
+    },
+    {
+      "sha": "19eb9ea1c146830b4ccb043e06d646114aa6f7fd",
+      "subject": "docs(COMC-41): add S-1 and S-6 feature packets and bounded plan"
+    },
+    {
+      "sha": "92634ffbc0dffb8c5087577628055f6d7c5638f1",
+      "subject": "chore(COMC-37): add local PostgreSQL Liquibase and FastAPI scaffold"
+    },
+    {
+      "sha": "47d553957ec95bb5d6428ef34364862f37cfaf25",
+      "subject": "test(COMC-39): add S-1 red tests and deferred S-6 acceptance contracts"
+    }
+  ]
+}

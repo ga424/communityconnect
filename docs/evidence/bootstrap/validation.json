@@ -1,0 +1,29 @@
+{
+  "tested_commit": "47d553957ec95bb5d6428ef34364862f37cfaf25",
+  "recorded_at": "2026-11-04T04:55:57.377753+00:00",
+  "local": {
+    "fresh_clone": true,
+    "docker_engine": "29.2.1",
+    "test_command": "BUILDX_CONFIG=/tmp/communityconnect-buildx docker compose run --build --rm test",
+    "pytest_exit": 1,
+    "harness_passed": 4,
+    "s1_failed": 6,
+    "s6_skipped": 5,
+    "setup_errors": 0,
+    "migration_update_repeat_rollback_reapply": "passed",
+    "bootstrap_checker": "passed",
+    "environment_note": "First build attempt failed to write ~/.docker/buildx activity under workspace sandbox; retried with documented BUILDX_CONFIG in writable temp directory."
+  },
+  "ci": {
+    "run_url": "https://github.com/ga424/communityconnect/actions/runs/41775497234",
+    "conclusion": "success",
+    "pytest_exit": 1,
+    "harness_passed": 4,
+    "s1_failed": 6,
+    "s6_skipped": 5
+  },
+  "files": {
+    "ci-junit.xml": "f153d6110cbf2d08e13f29f1cf7c654436f4425392fdc8d45fecaa7f05233d7e",
+    "local-junit.xml": "026c8ea0d582919ea9810877692b75d5eeb66f993245f1233faf85726008721f"
+  }
+}

@@ -32,7 +32,7 @@ bash scripts/migration_rehearsal.sh
 docker compose down --volumes --remove-orphans
 ```
 
-`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. The authoring machine lacks a Docker engine; local fresh-clone execution remains a Sandeep review task even if remote CI passes.
+`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. Docker Desktop was started during this session. A local fresh-clone run and remote CI now match the expected red baseline; Sandeep’s human review remains pending. If a sandbox cannot write Buildx state under the home directory, set `BUILDX_CONFIG` to a writable temporary directory; the test command is otherwise unchanged.
 
 ## Work by feature with AISE
 
