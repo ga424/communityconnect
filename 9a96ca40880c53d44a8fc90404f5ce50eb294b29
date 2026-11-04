@@ -1,0 +1,45 @@
+{
+  "created_at": "2026-11-04T23:10:22.441125+00:00",
+  "commit": "9a96ca40880c53d44a8fc90404f5ce50eb294b29",
+  "record_type": "evidence_handoff",
+  "ledger_entry": 12,
+  "paths": [
+    ".agentic-sdlc/artifacts/05-implementation.md",
+    ".agentic-sdlc/artifacts/07-review.md",
+    ".agentic-sdlc/ledgers/code-changes.jsonl",
+    ".agentic-sdlc/ledgers/evidence.jsonl",
+    ".agentic-sdlc/ledgers/risks.jsonl",
+    ".agentic-sdlc/state/pipeline-state.json",
+    "LEDGER.md",
+    "docs/evidence/ac2/README.md",
+    "docs/evidence/ac2/ci-junit.xml",
+    "docs/evidence/ac2/ci-summary.json"
+  ],
+  "pull_request": "https://github.com/ga424/communityconnect/pull/6",
+  "ci_run": "https://github.com/ga424/communityconnect/actions/runs/41931315628",
+  "conclusion": "success",
+  "result": {
+    "passed": 88,
+    "deferred_failures": 2,
+    "skipped": 5,
+    "errors": 0,
+    "pytest_exit_code": 1
+  },
+  "new_cases_passed": 8,
+  "junit_sha256": "304e60e9b5b0e9df5289f94cac1d93c35f7b43ce66e59ee624ef0ccdcb2baf26",
+  "verification": "Downloaded final-head CI JUnit passed exact AC2 gate; tracked authored source and 40 protected-file hashes match local verification",
+  "approval": "EV-AC2-APPROVAL",
+  "risk_disposition": "F1 remediated in feature branch, local and CI regression verified; human review/merge pending",
+  "human_review": "pending",
+  "jira_updated": [
+    "COMC-55",
+    "COMC-54",
+    "COMC-39",
+    "COMC-41",
+    "COMC-44"
+  ],
+  "branch_lifecycle": "PR5 and PR6 remain open; no unmerged branches deleted; delete_branch_on_merge enabled",
+  "workspace_observation": "Untracked files with 2 suffixes appeared during final verification, were left untouched and excluded from commits/PR. Tracked files match verified hashes.",
+  "task_services": "Disposable Docker services removed",
+  "no_next_task_or_merge": true
+}
