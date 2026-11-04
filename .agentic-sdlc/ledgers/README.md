@@ -18,3 +18,6 @@ Code-change records should use `record_type: "code_change"` and include:
 - Delivery links such as `validation_commands`, `commit`, `branch`, and `pull_request`.
 
 For material implementation work, do not leave `code-changes.jsonl` as a narrative-only audit trail. It should be specific enough for Stage 7, TestGuard, reviewers, and release approvers to trace each changed path back to approved specification and verification evidence.
+
+## Append-only corrections
+A record with `supersedes` replaces the interpretation of the named earlier record for human review while preserving its history. These correction links are not currently resolved automatically by the bundled structural validator; consumers must follow the chain and must not count superseded rows as additional completed work. A machine_verified code-change record proves the stated content/check scope only, not that linked ACs passed. Runtime evidence names its own tested commit.
