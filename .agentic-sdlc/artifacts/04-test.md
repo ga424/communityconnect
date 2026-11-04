@@ -8,3 +8,7 @@ Sandeep must review the executable specification and proposed S-6 fixture API. A
 
 ## Approved AC-1 contract-test baseline
 Gustavo approved packet v1 and its contract-test/CI scope; EV-AC1-APPROVAL records the actual reply. tests/test_s1_contract.py adds 72 cases for existing design preconditions, validation order, no-write rejection, authorization, boundaries and ordering. EV-AC1-RED records their semantic red run before implementation. Existing tests are frozen in docs/evidence/ac1/protected-baseline.json; exact test IDs/outcomes and all test hashes for the approved incremental phase are in expected-tests.json. Full-story peer review remains pending.
+
+## AC-1 local implementation result
+
+Test-first commit `2b73ab0d5f21fb63e9b7c1406446c3cf7043682d` precedes implementation `15edff908305ffe51c7b7f7615bc22f87b4ef053`. All 72 contract cases now pass, with four harness passes and existing AC-1/2/3/5 passes; AC-4/6 remain 501 failures and five S-6 AC-labelled skips remain. Zero errors. Frozen manifest checks exact IDs and test-file hashes. Gate self-test rejects 11 defect types. See docs/evidence/ac1/local-summary.json and EV-AC1-LOCAL. Full-story QA and Sandeep peer review remain pending.
