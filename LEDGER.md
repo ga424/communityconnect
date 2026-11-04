@@ -93,3 +93,12 @@ review: Codex derived 72 contract cases from existing design rules and the appro
 checks: 72 new cases collect. Full container test run before application edits: 78 failed (all semantic 501 assertions), 4 passed, 5 skipped, zero errors; pytest exit 1. Hashes and exact phase expectations recorded.
 evidence: COMC-54; S-1 AC-1 plus binding invariants; EV-AC1-APPROVAL; EV-AC1-RED
 risk: Business behavior still unimplemented at this checkpoint; the expected incremental verifier has not yet been implemented or validated. Full-story peer review and course provenance reconciliation remain pending despite reaching eight genuine entries.
+
+## Entry 9
+artifact: app/requests.py, app/models.py, scripts/verify_ac1_baseline.py, CI phase transition, README and docs/evidence/ac1/ execution evidence
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: prompts/2026-11-04-ac1-approval.txt and prompts/2026-11-04-ac1-execution.txt; approved packet v1 at 8ea0e80759ae06dc80cf5bf4bfa5666313074378
+review: Codex inspected caller/access/input precedence, parameterized SQL, membership lock and transaction, self-only filtering, UTC public responses, exact error/no-write behavior, unchanged details stub, logs and file hashes. AI review only; human peer acceptance remains pending.
+checks: Full Docker run: 80 passed, 2 deferred 501 failures, 5 unchanged S-6 skips, zero errors; pytest exit 1. Phase verifier passed and rejected 11 defect types. Liquibase update/repeat/rollback/reapply passed. Fourteen protected hashes match. AISE structural validation passed with the documented historical warning; sensitive-data guard, Compose validation and diff whitespace checks passed.
+evidence: EV-AC1-LOCAL; docs/evidence/ac1/local-summary.json; red-test undo 2b73ab0d5f21fb63e9b7c1406446c3cf7043682d; COMC-54. Implementation commit SHA is recorded by its Git provenance note and the subsequent reconciliation entry.
+risk: Remote CI is pending at this checkpoint. Full S-1, all S-6 behavior, Kundan/Sandeep review and final full-story verification remain pending. Synthetic auth is local-only. No merge/deployment or next-task approval is claimed.

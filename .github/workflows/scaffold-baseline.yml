@@ -1,11 +1,11 @@
-name: Scaffold and expected red baseline
+name: AC-1 contract and incremental baseline
 on:
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  scaffold-red-baseline:
+  ac1-contract-baseline:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -27,7 +27,8 @@ jobs:
           set -e
           echo "$result" > artifacts/pytest-exit-code.txt
           test "$result" -eq 1
-          python scripts/verify_red_baseline.py
+          python scripts/verify_ac1_baseline.py --self-test > artifacts/ac1-gate-self-test.json
+          python scripts/verify_ac1_baseline.py
       - name: Record image inputs
         if: always()
         run: |
@@ -36,7 +37,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
-          name: scaffold-red-baseline
+          name: ac1-contract-baseline
           path: artifacts/
       - name: Remove disposable test services
         if: always()

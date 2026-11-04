@@ -4,7 +4,7 @@ A community management portal for residents, board members, community managers a
 
 ## Current increment
 
-This branch prepares Milestone 1 through the AISE lifecycle. **No business feature is implemented yet.** S-1 maintenance requests is the first build target. S-6 simulated scheduled dues is design/test-only. All fixtures are synthetic; no real payments or production authentication are enabled.
+This branch prepares Milestone 1 through the AISE lifecycle. **AC-1 resident request creation and self-listing are implemented for review.** The details route remains a 501 stub; S-1 is incomplete. S-6 simulated scheduled dues is design/test-only. All fixtures are synthetic; no real payments or production authentication are enabled.
 
 See [feature order and owners](docs/features/README.md), [S-1 plan](docs/plans/S-1-plan.md), [S-1 design](docs/design/S-1.md), [S-6 design](docs/design/S-6.md) and [31-AC traceability](docs/traceability.csv). Designs, plans and tests still need team review. [Jira COMC](https://gkms.atlassian.net/jira/software/projects/COMC/boards/34/backlog) tracks that review separately from drafted artifacts.
 
@@ -20,7 +20,14 @@ docker compose run --build --rm test
 
 The last line is the **one command for all tests**: it starts disposable PostgreSQL, applies Liquibase migrations, builds the Python 3.12 test image and runs pytest. Test fixture credentials in Compose are public, local-only examples; no database port is published. Tests clear only the dedicated `cc_test` database. Do not point this scaffold at shared data.
 
-Current expected result: **4 harness passes, 6 S-1 failures, 5 S-6 skips**. S-1 calls intentionally return 501 until bounded implementation is approved; S-6 skip reasons name AC-18 through AC-22. A collection/setup failure is not an acceptable red baseline. See [baseline evidence](docs/aise/test-baseline.md) for actual execution results. The CI baseline gate validates these counts; its success is not feature completion. Replace that gate with S-1-green expectations only through reviewed baseline promotion, not to hide failing tests.
+Current expected result: **80 passes, 2 deferred S-1 failures, 5 S-6 skips** (87 cases, pytest exit 1). The passes comprise 72 new contract cases, 4 harness cases and existing AC-1/2/3/5. AC-4 and AC-6 still fail on the unchanged details stub. S-6 retains its exact AC-18 through AC-22 skip reasons.
+
+The approved AC-1 CI gate checks exact test IDs, outcomes and frozen test-file hashes; it rejects missing/duplicate tests, setup errors, unexpected failures and added/changed skips. Its success means this bounded increment is ready for review, not that S-1 is complete. Existing tests and the original [red baseline evidence](docs/aise/test-baseline.md) remain unchanged. See [AC-1 execution evidence](docs/evidence/ac1/README.md) for the test-first checkpoint and current results.
+
+```bash
+python scripts/verify_ac1_baseline.py
+python scripts/verify_ac1_baseline.py --self-test
+```
 
 ```bash
 # Collect test names; starts the same database/migration prerequisites.
@@ -31,7 +38,7 @@ bash scripts/migration_rehearsal.sh
 docker compose down --volumes --remove-orphans
 ```
 
-`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. Docker Desktop was started during this session. A local fresh-clone run and remote CI now match the expected red baseline; Sandeep’s human review remains pending. If a sandbox cannot write Buildx state under the home directory, set `BUILDX_CONFIG` to a writable temporary directory; the test command is otherwise unchanged.
+`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. Docker Desktop was started during this session. Historical bootstrap runs are documented separately; the current AC-1 run must match the phase above. Sandeep’s human review remains pending. If a sandbox cannot write Buildx state under the home directory, set `BUILDX_CONFIG` to a writable temporary directory; the test command is otherwise unchanged.
 
 ## Work by feature with AISE
 
@@ -44,12 +51,12 @@ The [pinned AISE source](docs/aise/FRAMEWORK.md) includes its deterministic vali
 
 ## Boundaries and remaining work
 
-- Kundan: approve S-1 design/plan, then implement COMC-54 through COMC-59 with independent review.
+- Kundan: review the AC-1 implementation and remaining S-1 design/gap work; later bounded tasks COMC-55 through COMC-59 retain separate approval/review.
 - Sandeep: review fixtures/migration recovery, both test specifications and fresh-clone execution.
 - Gustavo: maintain provenance/traceability and coordinate integration and peer review.
 
-Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This initial workflow only checks scaffold integrity and the expected red baseline.
+Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This workflow checks migrations, AISE structure, the sensitive-data guard and the approved AC-1 contract phase; it is not a production security assessment.
 
 Private interviews, participant identities, consent/recording files and credentials are excluded from this public repository. Team contribution signatures and final submission are not fabricated by automation.
 
-Merged feature branches are deleted after merge; GitHub automatic branch deletion is enabled. Start each new task on a fresh branch from main. AC-1 awaits the [bounded approval packet](docs/plans/AC-1-approval.md).
+Merged feature branches are deleted after merge; GitHub automatic branch deletion is enabled. Start each new task on a fresh branch from main. Gustavo approved [packet v1](docs/plans/AC-1-approval.md); the historical packet’s pending status is superseded by the [actual approval record](prompts/2026-11-04-ac1-approval.txt). The implementation awaits human review. PR #3 contains the packet and is an ancestor of this implementation branch; no automatic merge is authorized.
