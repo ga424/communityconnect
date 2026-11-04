@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-11-04T21:26:19.449013+00:00",
+  "entry": 12,
+  "commit": "130af5d22bda7a98c4cff79e78904add49778b35",
+  "approval": "EV-AC2-APPROVAL",
+  "evidence": "EV-AC2-LOCAL",
+  "scope": "AC2 packet v1; no next-task or merge approval",
+  "human_review": "pending",
+  "branch": "feature/COMC-55-ac2"
+}
