@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-11-04T05:59:57.969154+00:00",
+  "reviewed_pr": "https://github.com/ga424/communityconnect/pull/4",
+  "head": "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca",
+  "merged_commit": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+  "ci_run": "https://github.com/ga424/communityconnect/actions/runs/41781158528",
+  "ci_conclusion": "success",
+  "baseline": {
+    "passed": 80,
+    "deferred_failures": 2,
+    "skipped": 5,
+    "errors": 0
+  },
+  "baseline_recheck": "Downloaded final-head CI JUnit passed existing verifier; 11 gate defect checks rejected as expected",
+  "merge_source_check": "git diff 74bcdd6 origin/main -- app tests db .github scripts: empty",
+  "diagnostic_cases": 7,
+  "finding": "F1: NUL/unpaired-surrogate descriptions produce HTTP 500; persisted_rows remains 0",
+  "branch_cleanup": {
+    "branch": "feature/COMC-54-ac1",
+    "remote_head": "absent after automatic deletion",
+    "local_head": "deleted after verifying ancestry in main and no open PR",
+    "delete_branch_on_merge": true
+  },
+  "probe_sha256": "cc33dd5b51eab3c998b5813c8f1a31816dc5b27aaa6d39e0195cd07197c2a664",
+  "human_peer_review": "not established by this AI review"
+}

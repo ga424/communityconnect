@@ -4,7 +4,7 @@ A community management portal for residents, board members, community managers a
 
 ## Current increment
 
-This branch prepares Milestone 1 through the AISE lifecycle. **AC-1 resident request creation and self-listing are implemented for review.** The details route remains a 501 stub; S-1 is incomplete. S-6 simulated scheduled dues is design/test-only. All fixtures are synthetic; no real payments or production authentication are enabled.
+This branch prepares Milestone 1 through the AISE lifecycle. **AC-1 resident request creation and self-listing are merged.** [PR4 review](docs/reviews/PR-4-and-AC-2-2026-11-04.md) found an unsupported-description validation gap; the [AC-2 fix packet](docs/plans/AC-2-approval.md) awaits approval. The details route remains a 501 stub; S-1 is incomplete. S-6 simulated scheduled dues is design/test-only. All fixtures are synthetic; no real payments or production authentication are enabled.
 
 See [feature order and owners](docs/features/README.md), [S-1 plan](docs/plans/S-1-plan.md), [S-1 design](docs/design/S-1.md), [S-6 design](docs/design/S-6.md) and [31-AC traceability](docs/traceability.csv). Designs, plans and tests still need team review. [Jira COMC](https://gkms.atlassian.net/jira/software/projects/COMC/boards/34/backlog) tracks that review separately from drafted artifacts.
 
@@ -59,4 +59,4 @@ Production identity/MFA, UI/Playwright, provider integrations, security/dependen
 
 Private interviews, participant identities, consent/recording files and credentials are excluded from this public repository. Team contribution signatures and final submission are not fabricated by automation.
 
-Merged feature branches are deleted after merge; GitHub automatic branch deletion is enabled. Start each new task on a fresh branch from main. Gustavo approved [packet v1](docs/plans/AC-1-approval.md); the historical packet’s pending status is superseded by the [actual approval record](prompts/2026-11-04-ac1-approval.txt). The implementation awaits human review. PR #3 contains the packet and is an ancestor of this implementation branch; no automatic merge is authorized.
+Merged feature branches are deleted after merge; GitHub automatic branch deletion is enabled. Start each new task on a fresh branch from main. Gustavo approved [packet v1](docs/plans/AC-1-approval.md); the historical packet’s pending status is superseded by the [actual approval record](prompts/2026-11-04-ac1-approval.txt). PR #4 is merged and its branch was deleted remotely and locally. The proposed AC-2 task requires its own approval; no automatic merge or next-task implementation is authorized.

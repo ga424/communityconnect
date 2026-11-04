@@ -1,0 +1,5 @@
+Actual user request:
+
+Let's review PR #4 and prepare the next bounded S-1 task for approval. Keep Jira and the AISE ledger updated, and make sure the branch is deleted after merge.
+
+Execution scope: review merged PR4, diagnose contract gaps using synthetic disposable data, prepare the AC2 approval packet, update Jira/AISE and clean up merged branches. No AC2 implementation or test/specification change is authorized by this review request.
