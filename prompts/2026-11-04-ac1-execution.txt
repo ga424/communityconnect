@@ -1,0 +1,5 @@
+Execution of approved AC-1 packet v1
+
+Actual user authorization is in 2026-11-04-ac1-approval.txt. The bounded task instruction is the approved-by-reference prompt in AC-1-bounded-task-proposed.txt and the allowed-file/stop-check packet at commit 8ea0e80759ae06dc80cf5bf4bfa5666313074378. That older proposed-prompt label is historical; this file records that execution began only after the explicit user approval.
+
+Execute tests first, preserve exact red results, commit an undo point, implement the two allowed create/self-list routes and model helpers, retain the details stub, add the named incremental verifier and CI transition, record actual outcomes and open a review PR. Preserve existing tests/design/migrations/policy controls. No subsequent AC implementation, merge or deployment.

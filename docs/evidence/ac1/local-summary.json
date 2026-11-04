@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-11-04T05:37:12.776672+00:00",
+  "approval_commit": "8ea0e80759ae06dc80cf5bf4bfa5666313074378",
+  "test_first_undo_commit": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
+  "implementation_commit_ref": "refs/notes/ai-provenance on the implementation commit; subsequent ledger reconciliation records its full SHA",
+  "command": "BUILDX_CONFIG=/tmp/communityconnect-buildx docker compose run --build --rm test",
+  "pytest_exit_code": 1,
+  "counts": {
+    "failed": 2,
+    "skipped": 5,
+    "errors": 0,
+    "passed": 80
+  },
+  "deferred_tests": [
+    "test_ac4_other_community_direct_id_returns_not_found",
+    "test_ac6_resident_sees_in_progress_status"
+  ],
+  "gate": "scripts/verify_ac1_baseline.py passed; valid control accepted and 11 defect types rejected",
+  "migration_rehearsal": {
+    "command": "BUILDX_CONFIG=/tmp/communityconnect-buildx bash scripts/migration_rehearsal.sh",
+    "exit_code": 0,
+    "steps": [
+      "update",
+      "repeat update",
+      "rollback-count 1",
+      "reapply"
+    ]
+  },
+  "protected_files": "All 14 hashes from protected-baseline.json match; existing tests are unchanged; new contract tests match red-commit hashes",
+  "details_stub": "AST unchanged from approval commit",
+  "authored_source_hashes": {
+    "app/requests.py": "2b586d326e5b2d0e5860a10c82e409044d53884484f57259f434f42fde4d3379",
+    "app/models.py": "f65cbb3aee8df16b2170be42bed2662d11a18f55f9a1f1d81e280b3c7ece7013",
+    "scripts/verify_ac1_baseline.py": "1949cb353062063610cc8e4f1e498a4bbe0c82cb3227c04db15b876c15f3ab7c",
+    ".github/workflows/scaffold-baseline.yml": "66db731219f3610767cd92ffec4c2a49d38ba3c5105ee400e624524d9e0d71d5"
+  },
+  "evidence_sha256": {
+    "local-junit.xml": "0f5d57670295fb3c03b3eeab5650a497446b2772619a9ab88aac65dbc2cd7b0c",
+    "gate-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+    "migration-output.txt": "bb320aa7c659e247d5f49d7299648405c2ca1b85c18975596d4fd8c116f954c3"
+  },
+  "limitations": [
+    "Full S-1 remains incomplete; AC-4/AC-6 still fail",
+    "All five S-6 tests intentionally skipped",
+    "Synthetic X-User-Id authentication only; local/test guard retained",
+    "Human peer review pending",
+    "Existing Starlette TestClient deprecation warning; dependency changes are outside this scope"
+  ]
+}

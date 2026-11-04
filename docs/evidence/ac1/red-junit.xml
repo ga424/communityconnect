@@ -1,0 +1,2241 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="78" skipped="5" tests="87" time="20.348" timestamp="2026-11-04T05:29:28.653326+00:00" hostname="6316a134eb75"><testcase classname="tests.test_harness" name="test_health_identifies_nonproduction_scaffold" time="0.142" /><testcase classname="tests.test_harness" name="test_liquibase_applied_schema_and_seeded_synthetic_memberships" time="0.172" /><testcase classname="tests.test_harness" name="test_schema_rejects_resident_unit_in_another_community" time="0.172" /><testcase classname="tests.test_harness" name="test_schema_rejects_resident_without_unit" time="0.175" /><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[missing-POST]" time="0.261"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6ba0&gt;
+method = 'POST', caller = None
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6ba0&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[missing-GET]" time="0.256"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da31a0&gt;
+method = 'GET', caller = None
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da31a0&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[empty-POST]" time="0.323"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dedfd0&gt;
+method = 'POST', caller = ''
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dedfd0&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': ''}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[empty-GET]" time="0.278"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df1c40&gt;
+method = 'GET', caller = ''
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df1c40&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': ''}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[zero-POST]" time="0.260"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df7b90&gt;
+method = 'POST', caller = '0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df7b90&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '0'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[zero-GET]" time="0.351"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df26c0&gt;
+method = 'GET', caller = '0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df26c0&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '0'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[negative-POST]" time="0.253"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa900&gt;
+method = 'POST', caller = '-1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa900&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '-1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[negative-GET]" time="0.322"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa9f0&gt;
+method = 'GET', caller = '-1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa9f0&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '-1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[leading-zero-POST]" time="0.289"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df7500&gt;
+method = 'POST', caller = '01'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df7500&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '01'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[leading-zero-GET]" time="0.197"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df84a0&gt;
+method = 'GET', caller = '01'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df84a0&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '01'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[plus-POST]" time="0.206"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da11f0&gt;
+method = 'POST', caller = '+1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da11f0&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '+1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[plus-GET]" time="0.257"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfe990&gt;
+method = 'GET', caller = '+1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfe990&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '+1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[decimal-POST]" time="0.241"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6480&gt;
+method = 'POST', caller = '1.0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6480&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '1.0'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[decimal-GET]" time="0.256"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dff230&gt;
+method = 'GET', caller = '1.0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dff230&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '1.0'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[text-POST]" time="0.200"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09deff80&gt;
+method = 'POST', caller = 'abc'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09deff80&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': 'abc'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[text-GET]" time="0.200"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfec30&gt;
+method = 'GET', caller = 'abc'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfec30&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': 'abc'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[space-POST]" time="0.258"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df9400&gt;
+method = 'POST', caller = '1 '
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df9400&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '1 '}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[space-GET]" time="0.190"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09decb30&gt;
+method = 'GET', caller = '1 '
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09decb30&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '1 '}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[unknown-POST]" time="0.223"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dda990&gt;
+method = 'POST', caller = '999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dda990&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '999'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[unknown-GET]" time="0.183"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd0978b290&gt;
+method = 'GET', caller = '999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd0978b290&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '999'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[outside-db-range-POST]" time="0.185"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df8b90&gt;
+method = 'POST'
+caller = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df8b90&gt;
+method = 'POST', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_identity[outside-db-range-GET]" time="0.199"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df3320&gt;
+method = 'GET'
+caller = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("+1", id="plus"),
+        pytest.param("1.0", id="decimal"), pytest.param("abc", id="text"),
+        pytest.param("1 ", id="space"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+    ])
+    def test_ac1_contract_rejects_invalid_identity(client, method, caller):
+        seed_request()
+&gt;       reject(client, method, "/communities/1/requests", 401, "Unknown user",
+               headers={} if caller is None else {"X-User-Id": caller}, json=payload())
+
+tests/test_s1_contract.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df3320&gt;
+method = 'GET', path = '/communities/1/requests', status = 401
+detail = 'Unknown user'
+kwargs = {'headers': {'X-User-Id': '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_identity_precedes_path_and_body[POST]" time="0.138"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5430&gt;
+method = 'POST'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    def test_ac1_contract_identity_precedes_path_and_body(client, method):
+&gt;       reject(client, method, "/communities/not-an-id/requests", 401, "Unknown user",
+               content="{")
+
+tests/test_s1_contract.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5430&gt;
+method = 'POST', path = '/communities/not-an-id/requests', status = 401
+detail = 'Unknown user', kwargs = {'content': '{'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_identity_precedes_path_and_body[GET]" time="0.219"><failure message="assert 501 == 401&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097dc4a0&gt;
+method = 'GET'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    def test_ac1_contract_identity_precedes_path_and_body(client, method):
+&gt;       reject(client, method, "/communities/not-an-id/requests", 401, "Unknown user",
+               content="{")
+
+tests/test_s1_contract.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd097dc4a0&gt;
+method = 'GET', path = '/communities/not-an-id/requests', status = 401
+detail = 'Unknown user', kwargs = {'content': '{'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 401
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[zero-POST]" time="0.335"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097def90&gt;
+method = 'POST', community = '0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd097def90&gt;
+method = 'POST', path = '/communities/0/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[zero-GET]" time="0.381"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6570&gt;
+method = 'GET', community = '0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da6570&gt;
+method = 'GET', path = '/communities/0/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[negative-POST]" time="0.391"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfe900&gt;
+method = 'POST', community = '-1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfe900&gt;
+method = 'POST', path = '/communities/-1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[negative-GET]" time="0.258"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df0560&gt;
+method = 'GET', community = '-1'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df0560&gt;
+method = 'GET', path = '/communities/-1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[leading-zero-POST]" time="0.261"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09789250&gt;
+method = 'POST', community = '01'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09789250&gt;
+method = 'POST', path = '/communities/01/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[leading-zero-GET]" time="0.252"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d23da0&gt;
+method = 'GET', community = '01'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d23da0&gt;
+method = 'GET', path = '/communities/01/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[text-POST]" time="0.187"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6a990&gt;
+method = 'POST', community = 'abc'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6a990&gt;
+method = 'POST', path = '/communities/abc/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[text-GET]" time="0.182"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6a420&gt;
+method = 'GET', community = 'abc'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6a420&gt;
+method = 'GET', path = '/communities/abc/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[unicode-digits-POST]" time="0.194"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09785340&gt;
+method = 'POST', community = '١'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09785340&gt;
+method = 'POST', path = '/communities/١/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[unicode-digits-GET]" time="0.185"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df2f30&gt;
+method = 'GET', community = '١'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df2f30&gt;
+method = 'GET', path = '/communities/١/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[decimal-POST]" time="0.169"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5820&gt;
+method = 'POST', community = '1.0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5820&gt;
+method = 'POST', path = '/communities/1.0/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[decimal-GET]" time="0.189"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3f7d0&gt;
+method = 'GET', community = '1.0'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3f7d0&gt;
+method = 'GET', path = '/communities/1.0/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[unknown-POST]" time="0.354"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d34770&gt;
+method = 'POST', community = '999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d34770&gt;
+method = 'POST', path = '/communities/999/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[unknown-GET]" time="0.282"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d35fa0&gt;
+method = 'GET', community = '999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d35fa0&gt;
+method = 'GET', path = '/communities/999/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[outside-db-range-POST]" time="0.245"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097dd250&gt;
+method = 'POST'
+community = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd097dd250&gt;
+method = 'POST'
+path = '/communities/9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999/requests'
+status = 404, detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[outside-db-range-GET]" time="0.299"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dee390&gt;
+method = 'GET'
+community = '9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dee390&gt;
+method = 'GET'
+path = '/communities/9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999/requests'
+status = 404, detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[other-community-POST]" time="0.298"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d490d0&gt;
+method = 'POST', community = '2'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d490d0&gt;
+method = 'POST', path = '/communities/2/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_unavailable_community[other-community-GET]" time="0.233"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5040&gt;
+method = 'GET', community = '2'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("community", [
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("01", id="leading-zero"), pytest.param("abc", id="text"),
+        pytest.param("١", id="unicode-digits"),
+        pytest.param("1.0", id="decimal"), pytest.param("999", id="unknown"),
+        pytest.param("9" * 100, id="outside-db-range"),
+        pytest.param("2", id="other-community"),
+    ])
+    def test_ac1_contract_rejects_unavailable_community(client, method, community):
+        seed_request()
+&gt;       reject(client, method, f"/communities/{community}/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df5040&gt;
+method = 'GET', path = '/communities/2/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_access_precedes_body" time="0.189"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df3830&gt;
+
+    def test_ac1_contract_access_precedes_body(client):
+&gt;       reject(client, "POST", "/communities/2/requests", 404, "Not found",
+               headers=R1, content="{")
+
+tests/test_s1_contract.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df3830&gt;
+method = 'POST', path = '/communities/2/requests', status = 404
+detail = 'Not found', kwargs = {'headers': {'X-User-Id': '1'}, 'content': '{'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[board_member-POST]" time="0.285"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09787800&gt;
+method = 'POST', role = 'board_member'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09787800&gt;
+method = 'POST', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[board_member-GET]" time="0.254"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09786900&gt;
+method = 'GET', role = 'board_member'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09786900&gt;
+method = 'GET', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[manager-POST]" time="0.264"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d49f70&gt;
+method = 'POST', role = 'manager'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d49f70&gt;
+method = 'POST', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[manager-GET]" time="0.295"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfda90&gt;
+method = 'GET', role = 'manager'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfda90&gt;
+method = 'GET', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[admin-POST]" time="0.234"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3fa10&gt;
+method = 'POST', role = 'admin'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3fa10&gt;
+method = 'POST', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_nonresident[admin-GET]" time="0.290"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d220c0&gt;
+method = 'GET', role = 'admin'
+
+    @pytest.mark.parametrize("method", ["POST", "GET"])
+    @pytest.mark.parametrize("role", ["board_member", "manager", "admin"])
+    def test_ac1_contract_rejects_nonresident(client, method, role):
+        seed_request()
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET role=%s WHERE user_id=1", (role,))
+&gt;       reject(client, method, "/communities/1/requests", 404, "Not found",
+               headers=R1, json=payload())
+
+tests/test_s1_contract.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d220c0&gt;
+method = 'GET', path = '/communities/1/requests', status = 404
+detail = 'Not found'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing', 'description': 'Kitchen sink leaks'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[malformed-json]" time="0.194"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd0978a0f0&gt;, body = '{'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd0978a0f0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[null]" time="0.230"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09da1700&gt;
+body = 'null'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09da1700&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': 'null'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[array]" time="0.180"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097ddd00&gt;, body = '[]'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd097ddd00&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '[]'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[string]" time="0.198"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09defce0&gt;
+body = '"text"'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09defce0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '"text"'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[boolean]" time="0.207"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d49340&gt;
+body = 'true'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d49340&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': 'true'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[missing-fields]" time="0.225"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa540&gt;, body = '{}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa540&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[missing-description]" time="0.213"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6b8f0&gt;
+body = '{"category":"Plumbing"}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d6b8f0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":"Plumbing"}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[missing-category]" time="0.226"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df1fd0&gt;
+body = '{"description":"leak"}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09df1fd0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"description":"leak"}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[category-type]" time="0.194"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d4a8d0&gt;
+body = '{"category":1,"description":"leak"}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d4a8d0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":1,"description":"leak"}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[description-type]" time="0.181"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d23260&gt;
+body = '{"category":"Plumbing","description":true}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d23260&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":"Plumbing","description":true}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[extra-unit]" time="0.213"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3f5c0&gt;
+body = '{"category":"Plumbing","description":"leak","unit_id":21}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3f5c0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":"Plumbing","description":"leak","unit_id":21}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[extra-caller]" time="0.190"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09789dc0&gt;
+body = '{"category":"Plumbing","description":"leak","submitted_by":2}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09789dc0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":"Plumbing","description":"leak","submitted_by":2}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_invalid_body[extra-status]" time="0.222"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d64f20&gt;
+body = '{"category":"Plumbing","description":"leak","status":"Resolved"}'
+
+    @pytest.mark.parametrize("body", [
+        pytest.param("{", id="malformed-json"),
+        pytest.param("null", id="null"), pytest.param("[]", id="array"),
+        pytest.param('"text"', id="string"), pytest.param("true", id="boolean"),
+        pytest.param("{}", id="missing-fields"),
+        pytest.param('{"category":"Plumbing"}', id="missing-description"),
+        pytest.param('{"description":"leak"}', id="missing-category"),
+        pytest.param('{"category":1,"description":"leak"}', id="category-type"),
+        pytest.param('{"category":"Plumbing","description":true}', id="description-type"),
+        pytest.param('{"category":"Plumbing","description":"leak","unit_id":21}', id="extra-unit"),
+        pytest.param('{"category":"Plumbing","description":"leak","submitted_by":2}', id="extra-caller"),
+        pytest.param('{"category":"Plumbing","description":"leak","status":"Resolved"}', id="extra-status"),
+    ])
+    def test_ac1_contract_rejects_invalid_body(client, body):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Invalid request body",
+               headers={**R1, "Content-Type": "application/json"}, content=body)
+
+tests/test_s1_contract.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d64f20&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Invalid request body'
+kwargs = {'headers': {'X-User-Id': '1', 'Content-Type': 'application/json'}, 'content': '{"category":"Plumbing","description":"leak","status":"Resolved"}'}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_description_precedes_category[empty]" time="0.176"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d658e0&gt;
+description = ''
+
+    @pytest.mark.parametrize("description", [
+        pytest.param("", id="empty"), pytest.param(" \t\n", id="ascii-whitespace"),
+        pytest.param("\u2003", id="unicode-whitespace"),
+    ])
+    def test_ac1_contract_description_precedes_category(client, description):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Description is required",
+               headers=R1, json={"category": "not-a-category", "description": description})
+
+tests/test_s1_contract.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d658e0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Description is required'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'not-a-category', 'description': ''}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_description_precedes_category[ascii-whitespace]" time="0.192"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfdc70&gt;
+description = ' \t\n'
+
+    @pytest.mark.parametrize("description", [
+        pytest.param("", id="empty"), pytest.param(" \t\n", id="ascii-whitespace"),
+        pytest.param("\u2003", id="unicode-whitespace"),
+    ])
+    def test_ac1_contract_description_precedes_category(client, description):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Description is required",
+               headers=R1, json={"category": "not-a-category", "description": description})
+
+tests/test_s1_contract.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfdc70&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Description is required'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'not-a-category', 'description': ' \t\n'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_description_precedes_category[unicode-whitespace]" time="0.217"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa930&gt;
+description = '\u2003'
+
+    @pytest.mark.parametrize("description", [
+        pytest.param("", id="empty"), pytest.param(" \t\n", id="ascii-whitespace"),
+        pytest.param("\u2003", id="unicode-whitespace"),
+    ])
+    def test_ac1_contract_description_precedes_category(client, description):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Description is required",
+               headers=R1, json={"category": "not-a-category", "description": description})
+
+tests/test_s1_contract.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfa930&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Description is required'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'not-a-category', 'description': '\u2003'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_rejects_description_over_limit_before_category" time="0.198"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09d74620&gt;
+
+    def test_ac1_contract_rejects_description_over_limit_before_category(client):
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Description is too long",
+               headers=R1, json={"category": "not-a-category",
+                                "description": "x" * (settings.MAX_DESCRIPTION_CHARS + 1)})
+
+tests/test_s1_contract.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd09d74620&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Description is too long'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'not-a-category', 'description': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_category_matches_exactly[plumbing]" time="0.232"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097863c0&gt;
+category = 'plumbing'
+
+    @pytest.mark.parametrize("category", ["plumbing", "Plumbing ", "not-a-category"])
+    def test_ac1_contract_category_matches_exactly(client, category):
+        assert category not in settings.REQUEST_CATEGORIES, "Use a nonmatching category fixture"
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Unknown category",
+               headers=R1, json={"category": category, "description": "leak"})
+
+tests/test_s1_contract.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd097863c0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Unknown category'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'plumbing', 'description': 'leak'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_category_matches_exactly[Plumbing ]" time="0.173"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d974d0&gt;
+category = 'Plumbing '
+
+    @pytest.mark.parametrize("category", ["plumbing", "Plumbing ", "not-a-category"])
+    def test_ac1_contract_category_matches_exactly(client, category):
+        assert category not in settings.REQUEST_CATEGORIES, "Use a nonmatching category fixture"
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Unknown category",
+               headers=R1, json={"category": category, "description": "leak"})
+
+tests/test_s1_contract.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d974d0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Unknown category'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'Plumbing ', 'description': 'leak'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_category_matches_exactly[not-a-category]" time="0.208"><failure message="assert 501 == 422&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d963c0&gt;
+category = 'not-a-category'
+
+    @pytest.mark.parametrize("category", ["plumbing", "Plumbing ", "not-a-category"])
+    def test_ac1_contract_category_matches_exactly(client, category):
+        assert category not in settings.REQUEST_CATEGORIES, "Use a nonmatching category fixture"
+        seed_request()
+&gt;       reject(client, "POST", "/communities/1/requests", 422, "Unknown category",
+               headers=R1, json={"category": category, "description": "leak"})
+
+tests/test_s1_contract.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = &lt;starlette.testclient.TestClient object at 0x7fdd08d963c0&gt;
+method = 'POST', path = '/communities/1/requests', status = 422
+detail = 'Unknown category'
+kwargs = {'headers': {'X-User-Id': '1'}, 'json': {'category': 'not-a-category', 'description': 'leak'}}
+
+    def reject(client, method, path, status, detail, **kwargs):
+        before = snapshot()
+        response = client.request(method, path, **kwargs)
+&gt;       assert response.status_code == status
+E       assert 501 == 422
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:27: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_trims_unicode_description_at_limit" time="0.094"><failure message="assert 501 == 201&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d221b0&gt;
+
+    def test_ac1_contract_trims_unicode_description_at_limit(client):
+        description = "é" * settings.MAX_DESCRIPTION_CHARS
+        response = client.post("/communities/1/requests", headers=R1,
+                               json=payload("\u2003" + description + " \t"))
+&gt;       assert response.status_code == 201
+E       assert 501 == 201
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:131: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_lists_tied_timestamps_by_id_descending" time="0.096"><failure message="assert 501 == 201&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d20c20&gt;
+
+    def test_ac1_contract_lists_tied_timestamps_by_id_descending(client):
+        created = []
+        for description in ["First request", "Second request"]:
+            response = client.post("/communities/1/requests", headers=R1, json=payload(description))
+&gt;           assert response.status_code == 201
+E           assert 501 == 201
+E            +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:148: AssertionError</failure></testcase><testcase classname="tests.test_s1_contract" name="test_ac1_contract_lists_only_submitter_even_for_same_unit" time="0.171"><failure message="assert 501 == 201&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d4b350&gt;
+
+    def test_ac1_contract_lists_only_submitter_even_for_same_unit(client):
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET unit_id=11 WHERE user_id=3")
+        response = client.post("/communities/1/requests", headers=R1, json=payload())
+&gt;       assert response.status_code == 201
+E       assert 501 == 201
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_contract.py:161: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac1_resident_submits_request_shown_as_open" time="0.136"><failure message="assert 501 == 201&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfe750&gt;
+
+    def test_ac1_resident_submits_request_shown_as_open(client):
+        response = client.post("/communities/1/requests", headers=R1,
+            json={"category": settings.REQUEST_CATEGORIES[0], "description": "Kitchen sink leaks"})
+&gt;       assert response.status_code == 201
+E       assert 501 == 201
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:15: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac2_blank_description_rejected_and_list_unchanged" time="0.189"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d9fc80&gt;
+
+    def test_ac2_blank_description_rejected_and_list_unchanged(client):
+        seed_request()
+        before = client.get('/communities/1/requests', headers=R1)
+&gt;       assert before.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:34: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac3_other_community_resident_does_not_see_request" time="0.151"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09dfdd00&gt;
+
+    def test_ac3_other_community_resident_does_not_see_request(client):
+        seed_request()
+        response = client.get('/communities/2/requests', headers=R2)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:49: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac4_other_community_direct_id_returns_not_found" time="0.146"><failure message="assert 501 == 404&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd08d3d460&gt;
+
+    def test_ac4_other_community_direct_id_returns_not_found(client):
+        request_id = seed_request()
+        response = client.get(f'/requests/{request_id}', headers=R2)
+&gt;       assert response.status_code == 404
+E       assert 501 == 404
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:56: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac5_neighbor_in_same_community_does_not_see_request" time="0.174"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd09df97c0&gt;
+
+    def test_ac5_neighbor_in_same_community_does_not_see_request(client):
+        seed_request()
+        response = client.get('/communities/1/requests', headers=R3)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:63: AssertionError</failure></testcase><testcase classname="tests.test_s1_requests" name="test_ac6_resident_sees_in_progress_status" time="0.150"><failure message="assert 501 == 200&#10; +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code">client = &lt;starlette.testclient.TestClient object at 0x7fdd097861e0&gt;
+
+    def test_ac6_resident_sees_in_progress_status(client):
+        request_id = seed_request(status='In progress')
+        response = client.get(f'/requests/{request_id}', headers=R1)
+&gt;       assert response.status_code == 200
+E       assert 501 == 200
+E        +  where 501 = &lt;Response [501 Not Implemented]&gt;.status_code
+
+tests/test_s1_requests.py:70: AssertionError</failure></testcase><testcase classname="tests.test_s6_payments" name="test_ac18_schedule_returned_without_token" time="0.001"><skipped type="pytest.skip" message="AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:17: AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac19_due_day_charges_exactly_once" time="0.001"><skipped type="pytest.skip" message="AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:31: AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac20_restart_mid_run_keeps_one_payment" time="0.001"><skipped type="pytest.skip" message="AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:44: AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac21_manual_payment_prevents_scheduled_charge" time="0.000"><skipped type="pytest.skip" message="AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:58: AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase><testcase classname="tests.test_s6_payments" name="test_ac22_declined_charge_retried_after_delay" time="0.001"><skipped type="pytest.skip" message="AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review">/workspace/tests/test_s6_payments.py:69: AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review</skipped></testcase></testsuite></testsuites>

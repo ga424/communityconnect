@@ -3,7 +3,7 @@
     "id": "COMC-M1-BOOTSTRAP",
     "release_id": "M1-progress",
     "status": "in_progress",
-    "current_stage": "00-charter",
+    "current_stage": "05-implementation",
     "service": {
       "name": "CommunityConnect",
       "tier": "local_class_prototype",
@@ -32,8 +32,8 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "main",
-      "commit": "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12"
+      "branch": "feature/COMC-54-ac1",
+      "commit": "15edff908305ffe51c7b7f7615bc22f87b4ef053"
     },
     "stage_status": [
       {
@@ -266,7 +266,7 @@
       {
         "stage": "04-test",
         "artifact": "artifacts/04-test.md",
-        "status": "pending",
+        "status": "in_progress",
         "required_evidence": [
           "requirement_to_test_index",
           "r1_r4_coverage",
@@ -310,7 +310,12 @@
           "protected_spec_test_change_authority",
           "specification_assurance_test_matrix"
         ],
-        "evidence_ids": [],
+        "evidence_ids": [
+          "EV-AC1-APPROVAL",
+          "EV-AC1-RED",
+          "EV-AC1-LOCAL",
+          "EV-CI-41780922018"
+        ],
         "approval": {
           "status": "pending",
           "role": "qa_lead"
@@ -319,7 +324,7 @@
       {
         "stage": "05-implementation",
         "artifact": "artifacts/05-implementation.md",
-        "status": "pending",
+        "status": "in_progress",
         "required_evidence": [
           "passing_tests",
           "test_integrity_proof",
@@ -369,7 +374,12 @@
           "invariant_preservation_evidence",
           "code_change_ledger_records"
         ],
-        "evidence_ids": [],
+        "evidence_ids": [
+          "EV-AC1-APPROVAL",
+          "EV-AC1-RED",
+          "EV-AC1-LOCAL",
+          "EV-CI-41780922018"
+        ],
         "approval": {
           "status": "pending",
           "role": "lead_developer"
@@ -631,14 +641,28 @@
       "code_change_traceability_management": "pending"
     },
     "open_questions": [
-      "Kundan/Sandeep must review designs and test specification before S-1 task approval.",
-      "All Q entries remain open until an accountable human records a decision.",
-      "Proposed AC1 contract-test and incremental-CI scope requires task-specific human approval; see docs/plans/AC-1-approval.md."
+      "Full Kundan/Sandeep design/gap/test reviews remain pending; Gustavo approved only AC-1 packet v1.",
+      "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC1 packet v1 awaiting Gustavo approval; no feature implementation started.",
-      "Full S-1 design/gap/test peer-review tasks remain open; no teammate acceptance inferred."
+      "AC-1 implementation and CI phase verified; human implementation review remains pending.",
+      "AC-4/AC-6 remain deferred 501 failures; S-6 remains skipped. Full S-1 design/gap/test peer-review tasks remain open."
     ],
-    "last_updated": "2026-11-04T05:18:34.432259+00:00"
+    "last_updated": "2026-11-04T05:45:01.709951+00:00",
+    "scoped_work": {
+      "issue": "COMC-54",
+      "packet": "AC-1 v1",
+      "scope_approval": "EV-AC1-APPROVAL",
+      "approval_owner": "Gustavo",
+      "test_first_undo_commit": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
+      "implementation_commit": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
+      "status": "review_ready",
+      "local_evidence": "EV-AC1-LOCAL",
+      "human_implementation_review": "pending",
+      "note": "Current stage describes bounded AC-1 work only; no global stage approval/completion is inferred.",
+      "pull_request": "https://github.com/ga424/communityconnect/pull/4",
+      "ci_evidence": "EV-CI-41780922018",
+      "verified_ci_commit": "0f5562f42081aede341079d723b4848cc604c271"
+    }
   }
 }

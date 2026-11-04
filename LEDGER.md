@@ -81,3 +81,28 @@ evidence: PR2 head 85e817ab73f8cfad5dc9caf5b950eedbdda614c7, merge dafd2ca71b89f
 risk: AC1 implementation, contract tests and CI promotion remain unapproved; full teammate review, original gap-check transfer, complete provenance and final all-S1-green verification remain pending. Supersession records require consumer interpretation; the bundled validator does not resolve them automatically.
 
 Entry 6 exact recording SHA: 85e817ab73f8cfad5dc9caf5b950eedbdda614c7, delivered in PR #2. Entry 6's earlier draft PR #1 reference preceded the separate evidence PR and is historical. Entry 7's own SHA is recorded in its Git provenance note and linked from Jira/PR after committing.
+
+## AC-1 approval and undo checkpoint
+Gustavo explicitly approved packet v1, its contract tests and CI transition; exact text: prompts/2026-11-04-ac1-approval.txt. Current main checkpoint is dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12. A new feature branch was created there and fast-forwarded to approved review commit 8ea0e80759ae06dc80cf5bf4bfa5666313074378 (PR #3 is still open). That commit is the pre-test undo point. No merge to main was performed. Existing tests/design/migrations/policies/settings/clock hashes are preserved in docs/evidence/ac1/protected-baseline.json. A separate red test commit will be made before application edits.
+
+## Entry 8
+artifact: tests/test_s1_contract.py; docs/evidence/ac1/red-junit.xml, red-summary.json, expected-tests.json, protected-baseline.json; actual approval record
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: Explicit AC-1 approval in prompts/2026-11-04-ac1-approval.txt; approved bounded execution recorded in prompts/2026-11-04-ac1-execution.txt and referenced packet v1.
+review: Codex derived 72 contract cases from existing design rules and the approved packet; inspected exact denial envelopes, unchanged persistence, validation order, self-only access and ordering. Preserved all existing tests and migrations. Human approval is for the packet's scope; no teammate execution/review is invented.
+checks: 72 new cases collect. Full container test run before application edits: 78 failed (all semantic 501 assertions), 4 passed, 5 skipped, zero errors; pytest exit 1. Hashes and exact phase expectations recorded.
+evidence: COMC-54; S-1 AC-1 plus binding invariants; EV-AC1-APPROVAL; EV-AC1-RED
+risk: Business behavior still unimplemented at this checkpoint; the expected incremental verifier has not yet been implemented or validated. Full-story peer review and course provenance reconciliation remain pending despite reaching eight genuine entries.
+
+## Entry 9
+artifact: app/requests.py, app/models.py, scripts/verify_ac1_baseline.py, CI phase transition, README and docs/evidence/ac1/ execution evidence
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: prompts/2026-11-04-ac1-approval.txt and prompts/2026-11-04-ac1-execution.txt; approved packet v1 at 8ea0e80759ae06dc80cf5bf4bfa5666313074378
+review: Codex inspected caller/access/input precedence, parameterized SQL, membership lock and transaction, self-only filtering, UTC public responses, exact error/no-write behavior, unchanged details stub, logs and file hashes. AI review only; human peer acceptance remains pending.
+checks: Full Docker run: 80 passed, 2 deferred 501 failures, 5 unchanged S-6 skips, zero errors; pytest exit 1. Phase verifier passed and rejected 11 defect types. Liquibase update/repeat/rollback/reapply passed. Fourteen protected hashes match. AISE structural validation passed with the documented historical warning; sensitive-data guard, Compose validation and diff whitespace checks passed.
+evidence: EV-AC1-LOCAL; docs/evidence/ac1/local-summary.json; red-test undo 2b73ab0d5f21fb63e9b7c1406446c3cf7043682d; COMC-54. Implementation commit SHA is recorded by its Git provenance note and the subsequent reconciliation entry.
+risk: Remote CI is pending at this checkpoint. Full S-1, all S-6 behavior, Kundan/Sandeep review and final full-story verification remain pending. Synthetic auth is local-only. No merge/deployment or next-task approval is claimed.
+
+Entry 8 exact red-test SHA: `2b73ab0d5f21fb63e9b7c1406446c3cf7043682d`. Entry 9 exact implementation SHA: `15edff908305ffe51c7b7f7615bc22f87b4ef053`. AISE code-change records now map these commits to AC-1 and its mandatory first-write guards; no unimplemented AC-4/6 or S-6 completion is attributed. Pipeline Stage 05 is in progress for bounded AC-1 only; all broader stage approvals remain pending. This reconciliation commit changes evidence/state only; its own SHA is preserved in a Git provenance note.
+
+Entry 9 publication addendum: [PR #4](https://github.com/ga424/communityconnect/pull/4) opened for review. [CI run 41780922018](https://github.com/ga424/communityconnect/actions/runs/41780922018) passed at `0f5562f42081aede341079d723b4848cc604c271`: 80 passed, 2 deferred failures, 5 skips, zero errors; downloaded JUnit reverified locally. CI migration/guard/gate/artifact/cleanup steps succeeded. COMC-39/41/44/54 updated; human review remains pending. PR #3 merged and its branch was deleted remotely and locally after verification. Task-owned local Docker services were removed. No merge or next-task execution was performed by this task. This evidence-only update leaves app, tests, migrations and workflow unchanged.
