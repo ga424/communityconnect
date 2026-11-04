@@ -1,0 +1,9 @@
+{
+  "entry": 9,
+  "commit": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
+  "approval": "EV-AC1-APPROVAL",
+  "evidence": "EV-AC1-LOCAL",
+  "scope": "AC-1 packet v1; human implementation review pending",
+  "branch": "feature/COMC-54-ac1",
+  "created_at": "2026-11-04T05:38:24.699571+00:00"
+}
