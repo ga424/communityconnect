@@ -1,0 +1,28 @@
+{
+  "common_gate": {
+    "valid_control": "accepted",
+    "rejected_defects": [
+      "missing required test",
+      "duplicate test",
+      "unexpected test",
+      "setup error",
+      "collection error",
+      "unexpected failure",
+      "extra skip",
+      "changed skip reason",
+      "non-stub deferred failure",
+      "unexpected deferred pass",
+      "test-file hash mismatch"
+    ]
+  },
+  "ac2_valid_control": "accepted",
+  "ac2_extension_rejected_defects": [
+    "missing new test",
+    "changed original expectation",
+    "changed original file hash",
+    "changed original manifest hash",
+    "unapproved additional test",
+    "changed new test-file hash",
+    "new test not required to pass"
+  ]
+}

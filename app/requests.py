@@ -68,6 +68,10 @@ def _create_request(caller: str | None, community: str, raw_body: bytes) -> Requ
             raise HTTPException(422, "Description is required")
         if len(description) > settings.MAX_DESCRIPTION_CHARS:
             raise HTTPException(422, "Description is too long")
+        # PostgreSQL text accepts Unicode scalars, excluding NUL. Reject before
+        # insertion, preserving blank/length precedence and valid Unicode text.
+        if any(char == "\x00" or 0xD800 <= ord(char) <= 0xDFFF for char in description):
+            raise HTTPException(422, "Invalid request body")
         if body.category not in settings.REQUEST_CATEGORIES:
             raise HTTPException(422, "Unknown category")
         row = models.insert_request(

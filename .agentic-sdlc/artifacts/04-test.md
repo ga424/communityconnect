@@ -12,3 +12,11 @@ Gustavo approved packet v1 and its contract-test/CI scope; EV-AC1-APPROVAL recor
 ## AC-1 local implementation result
 
 Test-first commit `2b73ab0d5f21fb63e9b7c1406446c3cf7043682d` precedes implementation `15edff908305ffe51c7b7f7615bc22f87b4ef053`. All 72 contract cases now pass, with four harness passes and existing AC-1/2/3/5 passes; AC-4/6 remain 501 failures and five S-6 AC-labelled skips remain. Zero errors. Frozen manifest checks exact IDs and test-file hashes. Gate self-test rejects 11 defect types. See docs/evidence/ac1/local-summary.json and EV-AC1-LOCAL. Full-story QA and Sandeep peer review remain pending.
+
+## AC-2 approved tests-first specification
+
+Gustavo approved AC2 packet v1 including the representability policy, eight regression cases and the CI phase change (EV-AC2-APPROVAL). New tests/test_s1_validation.py collects eight cases; tests and all original 87 expectations are frozen in docs/evidence/ac2/expected-tests.json before application edits. Full red execution is pending at this checkpoint; do not infer its outcome or peer QA acceptance from collection. Original tests/designs/models/schema/controls are protected.
+
+AC2 red execution completed before application edits: 84 passed, 6 failed, 5 skipped, zero errors. Four new cases fail semantically (three 500s and one wrong error precedence); four new controls pass. This resolves the earlier pending-execution checkpoint without claiming every new test was red. Evidence: EV-AC2-RED. New test hashes and all original expectations are frozen in docs/evidence/ac2/.
+
+AC2 implemented result at `130af5d22bda7a98c4cff79e78904add49778b35`: all eight new cases pass, with full 88/2/5 phase and zero errors. Original test files/hashes and expectations preserved. Stage4 hash equals the implementation-time test hash. This supersedes the red checkpoint only for current outcomes; red evidence remains intact. Human QA acceptance is still pending.

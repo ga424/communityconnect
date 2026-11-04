@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-11-04T05:59:57.969154+00:00",
+  "commit": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+  "probe_type": "diagnostic, not acceptance baseline",
+  "results": [
+    {
+      "case": "plain",
+      "status": 201,
+      "body": "{\"id\":1,\"community_id\":1,\"unit_id\":11,\"category\":\"Plumbing\",\"description\":\"Kitchen sink leaks\",\"status\":\"Open\",\"created_at\":\"2026-11-04T05:56:10Z\"}",
+      "persisted_rows": 1
+    },
+    {
+      "case": "blank",
+      "status": 422,
+      "body": "{\"detail\":\"Description is required\"}",
+      "persisted_rows": 0
+    },
+    {
+      "case": "unicode",
+      "status": 201,
+      "body": "{\"id\":1,\"community_id\":1,\"unit_id\":11,\"category\":\"Plumbing\",\"description\":\"\u00e9\",\"status\":\"Open\",\"created_at\":\"2026-11-04T05:56:10Z\"}",
+      "persisted_rows": 1
+    },
+    {
+      "case": "nul",
+      "status": 500,
+      "body": "Internal Server Error",
+      "persisted_rows": 0,
+      "exception_type": "DataError",
+      "exception_message": "PostgreSQL text fields cannot contain NUL (0x00) bytes"
+    },
+    {
+      "case": "lone_high_surrogate",
+      "status": 500,
+      "body": "Internal Server Error",
+      "persisted_rows": 0,
+      "exception_type": "UnicodeEncodeError",
+      "exception_message": "'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed"
+    },
+    {
+      "case": "lone_low_surrogate",
+      "status": 500,
+      "body": "Internal Server Error",
+      "persisted_rows": 0,
+      "exception_type": "UnicodeEncodeError",
+      "exception_message": "'utf-8' codec can't encode character '\\udfff' in position 0: surrogates not allowed"
+    },
+    {
+      "case": "nested_invalid_shape",
+      "status": 422,
+      "body": "{\"detail\":\"Invalid request body\"}",
+      "persisted_rows": 0
+    }
+  ]
+}

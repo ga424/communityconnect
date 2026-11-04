@@ -1,0 +1,5 @@
+Actual user approval of AC-2 packet v1:
+
+Approved. Go ahead with AC-2 packet v1, including the text-policy addendum, eight regression tests and CI phase change. Keep Jira and the AISE ledger updated, and open a PR when it's ready for review.
+
+Approved packet commit: 73842903bc1f1388324c0c3e5766cec5d7fa833d; docs/plans/AC-2-approval.md. This approval is bounded to AC-2; it does not authorize the next task, merge or deployment.

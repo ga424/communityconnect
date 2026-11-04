@@ -1,11 +1,11 @@
-name: AC-1 contract and incremental baseline
+name: AC-2 validation and incremental baseline
 on:
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  ac1-contract-baseline:
+  ac2-contract-baseline:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -27,8 +27,10 @@ jobs:
           set -e
           echo "$result" > artifacts/pytest-exit-code.txt
           test "$result" -eq 1
+          python scripts/verify_ac1_baseline.py --junit docs/evidence/ac1/local-junit.xml
           python scripts/verify_ac1_baseline.py --self-test > artifacts/ac1-gate-self-test.json
-          python scripts/verify_ac1_baseline.py
+          python scripts/verify_ac2_baseline.py --self-test > artifacts/ac2-gate-self-test.json
+          python scripts/verify_ac2_baseline.py
       - name: Record image inputs
         if: always()
         run: |
@@ -37,7 +39,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
-          name: ac1-contract-baseline
+          name: ac2-contract-baseline
           path: artifacts/
       - name: Remove disposable test services
         if: always()
