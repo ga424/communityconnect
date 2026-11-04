@@ -1,0 +1,39 @@
+{
+  "created_at": "2026-11-04T05:46:39.200110+00:00",
+  "commit": "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca",
+  "record_type": "evidence_handoff",
+  "paths": [
+    ".agentic-sdlc/artifacts/05-implementation.md",
+    ".agentic-sdlc/ledgers/code-changes.jsonl",
+    ".agentic-sdlc/ledgers/evidence.jsonl",
+    ".agentic-sdlc/state/pipeline-state.json",
+    "LEDGER.md",
+    "docs/evidence/ac1/README.md",
+    "docs/evidence/ac1/ci-junit.xml",
+    "docs/evidence/ac1/ci-summary.json"
+  ],
+  "pull_request": "https://github.com/ga424/communityconnect/pull/4",
+  "ci_run": "https://github.com/ga424/communityconnect/actions/runs/41781158528",
+  "conclusion": "success",
+  "result": {
+    "passed": 80,
+    "deferred_failures": 2,
+    "skipped": 5,
+    "errors": 0,
+    "pytest_exit_code": 1
+  },
+  "junit_sha256": "e7a9fa30dc0f6b9a868d91a5b4ec96e92ac6bb593566b5cdaa33f89445526b81",
+  "verification": "Downloaded final-head CI JUnit passed exact-test verifier; authored source hashes match local verified run; protected files and append-only histories verified",
+  "jira": [
+    "COMC-54",
+    "COMC-39",
+    "COMC-41",
+    "COMC-44",
+    "COMC-55",
+    "COMC-56",
+    "COMC-58"
+  ],
+  "review_status": "Ready for human review; no human peer acceptance claimed",
+  "branch_cleanup": "PR3 merged branch removed remotely and locally; PR4 feature branch retained until merge; delete_branch_on_merge true",
+  "no_next_task_or_merge": true
+}
