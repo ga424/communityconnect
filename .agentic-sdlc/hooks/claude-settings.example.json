@@ -1,0 +1,83 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py --hook"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py --hook"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "Bash|Write|Edit|MultiEdit|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py --hook"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py .agentic-sdlc/artifacts .agentic-sdlc/ledgers .agentic-sdlc/reports"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py --hook"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py .agentic-sdlc/artifacts .agentic-sdlc/ledgers .agentic-sdlc/reports"
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/guard_sensitive_data.py .agentic-sdlc/artifacts .agentic-sdlc/ledgers .agentic-sdlc/reports"
+          },
+          {
+            "type": "command",
+            "command": "python3 .agentic-sdlc/hooks/validate_project.py --workspace .agentic-sdlc"
+          }
+        ]
+      }
+    ]
+  }
+}

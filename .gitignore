@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+.env
+.env.*
+!.env.example
+artifacts/
+!/.agentic-sdlc/artifacts/
+.coverage
+*.log
+.DS_Store

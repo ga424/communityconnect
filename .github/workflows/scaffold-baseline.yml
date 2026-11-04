@@ -1,0 +1,43 @@
+name: Scaffold and expected red baseline
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scaffold-red-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Validate AISE state and authored source boundaries
+        run: |
+          python .agentic-sdlc/hooks/validate_project.py --workspace .agentic-sdlc
+          python .agentic-sdlc/hooks/guard_sensitive_data.py app tests db docs prompts scripts AGENTS.md README.md LEDGER.md
+          git diff --check
+          docker compose config --quiet
+      - name: Rehearse migrations on disposable PostgreSQL
+        run: bash scripts/migration_rehearsal.sh
+      - name: Run all tests and preserve the real nonzero result
+        run: |
+          mkdir -p artifacts
+          set +e
+          docker compose run --build --rm test 2>&1 | tee artifacts/test-output.txt
+          result=${PIPESTATUS[0]}
+          set -e
+          echo "$result" > artifacts/pytest-exit-code.txt
+          test "$result" -eq 1
+          python scripts/verify_red_baseline.py
+      - name: Record image inputs
+        if: always()
+        run: |
+          mkdir -p artifacts
+          docker images --digests > artifacts/container-images.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: always()
+        with:
+          name: scaffold-red-baseline
+          path: artifacts/
+      - name: Remove disposable test services
+        if: always()
+        run: docker compose down --volumes --remove-orphans

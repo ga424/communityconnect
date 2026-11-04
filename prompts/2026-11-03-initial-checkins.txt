@@ -1,0 +1,7 @@
+User request (verbatim):
+Let's make sure that we start doing initial project check ins by features again using our AISE agentic sdlc pipeline in the github project that will have our code for implementation with items that are known at this stage
+
+Scope interpretation presented to user:
+Small Git commits to ga424/communityconnect; inspect AISE; confirmed M1 scope; repository governance, local harness, maintenance requests; dues design/test-only.
+
+Source context: reviewed M1 v3 and COMC Jira. Restricted interview records and unrelated credentials from earlier conversation are not copied into this public prompt record. No bounded feature-implementation approval has yet been given.
