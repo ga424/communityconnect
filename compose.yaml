@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: cc_test
+      POSTGRES_USER: cc_test
+      POSTGRES_PASSWORD: cc_test
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cc_test -d cc_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    tmpfs:
+      - /var/lib/postgresql/data
+  migrate:
+    image: liquibase/liquibase:4.33.0
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./db/changelog:/liquibase/changelog:ro
+    command:
+      - --url=jdbc:postgresql://db:5432/cc_test
+      - --username=cc_test
+      - --password=cc_test
+      - --changelog-file=changelog/db.changelog.xml
+      - update
+  test:
+    build: .
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    environment:
+      APP_ENV: test
+      DATABASE_URL: postgresql://cc_test:cc_test@db:5432/cc_test
+      REQUEST_CATEGORIES: Plumbing,Electrical
+      MAX_DESCRIPTION_CHARS: "1000"
+      DUES_AMOUNT_CENTS: "12345"
+      RETRY_DELAY_DAYS: "2"
+      MAX_PAYMENT_ATTEMPTS: "2"
+    volumes:
+      - ./artifacts:/workspace/artifacts
+    command: ["python", "-m", "pytest", "-ra", "--junitxml=artifacts/pytest.xml"]

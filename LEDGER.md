@@ -30,3 +30,14 @@ review: Codex transferred design sections from M1 v3, preserved open questions a
 checks: Design sections extracted from the supplied revised document; AC text copied from current COMC-9/17; no participant notes copied. git diff --check recorded at commit.
 evidence: COMC-33/34/41, S-1 AC-1..6, S-6 AC-18..22
 risk: Draft test harness choices and feature packets require teammate review; the full platform is not specified by these two local slices.
+
+Entry 3 commit reference: 19eb9ea (full SHA in the final commit manifest).
+
+## Entry 4
+artifact: Docker/Compose, requirements lock, FastAPI stubs, local seed/schema/migrations, harness tests and CI recipe
+ tool: OpenAI Codex, GPT-6 (exact build not exposed); 2026-11-03 session
+prompts: Initial setup request; prompts/2026-11-03-initial-checkins.txt
+review: Codex inspected typed design boundaries, migration foreign keys, destructive fixture scope and non-production guard. Business endpoints remain 501. The sensitive-data guard flagged the long public dummy password; changed the disposable database fixture to the obvious cc_test value and rescanned without changing guard rules. Sandeep/Gustavo peer review pending.
+checks: pip check PASS; Python compile PASS; Docker Compose config PASS; shell syntax PASS; sensitive-data scan PASS after synthetic fixture correction. Docker execution unavailable locally; remote baseline pending.
+evidence: COMC-37; S-1 schema/fixture contract; no S-1 implementation
+risk: Migration update/rollback, Linux dependency installation and fresh-clone container execution remain unverified until actual runtime evidence. Latest Starlette warns that httpx TestClient support is deprecated; migration to its supported test client remains to review.
