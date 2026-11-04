@@ -1,0 +1,1 @@
+I've brought up docker desktop locally in case you needed it

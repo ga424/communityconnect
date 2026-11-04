@@ -33,7 +33,7 @@
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
       "branch": "feature/COMC-38-m1-aise-bootstrap",
-      "commit": "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d"
+      "commit": "47d553957ec95bb5d6428ef34364862f37cfaf25"
     },
     "stage_status": [
       {
@@ -90,7 +90,11 @@
           "precondition_postcondition_authority",
           "code_change_traceability_policy"
         ],
-        "evidence_ids": [],
+        "evidence_ids": [
+          "EV-REPO-ROOT",
+          "EV-CI-41775497234",
+          "EV-LOCAL-BOOTSTRAP"
+        ],
         "approval": {
           "status": "pending",
           "role": "product_owner_or_business_owner"
@@ -631,9 +635,8 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "Docker engine unavailable locally; fresh-clone container run pending.",
-      "Human stage approvals pending; no material feature implementation authorized."
+      "Human requirements/design/test approval pending; S-1 feature implementation not started."
     ],
-    "last_updated": "2026-11-04T04:43:55.076606+00:00"
+    "last_updated": "2026-11-04T04:55:57.377753+00:00"
   }
 }
