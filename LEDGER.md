@@ -117,3 +117,16 @@ evidence: EV-PR4-REVIEW-20261104; EV-PR4-BRANCH-CLEANUP; docs/evidence/pr4-revie
 risk: F1 remains open; the original 87 tests do not cover unsupported descriptions. Eight proposed new tests and 88/2/5 phase are not executed/approved. AC-4/6, S-6, full-story peer review, production assurance and course provenance reconciliation remain pending.
 
 Entry 10 verification addendum: AISE structural validation passed with the existing EV-REPO-ROOT warning; source-sensitive-data guard and whitespace checks passed. Diff against merged main confirms application, tests, original designs, migrations, dependencies, workflow, gate and controls are unchanged. Existing JSONL ledger prefixes are preserved. The review probe used only disposable synthetic fixtures.
+
+## AC-2 approval and undo checkpoint
+
+Gustavo explicitly approved AC-2 packet v1, its text-policy addendum, eight regression tests and CI phase change. Exact text: prompts/2026-11-04-ac2-approval.txt. Main checkpoint is 3708f9dd02abb43feffa54ebfa4df47aa58bbb74. A fresh feature branch was created there and fast-forwarded to the approved packet commit 73842903bc1f1388324c0c3e5766cec5d7fa833d; PR5 is still open at this checkpoint. That packet commit is the pre-test undo point. No merge to main was performed. Protected-file hashes are recorded in docs/evidence/ac2/protected-baseline.json. A separate test-baseline commit will precede application edits.
+
+## Entry 11
+artifact: approved S-1-AC2 validation addendum; tests/test_s1_validation.py; exact approval/execution prompts; frozen AC2 manifest and protected hashes; red JUnit/summary
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 4, 2026 America/New_York
+prompts: prompts/2026-11-04-ac2-approval.txt and prompts/2026-11-04-ac2-execution.txt; packet v1 at 73842903bc1f1388324c0c3e5766cec5d7fa833d
+review: Derived exactly eight tests from the approved packet. JSON escapes reach the server; assertions check HTTP contract, preserved seeded rows/list, valid Unicode and validation precedence. Every existing test, original design, model, migration, dependency and policy file remains unchanged. Scope approval is not teammate test/implementation acceptance.
+checks: Eight cases collect. Full container run before app edits: 84 passed, 6 failed, 5 skipped; zero errors; exit 1. Four new semantic failures reproduce 500 responses or wrong precedence; four controls already pass. The two existing AC4/6 failures and five S6 skips remain unchanged. Source-sensitive guard and whitespace check pass. Protected hashes match.
+evidence: EV-AC2-APPROVAL; EV-AC2-RED; COMC-55; docs/evidence/ac2/red-summary.json. Exact test-baseline SHA is recorded after this commit in the implementation ledger/note.
+risk: F1 remains unfixed at this checkpoint. CI promotion and guard implementation have not started. Full S-1, S6 behavior, teammate review and production assurance remain pending.

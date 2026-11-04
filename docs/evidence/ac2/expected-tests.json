@@ -1,0 +1,318 @@
+{
+  "approval_ref": "prompts/2026-11-04-ac2-approval.txt",
+  "ac1_manifest_sha256": "854aba12cfadbf5eb49f5b70a1a555eacf010744925d3a8c868d887756bd81ad",
+  "new_test_ids": [
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[nul]",
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-high]",
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-low]",
+    "tests/test_s1_validation.py::test_ac2_invalid_description_precedes_category",
+    "tests/test_s1_validation.py::test_ac2_accepts_supplementary_unicode",
+    "tests/test_s1_validation.py::test_ac2_identity_precedes_unstorable_description",
+    "tests/test_s1_validation.py::test_ac2_membership_precedes_unstorable_description",
+    "tests/test_s1_validation.py::test_ac2_length_precedes_unstorable_description"
+  ],
+  "tests": {
+    "tests/test_harness.py::test_health_identifies_nonproduction_scaffold": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_liquibase_applied_schema_and_seeded_synthetic_memberships": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_schema_rejects_resident_unit_in_another_community": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_schema_rejects_resident_without_unit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[missing-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[missing-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[empty-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[empty-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[negative-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[negative-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[leading-zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[leading-zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[plus-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[plus-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[decimal-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[decimal-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[text-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[text-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[space-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[space-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[unknown-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[unknown-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[outside-db-range-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[outside-db-range-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_identity_precedes_path_and_body[POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_identity_precedes_path_and_body[GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[negative-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[negative-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[leading-zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[leading-zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[text-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[text-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unicode-digits-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unicode-digits-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[decimal-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[decimal-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unknown-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unknown-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[outside-db-range-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[outside-db-range-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[other-community-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[other-community-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_access_precedes_body": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[board_member-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[board_member-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[manager-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[manager-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[admin-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[admin-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[malformed-json]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[null]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[array]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[string]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[boolean]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-fields]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-description]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-category]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[category-type]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[description-type]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-unit]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-caller]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-status]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[empty]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[ascii-whitespace]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[unicode-whitespace]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_description_over_limit_before_category": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[plumbing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[Plumbing ]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[not-a-category]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_trims_unicode_description_at_limit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_lists_tied_timestamps_by_id_descending": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_lists_only_submitter_even_for_same_unit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac2_blank_description_rejected_and_list_unchanged": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac3_other_community_resident_does_not_see_request": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found": {
+      "outcome": "stub_failure",
+      "message_prefix": "assert 501 == 404"
+    },
+    "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status": {
+      "outcome": "stub_failure",
+      "message_prefix": "assert 501 == 200"
+    },
+    "tests/test_s6_payments.py::test_ac18_schedule_returned_without_token": {
+      "outcome": "skipped",
+      "reason": "AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac19_due_day_charges_exactly_once": {
+      "outcome": "skipped",
+      "reason": "AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac20_restart_mid_run_keeps_one_payment": {
+      "outcome": "skipped",
+      "reason": "AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac21_manual_payment_prevents_scheduled_charge": {
+      "outcome": "skipped",
+      "reason": "AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac22_declined_charge_retried_after_delay": {
+      "outcome": "skipped",
+      "reason": "AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[nul]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-high]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-low]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_invalid_description_precedes_category": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_accepts_supplementary_unicode": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_identity_precedes_unstorable_description": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_membership_precedes_unstorable_description": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_length_precedes_unstorable_description": {
+      "outcome": "passed"
+    }
+  },
+  "test_file_sha256": {
+    "tests/conftest.py": "ca32a3e1b13127824973196191596feae373a35da124dd1811cfa011fcdbba78",
+    "tests/s6_harness.py": "03a9e3f2c2f8f26ccf70e8c530cf988d2c87a924eedcb05eab94e79d8502aa47",
+    "tests/test_harness.py": "dc065574d8d0c1281a23e962e22a77d92a15dc2bf148b7d70d4db4137c91bebd",
+    "tests/__init__.py": "61e5aeaa688c10609a587a5cbe067a47a373a278dea9a049254799ab03237d5f",
+    "tests/test_s1_contract.py": "f89f77be5c617ce144ad5e2d1c1d89282fd80cff9062b7d2c999a8cbf8bb57e8",
+    "tests/test_s1_requests.py": "b096a85081f78d12d9f3e07cdaad840623b7a46d1fa900e33b8313e62dc695ef",
+    "tests/test_s6_payments.py": "f299482824d293da820fbcd071eef0e2268715837bdf5c6f6b76f98e4eb26cf8",
+    "tests/test_s1_validation.py": "112965ee3e98fafd3981bfe6085c0e791ebaaba8c06a532fac92ef749d46455e"
+  }
+}
