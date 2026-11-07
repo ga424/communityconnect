@@ -1,3 +1,9 @@
+# Latest scope state — AC4/AC6, November 7, 2026
+
+Explicit approval EV-AC4-APPROVAL is recorded. Local implementation passes 120/0/5 with all six S1 acceptance tests green (EV-AC4-LOCAL). Remote CI and human review pending at this checkpoint. The final AC4 execution section below provides current details; earlier entries preserve historical scopes and states.
+
+---
+
 # Current assessment — November 7, 2026
 
 Scope: latest merged AISE verification, PR5/PR6 merge reconciliation, existing AC3 runtime check and AC4 proposal. Sequential AI inspection, not independent teammate or release approval.
@@ -35,3 +41,8 @@ PR4 merged at 3708f9dd02abb43feffa54ebfa4df47aa58bbb74. Final-head CI at 74bcdd6
 Evidence: EV-PR4-REVIEW-20261104 and EV-PR4-BRANCH-CLEANUP. Feedback: feedback/PR4-F1-validation.json. Risk: RISK-PR4-F1-UNSTORABLE-TEXT. Next decision: DEC-AC2-PACKET-PROPOSED-20261104, awaiting Gustavo. Original tests, designs, migrations and code are unchanged in this review.
 
 Human signoffs and full-story stage approvals remain pending. CI delivery, contract assurance, risk acceptance and production readiness are separate. Broader security/standards/supply-chain/accessibility/performance/jurisdiction assurance remains pending; no waivers inferred. Cost/efficacy telemetry unavailable. No next-task implementation, merge or deployment was performed. Merged PR4 branch was removed remotely and locally; the new review branch remains until its own merge.
+
+
+## AC4 execution — November 7, 2026
+
+Current bounded AC4 self-review: local implementation/contract checks pass, all prior functions except the details stub preserved, 24 verifier rejection controls pass. Human scope approval is recorded but independent teammate review is pending. Production verdict remains NO_GO; this is ready for CI/review publication only. Prior statements that AC4 is unapproved or still stubbed are historical and superseded by EV-AC4-APPROVAL/EV-AC4-LOCAL. No full security, NFR or identity assurance claimed.

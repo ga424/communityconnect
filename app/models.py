@@ -51,3 +51,18 @@ def own_requests(conn, *, user_id: int, community_id: int) -> list[dict]:
            ORDER BY created_at DESC, id DESC""",
         (community_id, user_id),
     ).fetchall()
+
+
+def own_request(conn, *, user_id: int, request_id: int) -> dict | None:
+    # Scope row and resident membership together; keep that membership stable
+    # through response validation. A membership elsewhere grants no access.
+    return conn.execute(
+        """SELECT r.id, r.community_id, r.unit_id, r.category, r.description,
+                  r.status, r.created_at
+           FROM maintenance_requests AS r
+           JOIN memberships AS m
+             ON m.user_id = r.submitted_by AND m.community_id = r.community_id
+           WHERE r.id = %s AND r.submitted_by = %s AND m.role = 'resident'
+           FOR SHARE OF m""",
+        (request_id, user_id),
+    ).fetchone()

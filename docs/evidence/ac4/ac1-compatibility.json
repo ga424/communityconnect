@@ -1,0 +1,16 @@
+{
+  "valid_control": "accepted",
+  "rejected_defects": [
+    "missing required test",
+    "duplicate test",
+    "unexpected test",
+    "setup error",
+    "collection error",
+    "unexpected failure",
+    "extra skip",
+    "changed skip reason",
+    "non-stub deferred failure",
+    "unexpected deferred pass",
+    "test-file hash mismatch"
+  ]
+}

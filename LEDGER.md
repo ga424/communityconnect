@@ -174,3 +174,13 @@ review: Derived exactly 30 cases from approved caller/ID/access/status/multi-com
 checks: Actual Docker red run: 88 passed / 32 failed / 5 skipped / zero errors; pytest exit 1. All 30 new failures are semantic 501 assertions. Original 95 outcomes revalidated against unchanged AC2 expectations; 80 protected file hashes match. No application or CI edit preceded this run.
 evidence: EV-AC4-APPROVAL; EV-AC4-RED; COMC-57/59; docs/evidence/ac4/red-summary.json. Exact red commit recorded in subsequent implementation evidence and Git note.
 risk: Details remain unimplemented at this checkpoint. S6 is skipped; full-story human review and production assurance remain pending. No merge/deploy permission.
+
+
+## Entry 15
+artifact: app/requests.py details route, app/models.py scoped read, scripts/verify_s1_baseline.py, CI phase and AC4 execution evidence
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 7, 2026 America/New_York
+prompts: prompts/2026-11-07-ac4-approval.txt and prompts/2026-11-07-ac4-execution.txt
+review: Caller checked before request ID; parameterized joined read requires submitter and current resident membership in the request community, with membership locked through response validation. No new write endpoint. Exact public model and 401/404 envelopes reused. Existing create/list/helpers/classes unchanged by AST comparison. New gate validates precisely the approved 30 additions and two promoted outcomes, retaining all historical verifier/test bytes. This is AI self-review; Kundan/Sandeep/Gustavo human review remains distinct.
+checks: Docker full suite 120 passed / zero failures/errors / five unchanged S6 skips; pytest exit 0. All 30 new and six original S1 cases pass. New gate accepts actual green, rejects actual red, and rejects 13 report plus 11 manifest defects. Historical AC1/AC2 reports and self-tests pass. Liquibase update/repeat/rollback/reapply, 80 protected hashes, new-test/manifest hashes, AISE structure, source guard, Compose, AST and whitespace checks pass. Existing TestClient deprecation and EV-REPO-ROOT warning retained.
+evidence: EV-AC4-LOCAL; COMC-57/59; docs/evidence/ac4/local-summary.json. Test-first undo is fb8db8046e3458a14d4c9edf04f019d3fcf7332e. Actual implementation SHA recorded in append-only Git note and subsequent reconciliation.
+risk: Remote CI and human review pending at this checkpoint. All S1 acceptance tests passing is not full-course acceptance or production authorization. S6 remains skipped, real identity/payments/deployment absent, no measured savings claimed.

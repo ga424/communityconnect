@@ -3,7 +3,7 @@
     "id": "COMC-M1-BOOTSTRAP",
     "release_id": "M1-progress",
     "status": "in_progress",
-    "current_stage": "04-test",
+    "current_stage": "05-implementation",
     "service": {
       "name": "CommunityConnect",
       "tier": "local_class_prototype",
@@ -656,8 +656,8 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "Full-story peer reviews and AC3 human acceptance remain pending.",
-      "AC4 tests-first phase in progress; application implementation and S6 remain unbuilt."
+      "AC4 local phase verified; remote CI and human implementation/test review pending.",
+      "All current S1 tests pass; full-story peer review, AC3 acceptance, S6 implementation and release assurance remain pending."
     ],
     "last_updated": "2026-11-04T23:08:35.601625+00:00",
     "scoped_work": {
@@ -665,18 +665,21 @@
       "packet": "AC-4 v1",
       "scope_approval": "EV-AC4-APPROVAL",
       "approval_owner": "Gustavo",
-      "status": "tests_first_in_progress",
+      "status": "local_verified_pending_ci_and_review",
       "pre_test_undo_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
       "human_implementation_review": "pending",
       "read_only_overlap": [
         "S-1 AC-6"
-      ]
+      ],
+      "test_first_undo_commit": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
+      "local_evidence": "EV-AC4-LOCAL",
+      "note": "All six original S1 tests and 30 new details contracts pass. Human full-story acceptance is not inferred."
     },
     "next_bounded_task": {
       "issue": "COMC-57",
       "packet": "docs/plans/AC-4-approval.md",
       "version": 1,
-      "status": "approved_in_progress",
+      "status": "implemented_pending_ci_and_review",
       "decision": "DEC-AC4-APPROVED-20261107",
       "approval_owner": "Gustavo",
       "proposed_new_cases": 30,
@@ -688,7 +691,7 @@
       "read_only_overlap": [
         "S-1 AC-6"
       ],
-      "implementation_started": false,
+      "implementation_started": true,
       "approval_evidence": "EV-AC4-APPROVAL"
     },
     "prior_scoped_work": [
