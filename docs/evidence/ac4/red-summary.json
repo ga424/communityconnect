@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-07T22:11:14.524871+00:00",
+  "base_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
+  "exit_code": 1,
+  "completed_at": "2026-11-07T22:11:48.213545+00:00",
+  "counts": {
+    "passed": 88,
+    "failed": 32,
+    "skipped": 5,
+    "errors": 0
+  },
+  "total": 125,
+  "new_cases": 30,
+  "new_semantic_501_failures": 30,
+  "legacy_ac2_results_unchanged": true,
+  "junit_sha256": "8549f3fbc0c28eec5485d7505b7edf27f231245135edb4fafe1908a62c443290",
+  "new_test_sha256": "e5449fa0885fc7e3c8bd14b552fc56a4775ac705effecb695a710bf5fdd60ce5",
+  "protected_files_verified": 80
+}

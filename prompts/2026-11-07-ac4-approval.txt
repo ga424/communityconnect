@@ -1,0 +1,4 @@
+Actual user approval, November 7, 2026 (America/New_York):
+Approved. Go ahead with AC-4 packet v1, including the 30 contract tests, AC-6 status coverage and CI phase change. Keep Jira and the AISE ledger updated, and open a PR when ready for review.
+
+Approved packet: docs/plans/AC-4-approval.md at 62b9df05338fe44a86747197502e088fa0cf45b5 (corrected membership fixtures). Scope approval is distinct from teammate implementation/test acceptance and does not authorize merging or deployment.

@@ -3,7 +3,7 @@
     "id": "COMC-M1-BOOTSTRAP",
     "release_id": "M1-progress",
     "status": "in_progress",
-    "current_stage": "05-implementation",
+    "current_stage": "04-test",
     "service": {
       "name": "CommunityConnect",
       "tier": "local_class_prototype",
@@ -32,8 +32,8 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "chore/aise-refresh-ac3",
-      "commit": "c0b26c34a1514631ec0825633e25473b570feb05"
+      "branch": "feature/COMC-57-ac4",
+      "commit": "62b9df05338fe44a86747197502e088fa0cf45b5"
     },
     "stage_status": [
       {
@@ -656,28 +656,28 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC3 runtime verified; human acceptance pending. AC4 packet including AC6 overlap, 30 tests and CI promotion awaits explicit approval.",
-      "Full S-1 design/gap/test peer reviews remain pending; current AC4/AC6 failures and S6 skips remain."
+      "Full-story peer reviews and AC3 human acceptance remain pending.",
+      "AC4 tests-first phase in progress; application implementation and S6 remain unbuilt."
     ],
     "last_updated": "2026-11-04T23:08:35.601625+00:00",
     "scoped_work": {
-      "issue": "COMC-56",
-      "scope": "existing AC3 runtime verification; no code change",
-      "status": "runtime_verified_pending_human_acceptance",
-      "base_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
-      "ci_evidence": "EV-AC3-CI-42417030245",
-      "human_review": "pending Kundan/Gustavo",
-      "implementation_changes": false,
-      "source_ref": "docs/evidence/ac3/README.md",
-      "local_evidence": "EV-AC3-LOCAL-20261107",
-      "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45"
+      "issue": "COMC-57",
+      "packet": "AC-4 v1",
+      "scope_approval": "EV-AC4-APPROVAL",
+      "approval_owner": "Gustavo",
+      "status": "tests_first_in_progress",
+      "pre_test_undo_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
+      "human_implementation_review": "pending",
+      "read_only_overlap": [
+        "S-1 AC-6"
+      ]
     },
     "next_bounded_task": {
       "issue": "COMC-57",
       "packet": "docs/plans/AC-4-approval.md",
       "version": 1,
-      "status": "proposed_awaiting_approval",
-      "decision": "DEC-AC4-FIXTURE-CORRECTION-20261107",
+      "status": "approved_in_progress",
+      "decision": "DEC-AC4-APPROVED-20261107",
       "approval_owner": "Gustavo",
       "proposed_new_cases": 30,
       "proposed_phase": {
@@ -688,7 +688,8 @@
       "read_only_overlap": [
         "S-1 AC-6"
       ],
-      "implementation_started": false
+      "implementation_started": false,
+      "approval_evidence": "EV-AC4-APPROVAL"
     },
     "prior_scoped_work": [
       {
@@ -726,6 +727,18 @@
         "verified_ci_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
         "merge_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
         "merge_evidence": "EV-PR6-MERGE-20261107"
+      },
+      {
+        "issue": "COMC-56",
+        "scope": "existing AC3 runtime verification; no code change",
+        "status": "runtime_verified_pending_human_acceptance",
+        "base_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
+        "ci_evidence": "EV-AC3-CI-42417030245",
+        "human_review": "pending Kundan/Gustavo",
+        "implementation_changes": false,
+        "source_ref": "docs/evidence/ac3/README.md",
+        "local_evidence": "EV-AC3-LOCAL-20261107",
+        "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45"
       }
     ],
     "framework": {

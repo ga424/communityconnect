@@ -160,3 +160,17 @@ Entry 13 packet-review correction: final schema inspection found that the initia
 
 
 Entry 13 local runtime follow-up (November 7, 2026): Gustavo said "I've brought up docker. please try again"; exact request/boundary at prompts/2026-11-07-docker-retry.txt. Docker socket access initially failed under sandbox permissions; scoped socket/network permission was granted before retry. Docker Engine 29.2.1 at source head 6026bdbd71e84081ddcdab96c85869e457299d45 ran the unchanged migration rehearsal (update/repeat/rollback/reapply: exit 0) and all 95 tests (88 passed / 2 expected AC4/6 501 failures / 5 unchanged S6 skips / zero errors; pytest exit 1). AC3 and three related isolation controls pass; exact phase gate and 38 protected source hashes pass. Evidence: EV-AC3-LOCAL-20261107 and docs/evidence/ac3/local-summary.json, local-junit.xml, local-migration-output.txt. Removed only the dedicated cc-ac3-local-20261107 Compose resources and verified unrelated containers remained running. This supersedes the current local-runtime gap, not the historical failed attempt. Human review and AC4 scope/test/CI approval remain pending. No implementation, merge, deployment or measured efficacy claim.
+
+
+## AC-4 approval and undo checkpoint
+Gustavo explicitly approved AC4 packet v1, the 30 contract tests, AC6 status coverage and CI phase change. Actual approval/execution prompts: prompts/2026-11-07-ac4-approval.txt and prompts/2026-11-07-ac4-execution.txt. Fresh feature/COMC-57-ac4 was created from main c0b26c34a1514631ec0825633e25473b570feb05 and fast-forwarded to approved packet/evidence commit 62b9df05338fe44a86747197502e088fa0cf45b5, the pre-test undo point. PR7 remains open; its history is preserved without merging it. Protected hashes are in docs/evidence/ac4/protected-baseline.json. Application edits wait for a separate committed actual red baseline. Approval does not confer teammate signoff or merge/deploy permission.
+
+
+## Entry 14
+artifact: tests/test_s1_details.py; frozen AC4 manifest/protected hashes; red JUnit/summary; actual approval/execution records
+tool: OpenAI Codex, GPT-6 (exact build not exposed); November 7, 2026 America/New_York
+prompts: prompts/2026-11-07-ac4-approval.txt and prompts/2026-11-07-ac4-execution.txt; corrected approved packet at 62b9df05338fe44a86747197502e088fa0cf45b5
+review: Derived exactly 30 cases from approved caller/ID/access/status/multi-community contracts. Each read snapshots persisted requests; successes assert exact public fields from known synthetic fixtures. Foreign keys remain enabled; all existing tests/design/schema/gates/controls unchanged. AI self-review, not teammate acceptance.
+checks: Actual Docker red run: 88 passed / 32 failed / 5 skipped / zero errors; pytest exit 1. All 30 new failures are semantic 501 assertions. Original 95 outcomes revalidated against unchanged AC2 expectations; 80 protected file hashes match. No application or CI edit preceded this run.
+evidence: EV-AC4-APPROVAL; EV-AC4-RED; COMC-57/59; docs/evidence/ac4/red-summary.json. Exact red commit recorded in subsequent implementation evidence and Git note.
+risk: Details remain unimplemented at this checkpoint. S6 is skipped; full-story human review and production assurance remain pending. No merge/deploy permission.
