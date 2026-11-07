@@ -676,7 +676,7 @@
       "packet": "docs/plans/AC-4-approval.md",
       "version": 1,
       "status": "proposed_awaiting_approval",
-      "decision": "DEC-AC4-PROPOSED-20261107",
+      "decision": "DEC-AC4-FIXTURE-CORRECTION-20261107",
       "approval_owner": "Gustavo",
       "proposed_new_cases": 30,
       "proposed_phase": {

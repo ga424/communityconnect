@@ -32,12 +32,15 @@ The same details endpoint must return `RequestOut`, including its persisted stat
 | Request ID zero, negative, leading zero, text, Unicode digits, decimal, unknown positive ID, outside database range | 8 | Valid resident caller; exact 404; no stored-row change |
 | Invalid caller with malformed request ID | 1 | Caller validation wins: exact 401 |
 | Submitter membership changed to board_member, manager or admin | 3 | Exact 404; no details or stored-row change |
-| Submitter membership removed, or moved to the other community with a valid unit there | 2 | Old request remains stored; exact 404 in each case |
+| Submitter has a nonresident role in the request's community but resident membership elsewhere | 1 | Exact 404; membership in another community cannot authorize this request |
+| Submitter has valid resident memberships and owns a request in each of two communities | 1 | Each ID returns only its exact seeded record with the matching community/unit; no writes |
 | Different submitter in the same community, then in the same unit | 2 | Exact 404; no details or stored-row change |
 | Authorized owner reads stored Open, In progress and Resolved request | 3 | Exact seven-field public response, correct ID/community/unit/category/description/status/UTC timestamp; no submitted_by and no write |
 | **Total** | **30** | All cases use disposable synthetic fixtures |
 
-The existing AC-4 test supplies the cross-community guessed-ID regression. The existing AC-6 test supplies the persisted-status acceptance check. Both test files remain byte-identical. Do not create duplicate tests that merely mirror implementation internals. Every new case asserts HTTP behavior and unchanged persisted request rows; success cases compare to the known seeded record. The deleted/moved-membership fixtures change only setup state, then snapshot before the read.
+The existing AC-4 test supplies the cross-community guessed-ID regression. The existing AC-6 test supplies the persisted-status acceptance check. Both test files remain byte-identical. Do not create duplicate tests that merely mirror implementation internals. Every new case asserts HTTP behavior and unchanged persisted request rows; success cases compare to the known seeded record. Multi-community fixtures insert a valid second membership/unit association and, for the positive case, a second request; snapshot after setup and before the reads. Use the existing test connection boundary without editing the shared seed helper.
+
+Schema constraint: `maintenance_requests(submitted_by, community_id)` references `memberships(user_id, community_id)`. Therefore deleting or moving a referenced membership while retaining the request is not a valid current fixture. Do not disable the foreign key or introduce a schema migration to simulate it. Revocation here is tested by changing the role, which the schema permits. Any future membership-deletion lifecycle needs its own design and migration review. This corrects the initial unapproved packet draft's two invalid setup cases; the total remains 30.
 
 ## Allowed and protected paths
 
