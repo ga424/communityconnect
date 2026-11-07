@@ -1,3 +1,21 @@
+# Current assessment — November 7, 2026
+
+Scope: latest merged AISE verification, PR5/PR6 merge reconciliation, existing AC3 runtime check and AC4 proposal. Sequential AI inspection, not independent teammate or release approval.
+
+- AISE: current pin equals upstream main 0.3.4 at 84816af; fresh clone and three vendor hashes verified (EV-AISE-LATEST-MERGED-20261107). Gustavo chose merged source; no preview/migration adopted.
+- PR5/PR6: merged; automatic branch deletion enabled, merged local copies removed after ancestry/no-open-PR checks (EV-PR6-MERGE-20261107). AC2 F1 remediation is on main.
+- AC3: no code change needed. Fresh CI run 42417030245 at c0b26c3 passes AC3 and related controls; complete phase 88/2/5, zero errors, actual pytest exit 1. Downloaded JUnit and unchanged gate verified (EV-AC3-CI-42417030245). Human acceptance pending.
+- AC4: concrete packet v1 proposes resident-owned details lookup, 30 new tests, existing AC6 read-only overlap and 120/0/5 CI phase. Implementation and phase changes are not authorized yet.
+- Boundaries: app/tests/design/schema/dependencies/workflow/hooks/config remain unchanged. Historical ledger records retained. Docker unavailable locally; no local runtime claim. Private interview data excluded. No measured cost/efficacy claim; telemetry unavailable.
+
+Verdict: **CONDITIONAL_GO for human review of the bounded next-task packet; NO_GO for implementation until that scope is approved, and NO_GO for production release.** Production identity, all S1 behavior, S6, security/dependency assurance, full-story teammate reviews and course provenance remain unresolved. No new code defect found in this limited AC3 assessment; it is not a full PR6/security audit.
+
+Skill contract: use orchestrate/test/review from pinned AISE; inputs are existing S1 design/acceptance/tests, merged Git history, Jira and actual CI. Deterministic checks are unchanged exact phase verifier, source hashes, structural validator, sensitive-data guard and diff. Outputs are docs/evidence/ac3/, dated framework proof, AC4 packet and append-only ledgers. Stop at reviewable artifacts; no application/test/CI edit, merge or deployment. Required owners: Kundan behavior, Sandeep tests, Gustavo scope/provenance. Evidence-to-approval separation is preserved; unchanged full-stage approvals remain pending.
+
+---
+
+Historical review records follow; current findings/dispositions above supersede their open-PR and unmerged-F1 status.
+
 # AC-2 remediation review — human acceptance pending
 
 The prior PR4 F1 finding below is now addressed by the approved AC2 guard and eight regression cases. EV-AC2-LOCAL proves local 88/2/5 outcomes with no new errors and unchanged seeded data on rejection; RISK-PR4-F1-AC2-LOCAL supersedes the earlier open-risk interpretation for this implementation branch. The guard does not mask database failures or sanitize text. Original tests/designs/models/migrations/controls remain protected. AI self-review is recorded in docs/evidence/ac2/README.md.

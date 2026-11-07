@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-11-07T21:43:00.161184+00:00",
+  "source": {
+    "date": "2026-11-04T02:16:17Z",
+    "html_url": "https://github.com/abreugus/aise/commit/84816af9975b4e2aaac5219a40603be38dc1bd70",
+    "message": "Strengthen guardrails and risk-based testing assurance",
+    "sha": "84816af9975b4e2aaac5219a40603be38dc1bd70"
+  },
+  "version": "0.3.4",
+  "releases": [],
+  "tags": [],
+  "decision": "Gustavo selected latest merged version; unmerged preview excluded",
+  "decision_prompt": "prompts/2026-11-07-aise-next-feature.txt",
+  "file_checks": [
+    {
+      "source": "scripts/validate_project.py",
+      "vendored": ".agentic-sdlc/hooks/validate_project.py",
+      "sha256": "871a9dcb485afe061a2b91a8e2f83a183a3c08e6f86f909dc2e353c6cbf374b9",
+      "identical": true
+    },
+    {
+      "source": "scripts/guard_sensitive_data.py",
+      "vendored": ".agentic-sdlc/hooks/guard_sensitive_data.py",
+      "sha256": "2892f85ad967404202e28f020ab5473771a97d176ced689d084ae9e17775d8bc",
+      "identical": true
+    },
+    {
+      "source": "LICENSE",
+      "vendored": "THIRD_PARTY_NOTICES/AISE-LICENSE.txt",
+      "sha256": "c4a1ebaf7c17da5ff91501d0f5044802ef1c99c82310f73efb13e1f7552cd144",
+      "identical": true
+    }
+  ]
+}

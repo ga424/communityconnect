@@ -1,6 +1,6 @@
 # S-1 bounded implementation plan
 
-Status: AC-1 packet v1 was explicitly approved and implemented in merged PR #4. Kundan/Sandeep full-story reviews remain pending. PR4 review identified an unsupported-description validation gap; [AC-2 approval packet v1](AC-2-approval.md) is the next bounded proposal. No AC-2 implementation authorization is recorded.
+Status as of November 7, 2026: AC-1 and explicitly approved AC-2 are implemented and merged (PRs #4/#6). AC-3 is [verified in fresh CI without a code change](../evidence/ac3/README.md), pending human review. [AC-4 packet v1](AC-4-approval.md) is the next implementation proposal; it explicitly includes the same read route's AC-6 overlap, 30 new contract cases and CI promotion. No AC-4 implementation approval is recorded. Kundan/Sandeep full-story reviews remain pending.
 
 ## How
 
@@ -8,16 +8,16 @@ FastAPI routes in app/requests.py use app/models.py PostgreSQL query helpers, se
 
 ## Prerequisites
 
-COMC-37: container/migration rehearsal. COMC-39 and COMC-40: both executable test baselines. COMC-33/35: reviewed S-1 design/gap dispositions. COMC-41: human approval of this plan. Gustavo approved the bounded AC-1 scope; this did not mark the other named reviewers' work complete or the full-story approval finished. AC-2 requires its own approval. The draft test hooks do not settle open product questions.
+COMC-37: container/migration rehearsal. COMC-39 and COMC-40: both executable test baselines. COMC-33/35: reviewed S-1 design/gap dispositions. COMC-41: human approval of bounded tasks. Gustavo's AC-1 and AC-2 approvals are recorded in prompts/; they do not complete other reviewers' work or approve AC-4. Review AC-3's no-code evidence before accepting the next packet. The draft test hooks do not settle open product questions.
 
 ## Numbered tasks
 
 For every task: save the exact bounded prompt, record human approval, commit an undo point, make only approved changes, inspect the diff/logs and edge cases, run the targeted test and prior passing tests, commit and record actual evidence. Tests and approved design are protected.
 
 1. **AC-1 / COMC-54:** follow [AC-1 approval packet v1](AC-1-approval.md). Implement create/self-list with existing validation and access invariants; add contract tests first and promote the CI phase explicitly. Allowed application files are app/requests.py and app/models.py; reuse settings/clock unchanged. Preserve GET-by-ID as a stub. Stop only when AC-1, required write-path/isolation checks, harness checks and the approved phase gate pass. Full test output and existing-test hashes must be recorded.
-2. **AC-2 / COMC-55:** follow [AC-2 approval packet v1](AC-2-approval.md). The original blank-description case passes. Proposed next work fixes the reviewed NUL/unpaired-surrogate 500 response through an explicit text-policy addendum, eight tests first and a bounded CI phase change. Preserve all existing tests and original design. Stop at the approved 88-pass / 2-deferred-failure / 5-skip phase and human review; no implementation begins before approval.
-3. **AC-3 / COMC-56:** verify/enforce community isolation in app/requests.py and app/models.py. Stop when test_ac3_other_community_resident_does_not_see_request passes. Check no cross-community response or write. If AC-1 already satisfies it, record no-code verification; do not introduce an insecure intermediate state.
-4. **AC-4 / COMC-57:** implement ID lookup with caller, membership and submitter filters. Files: app/requests.py, app/models.py. Stop when test_ac4_other_community_direct_id_returns_not_found passes. Check unknown, unauthorized and malformed ID all use the specified 404 envelope.
+2. **AC-2 / COMC-55:** approved and merged in PR #6. The NUL/unpaired-surrogate fix, text-policy addendum, eight regression cases and exact 88-pass / 2-deferred-failure / 5-skip phase are verified. Separate full-story peer acceptance remains pending; preserve historical approval and evidence.
+3. **AC-3 / COMC-56:** existing community isolation passes in CI run 42417030245 on merged main. No code change is required. Review [evidence](../evidence/ac3/README.md) for list exclusion, cross-community denial and unchanged write state; keep human acceptance separate from runtime verification.
+4. **AC-4 / COMC-57:** proposed [packet v1](AC-4-approval.md). Implement ID lookup with caller, membership and submitter filters only after explicit approval, including its 30 contracts and CI phase change. Authorized reads must return the persisted status, which also makes the existing AC-6 test pass. Do not preserve an artificial failure or silently broaden the packet.
 5. **AC-5 / COMC-58:** verify self-only access within the same community in app/requests.py and app/models.py. Stop when test_ac5_neighbor_in_same_community_does_not_see_request passes. If already passing, record verification rather than invent a code change. Broader household/board policy remains open.
 6. **AC-6 / COMC-59:** expose persisted status through lookup in app/requests.py and app/models.py. Stop when test_ac6_resident_sees_in_progress_status passes. The test fixture changes status; do not add a status-update endpoint. Run all six S-1 tests and inspect all existing edge cases.
 

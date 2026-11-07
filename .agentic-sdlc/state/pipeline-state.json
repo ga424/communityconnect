@@ -32,8 +32,8 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "feature/COMC-55-ac2",
-      "commit": "130af5d22bda7a98c4cff79e78904add49778b35"
+      "branch": "chore/aise-refresh-ac3",
+      "commit": "c0b26c34a1514631ec0825633e25473b570feb05"
     },
     "stage_status": [
       {
@@ -656,41 +656,38 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC2 F1 remediation and CI phase verified; human implementation review remains pending.",
-      "Full S-1 design/gap/test peer reviews remain pending; AC-4/AC-6 still deferred and S-6 skipped."
+      "AC3 runtime verified; human acceptance pending. AC4 packet including AC6 overlap, 30 tests and CI promotion awaits explicit approval.",
+      "Full S-1 design/gap/test peer reviews remain pending; current AC4/AC6 failures and S6 skips remain.",
+      "Local Docker unavailable during this assessment; runtime evidence is traceable GitHub CI."
     ],
     "last_updated": "2026-11-04T23:08:35.601625+00:00",
     "scoped_work": {
-      "issue": "COMC-55",
-      "packet": "AC-2 v1",
-      "scope_approval": "EV-AC2-APPROVAL",
-      "approval_owner": "Gustavo",
-      "status": "review_ready",
-      "pre_test_undo_commit": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
-      "human_implementation_review": "pending",
-      "note": "AC2 local and CI phases pass. Human review pending; no next-AC or merge/deployment approval.",
-      "test_first_undo_commit": "661a205dbfb4860d14194e54d75b46edec54cdca",
-      "implementation_commit": "130af5d22bda7a98c4cff79e78904add49778b35",
-      "local_evidence": "EV-AC2-LOCAL",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/6",
-      "ci_evidence": "EV-CI-41930928316",
-      "verified_ci_commit": "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea"
+      "issue": "COMC-56",
+      "scope": "existing AC3 runtime verification; no code change",
+      "status": "runtime_verified_pending_human_acceptance",
+      "base_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
+      "ci_evidence": "EV-AC3-CI-42417030245",
+      "human_review": "pending Kundan/Gustavo",
+      "implementation_changes": false,
+      "source_ref": "docs/evidence/ac3/README.md"
     },
     "next_bounded_task": {
-      "issue": "COMC-55",
-      "packet": "docs/plans/AC-2-approval.md",
+      "issue": "COMC-57",
+      "packet": "docs/plans/AC-4-approval.md",
       "version": 1,
-      "status": "implemented_pending_review",
-      "decision": "DEC-AC2-APPROVED-20261104",
+      "status": "proposed_awaiting_approval",
+      "decision": "DEC-AC4-PROPOSED-20261107",
       "approval_owner": "Gustavo",
-      "proposed_new_cases": 8,
+      "proposed_new_cases": 30,
       "proposed_phase": {
-        "passed": 88,
-        "deferred_failures": 2,
+        "passed": 120,
+        "deferred_failures": 0,
         "skipped": 5
       },
-      "implementation_started": true,
-      "approval_evidence": "EV-AC2-APPROVAL"
+      "read_only_overlap": [
+        "S-1 AC-6"
+      ],
+      "implementation_started": false
     },
     "prior_scoped_work": [
       {
@@ -710,7 +707,32 @@
         "merge_commit": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
         "review_evidence": "EV-PR4-REVIEW-20261104",
         "open_finding": "RISK-PR4-F1-UNSTORABLE-TEXT"
+      },
+      {
+        "issue": "COMC-55",
+        "packet": "AC-2 v1",
+        "scope_approval": "EV-AC2-APPROVAL",
+        "approval_owner": "Gustavo",
+        "status": "merged",
+        "pre_test_undo_commit": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+        "human_implementation_review": "merge by ga424 observed; separate teammate acceptance not established",
+        "note": "AC2 remediation merged and passes fresh CI; no next-task approval inferred",
+        "test_first_undo_commit": "661a205dbfb4860d14194e54d75b46edec54cdca",
+        "implementation_commit": "130af5d22bda7a98c4cff79e78904add49778b35",
+        "local_evidence": "EV-AC2-LOCAL",
+        "pull_request": "https://github.com/ga424/communityconnect/pull/6",
+        "ci_evidence": "EV-AC3-CI-42417030245",
+        "verified_ci_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
+        "merge_commit": "c0b26c34a1514631ec0825633e25473b570feb05",
+        "merge_evidence": "EV-PR6-MERGE-20261107"
       }
-    ]
+    ],
+    "framework": {
+      "version": "0.3.4",
+      "source_commit": "84816af9975b4e2aaac5219a40603be38dc1bd70",
+      "latest_merged_observed_at": "2026-11-07T21:44:25.510050+00:00",
+      "evidence": "EV-AISE-LATEST-MERGED-20261107",
+      "selection": "latest merged; previews excluded by user decision"
+    }
   }
 }
