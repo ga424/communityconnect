@@ -1,0 +1,4 @@
+Actual user request, November 7, 2026 (America/New_York):
+I've brought up docker. please try again
+
+Scope: retry the unchanged local Docker migration rehearsal and full current test baseline, verify AC3 and preserve actual results, then update the existing PR7/Jira/AISE evidence. Use a dedicated disposable Compose project; leave unrelated containers untouched. This request is not approval of AC4 packet v1, its proposed tests or CI phase change.

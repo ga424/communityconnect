@@ -657,8 +657,7 @@
     ],
     "blockers": [
       "AC3 runtime verified; human acceptance pending. AC4 packet including AC6 overlap, 30 tests and CI promotion awaits explicit approval.",
-      "Full S-1 design/gap/test peer reviews remain pending; current AC4/AC6 failures and S6 skips remain.",
-      "Local Docker unavailable during this assessment; runtime evidence is traceable GitHub CI."
+      "Full S-1 design/gap/test peer reviews remain pending; current AC4/AC6 failures and S6 skips remain."
     ],
     "last_updated": "2026-11-04T23:08:35.601625+00:00",
     "scoped_work": {
@@ -669,7 +668,9 @@
       "ci_evidence": "EV-AC3-CI-42417030245",
       "human_review": "pending Kundan/Gustavo",
       "implementation_changes": false,
-      "source_ref": "docs/evidence/ac3/README.md"
+      "source_ref": "docs/evidence/ac3/README.md",
+      "local_evidence": "EV-AC3-LOCAL-20261107",
+      "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45"
     },
     "next_bounded_task": {
       "issue": "COMC-57",

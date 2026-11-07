@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-11-07T21:58:53.547047+00:00",
+  "commit": "6026bdbd71e84081ddcdab96c85869e457299d45",
+  "compose_project": "cc-ac3-local-20261107",
+  "docker_engine": "29.2.1",
+  "migration_exit_code": 0,
+  "tests_exit_code": 1,
+  "completed_at": "2026-11-07T21:59:47.523021+00:00",
+  "counts": {
+    "passed": 88,
+    "failed": 2,
+    "skipped": 5,
+    "errors": 0
+  },
+  "total": 95,
+  "junit_sha256": "732f95c9535eeb8ab1f8fc5deabfeeb6d09a1b6de0986e3ae4fdf392b86ca369",
+  "migration_log_sha256": "10bd144dfc5745b39a75fd043ac826706c96bdaafb2fbc683ba2bb47050801ad",
+  "ac3_related_results": {
+    "tests.test_s1_contract::test_ac1_contract_rejects_unavailable_community[other-community-POST]": "passed",
+    "tests.test_s1_contract::test_ac1_contract_rejects_unavailable_community[other-community-GET]": "passed",
+    "tests.test_s1_contract::test_ac1_contract_lists_only_submitter_even_for_same_unit": "passed",
+    "tests.test_s1_requests::test_ac3_other_community_resident_does_not_see_request": "passed"
+  },
+  "phase_gate": "unchanged verify_ac2_baseline.py PASS on actual local JUnit",
+  "protected_files_verified": 38,
+  "human_review": "pending",
+  "application_changes": false,
+  "scope": "Existing baseline only; AC4 packet remains unapproved",
+  "initial_access_issue": "Docker socket permission denied; request_permissions granted scoped socket/network access before retry",
+  "cleanup": {
+    "compose_project_removed": "cc-ac3-local-20261107",
+    "unrelated_compose_projects_untouched": true,
+    "docker_desktop_left_running": true
+  }
+}
