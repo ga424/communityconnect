@@ -253,3 +253,152 @@ checks: Python CSV/AST/JUnit comparisons:31 unique IDs, all source fields equal,
 evidence: EV-M1-TRACE-AUDIT-20261108; S1 AC1–6; COMC-43/42/16
 
 risk: Final submission SHA unselected; Kundan31-row peer review and future announcement authority/atomicity decisions remain pending.
+
+
+## Append-only field supplement for Entries16–20
+
+Recorded November8,2026 from existing entries/artifacts/notes. This normalizes field labels; it is not a new execution or retrospective human approval. The historical opening eight-entry statement is superseded numerically; human course review remains pending.
+
+### Existing Entry 16 — field index
+
+artifact: PR8 review and proposed AC5 packet; exact original recording SHA in the original entry and Git note.
+
+tool: OpenAI Codex; exact deployed model build unavailable; original task date in Entry16; supplement November8,2026.
+
+prompts: prompts/2026-11-07-pr8-review.txt
+
+review: Reviewed approved packet, source/SQL/error contracts and CI artifacts; no blocking code finding; human acceptance was pending.
+
+checks: Previously recorded CI42445847082 and downloaded JUnit120/0/5,80 hashes and gate/compatibility checks; no new run is claimed in this supplement.
+
+evidence: EV-PR8-REVIEW-20261107; EV-CI-42445847082
+
+risk: At that checkpoint AC5 was unapproved and human/full-story acceptance pending.
+
+### Existing Entry 17 — field index
+
+artifact: Mac-local preview and wrapper evidence; exact original recording SHA in the original entry and Git note.
+
+tool: OpenAI Codex; exact deployed model build unavailable; original task date in Entry17; supplement November8,2026.
+
+prompts: prompts/2026-11-07-local-preview.txt
+
+review: Inspected unchanged API via synthetic preview and left user session intact.
+
+checks: Previously recorded HTTP creation/retrieval/isolation/health and PR9 CI42448030125; see original Entry17.
+
+evidence: EV-LOCAL-PREVIEW-20261107
+
+risk: External review wrapper is not shipped UI, production identity or deployment.
+
+### Existing Entry 18 — field index
+
+artifact: AC5 approval and merged-main checkpoint; exact original recording SHA in the original entry and Git note.
+
+tool: OpenAI Codex; exact deployed model build unavailable; original task date in Entry18; supplement November8,2026.
+
+prompts: prompts/2026-11-08-ac5-approval.txt; prompts/2026-11-08-ac5-execution.txt
+
+review: Recorded explicit authorization, exact-head PR8 merge and verified branch cleanup; checkpoint before verification.
+
+checks: Previously recorded merged ancestry/branch absence and source equivalence; runtime result not yet available at that checkpoint.
+
+evidence: EV-AC5-APPROVAL-20261108; EV-PR8-MERGE-CLEANUP-20261108
+
+risk: Verification and named acceptance were pending at checkpoint.
+
+### Existing Entry 19 — field index
+
+artifact: AC5 verification and post-publication audit; exact original recording SHA in the original entry and Git note.
+
+tool: OpenAI Codex; exact deployed model build unavailable; original task date in Entry19; supplement November8,2026.
+
+prompts: prompts/2026-11-08-ac5-approval.txt; prompts/2026-11-08-ac5-execution.txt
+
+review: Inspected logs, protected files, gate/migration results; append-only path correction preserves history; externally observed merges recorded without assistant merge attribution.
+
+checks: Previously recorded local120/0/5 exit0,107 hashes,24 gate controls,migration rehearsal and CI42450409215/42450702977/42450878827; exact records in evidence and notes.
+
+evidence: EV-AC5-LOCAL-20261108; EV-AC5-CI-42450409215; EV-AC5-MERGED-20261108
+
+risk: Independent named acceptance and broader assurance remained pending; historical validator warnings retained.
+
+### Existing Entry 20 — field index
+
+artifact: S1 acceptance review, fresh clone and S3 proposed packet; exact original recording SHA in the original entry and Git note.
+
+tool: OpenAI Codex; exact deployed model build unavailable; original task date in Entry20; supplement November8,2026.
+
+prompts: prompts/2026-11-08-s1-acceptance-next-feature.txt; prompts/2026-11-08-s1-review-execution.txt
+
+review: Compared six criteria/source/tests/Jira; extracted eight gap questions; proposed manager-context design-only scope.
+
+checks: Fresh clone at3918cbd120/0/5 exit0;107 protected hashes; AISE/guard/whitespace checks; final head CI42451758915 verified in Git note.
+
+evidence: EV-S1-CLOSEOUT-RUNTIME-20261108; EV-S1-ACCEPTANCE-REVIEW-20261108
+
+risk: At checkpoint named acceptance and S3 approval pending; Entry21 subsequently records Gustavo S1 acceptance.
+
+## Observed commit SHA inventory through Entry21
+
+Inventory of all reachable commits, including platform merge events; inclusion is not a claim that a human or AI authored every commit. Current recording commits are added via Git provenance notes and subsequent inventories.
+
+| Full SHA | Git subject |
+| --- | --- |
+| 746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d | docs(COMC-38): establish CommunityConnect milestone scope |
+| 21ff38c58657bb46f44e8cd703643834362a110e | chore(COMC-38): initialize pinned AISE governance workspace |
+| 19eb9ea1c146830b4ccb043e06d646114aa6f7fd | docs(COMC-41): add S-1 and S-6 feature packets and bounded plan |
+| 92634ffbc0dffb8c5087577628055f6d7c5638f1 | chore(COMC-37): add local PostgreSQL Liquibase and FastAPI scaffold |
+| 47d553957ec95bb5d6428ef34364862f37cfaf25 | test(COMC-39): add S-1 red tests and deferred S-6 acceptance contracts |
+| 4af6ba8626262118c9c1eefa5bccfbc5ee3c37b2 | Merge pull request #1 from ga424/feature/COMC-38-m1-aise-bootstrap |
+| 85e817ab73f8cfad5dc9caf5b950eedbdda614c7 | docs(COMC-44): record CI and local tests-first evidence |
+| dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12 | Merge pull request #2 from ga424/feature/COMC-38-m1-aise-bootstrap |
+| 8ea0e80759ae06dc80cf5bf4bfa5666313074378 | docs(COMC-54): review PR2 and bound AC1 approval with CI transition |
+| 7eab79e229dd250d45c9041822a7f45f4d94958c | Merge pull request #3 from ga424/review/COMC-54-ac1-approval |
+| 2b73ab0d5f21fb63e9b7c1406446c3cf7043682d | test(COMC-54): record approval and AC1 contract red baseline |
+| 15edff908305ffe51c7b7f7615bc22f87b4ef053 | feat(COMC-54): implement AC1 resident requests and contract CI gate |
+| 0f5562f42081aede341079d723b4848cc604c271 | docs(COMC-54): reconcile AC1 execution and AISE evidence |
+| 74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca | docs(COMC-54): record passing PR4 CI and review handoff |
+| 3708f9dd02abb43feffa54ebfa4df47aa58bbb74 | Merge pull request #4 from ga424/feature/COMC-54-ac1 |
+| 73842903bc1f1388324c0c3e5766cec5d7fa833d | docs(COMC-55): review PR4 and propose bounded AC2 validation |
+| 661a205dbfb4860d14194e54d75b46edec54cdca | test(COMC-55): freeze approved AC2 contracts and red baseline |
+| 130af5d22bda7a98c4cff79e78904add49778b35 | fix(COMC-55): reject unsupported descriptions and promote AC2 CI |
+| 5d2c13ce5a36ce7eedfe5997324a3d214b4706ea | docs(COMC-55): reconcile AC2 runtime evidence and F1 disposition |
+| 9a96ca40880c53d44a8fc90404f5ce50eb294b29 | docs(COMC-55): record passing AC2 CI and human-review handoff |
+| c0b26c34a1514631ec0825633e25473b570feb05 | Merge pull request #6 from ga424/feature/COMC-55-ac2 |
+| 0311d94a5ad9db3f93d88a776dbc967d1e1119b5 | docs(COMC-56): verify AC3 and latest AISE, prepare AC4 packet |
+| 6026bdbd71e84081ddcdab96c85869e457299d45 | docs(COMC-57): align proposed membership tests with schema |
+| 62b9df05338fe44a86747197502e088fa0cf45b5 | docs(COMC-56): record successful local Docker baseline retry |
+| fb8db8046e3458a14d4c9edf04f019d3fcf7332e | test(COMC-57): freeze 30 approved details contracts and red baseline |
+| 8df963e73801713e3eb6c9b02e7d6ce8092f14f7 | feat(COMC-57): add scoped request details and green S1 CI phase |
+| 354960fb81b55c2081dc3c5264a225be48930cd8 | docs(COMC-57): reconcile passing CI and review handoff |
+| 59fd4f570ac20d194e24b6c5e738c2fcf8017b74 | docs(COMC-58): review PR8 and prepare AC5 verification packet |
+| f9619f86d0f352eefc4fb18e443019c3d2f4c78e | docs(COMC-58): record scoped planning integrity check |
+| 244026ec788d26688ab5a4fe1c6fa50f2e8203b9 | docs: record requested localhost preview and verification |
+| fc208ec4a093cdd81c6e87158e7a93561822226c | Merge pull request #8: approved AC4 details and AC6 status |
+| e615d78717c29e1f7d84c031940edf60eab46a53 | docs(COMC-58): record AC5 approval and integrated-main checkpoint |
+| 77fe12f8266dba5c63fc5a1b499589e139ddc716 | docs(COMC-58): record passing AC5 verification and cleanup |
+| 722f1ba9bdd42125665ad51f5ecbc6414f7ad07a | docs(COMC-58): reconcile evidence PR and passing CI |
+| b41387f1c63c0b469b2c17026095c47d43932011 | Merge pull request #10 from ga424/verify/COMC-58-ac5 |
+| a9330b87c114fdbe2097fb07582360839aadeed0 | docs(COMC-58): complete append-only result path traceability |
+| f80f4d7aefd65b8dd3db960c4ebeab2f588603f4 | docs(COMC-58): preserve audit addendum after evidence merge |
+| 3918cbd9fd015f8325cfc0136180c28ad31c5d01 | Merge pull request #11 from ga424/docs/COMC-58-audit-followup |
+| ec989d1d8370cf2ee4c283d78babfae3bc0ab599 | docs(COMC-42): review S1 acceptance and propose S3 context design |
+| 06b507315b235162f2dcf64c567c03c3f1910f32 | docs(COMC-43): verify31-row trace and record Gustavo decisions |
+
+
+## Entry 22 — COMC-38/44 provenance audit (November 8, 2026)
+
+artifact: docs/reviews/M1-provenance-audit-2026-11-08.md; machine inventory; appended field index and commit inventory
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Work-queue request at prompts/2026-11-08-gustavo-work-queue.txt
+
+review: Read all21 actual ledger entries, exact prompt paths, AGENTS, Git history and notes; appended missing field-label crosswalk for16–20. Kept historical text and marked missing source/human evidence explicitly.
+
+checks: Field parser:16 fully labelled entries before supplement; all exact prompt references exist;40 commit SHAs enumerated; at least15 specific risk fields. No feature tests rerun for this audit.
+
+evidence: EV-M1-PROVENANCE-AUDIT-20261108; COMC-38/44
+
+risk: Original full extraction/summary/gap session provenance, Kundan audit acceptance and final submission-SHA reconciliation remain pending.
