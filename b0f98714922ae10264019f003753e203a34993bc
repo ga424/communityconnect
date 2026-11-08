@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-11-08T23:46:18.637888+00:00",
+  "record_type": "AISE_final_integration_evidence",
+  "feature": "S3-AC11 v1",
+  "issue": "COMC-65",
+  "jira_status": "Done",
+  "implementation_pr": "https://github.com/ga424/communityconnect/pull/17",
+  "implementation_commit": "026a6c3bdc972a7cf26d6d56ffd336a30097e767",
+  "tests_first_commit": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
+  "final_head": "b0f98714922ae10264019f003753e203a34993bc",
+  "feature_merge": "cf1e457052bbbe806a3711194e426181c599165f",
+  "verified_final_ci": {
+    "verified_at": "2026-11-08T23:42:34.922217+00:00",
+    "run": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
+    "head_sha": "b0f98714922ae10264019f003753e203a34993bc",
+    "conclusion": "success",
+    "counts": {
+      "passed": 200,
+      "skipped": 5,
+      "failed": 0,
+      "errors": 0,
+      "total": 205
+    },
+    "pytest_exit": 0,
+    "migration_step": "success",
+    "cleanup_step": "success",
+    "gate_controls": 24,
+    "artifact": "s1-contract-baseline",
+    "artifact_files_sha256": {
+      "ac1-gate-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+      "ac2-gate-self-test.json": "6516eef4958304c1e8e7187cb53816e5fde4189414f9508fb7501e6c3846d63f",
+      "container-images.txt": "befdd6618e68f80bc97436825698a7e89f1e74ce34fd2e4066b0715d43286095",
+      "pytest-exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "pytest.xml": "458d37a00681f9405bc6eff126068c1b25083df10343cd033f6f014decd94c05",
+      "run.json": "07464459776eba852c05159177fb407e2b8b8a6fbdd009cd012518132c1456f1",
+      "s1-gate-self-test.json": "a4ce8275a772cdfa796985e37483a715447c280551cd31d8be8ce00d7d38d948",
+      "s3-ac11-gate-self-test.json": "e131e035732fa951d8b8e6ad0bc82b5cd1e606fb457cd4e2702b3860cc3433cb",
+      "s3-ac12-gate-self-test.json": "0b6feaf825a5a106785bc68d8c9fd976d4b82506d4d007b87c80c60ee0254cbe",
+      "test-output.txt": "a0849f7ab9dc1dbf58a92fc694f1a2f00b8775c2754c4a261dc9fe4dfdea738a"
+    },
+    "human_result_acceptance": "pending; not established by CI"
+  },
+  "integration": {
+    "recorded_at": "2026-11-08T23:44:09.990219+00:00",
+    "pull_request": "https://github.com/ga424/communityconnect/pull/17",
+    "merged": true,
+    "merged_by": "abreugus",
+    "merged_at": "2026-11-08T23:41:19Z",
+    "merge_commit": "cf1e457052bbbe806a3711194e426181c599165f",
+    "final_head": "b0f98714922ae10264019f003753e203a34993bc",
+    "verified_ci": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
+    "main_tree_identical_to_verified_head": true,
+    "assistant_invoked_merge": false,
+    "branches_deleted_remote_and_local": [
+      "feat/COMC-65-s3-ac11",
+      "docs/COMC-65-review-status"
+    ],
+    "cleanup_preconditions": "Latest heads ancestry in origin/main, no open PRs, both worktrees clean; status remote removed with expected-head lease. Feature remote auto-deleted by GitHub. Worktrees detached before local deletion.",
+    "jira_status": "COMC-65 Done",
+    "parent_story": "COMC-10 In Progress; browser/full-story acceptance pending",
+    "next_feature_authorized": false,
+    "independent_teammate_authorship_verified": false
+  },
+  "metadata_closeout": {
+    "pull_request": "https://github.com/ga424/communityconnect/pull/18",
+    "head": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+    "merged": false,
+    "merge_commit": null,
+    "ci": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+    "counts": {
+      "passed": 200,
+      "skipped": 5,
+      "failed": 0,
+      "errors": 0,
+      "total": 205
+    },
+    "documentation_only": true,
+    "no_new_feature": true,
+    "branch_deleted": false,
+    "reason": "Open unmerged closeout PR; preserve branch until verified merge."
+  },
+  "independent_human_review": "Not inferred from CI or owner-closed tickets",
+  "next_feature_authorized": false
+}
