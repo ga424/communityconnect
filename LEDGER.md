@@ -680,3 +680,20 @@ checks: Latest merged-head CI42534349053 artifact148/0/5 exit0,24 controls and m
 evidence: EV-S3-AC11-APPROVAL-20261108; EV-PR15-16-INTEGRATION-20261108; DEC-S3-AC11-EXECUTE-20261108
 
 risk: No new behavior/test/CI change yet. Tests-first execution and actual concurrency evidence remain to be produced. Result acceptance and feature-PR merge remain separate.
+
+
+## Entry 39 — AC11 actual tests-first freeze (November 8, 2026)
+
+artifact: tests/test_s3_selected_requests.py; docs/evidence/s3-ac11/tests-first.json and red JUnit/output
+
+tool: OpenAI Codex, pinned AISE0.3.4; exact model/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI checked the52 cases against approved inventory. Real database and delegated final-row validation instrumentation; no fake successful authorization or forced failures. No independent teammate acceptance invented.
+
+checks: Docker collected205:148 passed,52 semantic missing-route failures,zero errors,5 exact old skips,exit1. Exact IDs and original153 strict gate pass;116 protected hashes unchanged. Test SHA256 ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38. Undo commit 85547272a0661c1eaadb4bded9cdc50e620603fd; tests-first commit is this commit and will be pinned in the additive manifest.
+
+evidence: EV-S3-AC11-RED-20261108
+
+risk: Red is expected missing behavior, not completion. Concurrency/fault probes fail at missing-route assertion before workers; actual lock evidence awaits implementation. No app/CI changes in this checkpoint.
