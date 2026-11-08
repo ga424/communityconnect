@@ -1,6 +1,6 @@
 # Current AC11 contract execution
 
-Gustavo approved the exact addendum/52 tests/CI phase; implementation locally passes200/0/5. No blocking AI code-review finding. COMC66/67 closures are Gustavo's actions, not independent teammate signatures. Browser outcome/full-story acceptance, CI publication and result review remain separate. See docs/reviews/S3-AC11-implementation-2026-11-08.md. Earlier checkpoints below are historical.
+Gustavo approved the exact addendum/52 tests/CI phase; implementation locally passes200/0/5. No blocking AI code-review finding. COMC66/67 closures are Gustavo's actions, not independent teammate signatures. PR17 implementation CI42536188957 is verified200/0/5. Browser outcome/full-story acceptance and human result review remain separate. See docs/reviews/S3-AC11-implementation-2026-11-08.md. Earlier checkpoints below are historical.
 
 # Status update
 

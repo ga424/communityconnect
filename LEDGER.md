@@ -714,3 +714,20 @@ checks:200 passes,0 failures/errors,5 original skips,exit0. Both real concurrent
 evidence: EV-S3-AC11-LOCAL-20261108; tests-first359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; final Stage5 completion SHA recorded by publication entry/Git note.
 
 risk: Remote CI and human result review remain pending. Local API only; no UI, production identity, performance/SCA or production assurance. Existing TestClient deprecation retained within protected dependencies. Future feature/merge not authorized.
+
+
+## Entry 41 — AC11 PR and verified implementation CI (November 8, 2026)
+
+artifact: PR17; CI summary/JUnit/gate controls; current state/review/publication links
+
+tool: OpenAI Codex with pinned AISE0.3.4; GitHub connector/CLI for publication and artifact retrieval.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI reverified actual downloaded artifact; human result acceptance and merge remain pending. Reviewer ticket authorship unchanged.
+
+checks: CI42536188957 at Stage5 completion `026a6c3bdc972a7cf26d6d56ffd336a30097e767`:200 pass,0 failures/errors,5 exact skips,pytest exit0,24 controls,migration and cleanup successful. The publication diff is metadata only; final publication-head CI and SHA are linked through PR/Jira and append-only Git provenance notes to avoid self-reference.
+
+evidence: EV-S3-AC11-CI-42536188957; https://github.com/ga424/communityconnect/actions/runs/42536188957; https://github.com/ga424/communityconnect/pull/17
+
+risk: No production/full-story acceptance or merge approval. Current feature/status branches preserve unmerged work; delete after verified latest-head integration.

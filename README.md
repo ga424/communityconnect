@@ -12,7 +12,7 @@ Local verification: **200 passed,zero failures/errors,five planned S6 skips**. T
 
 ## Review status
 
-Gustavo approved AC11 v1, its addendum,52 tests and CI phase. COMC65 is In Progress awaiting result review. COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Implementation PR merge is a separate decision; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
+Gustavo approved AC11 v1, its addendum,52 tests and CI phase. [PR17](https://github.com/ga424/communityconnect/pull/17) is open; COMC65 is In Progress awaiting result review. [Implementation CI](https://github.com/ga424/communityconnect/actions/runs/42536188957) verified200/0/5 from downloaded artifacts. COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Implementation PR merge is a separate decision; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
 
 ## Milestone and review context
 

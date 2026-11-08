@@ -1,6 +1,6 @@
 # Current AC11 execution checkpoint — November 8, 2026
 
-Approved AC11 v1 is locally implemented:200 passes,zero failures/errors,five exact S6 skips.52 tests frozen before code at359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; prior153 expectations/test hashes preserved. Real lock/fault cases and24 gate controls pass. New router plus main registration only; no schema/dependency/resident changes. See docs/evidence/s3-ac11/README.md and docs/reviews/S3-AC11-implementation-2026-11-08.md. PR15/16 merged; prior branches cleaned. CI publication, human result review and implementation-PR merge remain pending. Older checkpoints below are historical, not current authority.
+Approved AC11 v1 is locally implemented:200 passes,zero failures/errors,five exact S6 skips.52 tests frozen before code at359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; prior153 expectations/test hashes preserved. Real lock/fault cases and24 gate controls pass. New router plus main registration only; no schema/dependency/resident changes. See docs/evidence/s3-ac11/README.md and docs/reviews/S3-AC11-implementation-2026-11-08.md. PR15/16 merged; prior branches cleaned. PR17 is open; implementation CI42536188957 verifies200/0/5 at 026a6c3bdc972a7cf26d6d56ffd336a30097e767. Human result review and implementation-PR merge remain pending. Final publication-head CI is linked in the PR/Jira/Git note. Older checkpoints below are historical, not current authority.
 
 # Latest scope state — AC4/AC6, November 7, 2026
 
