@@ -1,0 +1,744 @@
+ Network cc-s3-ac12-20261108_default Creating 
+ Network cc-s3-ac12-20261108_default Creating 
+ Network cc-s3-ac12-20261108_default Created 
+ Network cc-s3-ac12-20261108_default Created 
+ Container cc-s3-ac12-20261108-db-1 Creating 
+ Container cc-s3-ac12-20261108-db-1 Created 
+ Container cc-s3-ac12-20261108-migrate-1 Creating 
+ Container cc-s3-ac12-20261108-migrate-1 Created 
+ Container cc-s3-ac12-20261108-db-1 Starting 
+ Container cc-s3-ac12-20261108-db-1 Started 
+ Container cc-s3-ac12-20261108-db-1 Waiting 
+ Container cc-s3-ac12-20261108-db-1 Healthy 
+ Container cc-s3-ac12-20261108-migrate-1 Starting 
+ Container cc-s3-ac12-20261108-migrate-1 Started 
+ Image cc-s3-ac12-20261108-test Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 634B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 254B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 99B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286
+#5 resolve docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286 0.1s done
+#5 DONE 0.1s
+
+#6 [internal] load build context
+#6 transferring context: 1.42MB 0.1s done
+#6 DONE 0.1s
+
+#7 [2/5] WORKDIR /workspace
+#7 CACHED
+
+#8 [3/5] COPY requirements.lock ./
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#10 [5/5] COPY . .
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.2s done
+#11 exporting manifest sha256:637b1393d26c568568550ce334672bce880887db47770df8c70821540210e150 0.0s done
+#11 exporting config sha256:d3a9b31c7698a0bc5f743464ac886c0aa21854905e2d3e73c357c10c9f8dc9a9 0.0s done
+#11 exporting attestation manifest sha256:9f9d2c453c8b4fb4bfbf242c14f2f392aaff3cd355bc4ca320f0f9a7488aa583 0.0s done
+#11 exporting manifest list sha256:75cff95af7e8fcfe906f431a7afe2031fb3538182de6b16068028ec868a1de55 0.0s done
+#11 naming to docker.io/library/cc-s3-ac12-20261108-test:latest done
+#11 unpacking to docker.io/library/cc-s3-ac12-20261108-test:latest 0.1s done
+#11 DONE 0.5s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image cc-s3-ac12-20261108-test Built 
+ Container cc-s3-ac12-20261108-migrate-1 Waiting 
+ Container cc-s3-ac12-20261108-migrate-1 Exited 
+ Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Creating 
+ Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Created 
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.2.0, pluggy-1.7.0
+rootdir: /workspace
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collected 153 items
+
+tests/test_harness.py ....                                               [  2%]
+tests/test_s1_contract.py .............................................. [ 32%]
+..........................                                               [ 49%]
+tests/test_s1_details.py ..............................                  [ 69%]
+tests/test_s1_requests.py ......                                         [ 73%]
+tests/test_s1_validation.py ........                                     [ 78%]
+tests/test_s3_community_options.py FFFFFFFFFFFFFFFFFFFFFFFFFFFF          [ 96%]
+tests/test_s6_payments.py sssss                                          [100%]
+
+=================================== FAILURES ===================================
+______________ test_ac12_manager_lists_only_assigned_communities _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90413146e0>
+
+    def test_ac12_manager_lists_only_assigned_communities(manager_client):
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f90413146e0>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+________________ test_ac12_options_multiple_assignments_sorted _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040d8ea50>
+
+    def test_ac12_options_multiple_assignments_sorted(manager_client):
+>       assert_options(manager_client, "101", [MOUNTAIN, PINE])
+
+tests/test_s3_community_options.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040d8ea50>
+caller = '101'
+expected = [{'id': 1, 'name': 'Mountain Ridge'}, {'id': 2, 'name': 'Pine Hollow'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+___________________ test_ac12_known_user_without_assignments ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403896d0>
+
+    def test_ac12_known_user_without_assignments(manager_client):
+>       assert_options(manager_client, "103", [])
+
+tests/test_s3_community_options.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f90403896d0>
+caller = '103', expected = []
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+_____________ test_ac12_nonmanager_roles_have_no_options[resident] _____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403cab70>
+role = 'resident'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_nonmanager_roles_have_no_options(manager_client, role):
+        with connection() as conn:
+            conn.execute("INSERT INTO memberships VALUES (104,3,%s,%s)",
+                         (role, 31 if role == "resident" else None))
+>       assert_options(manager_client, "104", [])
+
+tests/test_s3_community_options.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f90403cab70>
+caller = '104', expected = []
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+___________ test_ac12_nonmanager_roles_have_no_options[board_member] ___________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f904036e210>
+role = 'board_member'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_nonmanager_roles_have_no_options(manager_client, role):
+        with connection() as conn:
+            conn.execute("INSERT INTO memberships VALUES (104,3,%s,%s)",
+                         (role, 31 if role == "resident" else None))
+>       assert_options(manager_client, "104", [])
+
+tests/test_s3_community_options.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f904036e210>
+caller = '104', expected = []
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+______________ test_ac12_nonmanager_roles_have_no_options[admin] _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9041315c70>
+role = 'admin'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_nonmanager_roles_have_no_options(manager_client, role):
+        with connection() as conn:
+            conn.execute("INSERT INTO memberships VALUES (104,3,%s,%s)",
+                         (role, 31 if role == "resident" else None))
+>       assert_options(manager_client, "104", [])
+
+tests/test_s3_community_options.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9041315c70>
+caller = '104', expected = []
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+___________________ test_ac12_reject_invalid_caller[missing] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9041304830>
+caller = None
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+____________________ test_ac12_reject_invalid_caller[empty] ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040d8c9b0>
+caller = ''
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+____________________ test_ac12_reject_invalid_caller[zero] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040378350>
+caller = '0'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+__________________ test_ac12_reject_invalid_caller[negative] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f904130fad0>
+caller = '-1'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+________________ test_ac12_reject_invalid_caller[leading-zero] _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f904037b890>
+caller = '0102'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+____________________ test_ac12_reject_invalid_caller[plus] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040341f40>
+caller = '+102'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+___________________ test_ac12_reject_invalid_caller[decimal] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9041305b20>
+caller = '102.0'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+____________________ test_ac12_reject_invalid_caller[text] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403a8d70>
+caller = 'manager'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+____________________ test_ac12_reject_invalid_caller[space] ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403ca810>
+caller = ' 102'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+_______________ test_ac12_reject_invalid_caller[unicode-digits] ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403f24e0>
+caller = '²'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+___________________ test_ac12_reject_invalid_caller[unknown] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9041336a50>
+caller = '9999'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+______________ test_ac12_reject_invalid_caller[outside-db-range] _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040389100>
+caller = '2147483648'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+__________________ test_ac12_reject_invalid_caller[overlong] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9041306780>
+caller = '99999999999999999999999999999999999999999999999999'
+
+    @pytest.mark.parametrize("caller", [
+        pytest.param(None, id="missing"), pytest.param("", id="empty"),
+        pytest.param("0", id="zero"), pytest.param("-1", id="negative"),
+        pytest.param("0102", id="leading-zero"), pytest.param("+102", id="plus"),
+        pytest.param("102.0", id="decimal"), pytest.param("manager", id="text"),
+        pytest.param(" 102", id="space"), pytest.param("\u00b2", id="unicode-digits"),
+        pytest.param("9999", id="unknown"),
+        pytest.param("2147483648", id="outside-db-range"),
+        pytest.param("9" * 50, id="overlong"),
+    ])
+    def test_ac12_reject_invalid_caller(manager_client, caller):
+        response = options(manager_client, caller)
+>       assert response.status_code == 401
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:86: AssertionError
+_____________ test_ac12_mixed_roles_offer_only_manager_assignments _____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040343f20>
+
+    def test_ac12_mixed_roles_offer_only_manager_assignments(manager_client):
+        with connection() as conn:
+            conn.execute("""INSERT INTO memberships VALUES
+                (105,1,'manager',NULL), (105,2,'resident',21)""")
+>       assert_options(manager_client, "105", [MOUNTAIN])
+
+tests/test_s3_community_options.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040343f20>
+caller = '105', expected = [{'id': 1, 'name': 'Mountain Ridge'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+___________________ test_ac12_deleted_assignment_disappears ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
+
+    def test_ac12_deleted_assignment_disappears(manager_client):
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+________________ test_ac12_role_change_removes_option[resident] ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f903fd47aa0>
+role = 'resident'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_role_change_removes_option(manager_client, role):
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f903fd47aa0>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+______________ test_ac12_role_change_removes_option[board_member] ______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f903fd46900>
+role = 'board_member'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_role_change_removes_option(manager_client, role):
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f903fd46900>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+_________________ test_ac12_role_change_removes_option[admin] __________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
+role = 'admin'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac12_role_change_removes_option(manager_client, role):
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+______________ test_ac12_added_assignment_appears_without_restart ______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040378cb0>
+
+    def test_ac12_added_assignment_appears_without_restart(manager_client):
+>       assert_options(manager_client, "103", [])
+
+tests/test_s3_community_options.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040378cb0>
+caller = '103', expected = []
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+___________________ test_ac12_reads_leave_database_unchanged ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040d8f530>
+
+    def test_ac12_reads_leave_database_unchanged(manager_client):
+        before = snapshot()
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040d8f530>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+_______________ test_ac12_manager_does_not_gain_resident_access ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f90403b9610>
+
+    def test_ac12_manager_does_not_gain_resident_access(manager_client):
+>       assert_options(manager_client, "101", [MOUNTAIN, PINE])
+
+tests/test_s3_community_options.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f90403b9610>
+caller = '101'
+expected = [{'id': 1, 'name': 'Mountain Ridge'}, {'id': 2, 'name': 'Pine Hollow'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+____________ test_ac12_manager_unit_link_does_not_change_authority _____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f9040343470>
+
+    def test_ac12_manager_unit_link_does_not_change_authority(manager_client):
+        with connection() as conn:
+            conn.execute("UPDATE memberships SET unit_id=31 WHERE user_id=102 AND community_id=3")
+>       assert_options(manager_client, "102", ELM)
+
+tests/test_s3_community_options.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+client = <starlette.testclient.TestClient object at 0x7f9040343470>
+caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
+
+    def assert_options(client, caller, expected):
+        response = options(client, caller)
+>       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_community_options.py:50: AssertionError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------- generated xml file: /workspace/artifacts/pytest.xml --------------
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_s6_payments.py:17: AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:31: AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:44: AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:58: AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:69: AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+FAILED tests/test_s3_community_options.py::test_ac12_manager_lists_only_assigned_communities
+FAILED tests/test_s3_community_options.py::test_ac12_options_multiple_assignments_sorted
+FAILED tests/test_s3_community_options.py::test_ac12_known_user_without_assignments
+FAILED tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[resident]
+FAILED tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[board_member]
+FAILED tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[admin]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[missing]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[empty]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[zero]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[negative]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[leading-zero]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[plus]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[decimal]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[text]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[space]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unicode-digits]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unknown]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[outside-db-range]
+FAILED tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[overlong]
+FAILED tests/test_s3_community_options.py::test_ac12_mixed_roles_offer_only_manager_assignments
+FAILED tests/test_s3_community_options.py::test_ac12_deleted_assignment_disappears
+FAILED tests/test_s3_community_options.py::test_ac12_role_change_removes_option[resident]
+FAILED tests/test_s3_community_options.py::test_ac12_role_change_removes_option[board_member]
+FAILED tests/test_s3_community_options.py::test_ac12_role_change_removes_option[admin]
+FAILED tests/test_s3_community_options.py::test_ac12_added_assignment_appears_without_restart
+FAILED tests/test_s3_community_options.py::test_ac12_reads_leave_database_unchanged
+FAILED tests/test_s3_community_options.py::test_ac12_manager_does_not_gain_resident_access
+FAILED tests/test_s3_community_options.py::test_ac12_manager_unit_link_does_not_change_authority
+============ 28 failed, 120 passed, 5 skipped, 1 warning in 21.39s =============
+

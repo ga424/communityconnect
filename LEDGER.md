@@ -559,3 +559,20 @@ checks: All107 historical frozen hashes match before allowed changes; no app/tes
 evidence: EV-S3-AC12-OWNER-CLEARANCE-20261108; COMC62/63/64
 
 risk: Owner-confirmed completion is not independently authored peer evidence; result review and merge remain separate. Synthetic local scope only.
+
+
+## Entry 32 — AC12 tests-first baseline (November 8, 2026)
+
+artifact: new28-case file and actual red JUnit
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Checked fixtures/foreign keys, exact IDs and assertions against approved packet; original tests unchanged. Raw Latin1 header reaches API; no client/setup errors.
+
+checks: Docker full run collected153:120 pass,28 semantic404 failures,0 errors,5 exact old skips; real exit1. All new IDs match proposal.
+
+evidence: EV-S3-AC12-RED-20261108
+
+risk: Endpoint intentionally absent at this checkpoint; no green result or independent teammate authorship claimed. Freeze this file before implementation.
