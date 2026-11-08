@@ -919,14 +919,20 @@
       "selection": "latest merged; previews excluded by user decision"
     },
     "local_review_preview": {
-      "status": "running_local_only",
+      "status": "not_running_at_latest_review_check",
       "url": "http://127.0.0.1:8765",
       "project": "cc-review-preview",
       "source_commit": "354960fb81b55c2081dc3c5264a225be48930cd8",
       "evidence": "EV-LOCAL-PREVIEW-20261107",
       "approval": "DEC-LOCAL-PREVIEW-20261107",
       "product_ui_delivered": false,
-      "next_task_approval_inferred": false
+      "next_task_approval_inferred": false,
+      "latest_observation": {
+        "at": "2026-11-08T06:09:02.953753+00:00",
+        "http_probe": "127.0.0.1:8765/health connection failed, curl exit7",
+        "docker_ps": "No cc-review-preview containers running; unrelated containers present",
+        "action": "No restart, shutdown or preview file changes performed"
+      }
     }
   }
 }

@@ -506,3 +506,5 @@ checks: Exact-head CI42452643892 reused and reverified at ff6b0f9fd799e160079c3f
 evidence: EV-PR13-REVIEW-20261108; EV-S3-AC12-PROPOSAL-20261108; COMC-10/62/39/44/4
 
 risk: S3 scope/contract/test decisions pending. API-only increment cannot complete browser AC12/S3; M1 S1 boundary retained. Production identity, assignment workflow and real volumes excluded. Six historical validator warnings retained; new28 tests and148/0/5 phase are proposals only.
+
+Entry28 recording checkpoint: a38374377ed3a42c4c573f029153203123a80648; preparation PR14 opened. Subsequent read-only preview health check returned curl exit7 and docker ps showed no preview containers running. No preview/container mutation was performed. Current state now records this observation instead of retaining a stale running status. This follow-up changes review/state/provenance only. Jira COMC10/62/39/44/4 descriptions link the concrete packet and preserve named decisions as pending. Final head/CI recorded in Git notes.
