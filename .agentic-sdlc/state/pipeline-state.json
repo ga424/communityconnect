@@ -670,7 +670,7 @@
       "PR8 remains open; individual behavior/test/provenance acceptance is not inferred from a GitHub approval.",
       "AC5 verification packet awaits approval and integrated-main source; separate AC3 acceptance, full-story reviews, S6 and release assurance remain pending."
     ],
-    "last_updated": "2026-11-08T04:43:49.329712+00:00",
+    "last_updated": "2026-11-08T04:52:37.776933+00:00",
     "scoped_work": {
       "issue": "COMC-57",
       "packet": "AC-4 v1",
@@ -766,6 +766,16 @@
       "latest_merged_observed_at": "2026-11-07T21:44:25.510050+00:00",
       "evidence": "EV-AISE-LATEST-MERGED-20261107",
       "selection": "latest merged; previews excluded by user decision"
+    },
+    "local_review_preview": {
+      "status": "running_local_only",
+      "url": "http://127.0.0.1:8765",
+      "project": "cc-review-preview",
+      "source_commit": "354960fb81b55c2081dc3c5264a225be48930cd8",
+      "evidence": "EV-LOCAL-PREVIEW-20261107",
+      "approval": "DEC-LOCAL-PREVIEW-20261107",
+      "product_ui_delivered": false,
+      "next_task_approval_inferred": false
     }
   }
 }
