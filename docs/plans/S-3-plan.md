@@ -1,17 +1,13 @@
-# S-3 sequence and review gates
+# S-3 current execution sequence
 
-PR15's AC12 options API is implemented and reviewed at8f993ab; final-head CI42529654327 verifies148 passes and five unchanged skips. No blocking bounded AI-review findings; human result/merge decision remains pending. COMC63/64 are Done with actual Gustavo closure attribution preserved.
+PR14/15/16 are merged into main7d8174e. AC12 options API is integrated; merged-head CI42534349053 verifies148 passes and five exact S6 skips. Old merged branch names have been cleaned up; an in-flight metadata commit was preserved and incorporated without data loss.
 
-| Order | Bounded work | State |
+| Order | Scope | State |
 | --- | --- | --- |
-| 1 | AC12 options contract and28-case plan | Scope approved; prior owner completion confirmation recorded |
-| 2 | COMC62 / PR15 options API | Implemented, CI verified and AI reviewed; PR open, human result/merge decision pending |
-| 3 | COMC65 / S3-AC11 v1 selected-community request API | [Concrete packet](S-3-AC11-approval.md) proposed;52 tests,200/0/5 target; not implemented or approved |
-| 3a | COMC66 Kundan contract review | Done in Jira by Gustavo; independent author disposition not supplied |
-| 3b | COMC67 Sandeep test-plan review | Done in Jira by Gustavo; independent author disposition not supplied |
-| 4 | Browser selector and selected-request view | Separate future UI/Playwright packet; not authorized |
-| 5 | S3 acceptance | Full-story human/browser evidence pending |
+| 1 | COMC62 AC12 options API | Merged; bounded integration complete, browser/full-story acceptance separate |
+| 2 | COMC66/67 AC11 reviews | Done by Gustavo; no independent reviewer authorship claimed |
+| 3 | COMC65 AC11 v1 | Explicitly approved; tests-first execution starting,52 cases and200/0/5 target |
+| 4 | Browser selector/selected requests | Separate future packet; unapproved |
+| 5 | Full S3 acceptance | Human/browser evidence pending |
 
-Implementation order: PR15 integration → explicit AC11 scope approval (review-ticket closures recorded with actual attribution) → undo/tests-first checkpoint → AC11 implementation and result review → separately approved browser increment. No sprint dates or capacity invented. M1 scope and original traceability stay unchanged. Options do not grant request access. Payments, announcements, assignment administration and production identity stay separate.
-
-Both PR14/15 are open at this review; retain their branches until verified merge and cleanup checks. Automatic post-merge deletion is enabled. The AC11 preparation PR is stacked on PR15; retarget it to main during integration cleanup if needed.
+Only one selected-community read endpoint is authorized. M1 S1-only submission scope remains. No next task, UI, production identity/payments, deployment or merge of the eventual implementation PR is implied.

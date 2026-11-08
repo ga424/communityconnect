@@ -663,3 +663,20 @@ checks: Live Jira status/history/comments and GitHub PR timelines read; current 
 evidence: EV-AC11-REVIEW-TICKETS-DONE-20261108
 
 risk: Ticket completion does not silently approve a new implementation or merge. Preserve open branches until actual verified merge; keep closure attribution accurate. Seven historical structural warnings retained.
+
+
+## Entry 38 — AC11 approval, integration and undo checkpoint (November 8, 2026)
+
+artifact: approved AC11 addendum, exact approval prompt, baseline and integration/cleanup evidence
+
+tool: OpenAI Codex with pinned AISE0.3.4; exact model build/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: Gustavo explicitly approved AC11 v1 after the concrete addendum/52-test/CI question. PR16/15 had already merged via GitHub account abreugus; no assistant merge invocation. COMC66/67 Done closures retain owner attribution; no independent reviewer signature invented.
+
+checks: Latest merged-head CI42534349053 artifact148/0/5 exit0,24 controls and migrations/cleanup verified; main tree matches. Old merged branch names removed after ancestry/no-open-PR/clean-worktree checks. In-flight status commit preserved on a new branch. All116 preparation hashes matched before three explicit exceptions; new execution baseline captured. Docker29.9.2 available; five unrelated Hadoop containers inventoried.
+
+evidence: EV-S3-AC11-APPROVAL-20261108; EV-PR15-16-INTEGRATION-20261108; DEC-S3-AC11-EXECUTE-20261108
+
+risk: No new behavior/test/CI change yet. Tests-first execution and actual concurrency evidence remain to be produced. Result acceptance and feature-PR merge remain separate.

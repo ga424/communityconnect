@@ -23,3 +23,6 @@ The user requires post-merge branch deletion. Keep GitHub delete_branch_on_merge
 
 ## Approved later local increment — S3-AC12 v1
 Gustavo approved the options-only packet, addendum,28 new tests and additive148/0/5 CI phase. His subsequent completion confirmation and COMC63/64 closures clear this bounded implementation; record those closures as Gustavo's actions, not independently authored teammate sign-offs. Follow docs/plans/S-3-AC12-approval.md and the new S3-AC12 addendum. M1's S1-only submission boundary remains. No AC11, browser UI, production identity or merge is authorized; preserve all original tests and controls.
+
+## Approved later local increment — S3-AC11 v1
+Gustavo explicitly approved S3-AC11 v1, its addendum,52 tests and additive200/0/5 CI phase. PR15/16 are integrated; COMC66/67 are Done by Gustavo with attribution preserved. Follow docs/plans/S-3-AC11-approval.md and the new approved AC11 addendum. Allow only its listed files and tests-first sequence. M1 scope remains S1-only; no UI, production identity or next-task/implementation-PR merge is authorized.
