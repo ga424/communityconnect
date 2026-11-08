@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-11-08T05:27:30.575187+00:00",
+  "pr10": {
+    "url": "https://github.com/ga424/communityconnect/pull/10",
+    "merged": true,
+    "merge_commit": "b41387f1c63c0b469b2c17026095c47d43932011",
+    "head": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
+    "merged_at": "2026-11-08T05:25:20Z",
+    "actor": "abreugus",
+    "execution_attribution": "Merge observed in GitHub; assistant did not invoke PR10 merge"
+  },
+  "pr9": {
+    "merged_via_ancestor_integration": true,
+    "head": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+    "merged_at": "2026-11-08T05:25:22Z"
+  },
+  "merged_head_ci": {
+    "run": 42450702977,
+    "url": "https://github.com/ga424/communityconnect/actions/runs/42450702977",
+    "head": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
+    "conclusion": "success",
+    "downloaded_junit_gate": "PASS",
+    "counts": {
+      "passed": 120,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 5
+    },
+    "pytest_exit": 0,
+    "junit_sha256": "4c91eb446b9ac998e8f269e39169ac9ba79e5c0fcdd4eddc5e31e32863432a9c"
+  },
+  "cleanup": {
+    "docs/COMC-58-ac5-review": "remote automatically deleted and clean local branch deleted after ancestry/no-open-PR checks",
+    "verify/COMC-58-ac5": "remote was automatically deleted at PR10 merge, then an in-flight audit addendum push recreated it; renamed remotely/locally to docs/COMC-58-audit-followup to preserve unmerged work and remove the merged branch name",
+    "preserved_audit_tip": "a9330b87c114fdbe2097fb07582360839aadeed0",
+    "application_preview": "still running from unchanged PR8 bytes"
+  },
+  "audit_scope": "Append complete superseding path record; reconcile observed merge/cleanup. No executable/test/CI change or next feature. Fresh audit checkout starts at merged main, preserving the audit tip as ancestry."
+}
