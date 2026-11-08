@@ -4,15 +4,15 @@ A community management portal for residents, board members, community managers a
 
 ## Current increment
 
-M1's S1 resident request creation, validation, self-listing and details are merged. This branch adds the approved later-product **S3-AC12 community-options API**: `GET /manager/communities` returns only the caller's current manager assignments, sorted by community ID, with exactly id/name fields. Known callers without manager assignments receive an empty array; missing/invalid/unknown callers receive401. A valid unit link does not change manager authority. All reads preserve stored data and existing resident access behavior.
+S1 resident request creation, validation, self-listing and details are merged. S3-AC12 manager community options are merged in PR15, along with the AC11 preparation packet in PR16. This branch implements the approved **S3-AC11 selected-community requests API**: `GET /manager/communities/{community_id}/requests` returns all residents' requests in exactly one currently assigned community, with seven public fields ordered by created_at then ID descending.
 
-Local verification passed **148 tests, zero failures/errors and five planned S6 skips**. The28 new cases were committed before implementation; their actual red baseline had28 missing-route failures and all120 previous passes. [Execution evidence](docs/evidence/s3-ac12/README.md), [approved packet](docs/plans/S-3-AC12-approval.md), [addendum](docs/design/S-3-AC12-contract-addendum.md) and [supplemental traceability](docs/traceability/S-3-AC12.csv) describe this bounded API increment. It is not merged yet. Selected-community request reads (AC11), browser selector, production login/MFA and assignment administration remain future work.
+Each read checks current manager membership and holds it stable through response validation. Invalid/unknown callers receive401; invalid, absent or unassigned communities and nonmanagers receive404; an authorized empty community returns200 `[]`. Responses use no-store. Reads preserve stored data and resident access behavior. See the [approved addendum](docs/design/S-3-AC11-contract-addendum.md), [execution evidence](docs/evidence/s3-ac11/README.md) and [supplemental traceability](docs/traceability/S-3-AC11.csv).
 
-Gustavo approved scope and confirmed the two review tickets completed; Jira attributes their closures to him. Independently authored teammate sign-offs were not supplied. Result review and merge remain separate; no production release is authorized. Fixtures are synthetic, the identity header is local/test-only, and S6 payments remain intentionally unbuilt.
+Local verification: **200 passed,zero failures/errors,five planned S6 skips**. The52 new tests were committed first with52 real missing-route failures and148 original passes. They are unchanged in the green run. The CI phase requires the same exact205 cases and all previous integrity checks.
 
-## Next review and approval
+## Review status
 
-[PR15 review](docs/reviews/PR-15-and-S3-AC11-2026-11-08.md) found no blocking bounded code defect; final PR-head CI verifies the current148/0/5 phase. PR15 remains open for human result/merge decision. The [next packet, S3-AC11 v1](docs/plans/S-3-AC11-approval.md), proposes one selected-community request endpoint and52 tests; it is not implemented or approved. Gustavo owns COMC65, with COMC66/67 review tickets now Done by Gustavo; independent reviewer-authored dispositions were not supplied. Separate AC11 scope and PR15 merge decisions remain pending. The proposed200/0/5 phase is a future target, not the current result.
+Gustavo approved AC11 v1, its addendum,52 tests and CI phase. COMC65 is In Progress awaiting result review. COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Implementation PR merge is a separate decision; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
 
 ## Milestone and review context
 
@@ -30,13 +30,13 @@ docker compose run --build --rm test
 
 The last line is the **one command for all tests**: it starts disposable PostgreSQL, applies Liquibase migrations, builds the Python 3.12 test image and runs pytest. Test fixture credentials in Compose are public, local-only examples; no database port is published. Tests clear only the dedicated `cc_test` database. Do not point this scaffold at shared data.
 
-Current expected result: **148 passes, zero failures/errors, five exact S6 skips** (153 cases, pytest exit0): the original120 passing S1/harness cases plus28 AC12 contracts. S6 retains its AC18–AC22 skip reasons.
+Current expected result: **200 passes, zero failures/errors, five exact S6 skips** (205 cases, pytest exit0):120 S1/harness passes,28 AC12 passes and52 AC11 passes. S6 retains its AC18–AC22 skip reasons.
 
-The new gate requires exactly the frozen125 original expectations plus28 new passes, matching original file hashes and the tests-first AC12 hash. It rejects missing/duplicate/extra cases, failures/errors, changed skips and altered manifests/files. The24 adversarial controls exercise the new gate; historical gates remain unchanged and run against their historical reports.
+The new gate requires exactly the frozen153 previous expectations plus52 new passes, matching previous file hashes and the tests-first AC11 hash. It rejects missing/duplicate/extra cases, failures/errors, changed skips and altered manifests/files. The24 adversarial controls exercise the new gate; historical gates remain unchanged and run against their historical reports.
 
 ```bash
-python scripts/verify_s3_ac12_baseline.py
-python scripts/verify_s3_ac12_baseline.py --self-test
+python scripts/verify_s3_ac11_baseline.py
+python scripts/verify_s3_ac11_baseline.py --self-test
 # Compatibility checks use historical results, not the expanded current report:
 python scripts/verify_s1_baseline.py --junit docs/evidence/s1-closeout/fresh-clone-junit.xml
 python scripts/verify_ac1_baseline.py --junit docs/evidence/ac1/local-junit.xml
@@ -69,7 +69,7 @@ The [pinned AISE source](docs/aise/FRAMEWORK.md) includes its deterministic vali
 - Sandeep: review fixtures/migration recovery, both test specifications and fresh-clone execution.
 - Gustavo: maintain provenance/traceability and coordinate integration and peer review.
 
-Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This workflow checks migrations, AISE structure, the sensitive-data guard and the approved S-1 plus S3-AC12 contract phase; it is not a production security assessment.
+Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This workflow checks migrations, AISE structure, the sensitive-data guard and the approved S-1 plus S3-AC12/AC11 contract phase; it is not a production security assessment.
 
 Private interviews, participant identities, consent/recording files and credentials are excluded from this public repository. Team contribution signatures and final submission are not fabricated by automation.
 

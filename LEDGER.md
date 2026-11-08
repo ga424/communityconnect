@@ -697,3 +697,20 @@ checks: Docker collected205:148 passed,52 semantic missing-route failures,zero e
 evidence: EV-S3-AC11-RED-20261108
 
 risk: Red is expected missing behavior, not completion. Concurrency/fault probes fail at missing-route assertion before workers; actual lock evidence awaits implementation. No app/CI changes in this checkpoint.
+
+
+## Entry 40 — AC11 implementation and local verification (November 8, 2026)
+
+artifact: new manager_requests router and main registration; additive AC11 verifier/manifest/CI; evidence, traceability, review and current AISE state
+
+tool: OpenAI Codex, pinned AISE0.3.4; exact model/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI reviewed parameterized authorization/query, transaction scope through every row, exact projection and error precedence; no blocking bounded finding. Frozen tests were unchanged. Independent human result review remains pending.
+
+checks:200 passes,0 failures/errors,5 original skips,exit0. Both real concurrent membership mutations blocked through final-row validation and subsequent reads denied. Fault500/rollback/recovery cases pass.24 new gate controls and all historical gates/controls pass. Migration update/repeat/rollback/reapply pass.116 protected hashes and prior ledger prefixes match; source/structure/whitespace pass with seven historical warnings. Dedicated Compose resources removed; five unrelated Hadoop containers preserved.
+
+evidence: EV-S3-AC11-LOCAL-20261108; tests-first359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; final Stage5 completion SHA recorded by publication entry/Git note.
+
+risk: Remote CI and human result review remain pending. Local API only; no UI, production identity, performance/SCA or production assurance. Existing TestClient deprecation retained within protected dependencies. Future feature/merge not authorized.

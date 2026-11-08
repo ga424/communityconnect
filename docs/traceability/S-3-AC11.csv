@@ -1,0 +1,2 @@
+Story,AC,Source evidence,Assumption,Test,Delivered boundary,Pending boundary
+S-3,AC-11,E-3,A-2,tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community,Local selected-community requests API verified,Browser selection outcome and full-story acceptance

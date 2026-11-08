@@ -1,0 +1,44 @@
+{
+  "recorded_at": "2026-11-08T23:32:07.258422+00:00",
+  "scope": "S3-AC11 v1 local API only",
+  "undo_commit": "85547272a0661c1eaadb4bded9cdc50e620603fd",
+  "tests_first_commit": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
+  "test_sha256": "ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38",
+  "passed": 200,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 5,
+  "total": 205,
+  "pytest_exit": 0,
+  "new_tests_passed": 52,
+  "original_expectations_preserved": 153,
+  "gate_defects_rejected": 24,
+  "historical_gates": "AC1,AC2,S1,AC12 reports and self-tests passed",
+  "protected_paths_verified": 116,
+  "prior_ledger_prefixes_verified": 7,
+  "application_change": "new manager_requests router; main import/register only",
+  "concurrency_evidence": "Both delete and non-key role change observed pg_blocking_pids containing API PID during final-row validation; later read denied after commit.",
+  "fault_evidence": "Injected validation and connection faults remain500; validation rollback releases membership lock; recovery passes.",
+  "migration_rehearsal": "update, repeated update, rollback-count1 and reapply all passed; exit0",
+  "ci": "pending PR",
+  "human_result_review": "pending",
+  "production_release": false,
+  "existing_warnings": [
+    "Seven historical AISE record warnings retained without editing prior records.",
+    "Existing Starlette/httpx TestClient deprecation; no dependency changes in approved scope."
+  ],
+  "cleanup": {
+    "dedicated_project": "cc-s3-ac11-20261108",
+    "removed": true,
+    "unrelated_containers_preserved": [
+      "historyserver",
+      "nodemanager",
+      "resourcemanager",
+      "datanode",
+      "namenode"
+    ]
+  },
+  "source_guard": "passed",
+  "structural_check": "passed with seven pre-existing warnings",
+  "whitespace_check": "passed"
+}

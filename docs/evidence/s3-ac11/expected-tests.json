@@ -1,0 +1,694 @@
+{
+  "packet": "S3-AC11 v1",
+  "source_ac12_manifest_sha256": "d98bb241fa86b1968c3496a781ca3ffd41f3f4c9f01a57cba714b1591e9ac9c2",
+  "tests_first_commit": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
+  "new_test_ids": [
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community",
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_all_residents_in_selected_community",
+    "tests/test_s3_selected_requests.py::test_ac11_assigned_empty_community_returns_empty_array",
+    "tests/test_s3_selected_requests.py::test_ac11_switch_has_no_remembered_context",
+    "tests/test_s3_selected_requests.py::test_ac11_interleaved_managers_stay_isolated",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[missing]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[empty]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[negative]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[leading-zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[plus]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[decimal]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[text]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[space]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unicode-digits]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unknown]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[outside-db-range]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[overlong]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[negative]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[leading-zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[plus]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[decimal]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[text]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[space]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unicode-digits]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[outside-db-range]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[overlong]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[nonexistent]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unassigned]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[max-valid-absent]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[missing]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[unknown]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[malformed]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[resident]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[board_member]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[admin]",
+    "tests/test_s3_selected_requests.py::test_ac11_known_unassigned_caller_denied",
+    "tests/test_s3_selected_requests.py::test_ac11_mixed_roles_do_not_grant_manager_access",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_removal_denies_later_read",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[resident]",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[board_member]",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[admin]",
+    "tests/test_s3_selected_requests.py::test_ac11_new_assignment_authorizes_next_read",
+    "tests/test_s3_selected_requests.py::test_ac11_unit_link_does_not_change_authority",
+    "tests/test_s3_selected_requests.py::test_ac11_public_fields_order_status_and_utc",
+    "tests/test_s3_selected_requests.py::test_ac11_reads_preserve_application_tables",
+    "tests/test_s3_selected_requests.py::test_ac11_resident_routes_remain_self_only",
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[delete]",
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[role-change]",
+    "tests/test_s3_selected_requests.py::test_ac11_validation_failure_releases_transaction",
+    "tests/test_s3_selected_requests.py::test_ac11_database_failure_is_not_authorization_denial"
+  ],
+  "test_file_sha256": {
+    "tests/conftest.py": "ca32a3e1b13127824973196191596feae373a35da124dd1811cfa011fcdbba78",
+    "tests/s6_harness.py": "03a9e3f2c2f8f26ccf70e8c530cf988d2c87a924eedcb05eab94e79d8502aa47",
+    "tests/test_harness.py": "dc065574d8d0c1281a23e962e22a77d92a15dc2bf148b7d70d4db4137c91bebd",
+    "tests/__init__.py": "61e5aeaa688c10609a587a5cbe067a47a373a278dea9a049254799ab03237d5f",
+    "tests/test_s1_contract.py": "f89f77be5c617ce144ad5e2d1c1d89282fd80cff9062b7d2c999a8cbf8bb57e8",
+    "tests/test_s1_requests.py": "b096a85081f78d12d9f3e07cdaad840623b7a46d1fa900e33b8313e62dc695ef",
+    "tests/test_s6_payments.py": "f299482824d293da820fbcd071eef0e2268715837bdf5c6f6b76f98e4eb26cf8",
+    "tests/test_s1_validation.py": "112965ee3e98fafd3981bfe6085c0e791ebaaba8c06a532fac92ef749d46455e",
+    "tests/test_s1_details.py": "e5449fa0885fc7e3c8bd14b552fc56a4775ac705effecb695a710bf5fdd60ce5",
+    "tests/test_s3_community_options.py": "b9455f1fa62b2ec439956be42dc972d31e8e5fae52117980c770d615bb70ca3d",
+    "tests/test_s3_selected_requests.py": "ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38"
+  },
+  "tests": {
+    "tests/test_harness.py::test_health_identifies_nonproduction_scaffold": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_liquibase_applied_schema_and_seeded_synthetic_memberships": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_schema_rejects_resident_unit_in_another_community": {
+      "outcome": "passed"
+    },
+    "tests/test_harness.py::test_schema_rejects_resident_without_unit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[missing-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[missing-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[empty-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[empty-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[negative-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[negative-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[leading-zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[leading-zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[plus-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[plus-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[decimal-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[decimal-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[text-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[text-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[space-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[space-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[unknown-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[unknown-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[outside-db-range-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_identity[outside-db-range-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_identity_precedes_path_and_body[POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_identity_precedes_path_and_body[GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[negative-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[negative-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[leading-zero-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[leading-zero-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[text-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[text-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unicode-digits-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unicode-digits-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[decimal-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[decimal-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unknown-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[unknown-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[outside-db-range-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[outside-db-range-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[other-community-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_unavailable_community[other-community-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_access_precedes_body": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[board_member-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[board_member-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[manager-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[manager-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[admin-POST]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_nonresident[admin-GET]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[malformed-json]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[null]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[array]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[string]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[boolean]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-fields]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-description]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[missing-category]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[category-type]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[description-type]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-unit]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-caller]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_invalid_body[extra-status]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[empty]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[ascii-whitespace]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_description_precedes_category[unicode-whitespace]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_rejects_description_over_limit_before_category": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[plumbing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[Plumbing ]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_category_matches_exactly[not-a-category]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_trims_unicode_description_at_limit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_lists_tied_timestamps_by_id_descending": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_contract.py::test_ac1_contract_lists_only_submitter_even_for_same_unit": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac2_blank_description_rejected_and_list_unchanged": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac3_other_community_resident_does_not_see_request": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status": {
+      "outcome": "passed"
+    },
+    "tests/test_s6_payments.py::test_ac18_schedule_returned_without_token": {
+      "outcome": "skipped",
+      "reason": "AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac19_due_day_charges_exactly_once": {
+      "outcome": "skipped",
+      "reason": "AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac20_restart_mid_run_keeps_one_payment": {
+      "outcome": "skipped",
+      "reason": "AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac21_manual_payment_prevents_scheduled_charge": {
+      "outcome": "skipped",
+      "reason": "AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s6_payments.py::test_ac22_declined_charge_retried_after_delay": {
+      "outcome": "skipped",
+      "reason": "AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[nul]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-high]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_rejects_unstorable_description[unpaired-low]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_invalid_description_precedes_category": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_accepts_supplementary_unicode": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_identity_precedes_unstorable_description": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_membership_precedes_unstorable_description": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_validation.py::test_ac2_length_precedes_unstorable_description": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[missing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[empty]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[negative]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[leading-zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[plus]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[decimal]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[text]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[space]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[unknown]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_invalid_caller[outside-db-range]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[negative]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[leading-zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[text]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[unicode-digits]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[decimal]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[unknown]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_unavailable_id[outside-db-range]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_identity_precedes_path": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_nonresident_owner[board_member]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_nonresident_owner[manager]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_nonresident_owner[admin]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_membership_elsewhere_does_not_authorize": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_owner_in_two_communities": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_other_submitter[same-community]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_reject_other_submitter[same-unit]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_returns_persisted_status[open]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_returns_persisted_status[in-progress]": {
+      "outcome": "passed"
+    },
+    "tests/test_s1_details.py::test_ac4_details_returns_persisted_status[resolved]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_added_assignment_appears_without_restart": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_deleted_assignment_disappears": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_known_user_without_assignments": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_manager_does_not_gain_resident_access": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_manager_lists_only_assigned_communities": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_manager_unit_link_does_not_change_authority": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_mixed_roles_offer_only_manager_assignments": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[admin]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[board_member]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[resident]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_options_multiple_assignments_sorted": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reads_leave_database_unchanged": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[decimal]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[empty]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[leading-zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[missing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[negative]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[outside-db-range]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[overlong]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[plus]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[space]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[text]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unicode-digits]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unknown]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[admin]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[board_member]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[resident]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_all_residents_in_selected_community": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_assigned_empty_community_returns_empty_array": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_switch_has_no_remembered_context": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_interleaved_managers_stay_isolated": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[missing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[empty]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[negative]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[leading-zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[plus]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[decimal]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[text]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[space]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unicode-digits]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unknown]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[outside-db-range]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[overlong]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[negative]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[leading-zero]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[plus]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[decimal]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[text]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[space]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unicode-digits]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[outside-db-range]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[overlong]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[nonexistent]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unassigned]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[max-valid-absent]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[missing]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[unknown]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[malformed]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[resident]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[board_member]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[admin]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_known_unassigned_caller_denied": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_mixed_roles_do_not_grant_manager_access": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_committed_removal_denies_later_read": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[resident]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[board_member]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[admin]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_new_assignment_authorizes_next_read": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_unit_link_does_not_change_authority": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_public_fields_order_status_and_utc": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_reads_preserve_application_tables": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_resident_routes_remain_self_only": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[delete]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[role-change]": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_validation_failure_releases_transaction": {
+      "outcome": "passed"
+    },
+    "tests/test_s3_selected_requests.py::test_ac11_database_failure_is_not_authorization_denial": {
+      "outcome": "passed"
+    }
+  }
+}

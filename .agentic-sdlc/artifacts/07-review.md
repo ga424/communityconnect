@@ -1,3 +1,7 @@
+# Current AC11 execution checkpoint — November 8, 2026
+
+Approved AC11 v1 is locally implemented:200 passes,zero failures/errors,five exact S6 skips.52 tests frozen before code at359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; prior153 expectations/test hashes preserved. Real lock/fault cases and24 gate controls pass. New router plus main registration only; no schema/dependency/resident changes. See docs/evidence/s3-ac11/README.md and docs/reviews/S3-AC11-implementation-2026-11-08.md. PR15/16 merged; prior branches cleaned. CI publication, human result review and implementation-PR merge remain pending. Older checkpoints below are historical, not current authority.
+
 # Review-ticket status recheck — November 8, 2026
 
 **Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only. [Evidence](../../docs/evidence/pr15-review/review-recheck-20261108.json).

@@ -1,3 +1,5 @@
+> Execution update: AC11 v1 is implemented locally after actual approval. Frozen52 tests pass; full200/0/5 phase verified. See [evidence](../evidence/s3-ac11/README.md). Result review/merge remains pending. The historical preparation and approval checkpoints below retain their original wording.
+
 # S3-AC11 packet v1 — selected-community request reads
 
 **Approved execution update:** Gustavo answered “Approve merge and AC11 v1” to the question explicitly naming this addendum,52 tests and200/0/5 CI phase. [Exact record](../../prompts/2026-11-08-s3-ac11-approval.txt). PR15/16 are integrated; COMC66/67 are Done by Gustavo. Earlier pending statements below describe historical checkpoints. No new result/merge approval is inferred.

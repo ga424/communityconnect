@@ -1,3 +1,7 @@
+# Current AC11 execution checkpoint — November 8, 2026
+
+Approved AC11 v1 is locally implemented:200 passes,zero failures/errors,five exact S6 skips.52 tests frozen before code at359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; prior153 expectations/test hashes preserved. Real lock/fault cases and24 gate controls pass. New router plus main registration only; no schema/dependency/resident changes. See docs/evidence/s3-ac11/README.md and docs/reviews/S3-AC11-implementation-2026-11-08.md. PR15/16 merged; prior branches cleaned. CI publication, human result review and implementation-PR merge remain pending. Older checkpoints below are historical, not current authority.
+
 # Current AC11 tests-first checkpoint
 
 Approved52 cases now executable and frozen:148 passed,52 missing-route failures,zero errors,5 existing skips;205 collected. Exact inventory verified; original153 strict gate and116 protected hashes pass. See docs/evidence/s3-ac11/tests-first.json. No application code changed yet. Current approved scope supersedes historical pending checkpoints below.
