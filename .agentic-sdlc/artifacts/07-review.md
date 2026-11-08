@@ -1,3 +1,9 @@
+# Publication checkpoint — PR15 CI verified, November 8, 2026
+
+[PR15](https://github.com/ga424/communityconnect/pull/15) is open for result review. EV-S3-AC12-CI-42529458195 verifies its f76cf3a head: 148 passes, zero failures/errors, five exact skips and actual exit 0. Downloaded JUnit passed the strict gate; all 24 controls, migrations and cleanup passed. GitHub tested its merge ref, whose tree equals that head. [CI evidence](../../docs/evidence/s3-ac12/ci-42529458195.json). No runtime changes in this publication-only follow-up; final head CI will be attached in Git provenance notes. Human acceptance and merge remain pending. Earlier local/pending-CI text below records its checkpoint.
+
+---
+
 # Current result — S3-AC12 implementation, November8,2026
 
 Owner scope approval plus his completion confirmation and COMC63/64 closures allowed bounded execution. Closures are attributed to Gustavo; no independently authored Kundan/Sandeep sign-offs invented. COMC62 is In Progress for real implementation/result review.

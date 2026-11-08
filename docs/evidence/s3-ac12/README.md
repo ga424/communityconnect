@@ -21,3 +21,7 @@ Readable red logs/JUnit had trailing whitespace from Docker/pytest, caught by di
 - Only the dedicated cc-s3-ac12-20261108 project was removed. All five previously running Hadoop containers remain. Preview files untouched.
 
 Known limit: test identity is spoofable and local-only; no AC11 endpoint, browser selector, production identity, real money or full S3 acceptance. Current dependency/runtime advisory work remains separate; the existing Starlette/httpx warning is disclosed. No new broad SCA/security/performance/accessibility assurance is claimed.
+
+## Publication and CI
+
+[PR15](https://github.com/ga424/communityconnect/pull/15) is open. [CI42529458195](ci-42529458195.json) passed at head `f76cf3afc2c0c0849f7908c40b3d7815dc4239ec`; its downloaded [JUnit](ci-42529458195-junit.xml) independently passes the strict gate: 148 passes, no failures/errors, five exact skips and exit 0. Migration/cleanup steps and all 24 controls passed. The tested PR merge-ref tree equals that head. Final publication-head CI is attached via Git provenance notes and PR/Jira, without another source revision. Result review remains pending. Existing Actions Node20/Ubuntu migration notices are recorded separately from the successful application result.

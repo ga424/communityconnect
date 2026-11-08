@@ -612,3 +612,20 @@ evidence: EV-S3-AC12-LOCAL-REVIEW-20261108; EV-S3-AC12-LOCAL-20261108
 risk: CI and result review pending publication. Actual final SHA/CI will be attached through Git provenance notes; no merge authorized.
 
 Entry 34 metadata correction: its new code-change record omitted stage and triggered one additional validator warning. CHANGE-S3-AC12-LOCAL-REVIEW-COMPLETE-20261108 supplies stage 07-review as an append-only superseder. Structural validation still passes with seven raw warnings (six historical, one corrected record retained). No runtime or test change.
+
+
+## Entry 35 — AC12 PR publication and CI artifact review (November 8, 2026)
+
+artifact: PR15, CI42529458195, canonical state and provenance notes
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Read actual job steps and downloaded artifact; merge-ref checkout tree equals PR head. Jira COMC62/10/39/44 linked to implementation and kept In Progress. COMC63/64 remain Done with actual actor retained.
+
+checks: CI148/0/5 exit0,24 controls,migrations/cleanup success; reverified strict gate against downloaded JUnit. No runtime changes after local green.
+
+evidence: EV-S3-AC12-CI-42529458195; PR15; implementation b89fe0bdafa5defff1a84ad891bfd182d00a97a4; reviewed head f76cf3afc2c0c0849f7908c40b3d7815dc4239ec
+
+risk: Result review and merge pending. Existing Actions Node20/Ubuntu migration advisories remain; no dependency/control change. Final publication commit CI will be recorded in Git notes to avoid circular self-SHA claims.
