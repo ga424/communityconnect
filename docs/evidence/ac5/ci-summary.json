@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-11-08T05:25:02.569098+00:00",
+  "run": 42450409215,
+  "url": "https://github.com/ga424/communityconnect/actions/runs/42450409215",
+  "head": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
+  "conclusion": "success",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "downloaded_junit_gate": "PASS",
+  "junit_sha256": "9d19d6f279706835cd52e6bc41e20d3713fafe72b3cb8f4c9e73c27ed0babe63",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate AISE state and authored source boundaries",
+      "conclusion": "success"
+    },
+    {
+      "name": "Rehearse migrations on disposable PostgreSQL",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run all tests and require the approved S-1 phase",
+      "conclusion": "success"
+    },
+    {
+      "name": "Record image inputs",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "conclusion": "success"
+    },
+    {
+      "name": "Remove disposable test services",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "human_review": "pending named result reviewers",
+  "scope": "unchanged existing test/CI phase; evidence-only PR10"
+}

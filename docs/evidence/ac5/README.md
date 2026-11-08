@@ -28,6 +28,10 @@ Gustavo's [actual approval](../../../prompts/2026-11-08-ac5-approval.txt) author
 | Other checks | Compose config, AISE structure, source guard, prior ledger prefix and whitespace checks pass |
 | Cleanup | Dedicated verification project removed; all pre-existing containers and preview health preserved |
 
+## Evidence-PR CI
+
+[PR10](https://github.com/ga424/communityconnect/pull/10) is open for review. [Run42450409215](https://github.com/ga424/communityconnect/actions/runs/42450409215) passed at result commit `77fe12f8266dba5c63fc5a1b499589e139ddc716`. Its downloaded [JUnit](ci-junit.xml) independently passed the unchanged exact gate:120 passes, zero failures/errors, five exact S6 skips and real exit0. [CI summary](ci-summary.json) records checksum and successful steps, including migrations and cleanup. Later recording-head CI is captured in append-only Git provenance notes. No human result acceptance or merge is inferred.
+
 ## AC-5 and related controls
 
 The existing primary AC-5 criterion remains: Given R3 is another resident in Mountain Ridge, When R3 lists its requests, Then R1's request is absent. This is a verification of the current provisional rule, not a decision about future household/board/tenant access.
@@ -76,4 +80,4 @@ The user review project `cc-review-preview` and unrelated containers remained ru
 
 Gustavo's merge and execution authorizations are recorded; the table concerns review of the newly produced evidence. Sequential AI verification is not independent teammate signoff. COMC-58 stays In Progress until actual acceptance is recorded. Separate AC3/full-story/course reviews remain visible. No subsequent task is proposed or authorized here.
 
-Known warnings remain: Starlette TestClient/httpx deprecation and historical EV-REPO-ROOT missing claim. Existing CI Action/runner migration advisories remain separate maintenance work. No dependency/control change was made. S-6 remains unbuilt; no status-update endpoint, real identity/MFA, payments, shared hosting or production deployment. Broader security, performance, accessibility, resilience, supply-chain and regulatory assurance remain outside this prototype verification. Final CI/evidence-PR SHAs are recorded through append-only provenance notes and Jira when available.
+Known warnings remain: Starlette TestClient/httpx deprecation and historical EV-REPO-ROOT missing claim. Existing CI Action/runner migration advisories remain separate maintenance work. No dependency/control change was made. S-6 remains unbuilt; no status-update endpoint, real identity/MFA, payments, shared hosting or production deployment. Broader security, performance, accessibility, resilience, supply-chain and regulatory assurance remain outside this prototype verification. Evidence-PR CI above is verified; final recording-head SHAs/checksums are recorded through append-only provenance notes and Jira.
