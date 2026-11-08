@@ -1,0 +1,31 @@
+{
+  "valid_control": "accepted",
+  "rejected_reports": [
+    "missing original test",
+    "missing new test",
+    "missing promoted test",
+    "duplicate test",
+    "unexpected test",
+    "setup error",
+    "collection error",
+    "failing case",
+    "suite failure",
+    "extra skip",
+    "changed skip reason",
+    "unexpected S-6 pass",
+    "promoted case still stubbed"
+  ],
+  "rejected_manifests": [
+    "changed AC-1 manifest hash",
+    "changed AC-2 manifest hash",
+    "changed original file hash",
+    "changed new file hash",
+    "changed original expectation",
+    "weakened new expectation",
+    "weakened promoted expectation",
+    "unapproved additional test",
+    "changed approved case list",
+    "changed promotion list",
+    "missing new file hash"
+  ]
+}

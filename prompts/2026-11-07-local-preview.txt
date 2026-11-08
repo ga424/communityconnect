@@ -1,0 +1,7 @@
+Actual user request:
+Help me bring the latest application we have built online so that I can from amy own perspective review what's been built thus far.
+
+Actual destination clarification:
+Local browser preview on this Mac (recommended)
+
+Execution: isolated localhost review wrapper around unchanged PR8 API, synthetic data only; no shared hosting, production deployment, next-task approval or repository application change inferred.

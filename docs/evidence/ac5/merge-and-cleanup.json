@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-11-08T05:15:18.970322+00:00",
+  "authorization": "prompts/2026-11-08-ac5-approval.txt",
+  "pr8": {
+    "url": "https://github.com/ga424/communityconnect/pull/8",
+    "head": "354960fb81b55c2081dc3c5264a225be48930cd8",
+    "merge_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+    "merged_at": "2026-11-08T05:14:03Z",
+    "method": "merge",
+    "merged_by_assistant_with_explicit_user_authorization": true
+  },
+  "pr7": {
+    "url": "https://github.com/ga424/communityconnect/pull/7",
+    "head": "62b9df05338fe44a86747197502e088fa0cf45b5",
+    "state": "GitHub marked merged via ancestor integration",
+    "merged_at": "2026-11-08T05:14:05Z"
+  },
+  "delete_branch_on_merge": true,
+  "remote_branches_absent": [
+    "feature/COMC-57-ac4",
+    "chore/aise-refresh-ac3"
+  ],
+  "local_branches_deleted": [
+    "feature/COMC-57-ac4",
+    "chore/aise-refresh-ac3"
+  ],
+  "preconditions": [
+    "fetched current refs",
+    "exact latest heads verified in main",
+    "no open PR on either head",
+    "both worktrees clean",
+    "remote refs already absent"
+  ],
+  "worktrees": "detached at original heads and preserved; local review preview unaffected",
+  "pr9": "remains open; documentation history imported only into new evidence branch, no remote merge",
+  "evidence_branch": "verify/COMC-58-ac5",
+  "started_from_main": "fc208ec4a093cdd81c6e87158e7a93561822226c"
+}
