@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-11-08T05:43:08.940832+00:00",
+  "ledger_entry": 20,
+  "recording_commit": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+  "source_main": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "pr": "https://github.com/ga424/communityconnect/pull/12",
+  "pr_state": "open; not merged by assistant",
+  "ci_run": 42451758915,
+  "ci_conclusion": "success",
+  "ci_junit_sha256": "3479e9e391a6eb87c274b53e94fdd787a9b165a23f21838c9a46692d746d6f2f",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "frozen_hashes_verified": 107,
+  "ledger_prefixes_preserved": true,
+  "validation": "AISE structure, source guard, exact phase gate, protected hashes, whitespace passed; two known historical warnings retained",
+  "jira_updated": [
+    "COMC-9",
+    "COMC-10",
+    "COMC-33",
+    "COMC-35",
+    "COMC-39",
+    "COMC-41",
+    "COMC-42",
+    "COMC-44",
+    "COMC-45",
+    "COMC-54",
+    "COMC-55",
+    "COMC-56",
+    "COMC-57",
+    "COMC-58",
+    "COMC-59"
+  ],
+  "jira_transitions": {
+    "COMC-9": "In Progress",
+    "COMC-42": "In Progress",
+    "COMC-45": "In Progress"
+  },
+  "human_acceptance": "not inferred; explicit question pending",
+  "next_task": "S3-CTX1 contract design; new user instruction to execute own outstanding tasks being scoped separately",
+  "preview_health": 200,
+  "branch_cleanup": "automatic deletion enabled; open PR12 branch retained"
+}
