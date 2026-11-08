@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-11-08T05:29:51.214786+00:00",
+  "ledger_entries": [
+    18,
+    19
+  ],
+  "approval_record": "prompts/2026-11-08-ac5-approval.txt",
+  "integrated_implementation_main": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+  "latest_observed_main": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "no_application_test_design_dependency_schema_ci_changes": true,
+  "protected_hashes": 107,
+  "pr8_merge": "authorized and performed by assistant; exact expected head checked",
+  "pr10_merge": "observed GitHub account abreugus merge b41387f; assistant did not invoke it",
+  "pr11_merge": "observed GitHub account abreugus merge3918cbd; assistant did not invoke it",
+  "branch_cleanup": "PR7/8/9/10/11 branch names absent remotely and locally; audit tip preserved by rename while unmerged, then cleaned after its merge; detached worktrees retained",
+  "preview": "http://127.0.0.1:8765 health200, existing review containers left running",
+  "human_acceptance": "No individual Kundan/Sandeep/Gustavo result decision inferred from platform merges",
+  "known_audit_warning": "Supplemental CHANGE-AC5-RESULT-SHA lacked paths; complete superseding record appended, original retained and validator still warns on that historical line. EV-REPO-ROOT historical warning remains.",
+  "recording_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "stage": "final observed merged main",
+  "pr": 11,
+  "verified_ancestor_ci_run": 42450878827,
+  "protected_source_equivalent_to_tested_head": true,
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0
+}
