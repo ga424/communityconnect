@@ -3,7 +3,7 @@
     "id": "COMC-M1-BOOTSTRAP",
     "release_id": "M1-progress",
     "status": "in_progress",
-    "current_stage": "05-implementation",
+    "current_stage": "04-test",
     "service": {
       "name": "CommunityConnect",
       "tier": "local_class_prototype",
@@ -32,8 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "feature/COMC-57-ac4",
-      "commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7"
+      "branch": "verify/COMC-58-ac5",
+      "commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+      "commit_context": "Integrated implementation source; exact evidence checkpoint/result SHAs recorded separately"
     },
     "stage_status": [
       {
@@ -318,7 +319,11 @@
           "EV-AC2-APPROVAL",
           "EV-AC2-RED",
           "EV-AC2-LOCAL",
-          "EV-CI-41930928316"
+          "EV-CI-41930928316",
+          "EV-AC4-APPROVAL",
+          "EV-AC4-RED",
+          "EV-AC4-LOCAL",
+          "EV-CI-42445847082"
         ],
         "approval": {
           "status": "pending",
@@ -386,7 +391,11 @@
           "EV-AC2-APPROVAL",
           "EV-AC2-RED",
           "EV-AC2-LOCAL",
-          "EV-CI-41930928316"
+          "EV-CI-41930928316",
+          "EV-AC4-APPROVAL",
+          "EV-AC4-RED",
+          "EV-AC4-LOCAL",
+          "EV-CI-42445847082"
         ],
         "approval": {
           "status": "pending",
@@ -521,7 +530,9 @@
         ],
         "evidence_ids": [
           "EV-PR4-REVIEW-20261104",
-          "EV-PR4-BRANCH-CLEANUP"
+          "EV-PR4-BRANCH-CLEANUP",
+          "EV-PR8-REVIEW-20261107",
+          "EV-CI-42445847082"
         ],
         "approval": {
           "status": "pending",
@@ -652,51 +663,47 @@
       "code_change_traceability_management": "pending"
     },
     "open_questions": [
-      "Full Kundan/Sandeep design/gap/test reviews remain pending; Gustavo approved only AC-1 packet v1.",
+      "Gustavo approved bounded AC1/AC2/AC4 implementation and AC5 verification-only; named peer acceptance remains separate.",
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC4/AC6 implementation and CI verified; human implementation/test/provenance review remains pending.",
-      "All current S1 tests pass; full-story peer review, separate AC3/AC5 acceptance, S6 and release assurance remain pending."
+      "AC5 verification now approved; execution and actual reviewer acceptance still pending at this checkpoint.",
+      "Separate AC3 acceptance, full-story reviews, S6 and release assurance remain pending."
     ],
-    "last_updated": "2026-11-04T23:08:35.601625+00:00",
+    "last_updated": "2026-11-08T05:15:18.970322+00:00",
     "scoped_work": {
-      "issue": "COMC-57",
-      "packet": "AC-4 v1",
-      "scope_approval": "EV-AC4-APPROVAL",
+      "issue": "COMC-58",
+      "packet": "AC-5 v1",
+      "scope_approval": "EV-AC5-APPROVAL-20261108",
       "approval_owner": "Gustavo",
-      "status": "review_ready",
-      "pre_test_undo_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
-      "human_implementation_review": "pending",
-      "read_only_overlap": [
-        "S-1 AC-6"
-      ],
-      "test_first_undo_commit": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
-      "local_evidence": "EV-AC4-LOCAL",
-      "note": "Approved AC4 and read-only AC6 pass locally and in CI; all six original S1 tests green. Human review pending; no merge/deploy.",
-      "implementation_commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
-      "ci_evidence": "EV-CI-42419977346",
-      "verified_ci_commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/8"
+      "type": "verification_only",
+      "status": "approved_ready_for_verification",
+      "integrated_main_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+      "approval_packet_record_commit": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+      "application_changes": false,
+      "new_tests": 0,
+      "ci_phase_change": false,
+      "human_acceptance": "pending named reviewer decisions"
     },
     "next_bounded_task": {
-      "issue": "COMC-57",
-      "packet": "docs/plans/AC-4-approval.md",
+      "issue": "COMC-58",
+      "packet": "docs/plans/AC-5-approval.md",
       "version": 1,
-      "status": "implemented_pending_review",
-      "decision": "DEC-AC4-APPROVED-20261107",
+      "status": "approved_ready_for_verification",
+      "decision": "DEC-AC5-APPROVED-20261108",
       "approval_owner": "Gustavo",
-      "proposed_new_cases": 30,
-      "proposed_phase": {
+      "type": "verification_only",
+      "proposed_new_cases": 0,
+      "ci_phase_change": false,
+      "preserved_phase": {
         "passed": 120,
-        "deferred_failures": 0,
+        "failed": 0,
         "skipped": 5
       },
-      "read_only_overlap": [
-        "S-1 AC-6"
-      ],
-      "implementation_started": true,
-      "approval_evidence": "EV-AC4-APPROVAL"
+      "execution_started": false,
+      "implementation_changes": false,
+      "integration_prerequisite": "Satisfied: PR8 merged into fc208ec4a093cdd81c6e87158e7a93561822226c",
+      "scope_approval": "EV-AC5-APPROVAL-20261108"
     },
     "prior_scoped_work": [
       {
@@ -746,6 +753,28 @@
         "source_ref": "docs/evidence/ac3/README.md",
         "local_evidence": "EV-AC3-LOCAL-20261107",
         "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45"
+      },
+      {
+        "issue": "COMC-57",
+        "packet": "AC-4 v1",
+        "scope_approval": "EV-AC4-APPROVAL",
+        "approval_owner": "Gustavo",
+        "status": "merged_pending_separate_peer_acceptance",
+        "pre_test_undo_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
+        "human_implementation_review": "GitHub APPROVED by abreugus at 2026-11-08T04:31:24Z; individual Kundan/Sandeep acceptance not established",
+        "read_only_overlap": [
+          "S-1 AC-6"
+        ],
+        "test_first_undo_commit": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
+        "local_evidence": "EV-AC4-LOCAL",
+        "note": "Explicit user-authorized PR8 merge completed; branch removed locally/remotely. Separate named teammate decisions not inferred.",
+        "implementation_commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
+        "ci_evidence": "EV-CI-42445847082",
+        "verified_ci_commit": "354960fb81b55c2081dc3c5264a225be48930cd8",
+        "pull_request": "https://github.com/ga424/communityconnect/pull/8",
+        "review_evidence": "EV-PR8-REVIEW-20261107",
+        "merge_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+        "merge_evidence": "EV-PR8-MERGE-CLEANUP-20261108"
       }
     ],
     "framework": {
@@ -754,6 +783,16 @@
       "latest_merged_observed_at": "2026-11-07T21:44:25.510050+00:00",
       "evidence": "EV-AISE-LATEST-MERGED-20261107",
       "selection": "latest merged; previews excluded by user decision"
+    },
+    "local_review_preview": {
+      "status": "running_local_only",
+      "url": "http://127.0.0.1:8765",
+      "project": "cc-review-preview",
+      "source_commit": "354960fb81b55c2081dc3c5264a225be48930cd8",
+      "evidence": "EV-LOCAL-PREVIEW-20261107",
+      "approval": "DEC-LOCAL-PREVIEW-20261107",
+      "product_ui_delivered": false,
+      "next_task_approval_inferred": false
     }
   }
 }

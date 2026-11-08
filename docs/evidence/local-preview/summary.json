@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-11-08T04:51:54.750709+00:00",
+  "url": "http://127.0.0.1:8765",
+  "source_commit": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "docker_project": "cc-review-preview",
+  "binding": "127.0.0.1:8765 -> 8000/tcp",
+  "scope": "synthetic local review companion outside application repository; no authentication or status-update feature",
+  "checks": [
+    "health production_eligible=false",
+    "three personas return only expected seeded requests",
+    "same-community and cross-community ID lookup return exact 404",
+    "create returns 201/Open and correct unit/community",
+    "owner detail matches created response",
+    "neighbor list excludes created request",
+    "created synthetic smoke row removed by exact ID/submitter/description match"
+  ],
+  "created_smoke_id": 5,
+  "browser": "Page visibly loaded; user began interacting, so no further UI actions were performed",
+  "screenshot": "preview.jpg",
+  "live_state": "left running for user review",
+  "wrapper_sha256": {
+    "server.py": "0983c76b9b6acecf6253d8badcd206ca3e359668ec7f23da5b4e9a9fee120126",
+    "index.html": "f0458374a1ca3c08d08f44250c695592ad7dab76f6ab45c44c86ebc256b9abbd",
+    "compose.preview.yaml": "2b885bcd442d99b7f9885a4e96b05c8ffe14274ac0d3c6a889711ce1226d550a"
+  },
+  "local_folder": "Sibling workspace folder communityconnect-preview",
+  "repository_code_changed": false,
+  "authorization": "prompts/2026-11-07-local-preview.txt",
+  "startup_note": "Initial Compose extension lookup failed before starting any container; explicit source-file reference corrected the external override. Config/build/migration/start then succeeded."
+}

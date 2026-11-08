@@ -1,3 +1,13 @@
+# Current assessment — PR8 review / AC5 proposal, November 7, 2026
+
+No blocking code findings in bounded sequential AI review at 354960fb81b55c2081dc3c5264a225be48930cd8. Final-head CI 42445847082 was downloaded and reverified: 120 passes, zero failures/errors, five exact S6 skips; real exit 0. 80 protected hashes and tests-first integrity pass. See [review](../../docs/reviews/PR-8-and-AC-5-2026-11-07.md), EV-PR8-REVIEW-20261107 and EV-CI-42445847082. No new local Docker run is claimed.
+
+PR8 remains open. GitHub APPROVED by abreugus is observed; individual peer acceptance remains unconfirmed. Automatic branch deletion is enabled; neither open PR branch is deleted. Current S1 plan/state is reconciled; historical records below retain their original context. [AC5 v1](../../docs/plans/AC-5-approval.md) proposes verification-only after integration, with zero code/test/CI changes; DEC-AC5-PROPOSED-20261107 remains unapproved. One main agent, no parallel subagents. No merge or deployment.
+
+Verdict: CONDITIONAL_GO for bounded review/packet decision; no production release authority. Full-stage assurance, named peer reviews and course provenance remain pending. The linked review records scope, evidence, residual risks and required decisions.
+
+---
+
 # Latest scope state — AC4/AC6, November 7, 2026
 
 Explicit approval EV-AC4-APPROVAL is recorded. Local implementation passes 120/0/5 with all six S1 acceptance tests green (EV-AC4-LOCAL). Remote CI EV-CI-42419977346 passed at 8df963e; PR8 is ready for human review. Historical pending-CI statements below retain their original checkpoint context. The final AC4 execution section below provides current details; earlier entries preserve historical scopes and states.

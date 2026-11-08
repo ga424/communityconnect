@@ -1,0 +1,4 @@
+Actual user approval, November 8, 2026 (America/New_York):
+Approved. Merge PR #8, delete its branch, and proceed with AC-5 packet v1 as verification-only. Keep Jira and the AISE ledger updated, and open the evidence PR when ready for review.
+
+Authorized scope: merge exact reviewed PR8, clean confirmed merged branches, execute existing AC5 verification packet with unchanged application/tests/CI, record actual evidence, and open an evidence PR. No next-feature implementation, deployment or human peer acceptance inferred.
