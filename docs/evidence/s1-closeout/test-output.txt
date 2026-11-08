@@ -1,0 +1,97 @@
+ Network cc-s1-closeout-20261108_default Creating 
+ Network cc-s1-closeout-20261108_default Created 
+ Container cc-s1-closeout-20261108-db-1 Creating 
+ Container cc-s1-closeout-20261108-db-1 Created 
+ Container cc-s1-closeout-20261108-migrate-1 Creating 
+ Container cc-s1-closeout-20261108-migrate-1 Created 
+ Container cc-s1-closeout-20261108-db-1 Starting 
+ Container cc-s1-closeout-20261108-db-1 Started 
+ Container cc-s1-closeout-20261108-db-1 Waiting 
+ Container cc-s1-closeout-20261108-db-1 Healthy 
+ Container cc-s1-closeout-20261108-migrate-1 Starting 
+ Container cc-s1-closeout-20261108-migrate-1 Started 
+ Image cc-s1-closeout-20261108-test Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 586B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 254B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 99B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286
+#5 resolve docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286 0.1s done
+#5 DONE 0.1s
+
+#6 [internal] load build context
+#6 transferring context: 1.14MB 0.1s done
+#6 DONE 0.1s
+
+#7 [2/5] WORKDIR /workspace
+#7 CACHED
+
+#8 [3/5] COPY requirements.lock ./
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#10 [5/5] COPY . .
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.2s done
+#11 exporting manifest sha256:a3df0423be6ed1e2d83a165fc7f60b4d418f505db84639ca85e695286bc27705 0.0s done
+#11 exporting config sha256:a9ec9f73b83f9b94bf1bdcde426b82af825efc316910d30b903a3965f81640d4 0.0s done
+#11 exporting attestation manifest sha256:de3d987febe006cc5f43faa666c30b33cbb0cd8dafd5e9420069f4b21d9fbdc0 0.0s done
+#11 exporting manifest list sha256:4edca50329b76ab36c2e7b651968bff94905231cbb429bccd8879bebdfef75bd 0.0s done
+#11 naming to docker.io/library/cc-s1-closeout-20261108-test:latest
+#11 naming to docker.io/library/cc-s1-closeout-20261108-test:latest done
+#11 unpacking to docker.io/library/cc-s1-closeout-20261108-test:latest 0.1s done
+#11 DONE 0.6s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image cc-s1-closeout-20261108-test Built 
+ Container cc-s1-closeout-20261108-migrate-1 Waiting 
+ Container cc-s1-closeout-20261108-migrate-1 Exited 
+ Container cc-s1-closeout-20261108-test-run-f05ed169fd10 Creating 
+ Container cc-s1-closeout-20261108-test-run-f05ed169fd10 Created 
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.2.0, pluggy-1.7.0
+rootdir: /workspace
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collected 125 items
+
+tests/test_harness.py ....                                               [  3%]
+tests/test_s1_contract.py .............................................. [ 40%]
+..........................                                               [ 60%]
+tests/test_s1_details.py ..............................                  [ 84%]
+tests/test_s1_requests.py ......                                         [ 89%]
+tests/test_s1_validation.py ........                                     [ 96%]
+tests/test_s6_payments.py sssss                                          [100%]
+
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------- generated xml file: /workspace/artifacts/pytest.xml --------------
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_s6_payments.py:17: AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:31: AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:44: AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:58: AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:69: AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+================== 120 passed, 5 skipped, 1 warning in 20.10s ==================

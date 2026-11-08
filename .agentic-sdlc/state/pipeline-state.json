@@ -32,9 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "docs/COMC-58-audit-followup",
-      "commit": "b41387f1c63c0b469b2c17026095c47d43932011",
-      "commit_context": "Merged evidence source; audit-only recording commit and its CI are in Git provenance notes"
+      "branch": "docs/COMC-42-s1-closeout-s3-plan",
+      "commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+      "commit_context": "Verified merged source. Final preparation recording commit and CI are appended in Git provenance notes."
     },
     "stage_status": [
       {
@@ -540,7 +540,9 @@
           "EV-AC5-APPROVAL-20261108",
           "EV-AC5-LOCAL-20261108",
           "EV-PR8-MERGE-CLEANUP-20261108",
-          "EV-AC5-CI-42450409215"
+          "EV-AC5-CI-42450409215",
+          "EV-S1-CLOSEOUT-RUNTIME-20261108",
+          "EV-S1-ACCEPTANCE-REVIEW-20261108"
         ],
         "approval": {
           "status": "pending",
@@ -675,64 +677,61 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC5 local and merged-head CI verified; independent named result acceptance is not inferred from the observed PR10 merge.",
-      "Audit-only supplemental path correction awaiting review; separate AC3/full-story/course/S6 and production assurance remain pending."
+      "S-1 runtime green; named Kundan/Sandeep/Gustavo result/independent reviews remain pending.",
+      "COMC-33 stale design text/two-page rendering and COMC-35 missing reviewed gapcheck remain open.",
+      "COMC-45 Codex fresh-clone evidence exists; Sandeep independent final-submission-SHA verification and final SHA selection remain pending.",
+      "S-3-CTX-1 design-only scope approval pending; implementation expansion requires a later explicit decision. OQ1/OQ2, S6 and production assurance remain unchanged."
     ],
-    "last_updated": "2026-11-08T05:27:30.575187+00:00",
+    "last_updated": "2026-11-08T05:39:44.285844+00:00",
     "scoped_work": {
-      "issue": "COMC-58",
-      "packet": "AC-5 v1",
-      "scope_approval": "EV-AC5-APPROVAL-20261108",
-      "approval_owner": "Gustavo",
-      "type": "verification_only",
-      "status": "evidence_merged_named_acceptance_unconfirmed",
-      "integrated_main_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
-      "approval_packet_record_commit": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+      "issue": "COMC-42",
+      "related_issues": [
+        "COMC-9",
+        "COMC-33",
+        "COMC-35",
+        "COMC-39",
+        "COMC-41",
+        "COMC-44",
+        "COMC-45",
+        "COMC-54",
+        "COMC-55",
+        "COMC-56",
+        "COMC-57",
+        "COMC-58",
+        "COMC-59"
+      ],
+      "type": "acceptance_review_and_next_feature_preparation",
+      "status": "runtime_verified_human_acceptance_pending",
+      "source_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+      "evidence_ids": [
+        "EV-S1-CLOSEOUT-RUNTIME-20261108",
+        "EV-S1-ACCEPTANCE-REVIEW-20261108"
+      ],
       "application_changes": false,
       "new_tests": 0,
       "ci_phase_change": false,
-      "human_acceptance": "pending named reviewer decisions",
-      "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
-      "local_evidence": "EV-AC5-LOCAL-20261108",
-      "selected_controls_passed": 7,
-      "original_s1_cases_passed": 6,
-      "protected_files_verified": 107,
-      "resource_cleanup": "dedicated project removed; user preview preserved",
-      "ci_evidence": "EV-AC5-MERGED-20261108",
-      "result_commit": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/10",
-      "verified_ci_commit": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
-      "evidence_merge_commit": "b41387f1c63c0b469b2c17026095c47d43932011",
-      "evidence_merge_record": "EV-AC5-MERGED-20261108",
-      "audit_followup": "append-only complete path record and merge/cleanup reconciliation; no code change"
+      "independent_human_review": "pending",
+      "final_submission_sha_selected": false
     },
     "next_bounded_task": {
-      "issue": "COMC-58",
-      "packet": "docs/plans/AC-5-approval.md",
+      "issue": "COMC-10",
+      "story": "S-3",
+      "acceptance_criteria": [
+        "AC-11",
+        "AC-12"
+      ],
+      "packet": "docs/plans/S-3-context-approval.md",
       "version": 1,
-      "status": "verification_evidence_merged",
-      "decision": "DEC-AC5-APPROVED-20261108",
+      "id": "S-3-CTX-1",
+      "type": "design_and_test_plan_only",
+      "status": "awaiting_approval",
+      "decision": "DEC-S3-CTX1-PROPOSED-20261108",
       "approval_owner": "Gustavo",
-      "type": "verification_only",
-      "proposed_new_cases": 0,
-      "ci_phase_change": false,
-      "preserved_phase": {
-        "passed": 120,
-        "failed": 0,
-        "skipped": 5
-      },
-      "execution_started": true,
+      "execution_started": false,
       "implementation_changes": false,
-      "integration_prerequisite": "Satisfied: PR8 merged into fc208ec4a093cdd81c6e87158e7a93561822226c",
-      "scope_approval": "EV-AC5-APPROVAL-20261108",
-      "execution_complete": true,
-      "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
-      "local_evidence": "EV-AC5-LOCAL-20261108",
-      "result_commit": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/10",
-      "ci_evidence": "EV-AC5-CI-42450409215",
-      "evidence_merge_commit": "b41387f1c63c0b469b2c17026095c47d43932011",
-      "named_acceptance": "not inferred from platform merge event"
+      "new_executable_tests": 0,
+      "ci_phase_change": false,
+      "m1_scope_expanded": false
     },
     "prior_scoped_work": [
       {
@@ -742,16 +741,16 @@
         "approval_owner": "Gustavo",
         "test_first_undo_commit": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
         "implementation_commit": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
-        "status": "merged_with_followup_finding",
+        "status": "merged_followup_resolved_peer_acceptance_pending",
         "local_evidence": "EV-AC1-LOCAL",
         "human_implementation_review": "merge observed; separate teammate signoffs not established",
-        "note": "Delivery merge recorded separately from unresolved input-validation finding and full-story approvals.",
+        "note": "F1 resolved by approved AC2; current full suite passes. Separate human acceptance pending.",
         "pull_request": "https://github.com/ga424/communityconnect/pull/4",
         "ci_evidence": "EV-CI-41780922018",
         "verified_ci_commit": "0f5562f42081aede341079d723b4848cc604c271",
         "merge_commit": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
         "review_evidence": "EV-PR4-REVIEW-20261104",
-        "open_finding": "RISK-PR4-F1-UNSTORABLE-TEXT"
+        "open_finding": null
       },
       {
         "issue": "COMC-55",
@@ -781,7 +780,9 @@
         "implementation_changes": false,
         "source_ref": "docs/evidence/ac3/README.md",
         "local_evidence": "EV-AC3-LOCAL-20261107",
-        "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45"
+        "local_verified_commit": "6026bdbd71e84081ddcdab96c85869e457299d45",
+        "latest_verification_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "latest_evidence": "EV-S1-CLOSEOUT-RUNTIME-20261108"
       },
       {
         "issue": "COMC-57",
@@ -804,6 +805,34 @@
         "review_evidence": "EV-PR8-REVIEW-20261107",
         "merge_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
         "merge_evidence": "EV-PR8-MERGE-CLEANUP-20261108"
+      },
+      {
+        "issue": "COMC-58",
+        "packet": "AC-5 v1",
+        "scope_approval": "EV-AC5-APPROVAL-20261108",
+        "approval_owner": "Gustavo",
+        "type": "verification_only",
+        "status": "evidence_merged_named_acceptance_unconfirmed",
+        "integrated_main_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+        "approval_packet_record_commit": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+        "application_changes": false,
+        "new_tests": 0,
+        "ci_phase_change": false,
+        "human_acceptance": "pending named reviewer decisions",
+        "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
+        "local_evidence": "EV-AC5-LOCAL-20261108",
+        "selected_controls_passed": 7,
+        "original_s1_cases_passed": 6,
+        "protected_files_verified": 107,
+        "resource_cleanup": "dedicated project removed; user preview preserved",
+        "ci_evidence": "EV-AC5-MERGED-20261108",
+        "result_commit": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
+        "pull_request": "https://github.com/ga424/communityconnect/pull/10",
+        "verified_ci_commit": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
+        "evidence_merge_commit": "b41387f1c63c0b469b2c17026095c47d43932011",
+        "evidence_merge_record": "EV-AC5-MERGED-20261108",
+        "audit_followup": "Merged PR11 at 3918cbd9fd015f8325cfc0136180c28ad31c5d01; branch deleted; final CI42450878827 passed at f80f4d7",
+        "audit_merge_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01"
       }
     ],
     "framework": {

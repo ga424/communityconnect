@@ -1,0 +1,36 @@
+{
+  "document": "CS690_Milestone1_CommunityConnect_Review_v3.docx",
+  "source_issue": "COMC-4",
+  "source_attachment_id": 10060,
+  "source_manifest_sha256": "f09646d3958caf0005e0e4ddb9a1b79ec6360b0e78f3eb739c263ad094531b81",
+  "mapping_sha256": "5a650d002451b17a95a58543e7b9f64f65c32afedff81b9d3c7f71a191c09ed4",
+  "story": {
+    "id": "S-3",
+    "title": "Switch between communities",
+    "text": "As a community manager, I want to switch between my communities from one login and see only the selected community\u2019s requests, so that I never answer a resident with another community\u2019s information.",
+    "trace": "E-3; A-2",
+    "acs": [
+      [
+        "AC-11",
+        "Given M1 manages Mountain Ridge and Pine Hollow and each has one Open request, When M1 selects Pine Hollow, Then the request list shows only the Pine Hollow request.",
+        "E-3"
+      ],
+      [
+        "AC-12",
+        "Given M2 manages only Elm Court, When M2 opens the community selector, Then only Elm Court is offered.",
+        "E-3; A-2"
+      ]
+    ],
+    "gate": ""
+  },
+  "jira": "COMC-10",
+  "mapping_limitation": "Legacy community assignment and switching slice; current S-3 AC-11/12 only; invitation administration excluded",
+  "assumption": [
+    "A-2",
+    "We assume a management company allows one manager login to see every community that manager is assigned to.",
+    "Team",
+    "Assumption",
+    "Gustavo Abreu"
+  ],
+  "evidence_state": "source_extracted_not_new_human_acceptance"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "key": "COMC-59",
+    "summary": "D6d | S-1 AC-6 show updated request status",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-58",
+    "summary": "D6d | S-1 AC-5 hide another resident’s request",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-57",
+    "summary": "D6d | S-1 AC-4 deny guessed cross-community ID",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-56",
+    "summary": "D6d | S-1 AC-3 isolate cross-community lists",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-55",
+    "summary": "D6d | S-1 AC-2 description validation and PR4 follow-up",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-54",
+    "summary": "D6d | S-1 AC-1 create and list own request",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-45",
+    "summary": "D6e | Verify fresh clone at final submission SHA",
+    "status": "To Do",
+    "owner": "Sandeep Garg"
+  },
+  {
+    "key": "COMC-44",
+    "summary": "D8 | Audit >=8 genuine ledger entries and AI-use disclosure",
+    "status": "In Progress",
+    "owner": "Gustavo Abreu"
+  },
+  {
+    "key": "COMC-42",
+    "summary": "D6d | Independently review all six S-1 criteria and edge cases",
+    "status": "To Do",
+    "owner": "Gustavo Abreu"
+  },
+  {
+    "key": "COMC-41",
+    "summary": "D6c | Approve six AC-linked S-1 bounded tasks before edits",
+    "status": "In Progress",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-39",
+    "summary": "D6b | Write S-1 tests before feature implementation",
+    "status": "In Progress",
+    "owner": "Sandeep Garg"
+  },
+  {
+    "key": "COMC-35",
+    "summary": "D5 | Human-review S-1 gap check and unresolved decisions",
+    "status": "To Do",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-33",
+    "summary": "D5 | Review and store S-1 submit/track request design",
+    "status": "To Do",
+    "owner": "Kundan Singh"
+  },
+  {
+    "key": "COMC-10",
+    "summary": "Product | Assign and switch managed communities with invited accounts",
+    "status": "To Do",
+    "owner": "Gustavo Abreu"
+  },
+  {
+    "key": "COMC-9",
+    "summary": "S-1 | Submit and track a maintenance request",
+    "status": "To Do",
+    "owner": "Kundan Singh"
+  }
+]
