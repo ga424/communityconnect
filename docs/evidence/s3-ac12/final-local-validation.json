@@ -4,7 +4,7 @@
   "runtime_source_hashes": 6,
   "prior_ledger_prefixes": 7,
   "tests_first_hash": "b9455f1fa62b2ec439956be42dc972d31e8e5fae52117980c770d615bb70ca3d",
-  "structural_check": "PASS; six retained historical warnings",
+  "structural_check": "PASS; six historical warnings plus one retained incomplete review record, corrected by CHANGE-S3-AC12-LOCAL-REVIEW-COMPLETE-20261108",
   "source_guard": "PASS",
   "whitespace_check": "PASS",
   "review": "docs/reviews/S-3-AC12-implementation-2026-11-08.md",

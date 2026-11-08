@@ -610,3 +610,5 @@ checks: 108 protected paths, six runtime hashes, seven prior ledger prefixes, re
 evidence: EV-S3-AC12-LOCAL-REVIEW-20261108; EV-S3-AC12-LOCAL-20261108
 
 risk: CI and result review pending publication. Actual final SHA/CI will be attached through Git provenance notes; no merge authorized.
+
+Entry 34 metadata correction: its new code-change record omitted stage and triggered one additional validator warning. CHANGE-S3-AC12-LOCAL-REVIEW-COMPLETE-20261108 supplies stage 07-review as an append-only superseder. Structural validation still passes with seven raw warnings (six historical, one corrected record retained). No runtime or test change.

@@ -17,7 +17,7 @@ Readable red logs/JUnit had trailing whitespace from Docker/pytest, caught by di
 - [Local JUnit](local-junit.xml), [output](local-output.txt), [actual exit](local-exit-code.txt).
 - [Migration output](migration-output.txt): update, repeat, rollback one, reapply; exit0.
 - [New gate controls](gate-self-test.json): valid control accepted and24 defective reports/manifests/files rejected. Original AC1/AC2/S1 historical-report gates and self-tests pass.
-- Frozen protected paths and all prior ledger prefixes preserved; compile/source/structural/whitespace checks complete before publication. Six historical structural warnings remain documented.
+- Frozen protected paths and all prior ledger prefixes preserved; compile/source/structural/whitespace checks complete before publication. Six historical structural warnings remain documented. One new review-record stage omission is retained and corrected with an append-only complete record; the structural validator still reports its original warning.
 - Only the dedicated cc-s3-ac12-20261108 project was removed. All five previously running Hadoop containers remain. Preview files untouched.
 
 Known limit: test identity is spoofable and local-only; no AC11 endpoint, browser selector, production identity, real money or full S3 acceptance. Current dependency/runtime advisory work remains separate; the existing Starlette/httpx warning is disclosed. No new broad SCA/security/performance/accessibility assurance is claimed.
