@@ -1,0 +1,18 @@
+{
+  "run_id": 42419977346,
+  "run_url": "https://github.com/ga424/communityconnect/actions/runs/42419977346",
+  "commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
+  "conclusion": "success",
+  "total": 125,
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "skipped": 5,
+    "errors": 0
+  },
+  "pytest_exit": 0,
+  "junit_sha256": "92e6f6e341287c8431b3f81c4b49bf1f47b7e3309127fcf789a4487e639f6d35",
+  "downloaded_junit_gate": "PASS",
+  "migration_step": "success",
+  "human_review": "pending"
+}

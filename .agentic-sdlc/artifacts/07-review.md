@@ -1,6 +1,6 @@
 # Latest scope state — AC4/AC6, November 7, 2026
 
-Explicit approval EV-AC4-APPROVAL is recorded. Local implementation passes 120/0/5 with all six S1 acceptance tests green (EV-AC4-LOCAL). Remote CI and human review pending at this checkpoint. The final AC4 execution section below provides current details; earlier entries preserve historical scopes and states.
+Explicit approval EV-AC4-APPROVAL is recorded. Local implementation passes 120/0/5 with all six S1 acceptance tests green (EV-AC4-LOCAL). Remote CI EV-CI-42419977346 passed at 8df963e; PR8 is ready for human review. Historical pending-CI statements below retain their original checkpoint context. The final AC4 execution section below provides current details; earlier entries preserve historical scopes and states.
 
 ---
 

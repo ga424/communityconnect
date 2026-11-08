@@ -6,7 +6,7 @@ Gustavo explicitly approved the corrected packet v1, 30 contract tests, AC-6 sta
 
 The existing GET `/requests/{request_id}` now validates the caller first, then reads only a request submitted by that caller with current resident membership in its community. It returns the existing seven public fields, including persisted status. Unknown caller: exact 401. Missing/malformed/unauthorized ID: identical 404. Reads do not change persisted requests. No status-write endpoint, schema/dependency change or new access policy.
 
-Local Docker result: **120 passed, zero failures/errors, five unchanged S-6 skips; pytest exit 0**. All six original S-1 acceptance tests and all 30 new contracts pass. [Local summary](local-summary.json); [JUnit](local-junit.xml); [migration log](migration-output.txt). Remote CI is recorded separately when available.
+Local Docker result: **120 passed, zero failures/errors, five unchanged S-6 skips; pytest exit 0**. All six original S-1 acceptance tests and all 30 new contracts pass. [Local summary](local-summary.json); [JUnit](local-junit.xml); [migration log](migration-output.txt). [GitHub CI run 42419977346](https://github.com/ga424/communityconnect/actions/runs/42419977346) passed at implementation commit `8df963e73801713e3eb6c9b02e7d6ce8092f14f7`, also 120/0/5 with pytest exit 0. Downloaded JUnit independently passed the exact gate. [CI summary](ci-summary.json); [CI JUnit](ci-junit.xml). [PR8](https://github.com/ga424/communityconnect/pull/8) is open for review; it was opened by ga424 and updated with the evidence after the connector reported an existing PR.
 
 ## Test-first evidence
 
