@@ -1,3 +1,13 @@
+# Current scope — AC5 evidence review handoff, November 8, 2026
+
+Gustavo explicitly approved PR8 merge/branch cleanup and AC5 packet v1 verification-only (EV-AC5-APPROVAL-20261108). PR8 is merged into fc208ec; PR7/PR8 branches are removed remotely/locally after checks (EV-PR8-MERGE-CLEANUP-20261108). Evidence-only checkpoint e615d78 preserves approved packet/ledger history and executable source identical to merged main.
+
+EV-AC5-LOCAL-20261108: unchanged full suite120 passed / zero failures/errors / five exact S6 skips, real exit0; seven selected controls and all six original S1 cases pass. All107 protected hashes,24 gate defect controls, migration update/repeat/rollback/reapply and structural/source/whitespace checks pass. Dedicated test resources removed; running localhost preview and all previously running containers preserved. No application, test, design, migration, dependency or CI change. [Full evidence](../../docs/evidence/ac5/README.md).
+
+Bounded verification is ready for human result review. Kundan behavior, Sandeep QA/migrations and Gustavo provenance remain pending; prior merge/execution approvals are acknowledged and do not invent result acceptance. Separate AC3/full-story/course and broader production assurance remain pending; no next task or deployment authorized. Known historical warnings are retained. Earlier status text below is historical and superseded for this scope.
+
+---
+
 # Current assessment — PR8 review / AC5 proposal, November 7, 2026
 
 No blocking code findings in bounded sequential AI review at 354960fb81b55c2081dc3c5264a225be48930cd8. Final-head CI 42445847082 was downloaded and reverified: 120 passes, zero failures/errors, five exact S6 skips; real exit 0. 80 protected hashes and tests-first integrity pass. See [review](../../docs/reviews/PR-8-and-AC-5-2026-11-07.md), EV-PR8-REVIEW-20261107 and EV-CI-42445847082. No new local Docker run is claimed.

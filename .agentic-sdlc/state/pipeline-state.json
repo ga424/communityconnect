@@ -3,7 +3,7 @@
     "id": "COMC-M1-BOOTSTRAP",
     "release_id": "M1-progress",
     "status": "in_progress",
-    "current_stage": "04-test",
+    "current_stage": "07-review",
     "service": {
       "name": "CommunityConnect",
       "tier": "local_class_prototype",
@@ -323,7 +323,10 @@
           "EV-AC4-APPROVAL",
           "EV-AC4-RED",
           "EV-AC4-LOCAL",
-          "EV-CI-42445847082"
+          "EV-CI-42445847082",
+          "EV-AC5-APPROVAL-20261108",
+          "EV-AC5-LOCAL-20261108",
+          "EV-PR8-MERGE-CLEANUP-20261108"
         ],
         "approval": {
           "status": "pending",
@@ -532,7 +535,10 @@
           "EV-PR4-REVIEW-20261104",
           "EV-PR4-BRANCH-CLEANUP",
           "EV-PR8-REVIEW-20261107",
-          "EV-CI-42445847082"
+          "EV-CI-42445847082",
+          "EV-AC5-APPROVAL-20261108",
+          "EV-AC5-LOCAL-20261108",
+          "EV-PR8-MERGE-CLEANUP-20261108"
         ],
         "approval": {
           "status": "pending",
@@ -667,29 +673,36 @@
       "All Q entries remain open until an accountable human records a decision."
     ],
     "blockers": [
-      "AC5 verification now approved; execution and actual reviewer acceptance still pending at this checkpoint.",
-      "Separate AC3 acceptance, full-story reviews, S6 and release assurance remain pending."
+      "AC5 local verification passed; named result reviewers and evidence-PR CI remain pending.",
+      "Separate AC3 acceptance, full-story/course reviews, S6 and production assurance remain pending."
     ],
-    "last_updated": "2026-11-08T05:15:18.970322+00:00",
+    "last_updated": "2026-11-08T05:18:58.524034+00:00",
     "scoped_work": {
       "issue": "COMC-58",
       "packet": "AC-5 v1",
       "scope_approval": "EV-AC5-APPROVAL-20261108",
       "approval_owner": "Gustavo",
       "type": "verification_only",
-      "status": "approved_ready_for_verification",
+      "status": "runtime_verified_pending_result_review",
       "integrated_main_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
       "approval_packet_record_commit": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
       "application_changes": false,
       "new_tests": 0,
       "ci_phase_change": false,
-      "human_acceptance": "pending named reviewer decisions"
+      "human_acceptance": "pending named reviewer decisions",
+      "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
+      "local_evidence": "EV-AC5-LOCAL-20261108",
+      "selected_controls_passed": 7,
+      "original_s1_cases_passed": 6,
+      "protected_files_verified": 107,
+      "resource_cleanup": "dedicated project removed; user preview preserved",
+      "ci_evidence": "pending evidence-PR CI"
     },
     "next_bounded_task": {
       "issue": "COMC-58",
       "packet": "docs/plans/AC-5-approval.md",
       "version": 1,
-      "status": "approved_ready_for_verification",
+      "status": "runtime_verified_pending_result_review",
       "decision": "DEC-AC5-APPROVED-20261108",
       "approval_owner": "Gustavo",
       "type": "verification_only",
@@ -700,10 +713,13 @@
         "failed": 0,
         "skipped": 5
       },
-      "execution_started": false,
+      "execution_started": true,
       "implementation_changes": false,
       "integration_prerequisite": "Satisfied: PR8 merged into fc208ec4a093cdd81c6e87158e7a93561822226c",
-      "scope_approval": "EV-AC5-APPROVAL-20261108"
+      "scope_approval": "EV-AC5-APPROVAL-20261108",
+      "execution_complete": true,
+      "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
+      "local_evidence": "EV-AC5-LOCAL-20261108"
     },
     "prior_scoped_work": [
       {
@@ -761,7 +777,7 @@
         "approval_owner": "Gustavo",
         "status": "merged_pending_separate_peer_acceptance",
         "pre_test_undo_commit": "62b9df05338fe44a86747197502e088fa0cf45b5",
-        "human_implementation_review": "GitHub APPROVED by abreugus at 2026-11-08T04:31:24Z; individual Kundan/Sandeep acceptance not established",
+        "human_implementation_review": "Gustavo explicitly authorized reviewed PR8 merge; independent Kundan/Sandeep full-story decisions not inferred",
         "read_only_overlap": [
           "S-1 AC-6"
         ],

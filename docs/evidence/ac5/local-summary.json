@@ -1,0 +1,76 @@
+{
+  "started_at": "2026-11-08T05:15:57.616123+00:00",
+  "completed_at": "2026-11-08T05:17:28.448285+00:00",
+  "integrated_main_commit": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+  "verification_checkpoint": "e615d78717c29e1f7d84c031940edf60eab46a53",
+  "source_equivalence": "All protected executable/test/design/feature/workflow/control bytes match integrated main and reviewed PR8 source; only evidence/planning metadata changed",
+  "packet": "AC-5 v1",
+  "approval": "EV-AC5-APPROVAL-20261108",
+  "counts": {
+    "total": 125,
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "junit_sha256": "acde6c538d632078b5e20657452b16603284ef6606aa22032ef3f7fdffcd8d04",
+  "selected_controls": {
+    "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request": "passed",
+    "tests/test_s1_contract.py::test_ac1_contract_lists_only_submitter_even_for_same_unit": "passed",
+    "tests/test_s1_details.py::test_ac4_details_reject_other_submitter[same-community]": "passed",
+    "tests/test_s1_details.py::test_ac4_details_reject_other_submitter[same-unit]": "passed",
+    "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found": "passed",
+    "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open": "passed",
+    "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status": "passed"
+  },
+  "original_s1_acceptance_tests": {
+    "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open": "passed",
+    "tests/test_s1_requests.py::test_ac2_blank_description_rejected_and_list_unchanged": "passed",
+    "tests/test_s1_requests.py::test_ac3_other_community_resident_does_not_see_request": "passed",
+    "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found": "passed",
+    "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request": "passed",
+    "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status": "passed"
+  },
+  "protected_hashes_verified": 107,
+  "exact_gate": "PASS",
+  "gate_defect_controls": {
+    "reports_rejected": 13,
+    "manifests_rejected": 11,
+    "valid_control": "accepted"
+  },
+  "migration_rehearsal": "update / repeat update / rollback-count 1 / reapply PASS",
+  "docker_engine": "29.2.1",
+  "docker_project": "cc-ac5-20261108",
+  "commands": [
+    "COMPOSE_PROJECT_NAME=cc-ac5-20261108 BUILDX_CONFIG=/tmp/communityconnect-ac5-buildx bash scripts/migration_rehearsal.sh",
+    "COMPOSE_PROJECT_NAME=cc-ac5-20261108 BUILDX_CONFIG=/tmp/communityconnect-ac5-buildx docker compose run --build --rm test",
+    "python3 scripts/verify_s1_baseline.py --junit artifacts/pytest.xml",
+    "python3 scripts/verify_s1_baseline.py --self-test",
+    "python3 .agentic-sdlc/hooks/validate_project.py --workspace .agentic-sdlc",
+    "python3 .agentic-sdlc/hooks/guard_sensitive_data.py app tests db docs prompts scripts AGENTS.md README.md LEDGER.md",
+    "git diff --check"
+  ],
+  "checks": [
+    "Compose config PASS",
+    "AISE structure PASS (historical EV-REPO-ROOT missing claim warning retained)",
+    "sensitive-data source guard PASS",
+    "whitespace PASS",
+    "prior ledger prefixes preserved"
+  ],
+  "warnings": [
+    "Existing Starlette TestClient httpx deprecation; dependencies unchanged"
+  ],
+  "preflight_retry": "Initial non-login Bash PATH did not contain Docker; no containers or tests started. Retried with the configured login shell; no repository/config change.",
+  "application_changes": false,
+  "test_changes": false,
+  "ci_changes": false,
+  "human_acceptance": "pending Kundan behavior / Sandeep test and migration evidence / Gustavo provenance review",
+  "cleanup": {
+    "completed_at": "2026-11-08T05:17:30.530706+00:00",
+    "dedicated_project_containers_removed": true,
+    "previously_running_other_containers_still_running": 7,
+    "preview_health": "HTTP200",
+    "scope": "Only cc-ac5-20261108 removed; user localhost preview and unrelated projects untouched"
+  }
+}
