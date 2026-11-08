@@ -32,9 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "docs/COMC-gustavo-work-queue",
-      "commit": "b8a2723772c84a98ddcf42770e215fa61dcf5881",
-      "commit_context": "Queue checkpoint before final handoff; exact final recording SHA/CI in Git provenance notes. PR12 remains a separate preparation PR."
+      "branch": "docs/COMC-10-ac12-review",
+      "commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+      "commit_context": "Verified merged PR13 baseline; this preparation commit and final CI recorded in Git provenance notes. PR12/13 branches removed after observed merges."
     },
     "stage_status": [
       {
@@ -680,53 +680,57 @@
       "Kundan/Sandeep design, gap, QA and provenance reviews remain; Gustavo bounded S1 acceptance is recorded and COMC42 closed.",
       "Original AI extraction/summary/gap session provenance and remaining claim/exclusion review are unconfirmed; private source packets are prepared.",
       "Personal statement signatures, real walkthrough, final submission SHA and actual receipts require the named humans.",
-      "S3 draft contract/test review precedes future implementation; announcements have confirmed per-community designated-approver and partial-publication policy but designation/delivery contract remains.",
+      "S3 AC12 concrete packet awaits Gustavo scope, Kundan contract and Sandeep test decisions; manager unit-link addendum proposed. AC11/UI not authorized. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T05:53:39.265017+00:00",
+    "last_updated": "2026-11-08T06:07:17.267293+00:00",
     "scoped_work": {
-      "issue": "COMC-4",
-      "type": "Gustavo_assigned_queue",
-      "status": "available_artifacts_completed_remaining_human_and_dependency_gates",
-      "original_open_assigned_count": 15,
-      "completed_issue": "COMC-42",
-      "remaining_open_assigned_count": 14,
-      "human_s1_acceptance": "DEC-GUSTAVO-S1-ACCEPTED-20261108",
-      "source_runtime_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+      "issue": "COMC-10",
+      "related_issues": [
+        "COMC-62",
+        "COMC-4",
+        "COMC-39",
+        "COMC-44"
+      ],
+      "type": "PR13_review_and_S3_AC12_packet",
+      "status": "reviewed_packet_awaiting_human_decisions",
+      "source_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
       "application_changes": false,
       "new_executable_tests": 0,
       "ci_phase_change": false,
       "evidence_ids": [
-        "EV-M1-TRACE-AUDIT-20261108",
-        "EV-M1-PROVENANCE-AUDIT-20261108",
-        "EV-GUSTAVO-PRIVATE-HANDOFF-20261108",
-        "EV-GUSTAVO-SUBMISSION-HANDOFF-20261108",
-        "EV-S3-CONTEXT-DESIGN-20261108",
-        "EV-GUSTAVO-PRODUCT-READINESS-20261108"
+        "EV-PR13-REVIEW-20261108",
+        "EV-S3-AC12-PROPOSAL-20261108"
       ]
     },
     "next_bounded_task": {
-      "issue": "COMC-10",
+      "issue": "COMC-62",
+      "parent": "COMC-10",
       "story": "S-3",
       "acceptance_criteria": [
-        "AC-11",
-        "AC-12"
+        "AC-12 API projection"
       ],
-      "packet": "docs/plans/S-3-context-approval.md",
+      "packet": "docs/plans/S-3-AC12-approval.md",
       "version": 1,
-      "id": "S-3-CTX-1",
-      "type": "design_and_test_plan_only",
-      "status": "design_delivered_awaiting_contract_and_test_review",
-      "decision": "DEC-S3-CTX1-DESIGN-EXECUTION-20261108",
+      "id": "S3-AC12",
+      "type": "options_api_tests_first",
+      "status": "proposed_awaiting_scope_contract_test_decisions",
+      "decision": "DEC-S3-AC12-PROPOSED-20261108",
       "approval_owner": "Gustavo",
-      "execution_started": true,
-      "implementation_changes": false,
-      "new_executable_tests": 0,
-      "ci_phase_change": false,
+      "contract_reviewer": "Kundan",
+      "test_reviewer": "Sandeep",
+      "execution_started": false,
+      "proposed_new_tests": 28,
+      "proposed_target_phase": {
+        "passed": 148,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 5
+      },
       "m1_scope_expanded": false,
-      "execution_complete": true,
-      "source_ref": "docs/design/S-3-context.md",
-      "implementation_approval": "not granted; later exact tests/CI/code packet required"
+      "later_product_increment_approval": "pending",
+      "implementation_approval": "not granted",
+      "browser_acceptance": "pending future UI increment"
     },
     "prior_scoped_work": [
       {
@@ -847,7 +851,7 @@
           "COMC-59"
         ],
         "type": "acceptance_review_and_next_feature_preparation",
-        "status": "runtime_verified_human_acceptance_pending",
+        "status": "bounded_S1_accepted_by_Gustavo_peer_reviews_pending",
         "source_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
         "evidence_ids": [
           "EV-S1-CLOSEOUT-RUNTIME-20261108",
@@ -856,8 +860,55 @@
         "application_changes": false,
         "new_tests": 0,
         "ci_phase_change": false,
-        "independent_human_review": "pending",
-        "final_submission_sha_selected": false
+        "independent_human_review": "Kundan/Sandeep pending; Gustavo actual acceptance recorded",
+        "final_submission_sha_selected": false,
+        "human_acceptance": "DEC-GUSTAVO-S1-ACCEPTED-20261108"
+      },
+      {
+        "issue": "COMC-4",
+        "type": "Gustavo_assigned_queue",
+        "status": "merged_available_artifacts_remaining_human_gates",
+        "original_open_assigned_count": 15,
+        "completed_issue": "COMC-42",
+        "remaining_open_assigned_count": 14,
+        "human_s1_acceptance": "DEC-GUSTAVO-S1-ACCEPTED-20261108",
+        "source_runtime_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "application_changes": false,
+        "new_executable_tests": 0,
+        "ci_phase_change": false,
+        "evidence_ids": [
+          "EV-M1-TRACE-AUDIT-20261108",
+          "EV-M1-PROVENANCE-AUDIT-20261108",
+          "EV-GUSTAVO-PRIVATE-HANDOFF-20261108",
+          "EV-GUSTAVO-SUBMISSION-HANDOFF-20261108",
+          "EV-S3-CONTEXT-DESIGN-20261108",
+          "EV-GUSTAVO-PRODUCT-READINESS-20261108"
+        ],
+        "merge_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+        "pull_request": "https://github.com/ga424/communityconnect/pull/13"
+      },
+      {
+        "issue": "COMC-10",
+        "story": "S-3",
+        "acceptance_criteria": [
+          "AC-11",
+          "AC-12"
+        ],
+        "packet": "docs/plans/S-3-context-approval.md",
+        "version": 1,
+        "id": "S-3-CTX-1",
+        "type": "design_and_test_plan_only",
+        "status": "design_delivered_awaiting_contract_and_test_review",
+        "decision": "DEC-S3-CTX1-DESIGN-EXECUTION-20261108",
+        "approval_owner": "Gustavo",
+        "execution_started": true,
+        "implementation_changes": false,
+        "new_executable_tests": 0,
+        "ci_phase_change": false,
+        "m1_scope_expanded": false,
+        "execution_complete": true,
+        "source_ref": "docs/design/S-3-context.md",
+        "implementation_approval": "not granted; later exact tests/CI/code packet required"
       }
     ],
     "framework": {

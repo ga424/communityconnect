@@ -1,3 +1,13 @@
+# Current review — PR13 and S3-AC12 proposal, November 8, 2026
+
+PR13 is merged at de7e609a63b1caacb7e68b7cb5d82a3335321f98. Exact-head CI42452643892 at ff6b0f9 passes120/0/5, exit0, reverified;107 frozen hashes and prior ledger prefixes preserved. PR12/13 remote branches already auto-deleted; clean local copies removed after ancestry checks. The assistant did not invoke those merges. EV-PR13-REVIEW-20261108 resolves to the [review](../../docs/reviews/PR-13-and-S3-AC12-2026-11-08.md) and real evidence. No new local Docker run.
+
+F1: draft manager unit-null wording differs from valid schema states. Proposed addendum makes role/community the sole authority and adds regression coverage. [S3-AC12 v1](../../docs/plans/S-3-AC12-approval.md) / COMC62 proposes only the community-options API,28 new tests and148/0/5 phase. EV-S3-AC12-PROPOSAL-20261108 is drafted, not execution evidence. Current code/test/CI phase remains unchanged120/0/5. AC11, browser selector and full-story completion remain future scope. M1's S1-only baseline is retained.
+
+Verdict: CONDITIONAL_GO for packet decision; implementation scope/contract/test decisions pending; production NO_GO. Kundan and Sandeep reviews are not invented. Gustavo's earlier bounded S1 acceptance is recorded; COMC42 is Done for his action. Current state is reconciled; historical review sections below retain their earlier checkpoints. Full assurance, residual risks and final authority are documented in the linked review. Six retained historical structural warnings remain visible.
+
+---
+
 # Current review — Gustavo assigned queue, November8,2026
 
 Gustavo explicitly accepted the bounded S1 behavior (DEC-GUSTAVO-S1-ACCEPTED-20261108); COMC42 is Done for his action. The fifteen-ticket queue now has concrete audit/private-handoff/contribution/submission/design/readiness artifacts and named remaining gates. [Status and links](../../docs/reviews/Gustavo-work-queue-status-2026-11-08.md). No application/test/schema/CI change; all107 existing protected hashes remain unchanged. S3 design/test-plan deliverable is prepared under the user's queue instruction, not implemented.

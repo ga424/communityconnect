@@ -489,3 +489,20 @@ evidence: EV-GUSTAVO-QUEUE-HANDOFF-20261108; COMC-4/42/16
 risk: Fourteen assigned tickets remain open for named reviews/signatures/submissions/dependent product implementation; no automatic merge/deployment or live funds. Six retained historical structural warnings have complete current records or explicit gaps.
 
 Entry27 recording checkpoint: 4da9ef69f0757177be75657afa510f272dbb5b7d. Its scoped README update remained unstaged because the helper staged docs/prompts/ledger/state only; the following publication commit includes that already-reviewed README text and this disclosure. No work was lost and no code/test change occurred. Exact follow-up SHA is in the Git provenance note.
+
+
+## Entry 28 — PR13 review and S3-AC12 proposal (November 8, 2026)
+
+artifact: docs/reviews/PR-13-and-S3-AC12-2026-11-08.md; S3-AC12 approval packet, proposed addendum and28-case inventory; observed merge cleanup evidence
+
+tool: OpenAI Codex using pinned AISE0.3.4 review/orchestrate; exact deployed model build/version not exposed in session metadata; November8,2026.
+
+prompts: Exact user request at prompts/2026-11-08-pr13-s3-review.txt
+
+review: Inspected PR13 diff, merged ancestry, existing S3 contract/test plan, schema, ID parsing, fixtures and strict phase gates. Identified valid manager unit-link semantics; proposed clarification without altering protected design. Separated AC12 options from AC11/UI and M1 scope. Reconciled actual prior Gustavo acceptance without inventing named reviews.
+
+checks: Exact-head CI42452643892 reused and reverified at ff6b0f9fd799e160079c3fb9829c0abae9395ef4:120 passed,0 failures/errors,5 exact skips, actual exit0. Merged tree equal;107 frozen hashes and prior prefixes preserved. Clean merged branches removed locally after remote auto-deletion. New preparation checks recorded in docs/evidence/pr13-review/preparation-validation.json; final recording SHA/CI in Git notes. No new local Docker run or executable tests claimed.
+
+evidence: EV-PR13-REVIEW-20261108; EV-S3-AC12-PROPOSAL-20261108; COMC-10/62/39/44/4
+
+risk: S3 scope/contract/test decisions pending. API-only increment cannot complete browser AC12/S3; M1 S1 boundary retained. Production identity, assignment workflow and real volumes excluded. Six historical validator warnings retained; new28 tests and148/0/5 phase are proposals only.

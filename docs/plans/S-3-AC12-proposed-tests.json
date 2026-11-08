@@ -1,0 +1,148 @@
+{
+  "status": "proposed_not_executable_or_passed",
+  "packet": "S3-AC12 v1",
+  "jira": "COMC-62",
+  "base_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "existing_s1_manifest": "docs/evidence/ac4/expected-tests.json",
+  "existing_s1_manifest_sha256": "ce748625dc00f3c13cebc8f14af4af2163c0b11ebd14fedf413693056acaa644",
+  "existing_case_count": 125,
+  "new_test_file": "tests/test_s3_community_options.py",
+  "new_test_ids": [
+    "tests/test_s3_community_options.py::test_ac12_added_assignment_appears_without_restart",
+    "tests/test_s3_community_options.py::test_ac12_deleted_assignment_disappears",
+    "tests/test_s3_community_options.py::test_ac12_known_user_without_assignments",
+    "tests/test_s3_community_options.py::test_ac12_manager_does_not_gain_resident_access",
+    "tests/test_s3_community_options.py::test_ac12_manager_lists_only_assigned_communities",
+    "tests/test_s3_community_options.py::test_ac12_manager_unit_link_does_not_change_authority",
+    "tests/test_s3_community_options.py::test_ac12_mixed_roles_offer_only_manager_assignments",
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[admin]",
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[board_member]",
+    "tests/test_s3_community_options.py::test_ac12_nonmanager_roles_have_no_options[resident]",
+    "tests/test_s3_community_options.py::test_ac12_options_multiple_assignments_sorted",
+    "tests/test_s3_community_options.py::test_ac12_reads_leave_database_unchanged",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[decimal]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[empty]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[leading-zero]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[missing]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[negative]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[outside-db-range]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[overlong]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[plus]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[space]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[text]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unicode-digits]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[unknown]",
+    "tests/test_s3_community_options.py::test_ac12_reject_invalid_caller[zero]",
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[admin]",
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[board_member]",
+    "tests/test_s3_community_options.py::test_ac12_role_change_removes_option[resident]"
+  ],
+  "invalid_callers": {
+    "missing": null,
+    "empty": "",
+    "zero": "0",
+    "negative": "-1",
+    "leading-zero": "0102",
+    "plus": "+102",
+    "decimal": "102.0",
+    "text": "manager",
+    "space": " 102",
+    "unicode-digits": "\u00b2",
+    "unknown": "9999",
+    "outside-db-range": "2147483648",
+    "overlong": "99999999999999999999999999999999999999999999999999"
+  },
+  "test_groups": [
+    {
+      "name": "test_ac12_manager_lists_only_assigned_communities",
+      "parameter_ids": [],
+      "expected": "M2 receives exactly [{id:3,name:Elm Court}]; no other fields or communities."
+    },
+    {
+      "name": "test_ac12_options_multiple_assignments_sorted",
+      "parameter_ids": [],
+      "expected": "Insert M1 assignments out of order; IDs 1,2 appear in ascending ID order with exact names."
+    },
+    {
+      "name": "test_ac12_known_user_without_assignments",
+      "parameter_ids": [],
+      "expected": "Known user 103 with no memberships receives 200 and []."
+    },
+    {
+      "name": "test_ac12_nonmanager_roles_have_no_options",
+      "parameter_ids": [
+        "resident",
+        "board_member",
+        "admin"
+      ],
+      "expected": "A membership in each listed nonmanager role returns 200 and []. Resident fixture has unit 31."
+    },
+    {
+      "name": "test_ac12_reject_invalid_caller",
+      "parameter_ids": [
+        "missing",
+        "empty",
+        "zero",
+        "negative",
+        "leading-zero",
+        "plus",
+        "decimal",
+        "text",
+        "space",
+        "unicode-digits",
+        "unknown",
+        "outside-db-range",
+        "overlong"
+      ],
+      "expected": "Exact 401 with {detail:Unknown user}; no options; missing omits the header. Use the values in invalid_callers."
+    },
+    {
+      "name": "test_ac12_mixed_roles_offer_only_manager_assignments",
+      "parameter_ids": [],
+      "expected": "Manager in A and resident in B sees only A; interleave M2 and repeat first caller to reject shared cached context."
+    },
+    {
+      "name": "test_ac12_deleted_assignment_disappears",
+      "parameter_ids": [],
+      "expected": "Read M2 option, commit deletion, read again: []."
+    },
+    {
+      "name": "test_ac12_role_change_removes_option",
+      "parameter_ids": [
+        "resident",
+        "board_member",
+        "admin"
+      ],
+      "expected": "Read M2 option, commit role change, read again: []; resident change uses unit 31."
+    },
+    {
+      "name": "test_ac12_added_assignment_appears_without_restart",
+      "parameter_ids": [],
+      "expected": "Known empty caller first gets []; commit new manager assignment, next call includes it."
+    },
+    {
+      "name": "test_ac12_reads_leave_database_unchanged",
+      "parameter_ids": [],
+      "expected": "After fixture setup snapshot all five application tables; perform successful, empty and denied reads; exact snapshot unchanged."
+    },
+    {
+      "name": "test_ac12_manager_does_not_gain_resident_access",
+      "parameter_ids": [],
+      "expected": "Seed resident request; obtain manager options then require existing resident list/details denial for manager; known resident still sees own row."
+    },
+    {
+      "name": "test_ac12_manager_unit_link_does_not_change_authority",
+      "parameter_ids": [],
+      "expected": "Set M2 manager membership to valid unit31, then null; both requests return the same Elm Court option."
+    }
+  ],
+  "target_phase": {
+    "passed": 148,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 153
+  },
+  "test_file_hash": "Not available: executable tests have not been written. Freeze at the actual tests-first commit after approval.",
+  "unicode_header_transport": "Send the unicode-digits case as raw Latin-1 header bytes (superscript two, 0xB2). The ASGI header is non-ASCII; do not let HTTP client ASCII encoding fail before calling the API."
+}
