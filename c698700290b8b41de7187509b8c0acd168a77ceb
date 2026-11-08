@@ -1,0 +1,43 @@
+{
+  "pr": 14,
+  "head": "c698700290b8b41de7187509b8c0acd168a77ceb",
+  "ci": "https://github.com/ga424/communityconnect/actions/runs/42453558944",
+  "run_id": 42453558944,
+  "conclusion": "success",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "junit_sha256": "cddbc4d7bacf9d0a67d2915565d2e2cf5588426bd97dfed3116991dae5b6ccc5",
+  "gate": "unchanged scripts/verify_s1_baseline.py accepted downloaded full JUnit",
+  "migrations": "CI update/repeat/rollback/reapply step passed",
+  "cleanup": "CI disposable cleanup completed",
+  "protected_hashes_verified": 107,
+  "new_test_cases_written": 0,
+  "implementation_approval": false,
+  "recorded_at": "2026-11-08T06:11:01.224219+00:00",
+  "ledger_entry": 28,
+  "record_type": "review_packet_final_result",
+  "preparation_commit": "a38374377ed3a42c4c573f029153203123a80648",
+  "final_recording_commit": "c698700290b8b41de7187509b8c0acd168a77ceb",
+  "reviewed_pr13_head": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+  "observed_pr13_merge": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "updated_jira": [
+    "COMC-62",
+    "COMC-10",
+    "COMC-39",
+    "COMC-44",
+    "COMC-4"
+  ],
+  "github_review_comment": "https://github.com/ga424/communityconnect/pull/14#issuecomment-6718084330",
+  "old_branches": "PR12 and PR13 remote auto-deleted; clean local copies deleted after exact-tip ancestry/no-open-PR checks",
+  "new_branch": "PR14 open; docs/COMC-10-ac12-review retained until its own merge",
+  "decisions": "Gustavo scope, Kundan contract and Sandeep test decisions pending;28 proposed tests and148/0/5 target only",
+  "original_design_and_test_plan_unchanged": true,
+  "ledger_prefixes_preserved": true,
+  "worktree_clean": true,
+  "preview_observation": "Port8765 unavailable and no preview containers running at read-only check; no container or preview file mutations"
+}
