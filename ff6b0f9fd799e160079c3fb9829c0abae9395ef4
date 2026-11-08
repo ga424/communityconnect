@@ -4,3 +4,133 @@
   "actual_date": "2026-11-08T05:55:06.459826+00:00",
   "human_reviews": "Only explicit user responses recorded; no teammate decisions inferred"
 }
+
+{
+  "recorded_at": "2026-11-08T05:57:34.304642+00:00",
+  "recording_commit": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+  "ledger_entries": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "pr": "https://github.com/ga424/communityconnect/pull/13",
+  "includes_preparation_pr": 12,
+  "ci_run": 42452643892,
+  "ci_conclusion": "success",
+  "ci_junit_sha256": "1e833ed4d07fb0ee4d1f799999544b340c304dbafbb706b13b755a5ae5dfe25d",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "unchanged_original_protected_hashes": 107,
+  "prior_ledger_prefixes_preserved": true,
+  "application_test_schema_dependency_ci_changes": false,
+  "new_design_only": "docs/design/S-3-context.md",
+  "named_human_decisions": [
+    "Gustavo accepted bounded S1 behavior",
+    "board approval per target by one designated board approver",
+    "publish to approved targets and show remaining targets pending"
+  ],
+  "jira": {
+    "checked_at": "2026-11-08",
+    "completed": {
+      "key": "COMC-42",
+      "basis": "Actual Gustavo acceptance of bounded S1 behavior",
+      "status": "Done"
+    },
+    "open": [
+      {
+        "key": "COMC-4",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-8",
+        "status": "To Do"
+      },
+      {
+        "key": "COMC-10",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-16",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-21",
+        "status": "To Do"
+      },
+      {
+        "key": "COMC-27",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-29",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-38",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-43",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-44",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-46",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-49",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-51",
+        "status": "In Progress"
+      },
+      {
+        "key": "COMC-60",
+        "status": "In Progress"
+      }
+    ],
+    "dependencies": [
+      {
+        "key": "COMC-16",
+        "links": [
+          {
+            "name": "Blocks",
+            "inward": "COMC-15"
+          },
+          {
+            "name": "Blocks",
+            "inward": "COMC-10"
+          }
+        ]
+      },
+      {
+        "key": "COMC-21",
+        "links": [
+          {
+            "name": "Blocks",
+            "inward": "COMC-52"
+          }
+        ]
+      }
+    ]
+  },
+  "private_handoff": "local restricted source packets; no raw notes/quotes committed",
+  "human_gates": "Kundan/Sandeep reviews, personal statement signatures, actual walkthrough/final submissions remain pending",
+  "structural_warnings": "6 retained historical-line warnings;4 current-run missing change_type fields have complete superseding records; originals preserved",
+  "branch_lifecycle": "PR12/13 open, no branch eligible for deletion; automatic deletion enabled; no merge performed",
+  "preview_health": 200
+}
