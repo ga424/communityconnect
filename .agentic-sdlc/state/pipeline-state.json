@@ -32,9 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "feat/COMC-62-s3-ac12",
-      "commit": "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec",
-      "commit_context": "Verified implementation PR checkpoint. Publication-only follow-up retains identical runtime sources; final head CI recorded in refs/notes/ai-provenance."
+      "branch": "docs/COMC-10-ac11-packet",
+      "commit": "8f993ab6fb96e837315918d0da2b344642a05c57",
+      "commit_context": "Reviewed PR15 parent; documentation-only stacked preparation. Final preparation head/CI recorded in Git notes."
     },
     "stage_status": [
       {
@@ -683,77 +683,60 @@
       "S3 AC12 locally implemented; CI and human result review pending. Reviewer tickets closed by Gustavo; independent authorship unverified. AC11/UI not authorized. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T22:19:17.328950+00:00",
+    "last_updated": "2026-11-08T22:38:29.771180+00:00",
     "scoped_work": {
-      "issue": "COMC-62",
-      "type": "S3_AC12_options_implementation",
-      "status": "implemented_ci_verified_awaiting_result_review",
-      "application_changes": true,
-      "new_executable_tests": 28,
-      "ci_phase_change": true,
-      "counts": {
+      "issue": "COMC-65",
+      "parent": "COMC-10",
+      "type": "PR15_review_and_AC11_packet_preparation",
+      "status": "draft_packet_pending_decisions",
+      "application_changes": false,
+      "new_executable_tests": 0,
+      "ci_phase_change": false,
+      "reviewed_pr": "https://github.com/ga424/communityconnect/pull/15",
+      "reviewed_head": "8f993ab6fb96e837315918d0da2b344642a05c57",
+      "current_verified_counts": {
         "passed": 148,
         "failed": 0,
         "errors": 0,
         "skipped": 5
       },
       "evidence_ids": [
-        "EV-S3-AC12-OWNER-CLEARANCE-20261108",
-        "EV-S3-AC12-RED-20261108",
-        "EV-S3-AC12-LOCAL-20261108",
-        "EV-S3-AC12-CI-42529458195"
-      ],
-      "pull_request": "https://github.com/ga424/communityconnect/pull/15",
-      "verified_ci_commit": "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec",
-      "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42529458195"
+        "EV-PR15-REVIEW-20261108",
+        "EV-S3-AC11-PACKET-20261108"
+      ]
     },
     "next_bounded_task": {
-      "issue": "COMC-62",
+      "id": "S3-AC11",
+      "version": 1,
+      "issue": "COMC-65",
       "parent": "COMC-10",
       "story": "S-3",
       "acceptance_criteria": [
-        "AC-12 API projection"
+        "AC11 API projection"
       ],
-      "packet": "docs/plans/S-3-AC12-approval.md",
-      "version": 1,
-      "id": "S3-AC12",
-      "type": "options_api_tests_first",
-      "status": "implemented_ci_verified_awaiting_result_review",
-      "decision": "DEC-S3-AC12-EXECUTE-20261108",
+      "packet": "docs/plans/S-3-AC11-approval.md",
+      "status": "proposed_awaiting_scope_contract_test_decisions",
       "approval_owner": "Gustavo",
       "contract_reviewer": "Kundan",
       "test_reviewer": "Sandeep",
-      "execution_started": true,
-      "proposed_new_tests": 28,
+      "review_dependencies": {
+        "Kundan": "COMC-66",
+        "Sandeep": "COMC-67"
+      },
+      "integration_dependency": "PR15 reviewed head in main; COMC-62",
+      "proposed_new_tests": 52,
       "proposed_target_phase": {
-        "passed": 148,
+        "passed": 200,
         "failed": 0,
         "errors": 0,
-        "skipped": 5
+        "skipped": 5,
+        "total": 205
       },
-      "m1_scope_expanded": false,
-      "later_product_increment_approval": "owner_confirmed",
-      "implementation_approval": "existing scope approval plus owner completion confirmation",
-      "browser_acceptance": "pending future UI increment",
-      "scope_approval": "EV-S3-AC12-SCOPE-APPROVAL-20261108",
-      "review_dependencies": {
-        "Kundan": "COMC-63",
-        "Sandeep": "COMC-64"
-      },
-      "last_review_check": {
-        "at": "2026-11-08T22:12:49.188853+00:00",
-        "evidence": "EV-S3-AC12-OWNER-CLEARANCE-20261108",
-        "Kundan": "COMC63 Done by Gustavo",
-        "Sandeep": "COMC64 Done by Gustavo",
-        "owner_confirmation_recorded": true
-      },
-      "execution_clearance": "Gustavo completion confirmation and own closure of COMC63/64; independent reviewer authorship unverified",
-      "tests_first_commit": "5b5a1d6bf775774b58d89e206363919b3cb739bd",
-      "independent_reviewer_authorship_verified": false,
+      "execution_started": false,
+      "implementation_approved": false,
       "merge_authorized": false,
-      "pull_request": "https://github.com/ga424/communityconnect/pull/15",
-      "verified_ci_commit": "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec",
-      "ci_evidence": "EV-S3-AC12-CI-42529458195"
+      "m1_scope_expanded": false,
+      "browser_acceptance": "separate future UI increment"
     },
     "prior_scoped_work": [
       {
@@ -970,6 +953,31 @@
           "EV-S3-AC12-RECHECK-20261108"
         ],
         "latest_review_check": "EV-S3-AC12-RECHECK-20261108"
+      },
+      {
+        "issue": "COMC-62",
+        "type": "S3_AC12_options_implementation",
+        "status": "implemented_ci_verified_ai_reviewed_awaiting_human_result_and_merge",
+        "application_changes": true,
+        "new_executable_tests": 28,
+        "ci_phase_change": true,
+        "counts": {
+          "passed": 148,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 5
+        },
+        "evidence_ids": [
+          "EV-S3-AC12-OWNER-CLEARANCE-20261108",
+          "EV-S3-AC12-RED-20261108",
+          "EV-S3-AC12-LOCAL-20261108",
+          "EV-S3-AC12-CI-42529458195"
+        ],
+        "pull_request": "https://github.com/ga424/communityconnect/pull/15",
+        "verified_ci_commit": "8f993ab6fb96e837315918d0da2b344642a05c57",
+        "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42529654327",
+        "review_evidence": "EV-PR15-REVIEW-20261108",
+        "merge_observed": false
       }
     ],
     "framework": {

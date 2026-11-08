@@ -1,0 +1,298 @@
+{
+  "status": "proposal_not_executable_tests",
+  "packet": "S3-AC11 v1",
+  "issue": "COMC-65",
+  "file": "tests/test_s3_selected_requests.py",
+  "baseline_commit": "8f993ab6fb96e837315918d0da2b344642a05c57",
+  "new_case_count": 52,
+  "current_phase": {
+    "passed": 148,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 153
+  },
+  "proposed_phase": {
+    "passed": 200,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 205
+  },
+  "invalid_callers": {
+    "missing": null,
+    "empty": "",
+    "zero": "0",
+    "negative": "-1",
+    "leading-zero": "0101",
+    "plus": "+101",
+    "decimal": "101.0",
+    "text": "manager",
+    "space": " 101",
+    "unicode-digits": "²",
+    "unknown": "9999",
+    "outside-db-range": "2147483648",
+    "overlong": "99999999999999999999999999999999999999999999999999"
+  },
+  "unavailable_paths": {
+    "zero": "0",
+    "negative": "-1",
+    "leading-zero": "01",
+    "plus": "+1",
+    "decimal": "1.0",
+    "text": "community",
+    "space": " 1",
+    "unicode-digits": "²",
+    "outside-db-range": "2147483648",
+    "overlong": "99999999999999999999999999999999999999999999999999",
+    "nonexistent": "9999",
+    "unassigned": "3",
+    "max-valid-absent": "2147483647"
+  },
+  "groups": [
+    {
+      "function": "test_ac11_manager_reads_only_selected_community",
+      "parameters": [],
+      "count": 1,
+      "expected": "Source AC11: A and B each have one Open request; M1 reading B returns exactly B request21.",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_manager_reads_all_residents_in_selected_community",
+      "parameters": [],
+      "count": 1,
+      "expected": "Add a second resident request in A: manager sees both owners, and no B/C rows.",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_assigned_empty_community_returns_empty_array",
+      "parameters": [],
+      "count": 1,
+      "expected": "M1 assigned to empty Birch4 receives200 [].",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_switch_has_no_remembered_context",
+      "parameters": [],
+      "count": 1,
+      "expected": "M1 reads A, B, A; each exact array matches only the URL selection.",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_interleaved_managers_stay_isolated",
+      "parameters": [],
+      "count": 1,
+      "expected": "Interleave M1(A/B) and M2(C) requests; allowed arrays exact, cross-assignment reads exact404.",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_reject_invalid_caller",
+      "parameters": [
+        "missing",
+        "empty",
+        "zero",
+        "negative",
+        "leading-zero",
+        "plus",
+        "decimal",
+        "text",
+        "space",
+        "unicode-digits",
+        "unknown",
+        "outside-db-range",
+        "overlong"
+      ],
+      "count": 13,
+      "expected": "Matched selected route returns exact401 Unknown user; no data. Superscript2 sent as raw Latin1 header bytes.",
+      "coverage": "R2/R3"
+    },
+    {
+      "function": "test_ac11_unavailable_community_is_indistinguishable",
+      "parameters": [
+        "zero",
+        "negative",
+        "leading-zero",
+        "plus",
+        "decimal",
+        "text",
+        "space",
+        "unicode-digits",
+        "outside-db-range",
+        "overlong",
+        "nonexistent",
+        "unassigned",
+        "max-valid-absent"
+      ],
+      "count": 13,
+      "expected": "Known M1 receives exact404 Not found for every matched unavailable path; response contains no community/request details.",
+      "coverage": "R2/R3"
+    },
+    {
+      "function": "test_ac11_identity_precedes_invalid_path",
+      "parameters": [
+        "missing",
+        "unknown",
+        "malformed"
+      ],
+      "count": 3,
+      "expected": "Against path bad, callers None/9999/² each receive exact401, not404/422.",
+      "coverage": "R2/R3"
+    },
+    {
+      "function": "test_ac11_nonmanager_cannot_read",
+      "parameters": [
+        "resident",
+        "board_member",
+        "admin"
+      ],
+      "count": 3,
+      "expected": "User104 with only the stated A role receives exact404; resident has valid unit11.",
+      "coverage": "R2"
+    },
+    {
+      "function": "test_ac11_known_unassigned_caller_denied",
+      "parameters": [],
+      "count": 1,
+      "expected": "Known103 without any memberships receives exact404 reading A.",
+      "coverage": "R2"
+    },
+    {
+      "function": "test_ac11_mixed_roles_do_not_grant_manager_access",
+      "parameters": [],
+      "count": 1,
+      "expected": "User106 managerA/residentB reads all A but is denied manager B; resident B route remains own-only.",
+      "coverage": "R2/R4"
+    },
+    {
+      "function": "test_ac11_committed_removal_denies_later_read",
+      "parameters": [],
+      "count": 1,
+      "expected": "After successful options and A reads, commit deletion of M1/A membership; next request404 and next options omit A.",
+      "coverage": "R2/R4"
+    },
+    {
+      "function": "test_ac11_committed_role_change_denies_later_read",
+      "parameters": [
+        "resident",
+        "board_member",
+        "admin"
+      ],
+      "count": 3,
+      "expected": "After successful A read commit role change; next manager read404 and option gone. Resident change uses unit11.",
+      "coverage": "R2/R4"
+    },
+    {
+      "function": "test_ac11_new_assignment_authorizes_next_read",
+      "parameters": [],
+      "count": 1,
+      "expected": "Known103 denied A; commit managerA assignment; next read returns A without restart.",
+      "coverage": "R1/R4"
+    },
+    {
+      "function": "test_ac11_unit_link_does_not_change_authority",
+      "parameters": [],
+      "count": 1,
+      "expected": "M1/A reads identical rows with valid unit11 and with null unit.",
+      "coverage": "R3/R4"
+    },
+    {
+      "function": "test_ac11_public_fields_order_status_and_utc",
+      "parameters": [],
+      "count": 1,
+      "expected": "Exact seven-field dictionaries exclude submitted_by; include all three statuses; created_at desc then id desc including tie; non-UTC input renders UTC seconds.",
+      "coverage": "R1/R3"
+    },
+    {
+      "function": "test_ac11_reads_preserve_application_tables",
+      "parameters": [],
+      "count": 1,
+      "expected": "Successful, empty and denied reads preserve exact snapshots of five application tables.",
+      "coverage": "R4"
+    },
+    {
+      "function": "test_ac11_resident_routes_remain_self_only",
+      "parameters": [],
+      "count": 1,
+      "expected": "Manager gains no resident list/details access; resident1 sees own A row, never resident3 row; no stored changes.",
+      "coverage": "R4"
+    },
+    {
+      "function": "test_ac11_membership_stable_through_validation",
+      "parameters": [
+        "delete",
+        "role-change"
+      ],
+      "count": 2,
+      "expected": "Real concurrent delete or non-key board role update waits on API transaction during delegated row validation; first read may200, committed change makes next404.",
+      "coverage": "R2/R4"
+    },
+    {
+      "function": "test_ac11_validation_failure_releases_transaction",
+      "parameters": [],
+      "count": 1,
+      "expected": "After proving route exists, inject row-validation failure: server500, not auth denial/empty list; subsequent FOR UPDATE NOWAIT succeeds, rows unchanged.",
+      "coverage": "R4"
+    },
+    {
+      "function": "test_ac11_database_failure_is_not_authorization_denial",
+      "parameters": [],
+      "count": 1,
+      "expected": "After proving route exists, inject connection OperationalError: server500, not401/404/200; restore fixture and successful read.",
+      "coverage": "R4"
+    }
+  ],
+  "node_ids": [
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community",
+    "tests/test_s3_selected_requests.py::test_ac11_manager_reads_all_residents_in_selected_community",
+    "tests/test_s3_selected_requests.py::test_ac11_assigned_empty_community_returns_empty_array",
+    "tests/test_s3_selected_requests.py::test_ac11_switch_has_no_remembered_context",
+    "tests/test_s3_selected_requests.py::test_ac11_interleaved_managers_stay_isolated",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[missing]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[empty]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[negative]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[leading-zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[plus]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[decimal]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[text]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[space]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unicode-digits]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unknown]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[outside-db-range]",
+    "tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[overlong]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[negative]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[leading-zero]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[plus]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[decimal]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[text]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[space]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unicode-digits]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[outside-db-range]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[overlong]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[nonexistent]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unassigned]",
+    "tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[max-valid-absent]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[missing]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[unknown]",
+    "tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[malformed]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[resident]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[board_member]",
+    "tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[admin]",
+    "tests/test_s3_selected_requests.py::test_ac11_known_unassigned_caller_denied",
+    "tests/test_s3_selected_requests.py::test_ac11_mixed_roles_do_not_grant_manager_access",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_removal_denies_later_read",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[resident]",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[board_member]",
+    "tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[admin]",
+    "tests/test_s3_selected_requests.py::test_ac11_new_assignment_authorizes_next_read",
+    "tests/test_s3_selected_requests.py::test_ac11_unit_link_does_not_change_authority",
+    "tests/test_s3_selected_requests.py::test_ac11_public_fields_order_status_and_utc",
+    "tests/test_s3_selected_requests.py::test_ac11_reads_preserve_application_tables",
+    "tests/test_s3_selected_requests.py::test_ac11_resident_routes_remain_self_only",
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[delete]",
+    "tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[role-change]",
+    "tests/test_s3_selected_requests.py::test_ac11_validation_failure_releases_transaction",
+    "tests/test_s3_selected_requests.py::test_ac11_database_failure_is_not_authorization_denial"
+  ]
+}

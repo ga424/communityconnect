@@ -1,3 +1,9 @@
+# Current review — PR15 and proposed S3-AC11 v1
+
+[Review](../../docs/reviews/PR-15-and-S3-AC11-2026-11-08.md): no blocking bounded code findings at8f993ab; fresh CI artifact148/0/5 and24 gate controls verified. PR15 remains open, human result/merge decision pending. PR14 is also open; automatic deletion after verified merge remains enabled. [Next packet](../../docs/plans/S-3-AC11-approval.md) is unapproved: one route,52 tests, proposed200/0/5. COMC65 is To Do; Kundan66 and Sandeep67 decisions pending. Verdict CONDITIONAL_GO for human integration review, NO_GO for production. No executable or protected contract change in this preparation.
+
+---
+
 # Publication checkpoint — PR15 CI verified, November 8, 2026
 
 [PR15](https://github.com/ga424/communityconnect/pull/15) is open for result review. EV-S3-AC12-CI-42529458195 verifies its f76cf3a head: 148 passes, zero failures/errors, five exact skips and actual exit 0. Downloaded JUnit passed the strict gate; all 24 controls, migrations and cleanup passed. GitHub tested its merge ref, whose tree equals that head. [CI evidence](../../docs/evidence/s3-ac12/ci-42529458195.json). No runtime changes in this publication-only follow-up; final head CI will be attached in Git provenance notes. Human acceptance and merge remain pending. Earlier local/pending-CI text below records its checkpoint.

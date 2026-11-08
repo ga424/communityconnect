@@ -1,0 +1,53 @@
+{
+  "status": "proposed",
+  "packet": "S3-AC11 v1",
+  "method": "GET",
+  "path": "/manager/communities/{community_id}/requests",
+  "identity_header": "X-User-Id",
+  "identity_parser": "app.requests._database_id (unchanged)",
+  "path_parameter_type": "raw string",
+  "matched_route_error_precedence": [
+    "invalid_or_unknown_identity:401",
+    "invalid_or_unavailable_community_or_no_manager_assignment:404"
+  ],
+  "errors": {
+    "401": {
+      "detail": "Unknown user"
+    },
+    "404": {
+      "detail": "Not found"
+    }
+  },
+  "success": {
+    "status": 200,
+    "type": "array",
+    "model": "app.requests.RequestResponse (unchanged)",
+    "exact_fields": [
+      "id",
+      "community_id",
+      "unit_id",
+      "category",
+      "description",
+      "status",
+      "created_at"
+    ],
+    "order": [
+      "created_at DESC",
+      "id DESC"
+    ],
+    "empty": []
+  },
+  "cache_control": "no-store for 200/401/404",
+  "authorization": {
+    "membership": [
+      "user_id=caller",
+      "community_id=selected",
+      "role=manager"
+    ],
+    "unit_id": "ignored",
+    "lock": "FOR SHARE through row validation in one transaction"
+  },
+  "writes": false,
+  "exceptions": "unwind transaction; server error, never substitute success/authorization denial",
+  "source_ac": "S-3 AC-11 API projection; browser outcome pending"
+}

@@ -1,0 +1,33 @@
+{
+  "reviewed_at": "2026-11-08T22:37:24.140768+00:00",
+  "pr": 15,
+  "head": "8f993ab6fb96e837315918d0da2b344642a05c57",
+  "base_main": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "state": "OPEN",
+  "formal_human_reviews": 0,
+  "automated_review": {
+    "head": "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec",
+    "findings_reported": false,
+    "security_review": "not reported"
+  },
+  "review_verdict": "no blocking bounded code findings; human result/merge decision pending",
+  "ci": "https://github.com/ga424/communityconnect/actions/runs/42529654327",
+  "counts": {
+    "passed": 148,
+    "skipped": 5,
+    "failed": 0,
+    "errors": 0,
+    "total": 153
+  },
+  "pytest_exit": 0,
+  "protected_paths": 116,
+  "new_test_hash": "b9455f1fa62b2ec439956be42dc972d31e8e5fae52117980c770d615bb70ca3d",
+  "local_runtime_rerun": false,
+  "gate_control_rerun": true,
+  "branch_cleanup": {
+    "pr14": "open; preserve",
+    "pr15": "open; preserve",
+    "automatic_delete_after_merge": true
+  },
+  "next_task": "COMC-65; proposed S3-AC11 v1;52 tests;200/0/5 target, not a result"
+}
