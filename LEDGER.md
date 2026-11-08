@@ -542,3 +542,20 @@ checks: Structural/source/whitespace,107 protected hashes and prior ledger prefi
 evidence: EV-S3-AC12-RECHECK-20261108; COMC62/63/64; PR14
 
 risk: Named review decisions remain missing in checked sources. Do not treat Gustavo's approvals, ticket status or silence as proxy peer acceptance. Current approved scope persists; all implementation targets remain pending execution.
+
+
+## Entry 31 — AC12 owner completion confirmation and undo checkpoint (November 8, 2026)
+
+artifact: new addendum, scoped AGENTS exception, baseline and context
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Read actual Jira transitions and preserved their actor; no Kundan/Sandeep comments or signatures invented. Scope/addendum already explicitly approved. Fresh main and PR14 ancestry inspected.
+
+checks: All107 historical frozen hashes match before allowed changes; no app/test/CI change. Docker29.9.2 accessible; unrelated containers inventoried.
+
+evidence: EV-S3-AC12-OWNER-CLEARANCE-20261108; COMC62/63/64
+
+risk: Owner-confirmed completion is not independently authored peer evidence; result review and merge remain separate. Synthetic local scope only.
