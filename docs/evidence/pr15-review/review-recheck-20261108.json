@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-08T23:16:13.853785+00:00",
+  "request": "check again",
+  "issues": {
+    "COMC-63": {
+      "status": "Done",
+      "changed_at": "2026-11-08T17:05:01.436-0500"
+    },
+    "COMC-64": {
+      "status": "Done",
+      "changed_at": "2026-11-08T17:05:04.727-0500"
+    },
+    "COMC-66": {
+      "status": "Done",
+      "actor": "Gustavo Abreu",
+      "changed_at": "2026-11-08T18:11:58.919-0500",
+      "comments": 0,
+      "attachments": 0
+    },
+    "COMC-67": {
+      "status": "Done",
+      "actor": "Gustavo Abreu",
+      "changed_at": "2026-11-08T18:12:01.064-0500",
+      "comments": 0,
+      "attachments": 0
+    },
+    "COMC-65": {
+      "status": "To Do",
+      "scope_approval": "not yet recorded"
+    },
+    "COMC-62": {
+      "status": "In Progress"
+    }
+  },
+  "prs": {
+    "14": {
+      "state": "OPEN",
+      "head": "ba7740354bcc25b2fbcc72e736c15e3c2d128d91"
+    },
+    "15": {
+      "state": "OPEN",
+      "head": "8f993ab6fb96e837315918d0da2b344642a05c57",
+      "ci": "SUCCESS at42529654327"
+    },
+    "16": {
+      "state": "OPEN",
+      "draft": true,
+      "head": "3f79f0c4d4f3b709906046f75715b5fcaea4aea8",
+      "base": "feat/COMC-62-s3-ac12"
+    }
+  },
+  "automatic_delete_after_merge": true,
+  "independent_reviewer_authorship_verified": false,
+  "implementation_started": false,
+  "remaining_decisions": [
+    "Gustavo approval of S3-AC11 v1/addendum/52 tests/CI phase",
+    "PR15 merge authorization and integration"
+  ],
+  "source_refs": [
+    "https://gkms.atlassian.net/browse/COMC-66",
+    "https://gkms.atlassian.net/browse/COMC-67",
+    "https://github.com/ga424/communityconnect/pull/15",
+    "https://github.com/ga424/communityconnect/pull/16"
+  ]
+}

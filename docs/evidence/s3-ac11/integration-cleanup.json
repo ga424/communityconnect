@@ -1,0 +1,34 @@
+{
+  "verified_at": "2026-11-08T23:24:42.778150+00:00",
+  "pr14": {
+    "merged_at": "2026-11-08T23:16:26Z",
+    "head": "ba7740354bcc25b2fbcc72e736c15e3c2d128d91"
+  },
+  "pr15": {
+    "merged_at": "2026-11-08T23:16:24Z",
+    "head": "23acd10e0c854f48aa4f7f08dc077c62c17665c7",
+    "merge": "7d8174e75d1f9a899f6ebb6d694eddf458a295de",
+    "merged_by": "abreugus"
+  },
+  "pr16": {
+    "merged_at": "2026-11-08T23:16:05Z",
+    "head": "3f79f0c4d4f3b709906046f75715b5fcaea4aea8",
+    "merge": "23acd10e0c854f48aa4f7f08dc077c62c17665c7"
+  },
+  "cleanup": {
+    "old_remote_branch_names_absent": [
+      "docs/COMC-10-ac12-review",
+      "feat/COMC-62-s3-ac12",
+      "docs/COMC-10-ac11-packet"
+    ],
+    "old_local_branch_names_absent": true,
+    "clean_worktrees_detached": [
+      "communityconnect-s3-ac12",
+      "communityconnect-s3-ac12-review"
+    ],
+    "in_flight_status_update": "8f67364 arrived after automatic branch deletion. Preserved under docs/COMC-65-review-status before old name removed with expected-head lease; incorporated into new feature worktree. No unmerged work discarded.",
+    "status_branch": "Unmerged metadata branch remains until its latest head integrates"
+  },
+  "ci_run": "42534349053",
+  "main_tree_equals_verified_ci_head": true
+}

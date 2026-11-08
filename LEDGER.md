@@ -646,3 +646,88 @@ checks: Freshly downloaded final PR15-head CI42529654327 verifies148/0/5 exit0;2
 evidence: EV-PR15-REVIEW-20261108; EV-S3-AC11-PACKET-20261108; DEC-S3-AC11-PROPOSED-20261108
 
 risk: PR15 result/merge decision, AC11 scope/contract/test decisions and real concurrency evidence remain pending. COMC62/66/67 block COMC65. API evidence does not complete browser S3 or authorize production. Seven existing structural warnings retained.
+
+
+## Entry 37 — AC11 review-ticket recheck (November 8, 2026)
+
+artifact: docs/evidence/pr15-review/review-recheck-20261108.json and current packet/state status
+
+tool: OpenAI Codex with existing pinned AISE0.3.4 record format; exact model build and usage/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-ac11-review-recheck.txt
+
+review: COMC66/67 are Done with closures by Gustavo; zero comments/attachments on each, so no independent Kundan/Sandeep-authored acceptance is invented. PR14/15/16 remain open. Scope approval for AC11 and authorization to merge PR15 are still separate pending decisions at this checkpoint.
+
+checks: Live Jira status/history/comments and GitHub PR timelines read; current heads and automatic branch deletion verified. Protected-file hashes and prior ledger prefixes retained; structural/source/whitespace checks. No new tests or runtime run.
+
+evidence: EV-AC11-REVIEW-TICKETS-DONE-20261108
+
+risk: Ticket completion does not silently approve a new implementation or merge. Preserve open branches until actual verified merge; keep closure attribution accurate. Seven historical structural warnings retained.
+
+
+## Entry 38 — AC11 approval, integration and undo checkpoint (November 8, 2026)
+
+artifact: approved AC11 addendum, exact approval prompt, baseline and integration/cleanup evidence
+
+tool: OpenAI Codex with pinned AISE0.3.4; exact model build/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: Gustavo explicitly approved AC11 v1 after the concrete addendum/52-test/CI question. PR16/15 had already merged via GitHub account abreugus; no assistant merge invocation. COMC66/67 Done closures retain owner attribution; no independent reviewer signature invented.
+
+checks: Latest merged-head CI42534349053 artifact148/0/5 exit0,24 controls and migrations/cleanup verified; main tree matches. Old merged branch names removed after ancestry/no-open-PR/clean-worktree checks. In-flight status commit preserved on a new branch. All116 preparation hashes matched before three explicit exceptions; new execution baseline captured. Docker29.9.2 available; five unrelated Hadoop containers inventoried.
+
+evidence: EV-S3-AC11-APPROVAL-20261108; EV-PR15-16-INTEGRATION-20261108; DEC-S3-AC11-EXECUTE-20261108
+
+risk: No new behavior/test/CI change yet. Tests-first execution and actual concurrency evidence remain to be produced. Result acceptance and feature-PR merge remain separate.
+
+
+## Entry 39 — AC11 actual tests-first freeze (November 8, 2026)
+
+artifact: tests/test_s3_selected_requests.py; docs/evidence/s3-ac11/tests-first.json and red JUnit/output
+
+tool: OpenAI Codex, pinned AISE0.3.4; exact model/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI checked the52 cases against approved inventory. Real database and delegated final-row validation instrumentation; no fake successful authorization or forced failures. No independent teammate acceptance invented.
+
+checks: Docker collected205:148 passed,52 semantic missing-route failures,zero errors,5 exact old skips,exit1. Exact IDs and original153 strict gate pass;116 protected hashes unchanged. Test SHA256 ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38. Undo commit 85547272a0661c1eaadb4bded9cdc50e620603fd; tests-first commit is this commit and will be pinned in the additive manifest.
+
+evidence: EV-S3-AC11-RED-20261108
+
+risk: Red is expected missing behavior, not completion. Concurrency/fault probes fail at missing-route assertion before workers; actual lock evidence awaits implementation. No app/CI changes in this checkpoint.
+
+
+## Entry 40 — AC11 implementation and local verification (November 8, 2026)
+
+artifact: new manager_requests router and main registration; additive AC11 verifier/manifest/CI; evidence, traceability, review and current AISE state
+
+tool: OpenAI Codex, pinned AISE0.3.4; exact model/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI reviewed parameterized authorization/query, transaction scope through every row, exact projection and error precedence; no blocking bounded finding. Frozen tests were unchanged. Independent human result review remains pending.
+
+checks:200 passes,0 failures/errors,5 original skips,exit0. Both real concurrent membership mutations blocked through final-row validation and subsequent reads denied. Fault500/rollback/recovery cases pass.24 new gate controls and all historical gates/controls pass. Migration update/repeat/rollback/reapply pass.116 protected hashes and prior ledger prefixes match; source/structure/whitespace pass with seven historical warnings. Dedicated Compose resources removed; five unrelated Hadoop containers preserved.
+
+evidence: EV-S3-AC11-LOCAL-20261108; tests-first359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; final Stage5 completion SHA recorded by publication entry/Git note.
+
+risk: Remote CI and human result review remain pending. Local API only; no UI, production identity, performance/SCA or production assurance. Existing TestClient deprecation retained within protected dependencies. Future feature/merge not authorized.
+
+
+## Entry 41 — AC11 PR and verified implementation CI (November 8, 2026)
+
+artifact: PR17; CI summary/JUnit/gate controls; current state/review/publication links
+
+tool: OpenAI Codex with pinned AISE0.3.4; GitHub connector/CLI for publication and artifact retrieval.
+
+prompts: prompts/2026-11-08-s3-ac11-approval.txt
+
+review: AI reverified actual downloaded artifact; human result acceptance and merge remain pending. Reviewer ticket authorship unchanged.
+
+checks: CI42536188957 at Stage5 completion `026a6c3bdc972a7cf26d6d56ffd336a30097e767`:200 pass,0 failures/errors,5 exact skips,pytest exit0,24 controls,migration and cleanup successful. The publication diff is metadata only; final publication-head CI and SHA are linked through PR/Jira and append-only Git provenance notes to avoid self-reference.
+
+evidence: EV-S3-AC11-CI-42536188957; https://github.com/ga424/communityconnect/actions/runs/42536188957; https://github.com/ga424/communityconnect/pull/17
+
+risk: No production/full-story acceptance or merge approval. Current feature/status branches preserve unmerged work; delete after verified latest-head integration.

@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-11-08T23:29:14.864025+00:00",
+  "undo_commit": "85547272a0661c1eaadb4bded9cdc50e620603fd",
+  "test_file": "tests/test_s3_selected_requests.py",
+  "test_sha256": "ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38",
+  "new_cases": 52,
+  "total": 205,
+  "passed": 148,
+  "failed": 52,
+  "errors": 0,
+  "skipped": 5,
+  "pytest_exit": 1,
+  "exact_ids_match": true,
+  "prior_153_strict_gate": "passed",
+  "protected_paths_verified": 116,
+  "classification": "52 semantic missing-route failures; no unexpected passes or setup/collection errors",
+  "test_review": "Test-local real DB fixtures and bounded concurrency/fault wrappers match approved inventory; AI review, not independent teammate review.",
+  "evidence_formatting": {
+    "red-junit.xml": {
+      "raw_sha256": "45aa9a92c7017765e5bd93810eb6c5b23458c30bd8f2210872c47a1dbaa7c621",
+      "normalization": "Trailing line whitespace removed only; outcomes/messages retained."
+    },
+    "red-output.txt": {
+      "raw_sha256": "b53e9db5d7dc51e31c15b60e99cd273f0268963710573945d14d96b341af1a65",
+      "normalization": "Trailing line whitespace removed only; outcomes/messages retained."
+    }
+  }
+}

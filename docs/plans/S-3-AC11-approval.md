@@ -1,4 +1,10 @@
+> Execution update: AC11 v1 is implemented locally after actual approval. Frozen52 tests pass; full200/0/5 phase verified. See [evidence](../evidence/s3-ac11/README.md). Result review/merge remains pending. The historical preparation and approval checkpoints below retain their original wording.
+
 # S3-AC11 packet v1 — selected-community request reads
+
+**Approved execution update:** Gustavo answered “Approve merge and AC11 v1” to the question explicitly naming this addendum,52 tests and200/0/5 CI phase. [Exact record](../../prompts/2026-11-08-s3-ac11-approval.txt). PR15/16 are integrated; COMC66/67 are Done by Gustavo. Earlier pending statements below describe historical checkpoints. No new result/merge approval is inferred.
+
+**Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only.
 
 **Proposed, awaiting approval.** [COMC-65](https://gkms.atlassian.net/browse/COMC-65), parent [COMC-10](https://gkms.atlassian.net/browse/COMC-10). Gustavo owns integration/scope; Kundan reviews the contract in COMC-66; Sandeep reviews the test plan in COMC-67. No review completion or scope approval is implied by this draft or by the AC12 reviews.
 

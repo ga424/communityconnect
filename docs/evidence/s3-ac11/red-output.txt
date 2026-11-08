@@ -1,0 +1,1546 @@
+ Network cc-s3-ac11-20261108_default Creating
+ Network cc-s3-ac11-20261108_default Creating
+ Network cc-s3-ac11-20261108_default Created
+ Network cc-s3-ac11-20261108_default Created
+ Container cc-s3-ac11-20261108-db-1 Creating
+ Container cc-s3-ac11-20261108-db-1 Created
+ Container cc-s3-ac11-20261108-migrate-1 Creating
+ Container cc-s3-ac11-20261108-migrate-1 Created
+ Container cc-s3-ac11-20261108-db-1 Starting
+ Container cc-s3-ac11-20261108-db-1 Started
+ Container cc-s3-ac11-20261108-db-1 Waiting
+ Container cc-s3-ac11-20261108-db-1 Healthy
+ Container cc-s3-ac11-20261108-migrate-1 Starting
+ Container cc-s3-ac11-20261108-migrate-1 Started
+ Image cc-s3-ac11-20261108-test Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 634B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 254B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 99B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286
+#5 resolve docker.io/library/python:3.12-slim@sha256:804ddf3251a60bbf9c92e73b7566c40428d54d0e79d3428194edf40da6521286 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.77MB 0.2s done
+#6 DONE 0.2s
+
+#7 [2/5] WORKDIR /workspace
+#7 CACHED
+
+#8 [3/5] COPY requirements.lock ./
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#10 [5/5] COPY . .
+#10 DONE 0.2s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.3s done
+#11 exporting manifest sha256:d8a49181de672f8c34a9a289ba33a752d921a151fa70f485649f179cc6907c25 0.0s done
+#11 exporting config sha256:0bba9ca700e5be2b54cdfa2842ed99a80ec4355a960a33af80d6e40750432535 0.0s done
+#11 exporting attestation manifest sha256:3df69eac0a12474309622c201bc86736516a27c3c3e624f721926d44d9ca56bc 0.0s done
+#11 exporting manifest list sha256:5c3afc011509d997629b768f1826a654e12e37a9940e9f76b5d269fe762d02d4
+#11 exporting manifest list sha256:5c3afc011509d997629b768f1826a654e12e37a9940e9f76b5d269fe762d02d4 0.0s done
+#11 naming to docker.io/library/cc-s3-ac11-20261108-test:latest done
+#11 unpacking to docker.io/library/cc-s3-ac11-20261108-test:latest 0.2s done
+#11 DONE 0.7s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image cc-s3-ac11-20261108-test Built
+ Container cc-s3-ac11-20261108-migrate-1 Waiting
+ Container cc-s3-ac11-20261108-migrate-1 Exited
+ Container cc-s3-ac11-20261108-test-run-a41bca0257ea Creating
+ Container cc-s3-ac11-20261108-test-run-a41bca0257ea Created
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.2.0, pluggy-1.7.0
+rootdir: /workspace
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.16.0
+collected 205 items
+
+tests/test_harness.py ....                                               [  1%]
+tests/test_s1_contract.py .............................................. [ 24%]
+..........................                                               [ 37%]
+tests/test_s1_details.py ..............................                  [ 51%]
+tests/test_s1_requests.py ......                                         [ 54%]
+tests/test_s1_validation.py ........                                     [ 58%]
+tests/test_s3_community_options.py ............................          [ 72%]
+tests/test_s3_selected_requests.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 90%]
+FFFFFFFFFFFFFFF                                                          [ 97%]
+tests/test_s6_payments.py sssss                                          [100%]
+
+=================================== FAILURES ===================================
+_______________ test_ac11_manager_reads_only_selected_community ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8872dd60>
+
+    def test_ac11_manager_reads_only_selected_community(manager_client):
+>       read(manager_client, [row(21, 2, 21)], 2)
+
+tests/test_s3_selected_requests.py:114:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 21, 'community_id': 2, 'unit_id': 21, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________ test_ac11_manager_reads_all_residents_in_selected_community __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88746630>
+
+    def test_ac11_manager_reads_all_residents_in_selected_community(manager_client):
+        seed_request(12, unit=12, owner=3)
+>       read(manager_client, [row(12, unit=12), row(11)])
+
+tests/test_s3_selected_requests.py:119:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________ test_ac11_assigned_empty_community_returns_empty_array ____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d19ca0>
+
+    def test_ac11_assigned_empty_community_returns_empty_array(manager_client):
+>       read(manager_client, [], 4)
+
+tests/test_s3_selected_requests.py:123:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = [], status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________________ test_ac11_switch_has_no_remembered_context __________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfcc50>
+
+    def test_ac11_switch_has_no_remembered_context(manager_client):
+        for community, expected in [(1, [row(11)]), (2, [row(21, 2, 21)]), (1, [row(11)])]:
+>           read(manager_client, expected, community)
+
+tests/test_s3_selected_requests.py:128:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________________ test_ac11_interleaved_managers_stay_isolated _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88ddde20>
+
+    def test_ac11_interleaved_managers_stay_isolated(manager_client):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:132:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+___________________ test_ac11_reject_invalid_caller[missing] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89d38860>
+case = 'missing'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________________ test_ac11_reject_invalid_caller[empty] ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89deb980>
+case = 'empty'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________________ test_ac11_reject_invalid_caller[zero] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89d01670>
+case = 'zero'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________________ test_ac11_reject_invalid_caller[negative] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfe8a0>
+case = 'negative'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+________________ test_ac11_reject_invalid_caller[leading-zero] _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d1a2a0>
+case = 'leading-zero'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________________ test_ac11_reject_invalid_caller[plus] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8872ef30>
+case = 'plus'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+___________________ test_ac11_reject_invalid_caller[decimal] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d43b30>
+case = 'decimal'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________________ test_ac11_reject_invalid_caller[text] _____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88744830>
+case = 'text'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________________ test_ac11_reject_invalid_caller[space] ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8872fec0>
+case = 'space'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_______________ test_ac11_reject_invalid_caller[unicode-digits] ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfe600>
+case = 'unicode-digits'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+___________________ test_ac11_reject_invalid_caller[unknown] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dddd30>
+case = 'unknown'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+______________ test_ac11_reject_invalid_caller[outside-db-range] _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a897938f0>
+case = 'outside-db-range'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________________ test_ac11_reject_invalid_caller[overlong] ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8979a690>
+case = 'overlong'
+
+    @pytest.mark.parametrize("case", INVALID_CALLERS)
+    def test_ac11_reject_invalid_caller(manager_client, case):
+>       read(manager_client, {"detail": "Unknown user"}, caller=INVALID_CALLERS[case], status=401)
+
+tests/test_s3_selected_requests.py:142:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________ test_ac11_unavailable_community_is_indistinguishable[zero] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dc8e30>
+case = 'zero'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+________ test_ac11_unavailable_community_is_indistinguishable[negative] ________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88721580>
+case = 'negative'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+______ test_ac11_unavailable_community_is_indistinguishable[leading-zero] ______
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfc1a0>
+case = 'leading-zero'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+__________ test_ac11_unavailable_community_is_indistinguishable[plus] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d1bcb0>
+case = 'plus'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+________ test_ac11_unavailable_community_is_indistinguishable[decimal] _________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89798da0>
+case = 'decimal'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+__________ test_ac11_unavailable_community_is_indistinguishable[text] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dbd280>
+case = 'text'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+_________ test_ac11_unavailable_community_is_indistinguishable[space] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88ded880>
+case = 'space'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+_____ test_ac11_unavailable_community_is_indistinguishable[unicode-digits] _____
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8979a150>
+case = 'unicode-digits'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+____ test_ac11_unavailable_community_is_indistinguishable[outside-db-range] ____
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8872dd30>
+case = 'outside-db-range'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+________ test_ac11_unavailable_community_is_indistinguishable[overlong] ________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d2a840>
+case = 'overlong'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+______ test_ac11_unavailable_community_is_indistinguishable[nonexistent] _______
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89d03290>
+case = 'nonexistent'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+_______ test_ac11_unavailable_community_is_indistinguishable[unassigned] _______
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dde930>
+case = 'unassigned'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+____ test_ac11_unavailable_community_is_indistinguishable[max-valid-absent] ____
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dc4170>
+case = 'max-valid-absent'
+
+    @pytest.mark.parametrize("case", UNAVAILABLE)
+    def test_ac11_unavailable_community_is_indistinguishable(manager_client, case):
+>       denied(manager_client, UNAVAILABLE[case])
+
+tests/test_s3_selected_requests.py:147:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+______________ test_ac11_identity_precedes_invalid_path[missing] _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d28080>
+case = 'missing'
+
+    @pytest.mark.parametrize("case", ["missing", "unknown", "malformed"])
+    def test_ac11_identity_precedes_invalid_path(manager_client, case):
+        caller = {"missing": None, "unknown": "9999", "malformed": "²"}[case]
+>       read(manager_client, {"detail": "Unknown user"}, "bad", caller, 401)
+
+tests/test_s3_selected_requests.py:153:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+______________ test_ac11_identity_precedes_invalid_path[unknown] _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dff830>
+case = 'unknown'
+
+    @pytest.mark.parametrize("case", ["missing", "unknown", "malformed"])
+    def test_ac11_identity_precedes_invalid_path(manager_client, case):
+        caller = {"missing": None, "unknown": "9999", "malformed": "²"}[case]
+>       read(manager_client, {"detail": "Unknown user"}, "bad", caller, 401)
+
+tests/test_s3_selected_requests.py:153:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_____________ test_ac11_identity_precedes_invalid_path[malformed] ______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8979aff0>
+case = 'malformed'
+
+    @pytest.mark.parametrize("case", ["missing", "unknown", "malformed"])
+    def test_ac11_identity_precedes_invalid_path(manager_client, case):
+        caller = {"missing": None, "unknown": "9999", "malformed": "²"}[case]
+>       read(manager_client, {"detail": "Unknown user"}, "bad", caller, 401)
+
+tests/test_s3_selected_requests.py:153:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Unknown user'}
+status = 401, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 401
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________________ test_ac11_nonmanager_cannot_read[resident] __________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dee9f0>
+role = 'resident'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_nonmanager_cannot_read(manager_client, role):
+        execute("INSERT INTO memberships VALUES (104,1,%s,%s)",
+                (role, 11 if role == "resident" else None))
+>       denied(manager_client, caller="104")
+
+tests/test_s3_selected_requests.py:160:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+________________ test_ac11_nonmanager_cannot_read[board_member] ________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88723260>
+role = 'board_member'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_nonmanager_cannot_read(manager_client, role):
+        execute("INSERT INTO memberships VALUES (104,1,%s,%s)",
+                (role, 11 if role == "resident" else None))
+>       denied(manager_client, caller="104")
+
+tests/test_s3_selected_requests.py:160:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+___________________ test_ac11_nonmanager_cannot_read[admin] ____________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88723e90>
+role = 'admin'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_nonmanager_cannot_read(manager_client, role):
+        execute("INSERT INTO memberships VALUES (104,1,%s,%s)",
+                (role, 11 if role == "resident" else None))
+>       denied(manager_client, caller="104")
+
+tests/test_s3_selected_requests.py:160:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+___________________ test_ac11_known_unassigned_caller_denied ___________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88d1a270>
+
+    def test_ac11_known_unassigned_caller_denied(manager_client):
+>       denied(manager_client, caller="103")
+
+tests/test_s3_selected_requests.py:164:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+______________ test_ac11_mixed_roles_do_not_grant_manager_access _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfe750>
+
+    def test_ac11_mixed_roles_do_not_grant_manager_access(manager_client):
+        seed_request(12, unit=12, owner=3)
+        seed_request(22, 2, 21, 106)
+        seed_request(23, 2, 21, 202)
+>       read(manager_client, [row(12, unit=12), row(11)], caller="106")
+
+tests/test_s3_selected_requests.py:171:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+________________ test_ac11_committed_removal_denies_later_read _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a8872c7a0>
+
+    def test_ac11_committed_removal_denies_later_read(manager_client):
+        options(manager_client, OPTIONS)
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:181:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________ test_ac11_committed_role_change_denies_later_read[resident] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dc6420>
+role = 'resident'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_committed_role_change_denies_later_read(manager_client, role):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:189:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_______ test_ac11_committed_role_change_denies_later_read[board_member] ________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a887098e0>
+role = 'board_member'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_committed_role_change_denies_later_read(manager_client, role):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:189:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+___________ test_ac11_committed_role_change_denies_later_read[admin] ___________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88ddda00>
+role = 'admin'
+
+    @pytest.mark.parametrize("role", ["resident", "board_member", "admin"])
+    def test_ac11_committed_role_change_denies_later_read(manager_client, role):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:189:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+________________ test_ac11_new_assignment_authorizes_next_read _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dfc320>
+
+    def test_ac11_new_assignment_authorizes_next_read(manager_client):
+>       denied(manager_client, caller="103")
+
+tests/test_s3_selected_requests.py:197:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:100: in denied
+    return read(client, {"detail": "Not found"}, community, caller, 404)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>, expected = {'detail': 'Not found'}
+status = 404, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+        assert response.status_code == status
+>       assert response.json() == expected
+E       AssertionError: assert {'detail': 'Not Found'} == {'detail': 'Not found'}
+E
+E         Differing items:
+E         {'detail': 'Not Found'} != {'detail': 'Not found'}
+E         Use -v to get more diff
+
+tests/test_s3_selected_requests.py:86: AssertionError
+________________ test_ac11_unit_link_does_not_change_authority _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dbf740>
+
+    def test_ac11_unit_link_does_not_change_authority(manager_client):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:203:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________________ test_ac11_public_fields_order_status_and_utc _________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88dee6f0>
+
+    def test_ac11_public_fields_order_status_and_utc(manager_client):
+        seed_request(12, unit=12, owner=3, status="In progress", created="2026-01-02T09:15:30-05:00")
+        seed_request(13, status="Resolved", created="2026-01-02T14:15:30Z")
+>       read(manager_client, [row(13, status="Resolved", created="2026-01-02T14:15:30Z"),
+                              row(12, unit=12, status="In progress", created="2026-01-02T14:15:30Z"),
+                              row(11)])
+
+tests/test_s3_selected_requests.py:213:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 13, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}, {'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________________ test_ac11_reads_preserve_application_tables __________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88709f10>
+
+    def test_ac11_reads_preserve_application_tables(manager_client):
+        before = snapshot()
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:220:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+__________________ test_ac11_resident_routes_remain_self_only __________________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88776150>
+
+    def test_ac11_resident_routes_remain_self_only(manager_client):
+        seed_request(12, unit=12, owner=3)
+>       read(manager_client, [row(12, unit=12), row(11)])
+
+tests/test_s3_selected_requests.py:228:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________ test_ac11_membership_stable_through_validation[delete] ____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a887899a0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a887881d0>
+mutation = 'delete'
+
+    @pytest.mark.parametrize("mutation", ["delete", "role-change"])
+    def test_ac11_membership_stable_through_validation(manager_client, monkeypatch, mutation):
+        seed_request(12, unit=12, owner=3)
+        expected = [row(12, unit=12), row(11)]
+>       read(manager_client, expected)  # Fail semantically before workers if the route is absent.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_s3_selected_requests.py:244:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+_________ test_ac11_membership_stable_through_validation[role-change] __________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a88708ec0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a88754500>
+mutation = 'role-change'
+
+    @pytest.mark.parametrize("mutation", ["delete", "role-change"])
+    def test_ac11_membership_stable_through_validation(manager_client, monkeypatch, mutation):
+        seed_request(12, unit=12, owner=3)
+        expected = [row(12, unit=12), row(11)]
+>       read(manager_client, expected)  # Fail semantically before workers if the route is absent.
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_s3_selected_requests.py:244:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 12, 'community_id': 1, 'unit_id': 12, 'category': 'Plumbing', ...}, {'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+______________ test_ac11_validation_failure_releases_transaction _______________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a887478c0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a88dc81a0>
+
+    def test_ac11_validation_failure_releases_transaction(manager_client, monkeypatch):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:328:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+____________ test_ac11_database_failure_is_not_authorization_denial ____________
+
+manager_client = <starlette.testclient.TestClient object at 0x7f8a89710dd0>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a89d00d10>
+
+    def test_ac11_database_failure_is_not_authorization_denial(manager_client, monkeypatch):
+>       read(manager_client, [row(11)])
+
+tests/test_s3_selected_requests.py:351:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests/test_s3_selected_requests.py:94: in read
+    assert_response(response, expected, status)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+response = <Response [404 Not Found]>
+expected = [{'id': 11, 'community_id': 1, 'unit_id': 11, 'category': 'Plumbing', ...}]
+status = 200, cache = True
+
+    def assert_response(response, expected, status=200, cache=True):
+>       assert response.status_code == status
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_s3_selected_requests.py:85: AssertionError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------- generated xml file: /workspace/artifacts/pytest.xml --------------
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_s6_payments.py:17: AC-18: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:31: AC-19: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:44: AC-20: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:58: AC-21: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+SKIPPED [1] tests/test_s6_payments.py:69: AC-22: S-6 is intentionally unbuilt in M1; executable contract pending peer review
+FAILED tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community
+FAILED tests/test_s3_selected_requests.py::test_ac11_manager_reads_all_residents_in_selected_community
+FAILED tests/test_s3_selected_requests.py::test_ac11_assigned_empty_community_returns_empty_array
+FAILED tests/test_s3_selected_requests.py::test_ac11_switch_has_no_remembered_context
+FAILED tests/test_s3_selected_requests.py::test_ac11_interleaved_managers_stay_isolated
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[missing]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[empty]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[zero]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[negative]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[leading-zero]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[plus]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[decimal]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[text]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[space]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unicode-digits]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[unknown]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[outside-db-range]
+FAILED tests/test_s3_selected_requests.py::test_ac11_reject_invalid_caller[overlong]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[zero]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[negative]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[leading-zero]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[plus]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[decimal]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[text]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[space]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unicode-digits]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[outside-db-range]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[overlong]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[nonexistent]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[unassigned]
+FAILED tests/test_s3_selected_requests.py::test_ac11_unavailable_community_is_indistinguishable[max-valid-absent]
+FAILED tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[missing]
+FAILED tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[unknown]
+FAILED tests/test_s3_selected_requests.py::test_ac11_identity_precedes_invalid_path[malformed]
+FAILED tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[resident]
+FAILED tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[board_member]
+FAILED tests/test_s3_selected_requests.py::test_ac11_nonmanager_cannot_read[admin]
+FAILED tests/test_s3_selected_requests.py::test_ac11_known_unassigned_caller_denied
+FAILED tests/test_s3_selected_requests.py::test_ac11_mixed_roles_do_not_grant_manager_access
+FAILED tests/test_s3_selected_requests.py::test_ac11_committed_removal_denies_later_read
+FAILED tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[resident]
+FAILED tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[board_member]
+FAILED tests/test_s3_selected_requests.py::test_ac11_committed_role_change_denies_later_read[admin]
+FAILED tests/test_s3_selected_requests.py::test_ac11_new_assignment_authorizes_next_read
+FAILED tests/test_s3_selected_requests.py::test_ac11_unit_link_does_not_change_authority
+FAILED tests/test_s3_selected_requests.py::test_ac11_public_fields_order_status_and_utc
+FAILED tests/test_s3_selected_requests.py::test_ac11_reads_preserve_application_tables
+FAILED tests/test_s3_selected_requests.py::test_ac11_resident_routes_remain_self_only
+FAILED tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[delete]
+FAILED tests/test_s3_selected_requests.py::test_ac11_membership_stable_through_validation[role-change]
+FAILED tests/test_s3_selected_requests.py::test_ac11_validation_failure_releases_transaction
+FAILED tests/test_s3_selected_requests.py::test_ac11_database_failure_is_not_authorization_denial
+============ 52 failed, 148 passed, 5 skipped, 1 warning in 25.20s =============

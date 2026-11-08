@@ -1,3 +1,13 @@
+# Current AC11 execution checkpoint — November 8, 2026
+
+Approved AC11 v1 is locally implemented:200 passes,zero failures/errors,five exact S6 skips.52 tests frozen before code at359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6; prior153 expectations/test hashes preserved. Real lock/fault cases and24 gate controls pass. New router plus main registration only; no schema/dependency/resident changes. See docs/evidence/s3-ac11/README.md and docs/reviews/S3-AC11-implementation-2026-11-08.md. PR15/16 merged; prior branches cleaned. PR17 is open; implementation CI42536188957 verifies200/0/5 at 026a6c3bdc972a7cf26d6d56ffd336a30097e767. Human result review and implementation-PR merge remain pending. Final publication-head CI is linked in the PR/Jira/Git note. Older checkpoints below are historical, not current authority.
+
+# Review-ticket status recheck — November 8, 2026
+
+**Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only. [Evidence](../../docs/evidence/pr15-review/review-recheck-20261108.json).
+
+---
+
 # Current review — PR15 and proposed S3-AC11 v1
 
 [Review](../../docs/reviews/PR-15-and-S3-AC11-2026-11-08.md): no blocking bounded code findings at8f993ab; fresh CI artifact148/0/5 and24 gate controls verified. PR15 remains open, human result/merge decision pending. PR14 is also open; automatic deletion after verified merge remains enabled. [Next packet](../../docs/plans/S-3-AC11-approval.md) is unapproved: one route,52 tests, proposed200/0/5. COMC65 is To Do; Kundan66 and Sandeep67 decisions pending. Verdict CONDITIONAL_GO for human integration review, NO_GO for production. No executable or protected contract change in this preparation.

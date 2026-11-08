@@ -1,0 +1,121 @@
+ Container cc-s3-ac11-20261108-db-1 Running
+ Container cc-s3-ac11-20261108-db-1 Waiting
+ Container cc-s3-ac11-20261108-db-1 Healthy
+ Container cc-s3-ac11-20261108-migrate-run-1e426c3dc531 Creating
+ Container cc-s3-ac11-20261108-migrate-run-1e426c3dc531 Created
+####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ##
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ##
+##                                                ##
+####################################################
+Starting Liquibase at 23:31:10 using Java 21.0.7 (version 4.33.0 #8744 built at 2025-07-08 20:43+0000)
+Liquibase Version: 4.33.0
+Liquibase Open Source 4.33.0 by Liquibase
+Database is up to date, no changesets to execute
+
+UPDATE SUMMARY
+Run:                          0
+Previously run:               1
+Filtered out:                 0
+-------------------------------
+Total change sets:            1
+
+Liquibase command 'update' was executed successfully.
+ Container cc-s3-ac11-20261108-db-1 Running
+ Container cc-s3-ac11-20261108-db-1 Waiting
+ Container cc-s3-ac11-20261108-db-1 Healthy
+ Container cc-s3-ac11-20261108-migrate-run-b51cf85d58da Creating
+ Container cc-s3-ac11-20261108-migrate-run-b51cf85d58da Created
+####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ##
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ##
+##                                                ##
+####################################################
+Starting Liquibase at 23:31:26 using Java 21.0.7 (version 4.33.0 #8744 built at 2025-07-08 20:43+0000)
+Liquibase Version: 4.33.0
+Liquibase Open Source 4.33.0 by Liquibase
+Database is up to date, no changesets to execute
+
+UPDATE SUMMARY
+Run:                          0
+Previously run:               1
+Filtered out:                 0
+-------------------------------
+Total change sets:            1
+
+Liquibase command 'update' was executed successfully.
+ Container cc-s3-ac11-20261108-db-1 Running
+ Container cc-s3-ac11-20261108-db-1 Waiting
+ Container cc-s3-ac11-20261108-db-1 Healthy
+ Container cc-s3-ac11-20261108-migrate-run-cfe8491115dd Creating
+ Container cc-s3-ac11-20261108-migrate-run-cfe8491115dd Created
+####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ##
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ##
+##                                                ##
+####################################################
+Starting Liquibase at 23:31:37 using Java 21.0.7 (version 4.33.0 #8744 built at 2025-07-08 20:43+0000)
+Liquibase Version: 4.33.0
+Liquibase Open Source 4.33.0 by Liquibase
+Rolling Back Changeset: changelog/001_s1_local_schema.sql::001-s1-local-schema::communityconnect
+Liquibase command 'rollback-count' was executed successfully.
+ Container cc-s3-ac11-20261108-db-1 Running
+ Container cc-s3-ac11-20261108-db-1 Waiting
+ Container cc-s3-ac11-20261108-db-1 Healthy
+ Container cc-s3-ac11-20261108-migrate-run-31d7af38feee Creating
+ Container cc-s3-ac11-20261108-migrate-run-31d7af38feee Created
+####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ##
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ##
+##                                                ##
+####################################################
+Starting Liquibase at 23:31:46 using Java 21.0.7 (version 4.33.0 #8744 built at 2025-07-08 20:43+0000)
+Liquibase Version: 4.33.0
+Liquibase Open Source 4.33.0 by Liquibase
+Running Changeset: changelog/001_s1_local_schema.sql::001-s1-local-schema::communityconnect
+
+UPDATE SUMMARY
+Run:                          1
+Previously run:               0
+Filtered out:                 0
+-------------------------------
+Total change sets:            1
+
+Liquibase: Update has been successful. Rows affected: 0
+Liquibase command 'update' was executed successfully.
