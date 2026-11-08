@@ -8,6 +8,10 @@ This branch prepares Milestone 1 through the AISE lifecycle. **AC-1 creation/sel
 
 See [feature order and owners](docs/features/README.md), [S-1 plan](docs/plans/S-1-plan.md), [S-1 design](docs/design/S-1.md), [S-6 design](docs/design/S-6.md) and [31-AC traceability](docs/traceability.csv). Designs, plans and tests still need team review. [Jira COMC](https://gkms.atlassian.net/jira/software/projects/COMC/boards/34/backlog) tracks that review separately from drafted artifacts.
 
+## Latest review and next decision
+
+[PR8 bounded review](docs/reviews/PR-8-and-AC-5-2026-11-07.md) reverified final-head CI (120/0/5) and found no blocking code defect. PR8 remains open; GitHub records an approval from abreugus, while named teammate acceptance remains pending. The next proposed task is [AC-5 packet v1](docs/plans/AC-5-approval.md): verification-only after integration, preserving all code, tests and CI. No AC5 execution approval is recorded. Automatic branch deletion is enabled; unmerged branches are retained.
+
 ## Install and run every test
 
 Prerequisites: Git and a running Docker Engine with Docker Compose v2. No local Python/PostgreSQL/Java installation is needed for the container path.

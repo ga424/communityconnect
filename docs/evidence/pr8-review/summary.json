@@ -1,0 +1,42 @@
+{
+  "reviewed_at": "2026-11-08T04:42:11.559431+00:00",
+  "reviewed_head": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "approved_packet_head": "62b9df05338fe44a86747197502e088fa0cf45b5",
+  "test_first_commit": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
+  "implementation_commit": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
+  "ci_run": 42445847082,
+  "ci_url": "https://github.com/ga424/communityconnect/actions/runs/42445847082",
+  "ci_junit_sha256": "eea6e1d6d5c445fac8e9f5515ca4406358fbe6f27db545557e727a845410f1d5",
+  "real_pytest_exit": 0,
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "skipped": 5,
+    "errors": 0
+  },
+  "protected_hashes_verified": 80,
+  "new_test_and_manifest_match_test_first": true,
+  "unrelated_application_definitions_unchanged": true,
+  "prior_ledger_prefixes_preserved": true,
+  "green_gate": "PASS",
+  "red_gate_rejection": "PASS",
+  "negative_controls": {
+    "report": 13,
+    "manifest": 11
+  },
+  "historical_ac1_ac2_report_compatibility": "PASS",
+  "new_local_docker_run": false,
+  "review_type": "sequential AI review; not independent human approval",
+  "blocking_code_findings": [],
+  "plan_reconciliation": "Current S-1 plan has stale AC4 pending wording; reconcile current metadata without rewriting historical approved packet",
+  "github_state": {
+    "pr8": "open",
+    "pr7": "open draft",
+    "approval_actor": "abreugus",
+    "approval_submitted_at": "2026-11-08T04:31:24Z",
+    "approval_body": "",
+    "individual_peer_acceptance": "not established",
+    "delete_branch_on_merge": true,
+    "branch_deletion": "not eligible while PRs unmerged"
+  }
+}
