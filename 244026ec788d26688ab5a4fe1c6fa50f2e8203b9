@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-11-08T04:54:16.024968+00:00",
+  "recording_commit": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+  "pr": "https://github.com/ga424/communityconnect/pull/9",
+  "reviewed_pr8_head": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "ledger_entries": [
+    16,
+    17
+  ],
+  "jira_updated": [
+    "COMC-57",
+    "COMC-59",
+    "COMC-58",
+    "COMC-41",
+    "COMC-44"
+  ],
+  "approval_status": "AC5 pending; named teammate acceptance not inferred",
+  "branch_status": "PR8 remains open; delete_branch_on_merge=true; no eligible merged branch removed",
+  "agent_status": "One main Codex agent, no subagents",
+  "stage": "local browser preview evidence recording",
+  "ci_run": 42448552161,
+  "ci_url": "https://github.com/ga424/communityconnect/actions/runs/42448552161",
+  "junit_sha256": "ce0c5604282451d1d54bf67d696b175aa1fbc9b2dbf06cb12b2edded0274f828",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "local_preview": "http://127.0.0.1:8765",
+  "preview_source": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "preview_evidence": "EV-LOCAL-PREVIEW-20261107",
+  "runtime": "dedicated cc-review-preview left running for user; no production deployment",
+  "ci_annotations": [
+    "Pinned checkout/upload Actions target deprecated Node20; runner executes them on Node24. Existing pins unchanged; maintenance follow-up belongs to Sandeep.",
+    "ubuntu-latest migration advisory shown; no change made."
+  ]
+}
