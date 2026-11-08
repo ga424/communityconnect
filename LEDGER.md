@@ -402,3 +402,20 @@ checks: Field parser:16 fully labelled entries before supplement; all exact prom
 evidence: EV-M1-PROVENANCE-AUDIT-20261108; COMC-38/44
 
 risk: Original full extraction/summary/gap session provenance, Kundan audit acceptance and final submission-SHA reconciliation remain pending.
+
+
+## Entry 23 — COMC-27/29/60 interview and AI-use handoff (November 8, 2026)
+
+artifact: public-safe INT02/04 indexes and docs/review/m1-ai-claims.md; private source packets outside repository
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Work-queue request at prompts/2026-11-08-gustavo-work-queue.txt; prior exact guided review is preserved privately in the existing November3 record
+
+review: Read supplied manifest and actual confirmed review record. Preserved original12/10 raw paragraphs privately, real4 Kept decisions, existing dates/attendance and rehearsal exclusions; no new claims or consent verification invented.
+
+checks: Asserted12/10 paragraph counts,2 corresponding claims each, no Matthew in actual participation field; file hashes and restricted local permissions recorded. Public outputs contain IDs/status only, no raw notes or quotes.
+
+evidence: EV-GUSTAVO-PRIVATE-HANDOFF-20261108; PS3/4/7/8; INT02/04
+
+risk: Kundan/Sandeep peer reviews, original full AI-session provenance and final exclusion/participation reconciliation remain pending; consent/recording files not independently inspected.

@@ -1,0 +1,73 @@
+{
+  "bundle_name": "gustavo-review-handoff-2026-11-08",
+  "files_sha256": {
+    "INT-02-review-packet.json": "78c9055f6a296542a768918d73d13801f43168500ccc2765079c9f6dbd8ca87d",
+    "INT-04-review-packet.json": "42dc13771c8086fa08811946ebb9545416f3b55b6a4d3bfb28bb364f1691ead3",
+    "Gustavo-review-session-confirmed.json": "698f644057eaf54b46f0235028f3ee86c57855c3e458104bf61224382917c92a"
+  },
+  "raw_paragraph_counts": {
+    "INT-02": 12,
+    "INT-04": 10
+  },
+  "public_files_contain_raw_quotes": false,
+  "peer_review": "pending",
+  "full_original_session_export": "not established",
+  "actual_prior_decisions": [
+    {
+      "claim_id": "PS-1",
+      "source_paragraph": "INT-01:P02",
+      "decision": "Pending",
+      "reviewer": "Kundan Singh",
+      "date": null
+    },
+    {
+      "claim_id": "PS-2",
+      "source_paragraph": "INT-01:P03",
+      "decision": "Pending",
+      "reviewer": "Kundan Singh",
+      "date": null
+    },
+    {
+      "claim_id": "PS-3",
+      "source_paragraph": "INT-02:P04",
+      "decision": "Kept",
+      "reviewer": "Gustavo Abreu",
+      "date": "2026-11-03"
+    },
+    {
+      "claim_id": "PS-4",
+      "source_paragraph": "INT-02:P03",
+      "decision": "Kept",
+      "reviewer": "Gustavo Abreu",
+      "date": "2026-11-03"
+    },
+    {
+      "claim_id": "PS-5",
+      "source_paragraph": "INT-03:P02",
+      "decision": "Pending",
+      "reviewer": "Kundan Singh",
+      "date": null
+    },
+    {
+      "claim_id": "PS-6",
+      "source_paragraph": "INT-03:P03",
+      "decision": "Pending",
+      "reviewer": "Kundan Singh",
+      "date": null
+    },
+    {
+      "claim_id": "PS-7",
+      "source_paragraph": "INT-04:P06",
+      "decision": "Kept",
+      "reviewer": "Gustavo Abreu",
+      "date": "2026-11-03"
+    },
+    {
+      "claim_id": "PS-8",
+      "source_paragraph": "INT-04:P09",
+      "decision": "Kept",
+      "reviewer": "Gustavo Abreu",
+      "date": "2026-11-03"
+    }
+  ]
+}
