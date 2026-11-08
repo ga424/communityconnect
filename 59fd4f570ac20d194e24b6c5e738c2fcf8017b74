@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-08T04:54:15.994476+00:00",
+  "recording_commit": "59fd4f570ac20d194e24b6c5e738c2fcf8017b74",
+  "pr": "https://github.com/ga424/communityconnect/pull/9",
+  "reviewed_pr8_head": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "ledger_entries": [
+    16
+  ],
+  "jira_updated": [
+    "COMC-57",
+    "COMC-59",
+    "COMC-58",
+    "COMC-41",
+    "COMC-44"
+  ],
+  "approval_status": "AC5 pending; named teammate acceptance not inferred",
+  "branch_status": "PR8 remains open; delete_branch_on_merge=true; no eligible merged branch removed",
+  "agent_status": "One main Codex agent, no subagents",
+  "stage": "initial PR8 review and AC5 preparation",
+  "limitation": "Initial blanket hash check failed on intentionally updated current S1 plan; subsequent f9619f8 scoped verification explicitly records the exception. PR8 reviewed source itself had all80 hashes matching."
+}
