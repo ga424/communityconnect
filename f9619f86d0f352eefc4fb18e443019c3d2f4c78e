@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-11-08T04:54:16.010116+00:00",
+  "recording_commit": "f9619f86d0f352eefc4fb18e443019c3d2f4c78e",
+  "pr": "https://github.com/ga424/communityconnect/pull/9",
+  "reviewed_pr8_head": "354960fb81b55c2081dc3c5264a225be48930cd8",
+  "ledger_entries": [
+    16
+  ],
+  "jira_updated": [
+    "COMC-57",
+    "COMC-59",
+    "COMC-58",
+    "COMC-41",
+    "COMC-44"
+  ],
+  "approval_status": "AC5 pending; named teammate acceptance not inferred",
+  "branch_status": "PR8 remains open; delete_branch_on_merge=true; no eligible merged branch removed",
+  "agent_status": "One main Codex agent, no subagents",
+  "stage": "scoped integrity reconciliation",
+  "ci_run": 42448030125,
+  "junit_sha256": "a9673b4532a2babd9642380f41e8ebac8952b058fc0ca312945d06e9440a81a3",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0
+}
