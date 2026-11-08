@@ -236,3 +236,20 @@ Entry19 post-publication event: GitHub shows PR10 merged by abreugus at2026-11-0
 - Evidence: `docs/evidence/s1-closeout/`, EV-PR11-MERGE-RECONCILED-20261108, EV-S1-CLOSEOUT-RUNTIME-20261108, EV-S1-ACCEPTANCE-REVIEW-20261108. No new blocking runtime finding. Required reviewed gapcheck absent and design's old empty-repository statement stale; a full eight-question source extract is prepared for named review without changing protected design.
 - Proposed next feature: `docs/plans/S-3-context-approval.md`, S-3-CTX-1 v1 / COMC-10, current AC11/12. Design and test-plan documentation only; approval pending (DEC-S3-CTX1-PROPOSED-20261108). Manager assignment/read rules are proposals, not silently adopted policy. No executable tests, migration, CI phase change or implementation authorized. S1 remains the only M1 built story; S6 unbuilt.
 - Named acceptance checklist divides requirements/design to Kundan, test/final-clone review to Sandeep and provenance/integration to Gustavo. Exact claims/decisions remain pending until supplied; no fabricated signatures. Prior ledger bytes preserved, known historical warnings retained. Final checks/recording SHA/PR/CI/Jira reconciliation are appended through Git provenance notes after publication, avoiding an in-flight evidence commit after merge.
+
+
+## Entry 21 — COMC-43 traceability audit and actual Gustavo decisions (November 8, 2026)
+
+artifact: docs/evidence/gustavo-queue/traceability-audit.json; docs/plans/Gustavo-work-queue.md; result SHA in Git provenance note
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Exact user work-queue request and two real replies in prompts/2026-11-08-gustavo-work-queue.txt and prompts/2026-11-08-gustavo-review-decisions.txt
+
+review: Read31 source rows, CSV, AST and JUnit; no matrix/test edits. Recorded actual bounded S1 acceptance and per-community board-approval policy; did not infer teammate approvals.
+
+checks: Python CSV/AST/JUnit comparisons:31 unique IDs, all source fields equal,11 functions/cases resolved,6 passed/5 skipped,20 Not yet written; PASS.
+
+evidence: EV-M1-TRACE-AUDIT-20261108; S1 AC1–6; COMC-43/42/16
+
+risk: Final submission SHA unselected; Kundan31-row peer review and future announcement authority/atomicity decisions remain pending.

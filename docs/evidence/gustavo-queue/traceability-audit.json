@@ -1,0 +1,91 @@
+{
+  "source_commit": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+  "runtime_source_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "matrix_sha256": "4aabf844de80e7e3c7f199fa3511b7885c204ac9009608f221da1d539b793a04",
+  "source_manifest_sha256": "f09646d3958caf0005e0e4ddb9a1b79ec6360b0e78f3eb739c263ad094531b81",
+  "rows": 31,
+  "unique_acs": 31,
+  "source_fields_exact_match": true,
+  "selected_story_tests": [
+    {
+      "ac": "AC-1",
+      "test": "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-2",
+      "test": "tests/test_s1_requests.py::test_ac2_blank_description_rejected_and_list_unchanged",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-3",
+      "test": "tests/test_s1_requests.py::test_ac3_other_community_resident_does_not_see_request",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-4",
+      "test": "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-5",
+      "test": "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-6",
+      "test": "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status",
+      "outcome": "passed"
+    },
+    {
+      "ac": "AC-18",
+      "test": "tests/test_s6_payments.py::test_ac18_schedule_returned_without_token",
+      "outcome": "skipped"
+    },
+    {
+      "ac": "AC-19",
+      "test": "tests/test_s6_payments.py::test_ac19_due_day_charges_exactly_once",
+      "outcome": "skipped"
+    },
+    {
+      "ac": "AC-20",
+      "test": "tests/test_s6_payments.py::test_ac20_restart_mid_run_keeps_one_payment",
+      "outcome": "skipped"
+    },
+    {
+      "ac": "AC-21",
+      "test": "tests/test_s6_payments.py::test_ac21_manual_payment_prevents_scheduled_charge",
+      "outcome": "skipped"
+    },
+    {
+      "ac": "AC-22",
+      "test": "tests/test_s6_payments.py::test_ac22_declined_charge_retried_after_delay",
+      "outcome": "skipped"
+    }
+  ],
+  "other_story_acs_not_yet_written": [
+    "AC-7",
+    "AC-8",
+    "AC-9",
+    "AC-10",
+    "AC-11",
+    "AC-12",
+    "AC-13",
+    "AC-14",
+    "AC-15",
+    "AC-31",
+    "AC-16",
+    "AC-17",
+    "AC-23",
+    "AC-24",
+    "AC-25",
+    "AC-26",
+    "AC-27",
+    "AC-30",
+    "AC-28",
+    "AC-29"
+  ],
+  "failures": [],
+  "human_review": "Gustavo accepted bounded S1 behavior;31-row acceptance and Kundan review not inferred",
+  "final_submission_sha": "not yet selected"
+}
