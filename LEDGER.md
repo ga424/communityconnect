@@ -470,3 +470,20 @@ checks: Source AC/E/A/Q mapping inspected; future tests remain Not yet written. 
 evidence: EV-GUSTAVO-PRODUCT-READINESS-20261108; COMC-16/21/8; Q2 product decision
 
 risk: Partial-publication policy, designation authority and delivery transaction semantics pending; fallback not activated; final platform isolation/payment policy absent. Current-run provenance-field omissions corrected append-only but validator still warns on retained originals.
+
+
+## Entry 27 — Gustavo queue handoff and actual acceptance closeout (November 8, 2026)
+
+artifact: current queue report, canonical state and actual publication-policy update; commit references in notes
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Exact work request and all actual replies in prompts/2026-11-08-gustavo-work-queue.txt and prompts/2026-11-08-gustavo-review-decisions.txt
+
+review: Closed COMC42 only after Gustavo explicitly accepted bounded S1; kept named peer/full-story reviews separate. Recorded approved-target publication/pending remainder and made COMC10→16 and52→21 dependencies explicit.
+
+checks: Prior exact-head CI42451758915 passed120/0/5 exit0. New docs/metadata validation and protected-prefix checks run before publication; final PR CI and SHA appended in notes. No new application or runtime claim.
+
+evidence: EV-GUSTAVO-QUEUE-HANDOFF-20261108; COMC-4/42/16
+
+risk: Fourteen assigned tickets remain open for named reviews/signatures/submissions/dependent product implementation; no automatic merge/deployment or live funds. Six retained historical structural warnings have complete current records or explicit gaps.

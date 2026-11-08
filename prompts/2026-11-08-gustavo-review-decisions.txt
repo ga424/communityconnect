@@ -6,3 +6,6 @@ Answer: Board approval required for each target community
 
 Question: For COMC-16, who can grant board approval for a target community? This determines the authorization rule before announcement code can be built.
 Answer: One designated board approver
+
+Question: If a notice targets several communities but only some have approved it, what should publication do?
+Answer: Publish only to approved communities and show the remainder as pending
