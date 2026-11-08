@@ -487,3 +487,5 @@ checks: Prior exact-head CI42451758915 passed120/0/5 exit0. New docs/metadata va
 evidence: EV-GUSTAVO-QUEUE-HANDOFF-20261108; COMC-4/42/16
 
 risk: Fourteen assigned tickets remain open for named reviews/signatures/submissions/dependent product implementation; no automatic merge/deployment or live funds. Six retained historical structural warnings have complete current records or explicit gaps.
+
+Entry27 recording checkpoint: 4da9ef69f0757177be75657afa510f272dbb5b7d. Its scoped README update remained unstaged because the helper staged docs/prompts/ledger/state only; the following publication commit includes that already-reviewed README text and this disclosure. No work was lost and no code/test change occurred. Exact follow-up SHA is in the Git provenance note.
