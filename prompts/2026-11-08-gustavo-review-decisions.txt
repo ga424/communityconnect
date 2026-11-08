@@ -3,3 +3,6 @@ Answer: Accept the bounded S-1 behavior
 
 Question: COMC-16 cannot implement manager announcements until the publication rule is settled. What rule has the team or community confirmed?
 Answer: Board approval required for each target community
+
+Question: For COMC-16, who can grant board approval for a target community? This determines the authorization rule before announcement code can be built.
+Answer: One designated board approver

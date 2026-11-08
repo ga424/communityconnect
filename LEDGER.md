@@ -453,3 +453,20 @@ checks: 9 sections,2 explicit open-question stop lines,12 proposed scenario grou
 evidence: EV-S3-CONTEXT-DESIGN-20261108; COMC-10; S3 AC11/12
 
 risk: Kundan contract and Sandeep test review pending; no new endpoint/UI delivered. Production identity and real-volume limits are excluded; implementation beyond M1 requires its own bounded packet.
+
+
+## Entry 26 — COMC-16/21/8 future capability readiness (November 8, 2026)
+
+artifact: manager-notice readiness and conditional dues-fallback packet
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Work-queue request and exact human board-approval decisions in prompts/2026-11-08-gustavo-review-decisions.txt
+
+review: Mapped revised S5/S7 IDs against legacy Jira, preserved the M2/payment cut prerequisite and identified exact authorization/atomicity/balance-policy blockers. Recorded one designated board approver per community; no committee rule or financial timing invented.
+
+checks: Source AC/E/A/Q mapping inspected; future tests remain Not yet written. AISE validator also found four new change records omitted change_type; complete superseding records appended, originals retained, so historical-line warnings remain. No code/test/CI change.
+
+evidence: EV-GUSTAVO-PRODUCT-READINESS-20261108; COMC-16/21/8; Q2 product decision
+
+risk: Partial-publication policy, designation authority and delivery transaction semantics pending; fallback not activated; final platform isolation/payment policy absent. Current-run provenance-field omissions corrected append-only but validator still warns on retained originals.
