@@ -1,18 +1,18 @@
- Network cc-s3-ac12-20261108_default Creating 
- Network cc-s3-ac12-20261108_default Creating 
- Network cc-s3-ac12-20261108_default Created 
- Network cc-s3-ac12-20261108_default Created 
- Container cc-s3-ac12-20261108-db-1 Creating 
- Container cc-s3-ac12-20261108-db-1 Created 
- Container cc-s3-ac12-20261108-migrate-1 Creating 
- Container cc-s3-ac12-20261108-migrate-1 Created 
- Container cc-s3-ac12-20261108-db-1 Starting 
- Container cc-s3-ac12-20261108-db-1 Started 
- Container cc-s3-ac12-20261108-db-1 Waiting 
- Container cc-s3-ac12-20261108-db-1 Healthy 
- Container cc-s3-ac12-20261108-migrate-1 Starting 
- Container cc-s3-ac12-20261108-migrate-1 Started 
- Image cc-s3-ac12-20261108-test Building 
+ Network cc-s3-ac12-20261108_default Creating
+ Network cc-s3-ac12-20261108_default Creating
+ Network cc-s3-ac12-20261108_default Created
+ Network cc-s3-ac12-20261108_default Created
+ Container cc-s3-ac12-20261108-db-1 Creating
+ Container cc-s3-ac12-20261108-db-1 Created
+ Container cc-s3-ac12-20261108-migrate-1 Creating
+ Container cc-s3-ac12-20261108-migrate-1 Created
+ Container cc-s3-ac12-20261108-db-1 Starting
+ Container cc-s3-ac12-20261108-db-1 Started
+ Container cc-s3-ac12-20261108-db-1 Waiting
+ Container cc-s3-ac12-20261108-db-1 Healthy
+ Container cc-s3-ac12-20261108-migrate-1 Starting
+ Container cc-s3-ac12-20261108-migrate-1 Started
+ Image cc-s3-ac12-20261108-test Building
 #1 [internal] load local bake definitions
 #1 reading from stdin 634B done
 #1 DONE 0.0s
@@ -61,11 +61,11 @@
 
 #12 resolving provenance for metadata file
 #12 DONE 0.0s
- Image cc-s3-ac12-20261108-test Built 
- Container cc-s3-ac12-20261108-migrate-1 Waiting 
- Container cc-s3-ac12-20261108-migrate-1 Exited 
- Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Creating 
- Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Created 
+ Image cc-s3-ac12-20261108-test Built
+ Container cc-s3-ac12-20261108-migrate-1 Waiting
+ Container cc-s3-ac12-20261108-migrate-1 Exited
+ Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Creating
+ Container cc-s3-ac12-20261108-test-run-762c7bcf0a20 Created
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.2.0, pluggy-1.7.0
 rootdir: /workspace
@@ -91,8 +91,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f90413146e0>
     def test_ac12_manager_lists_only_assigned_communities(manager_client):
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:55: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f90413146e0>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -111,8 +111,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040d8ea50>
     def test_ac12_options_multiple_assignments_sorted(manager_client):
 >       assert_options(manager_client, "101", [MOUNTAIN, PINE])
 
-tests/test_s3_community_options.py:59: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:59:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040d8ea50>
 caller = '101'
@@ -132,8 +132,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f90403896d0>
     def test_ac12_known_user_without_assignments(manager_client):
 >       assert_options(manager_client, "103", [])
 
-tests/test_s3_community_options.py:63: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:63:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f90403896d0>
 caller = '103', expected = []
@@ -157,8 +157,8 @@ role = 'resident'
                          (role, 31 if role == "resident" else None))
 >       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f90403cab70>
 caller = '104', expected = []
@@ -182,8 +182,8 @@ role = 'board_member'
                          (role, 31 if role == "resident" else None))
 >       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f904036e210>
 caller = '104', expected = []
@@ -207,8 +207,8 @@ role = 'admin'
                          (role, 31 if role == "resident" else None))
 >       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9041315c70>
 caller = '104', expected = []
@@ -516,8 +516,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040343f20>
                 (105,1,'manager',NULL), (105,2,'resident',21)""")
 >       assert_options(manager_client, "105", [MOUNTAIN])
 
-tests/test_s3_community_options.py:94: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:94:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040343f20>
 caller = '105', expected = [{'id': 1, 'name': 'Mountain Ridge'}]
@@ -536,8 +536,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
     def test_ac12_deleted_assignment_disappears(manager_client):
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:100: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:100:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -558,8 +558,8 @@ role = 'resident'
     def test_ac12_role_change_removes_option(manager_client, role):
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f903fd47aa0>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -580,8 +580,8 @@ role = 'board_member'
     def test_ac12_role_change_removes_option(manager_client, role):
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f903fd46900>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -602,8 +602,8 @@ role = 'admin'
     def test_ac12_role_change_removes_option(manager_client, role):
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040347bc0>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -622,8 +622,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040378cb0>
     def test_ac12_added_assignment_appears_without_restart(manager_client):
 >       assert_options(manager_client, "103", [])
 
-tests/test_s3_community_options.py:116: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:116:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040378cb0>
 caller = '103', expected = []
@@ -643,8 +643,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040d8f530>
         before = snapshot()
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:124: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:124:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040d8f530>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -663,8 +663,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f90403b9610>
     def test_ac12_manager_does_not_gain_resident_access(manager_client):
 >       assert_options(manager_client, "101", [MOUNTAIN, PINE])
 
-tests/test_s3_community_options.py:133: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:133:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f90403b9610>
 caller = '101'
@@ -686,8 +686,8 @@ manager_client = <starlette.testclient.TestClient object at 0x7f9040343470>
             conn.execute("UPDATE memberships SET unit_id=31 WHERE user_id=102 AND community_id=3")
 >       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:154: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:154:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = <starlette.testclient.TestClient object at 0x7f9040343470>
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -741,4 +741,3 @@ FAILED tests/test_s3_community_options.py::test_ac12_reads_leave_database_unchan
 FAILED tests/test_s3_community_options.py::test_ac12_manager_does_not_gain_resident_access
 FAILED tests/test_s3_community_options.py::test_ac12_manager_unit_link_does_not_change_authority
 ============ 28 failed, 120 passed, 5 skipped, 1 warning in 21.39s =============
-

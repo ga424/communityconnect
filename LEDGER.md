@@ -576,3 +576,37 @@ checks: Docker full run collected153:120 pass,28 semantic404 failures,0 errors,5
 evidence: EV-S3-AC12-RED-20261108
 
 risk: Endpoint intentionally absent at this checkpoint; no green result or independent teammate authorship claimed. Freeze this file before implementation.
+
+
+## Entry 33 — AC12 implementation and local evidence (November 8, 2026)
+
+artifact: options router, additive verifier/CI, supplemental traceability and runtime reports
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Sequential AI self-review of role/community SQL, typed projection, malformed identity handling, no caching/writes and original resident isolation. Test file and expectations remain frozen; no independent teammate review claimed.
+
+checks: Full Docker153-case suite148/0/5 exit0; migrations update/repeat/rollback/reapply exit0;24 new gate controls rejected defects; historical gates/self-tests pass. Protected hashes and cleanup verified. Raw red traces archived before whitespace normalization.
+
+evidence: EV-S3-AC12-LOCAL-20261108; COMC62
+
+risk: CI/result review still pending at this checkpoint; spoofable local identity and no browser outcome. Six retained structural warnings and existing TestClient advisory remain. No merge or production launch.
+
+
+## Entry 34 — AC12 final local review (November 8, 2026)
+
+artifact: docs/reviews/S-3-AC12-implementation-2026-11-08.md and final-local-validation.json
+
+tool: OpenAI Codex with pinned AISE0.3.4; exact model build and cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Sequential AI self-review, no independent human acceptance claimed; bounded review verdict CONDITIONAL_GO for PR, NO_GO for production.
+
+checks: 108 protected paths, six runtime hashes, seven prior ledger prefixes, relative links, source guard and whitespace pass. Six historical structural warnings retained. No new runtime change after the green run.
+
+evidence: EV-S3-AC12-LOCAL-REVIEW-20261108; EV-S3-AC12-LOCAL-20261108
+
+risk: CI and result review pending publication. Actual final SHA/CI will be attached through Git provenance notes; no merge authorized.

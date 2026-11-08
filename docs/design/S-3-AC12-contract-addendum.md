@@ -21,4 +21,3 @@ Use `X-User-Id: str | None` and the unchanged `app.requests._database_id` rules:
 Known callers receive `200` with only their current manager options. Zero assignments, including resident/board/admin-only memberships, return `[]`. Exact option shape is `{"id": positive_integer, "name": string_length_1_to_100}`; sort by ID ascending. No request, unit, role or user fields. Database and validation failures are not converted to empty arrays or authorization denials. GET performs no writes.
 
 This supports AC-12's selector data contract only. Browser interaction, identity, assignment administration, pagination and real-volume latency remain future work; do not report full AC-12 UI or S-3 completion from API tests.
-

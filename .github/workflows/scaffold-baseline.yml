@@ -1,4 +1,4 @@
-name: S-1 resident request contract baseline
+name: S-1 and S3 AC12 contract baseline
 on:
   pull_request:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           docker compose config --quiet
       - name: Rehearse migrations on disposable PostgreSQL
         run: bash scripts/migration_rehearsal.sh
-      - name: Run all tests and require the approved S-1 phase
+      - name: Run all tests and require the approved S3 AC12 phase
         run: |
           mkdir -p artifacts
           set +e
@@ -32,7 +32,9 @@ jobs:
           python scripts/verify_ac1_baseline.py --self-test > artifacts/ac1-gate-self-test.json
           python scripts/verify_ac2_baseline.py --self-test > artifacts/ac2-gate-self-test.json
           python scripts/verify_s1_baseline.py --self-test > artifacts/s1-gate-self-test.json
-          python scripts/verify_s1_baseline.py
+          python scripts/verify_s1_baseline.py --junit docs/evidence/s1-closeout/fresh-clone-junit.xml
+          python scripts/verify_s3_ac12_baseline.py --self-test > artifacts/s3-ac12-gate-self-test.json
+          python scripts/verify_s3_ac12_baseline.py
       - name: Record image inputs
         if: always()
         run: |

@@ -1,13 +1,13 @@
 # S-3 sequence and review gates
 
-The original design/test-plan deliverable is merged in PR13. [COMC-10](https://gkms.atlassian.net/browse/COMC-10) remains In Progress; neither route nor browser selector is implemented. Revised source uses S3/AC11/AC12, superseding COMC-10's legacy identifiers for this slice.
+COMC63/64 are Done, with closures recorded by Gustavo after his report that the prerequisites were complete. This is owner confirmation; no reviewer-authored dispositions were supplied. COMC62 is In Progress for the actual implementation and review, rather than Done before code exists.
 
-| Order | Bounded work | Status and dependency |
+| Order | Bounded work | Current state |
 | --- | --- | --- |
-| 1 | Review S3 contract and tests; decide AC12 addendum | Gustavo scope approved; Kundan contract (COMC-63) and Sandeep test (COMC-64) decisions pending |
-| 2 | [COMC-62 / S3-AC12 v1](S-3-AC12-approval.md): community options API | To Do awaiting recorded peer reviews; scope approved,28 tests authorized conditionally; current CI remains120/0/5 |
-| 3 | AC11 selected-community request reads | Not authorized; separate packet must settle transaction-stable membership, denial precedence, fields/status/order and concurrency tests |
-| 4 | Browser selector and selected-request view | Not authorized; separate UI/Playwright packet after API contracts, with actual user-facing AC11/12 evidence |
-| 5 | S3 result acceptance | Named team review of API and UI evidence; no completion from API-only results |
+| 1 | S3 options contract/addendum and28-case plan | Scope approved; owner-confirmed review-ticket completion; attribution preserved |
+| 2 | COMC62 / S3-AC12 v1 community-options API | Implemented on feature branch; local148/0/5, tests-first and migration/gate evidence; CI/result review pending |
+| 3 | AC11 selected-community request reads | Not authorized; separate bounded packet and authorization/transaction tests |
+| 4 | Browser selector and selected-request view | Not authorized; future UI/Playwright evidence for source AC11/12 outcomes |
+| 5 | S3 acceptance | Full-story result review remains pending; API evidence alone is insufficient |
 
-This ordering limits review size; AC12 does not itself grant request access. AC11 must independently recheck authorization. No sprint dates or capacity estimates were invented. M1 remains the existing S1 implementation submission boundary; later product increments use supplemental traceability. COMC16's dependency on community authorization is not satisfied by a plan or an options list alone.
+M1's S1-only submission boundary and original traceability remain unchanged. This later-product API uses supplemental traceability. No sprint dates/capacity invented; options do not grant request access, and COMC16 authorization prerequisites are not satisfied by an options list alone. No merge or production release authorized.

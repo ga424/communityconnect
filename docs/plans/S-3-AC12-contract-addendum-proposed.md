@@ -1,5 +1,8 @@
 # S3-AC12 contract addendum — proposed v1
 
+**Execution update, November8,2026:** Gustavo reported the prerequisite reviews completed; both Jira tickets are Done with closures by his account. This owner confirmation cleared bounded implementation under the prior scope approval. Reviewer-authored comments/signatures were not supplied. Tests-first execution and local148/0/5 evidence are in `docs/evidence/s3-ac12/README.md`; CI/result review and merge remain separate. Earlier planning statements below retain the approval checkpoint at which they were written.
+
+
 **Gustavo scope approved on November 8, 2026; Kundan contract and Sandeep specification reviews remain pending.** This document proposes two clarifications for the options-only increment. It does not modify the protected S-3 contract. After the required reviews accept these rules, copy them into a new `docs/design/S-3-AC12-contract-addendum.md`, preserving the original design. [Packet](S-3-AC12-approval.md); [Jira COMC-62](https://gkms.atlassian.net/browse/COMC-62).
 
 ## A1 — Manager authority is independent of a unit link

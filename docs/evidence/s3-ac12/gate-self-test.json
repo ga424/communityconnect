@@ -1,0 +1,33 @@
+{
+  "valid_control": "accepted",
+  "rejected_reports": [
+    "missing original test",
+    "missing AC12 test",
+    "duplicate test",
+    "unexpected test",
+    "case error",
+    "suite error",
+    "case failure",
+    "suite failure",
+    "extra skip",
+    "changed S6 skip reason",
+    "unexpected S6 pass"
+  ],
+  "rejected_manifests": [
+    "changed source hash",
+    "changed tests-first commit",
+    "changed old test hash",
+    "changed new test hash",
+    "missing old hash",
+    "missing new hash",
+    "changed old expectation",
+    "weakened new expectation",
+    "changed approved ID list",
+    "extra expectation"
+  ],
+  "rejected_disk_defects": [
+    "altered source manifest",
+    "changed test file",
+    "missing test file"
+  ]
+}

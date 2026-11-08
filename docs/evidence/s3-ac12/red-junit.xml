@@ -3,8 +3,8 @@
     def test_ac12_manager_lists_only_assigned_communities(manager_client):
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:55: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f90413146e0&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -20,8 +20,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
     def test_ac12_options_multiple_assignments_sorted(manager_client):
 &gt;       assert_options(manager_client, "101", [MOUNTAIN, PINE])
 
-tests/test_s3_community_options.py:59: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:59:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040d8ea50&gt;
 caller = '101'
@@ -38,8 +38,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
     def test_ac12_known_user_without_assignments(manager_client):
 &gt;       assert_options(manager_client, "103", [])
 
-tests/test_s3_community_options.py:63: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:63:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f90403896d0&gt;
 caller = '103', expected = []
@@ -60,8 +60,8 @@ role = 'resident'
                          (role, 31 if role == "resident" else None))
 &gt;       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f90403cab70&gt;
 caller = '104', expected = []
@@ -82,8 +82,8 @@ role = 'board_member'
                          (role, 31 if role == "resident" else None))
 &gt;       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f904036e210&gt;
 caller = '104', expected = []
@@ -104,8 +104,8 @@ role = 'admin'
                          (role, 31 if role == "resident" else None))
 &gt;       assert_options(manager_client, "104", [])
 
-tests/test_s3_community_options.py:71: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:71:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9041315c70&gt;
 caller = '104', expected = []
@@ -371,8 +371,8 @@ tests/test_s3_community_options.py:86: AssertionError</failure></testcase><testc
                 (105,1,'manager',NULL), (105,2,'resident',21)""")
 &gt;       assert_options(manager_client, "105", [MOUNTAIN])
 
-tests/test_s3_community_options.py:94: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:94:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040343f20&gt;
 caller = '105', expected = [{'id': 1, 'name': 'Mountain Ridge'}]
@@ -388,8 +388,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
     def test_ac12_deleted_assignment_disappears(manager_client):
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:100: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:100:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040347bc0&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -407,8 +407,8 @@ role = 'resident'
     def test_ac12_role_change_removes_option(manager_client, role):
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f903fd47aa0&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -426,8 +426,8 @@ role = 'board_member'
     def test_ac12_role_change_removes_option(manager_client, role):
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f903fd46900&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -445,8 +445,8 @@ role = 'admin'
     def test_ac12_role_change_removes_option(manager_client, role):
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:108: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:108:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040347bc0&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -462,8 +462,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
     def test_ac12_added_assignment_appears_without_restart(manager_client):
 &gt;       assert_options(manager_client, "103", [])
 
-tests/test_s3_community_options.py:116: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:116:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040378cb0&gt;
 caller = '103', expected = []
@@ -480,8 +480,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
         before = snapshot()
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:124: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:124:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040d8f530&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]
@@ -497,8 +497,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
     def test_ac12_manager_does_not_gain_resident_access(manager_client):
 &gt;       assert_options(manager_client, "101", [MOUNTAIN, PINE])
 
-tests/test_s3_community_options.py:133: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:133:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f90403b9610&gt;
 caller = '101'
@@ -517,8 +517,8 @@ tests/test_s3_community_options.py:50: AssertionError</failure></testcase><testc
             conn.execute("UPDATE memberships SET unit_id=31 WHERE user_id=102 AND community_id=3")
 &gt;       assert_options(manager_client, "102", ELM)
 
-tests/test_s3_community_options.py:154: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_s3_community_options.py:154:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 client = &lt;starlette.testclient.TestClient object at 0x7f9040343470&gt;
 caller = '102', expected = [{'id': 3, 'name': 'Elm Court'}]

@@ -1,5 +1,8 @@
 # S3-AC12 packet v1 — manager community options
 
+**Execution update, November8,2026:** Gustavo reported the prerequisite reviews completed; both Jira tickets are Done with closures by his account. This owner confirmation cleared bounded implementation under the prior scope approval. Reviewer-authored comments/signatures were not supplied. Tests-first execution and local148/0/5 evidence are in `docs/evidence/s3-ac12/README.md`; CI/result review and merge remain separate. Earlier planning statements below retain the approval checkpoint at which they were written.
+
+
 **Gustavo approved this bounded later-product scope, addendum, 28 tests and additive CI phase on November 8, 2026, conditional on Kundan and Sandeep’s reviews being recorded. Implementation has not started.** Jira [COMC-62](https://gkms.atlassian.net/browse/COMC-62), parent [COMC-10](https://gkms.atlassian.net/browse/COMC-10). Integration owner: Gustavo. Kundan contract and Sandeep test-plan decisions remain pending; record their actual dispositions before the tests-first implementation starts, as required by the existing S-3 test plan.
 
 Review baseline: merged main `de7e609a63b1caacb7e68b7cb5d82a3335321f98`; PR13 head `ff6b0f9fd799e160079c3fb9829c0abae9395ef4`. [Review](../reviews/PR-13-and-S3-AC12-2026-11-08.md). AISE stays at the recorded merged 0.3.4 pin. PR13 merge is not AC-12 approval.

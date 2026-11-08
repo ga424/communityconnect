@@ -1,0 +1,41 @@
+{
+  "verified_at": "2026-11-08T22:12:49.041480+00:00",
+  "undo_commit": "6c514dd",
+  "tests_first_commit": "5b5a1d6bf775774b58d89e206363919b3cb739bd",
+  "tests_first_file_sha256": "b9455f1fa62b2ec439956be42dc972d31e8e5fae52117980c770d615bb70ca3d",
+  "counts": {
+    "passed": 148,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 153
+  },
+  "pytest_exit": 0,
+  "migration_exit": 0,
+  "migration_sequence": [
+    "update",
+    "repeat update",
+    "rollback-count 1",
+    "reapply update"
+  ],
+  "strict_gate": "passed",
+  "negative_gate_controls_rejected": 24,
+  "historical_gate_compatibility": "AC1,AC2,S1 historical JUnit and self-tests passed",
+  "runtime_source_sha256": {
+    "app/manager_communities.py": "6f4fbeef3485032fb79602f5edb566152333d74deeabaf5b29aac03aa63250ea",
+    "app/main.py": "8df46561596e42a840c855105a8dd668bf824df805db9e1d5ac8f9e42b587e66",
+    "tests/test_s3_community_options.py": "b9455f1fa62b2ec439956be42dc972d31e8e5fae52117980c770d615bb70ca3d",
+    "scripts/verify_s3_ac12_baseline.py": "e9a5bce7a6479d2cd26513bde1499dbfb476d38edcd1552aea55f10333bed82c",
+    ".github/workflows/scaffold-baseline.yml": "844d05424a9b6d090a1d7bc8603988064a47a0bdec3fc83ea8a6f6def78dd183",
+    "docs/evidence/s3-ac12/expected-tests.json": "d98bb241fa86b1968c3496a781ca3ffd41f3f4c9f01a57cba714b1591e9ac9c2"
+  },
+  "protected_paths_verified": 108,
+  "new_test_ids_match_packet": true,
+  "junit_sha256": "61e851c6877147c58c299010dbbeaef643517edc565e52916e1ba0d9ecd73f84",
+  "docker_server": "29.9.2",
+  "test_image_id": "sha256:d1fd81050211f7ecf9132a8f7fc1ed79f611ef51322917b267ca5190909eeea4",
+  "cleanup": "Only cc-s3-ac12-20261108 resources removed; five preexisting Hadoop containers remain; preview files unchanged",
+  "known_warning": "Existing Starlette/httpx TestClient deprecation; no dependency change",
+  "independent_human_review": "Reviewer tickets Done by Gustavo; no authored Kundan/Sandeep disposition verified",
+  "ci": "pending feature PR"
+}
