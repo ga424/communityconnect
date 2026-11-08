@@ -1,0 +1,5 @@
+historyserver
+nodemanager
+resourcemanager
+datanode
+namenode

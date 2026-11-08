@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-08T06:00:11.260114+00:00",
+  "main": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "pr13": {
+    "head": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+    "merged_at": "2026-11-08T05:58:33Z"
+  },
+  "pr12": {
+    "head": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+    "merged_at": "2026-11-08T05:58:35Z"
+  },
+  "merges": "Observed GitHub events; assistant did not invoke these merges",
+  "branches": [
+    {
+      "name": "docs/COMC-gustavo-work-queue",
+      "tip": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+      "in_main": true,
+      "open_pr": false,
+      "remote": "already deleted by GitHub",
+      "local": "deleted after clean-worktree detachment"
+    },
+    {
+      "name": "docs/COMC-42-s1-closeout-s3-plan",
+      "tip": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+      "in_main": true,
+      "open_pr": false,
+      "remote": "already deleted by GitHub",
+      "local": "deleted after clean-worktree detachment"
+    }
+  ],
+  "worktrees_preserved": true,
+  "automatic_branch_deletion": true
+}

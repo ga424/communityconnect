@@ -1,3 +1,43 @@
+# Current review — PR15 and proposed S3-AC11 v1
+
+[Review](../../docs/reviews/PR-15-and-S3-AC11-2026-11-08.md): no blocking bounded code findings at8f993ab; fresh CI artifact148/0/5 and24 gate controls verified. PR15 remains open, human result/merge decision pending. PR14 is also open; automatic deletion after verified merge remains enabled. [Next packet](../../docs/plans/S-3-AC11-approval.md) is unapproved: one route,52 tests, proposed200/0/5. COMC65 is To Do; Kundan66 and Sandeep67 decisions pending. Verdict CONDITIONAL_GO for human integration review, NO_GO for production. No executable or protected contract change in this preparation.
+
+---
+
+# Publication checkpoint — PR15 CI verified, November 8, 2026
+
+[PR15](https://github.com/ga424/communityconnect/pull/15) is open for result review. EV-S3-AC12-CI-42529458195 verifies its f76cf3a head: 148 passes, zero failures/errors, five exact skips and actual exit 0. Downloaded JUnit passed the strict gate; all 24 controls, migrations and cleanup passed. GitHub tested its merge ref, whose tree equals that head. [CI evidence](../../docs/evidence/s3-ac12/ci-42529458195.json). No runtime changes in this publication-only follow-up; final head CI will be attached in Git provenance notes. Human acceptance and merge remain pending. Earlier local/pending-CI text below records its checkpoint.
+
+---
+
+# Current result — S3-AC12 implementation, November8,2026
+
+Owner scope approval plus his completion confirmation and COMC63/64 closures allowed bounded execution. Closures are attributed to Gustavo; no independently authored Kundan/Sandeep sign-offs invented. COMC62 is In Progress for real implementation/result review.
+
+EV-S3-AC12-RED-20261108 records28 semantic red failures before code, with120 old passes and5 exact skips. EV-S3-AC12-LOCAL-20261108 records148 passes,0 failures/errors,5 exact skips and exit0 after implementation; migrations,24 new gate controls, old gate compatibility, frozen hashes and cleanup pass. [Evidence](../../docs/evidence/s3-ac12/README.md). New test file remains frozen from5b5a1d6.
+
+[Detailed self-review](../../docs/reviews/S-3-AC12-implementation-2026-11-08.md) found no blocking bounded implementation defect; local delivery is ready for CI/result review. Human review, full browser AC12/S3 acceptance and production assurance remain separate. Verdict: CONDITIONAL_GO for a review PR, NO_GO for production. CI and final head recorded in Git notes/PR/Jira after publication. Original ledgers and contracts preserved; history below remains at its earlier checkpoints.
+
+---
+
+# Current decision — S3-AC12 scope approved, November 8, 2026
+
+EV-S3-AC12-SCOPE-APPROVAL-20261108 records Gustavo's actual approval of packet v1, addendum,28 tests and CI phase, explicitly conditional on recorded Kundan/Sandeep reviews. EV-S3-AC12-REVIEW-CHECK-20261108 found no such dispositions in checked PR/Jira sources. COMC63 and COMC64 now track those named reviews and block COMC62, which remains To Do. [Review status](../../docs/reviews/S-3-AC12-approval-status-2026-11-08.md).
+
+Scope is approved and does not need reconfirmation unchanged; execution is waiting on the user's explicit condition. No app, tests, design contract, migration or CI changes. The target148/0/5 is not a runtime result; current proven phase remains120/0/5. No independent human approval, implementation completion or production release inferred. Earlier sections below retain their historical pending-scope statements.
+
+---
+
+# Current review — PR13 and S3-AC12 proposal, November 8, 2026
+
+PR13 is merged at de7e609a63b1caacb7e68b7cb5d82a3335321f98. Exact-head CI42452643892 at ff6b0f9 passes120/0/5, exit0, reverified;107 frozen hashes and prior ledger prefixes preserved. PR12/13 remote branches already auto-deleted; clean local copies removed after ancestry checks. The assistant did not invoke those merges. EV-PR13-REVIEW-20261108 resolves to the [review](../../docs/reviews/PR-13-and-S3-AC12-2026-11-08.md) and real evidence. No new local Docker run.
+
+F1: draft manager unit-null wording differs from valid schema states. Proposed addendum makes role/community the sole authority and adds regression coverage. [S3-AC12 v1](../../docs/plans/S-3-AC12-approval.md) / COMC62 proposes only the community-options API,28 new tests and148/0/5 phase. EV-S3-AC12-PROPOSAL-20261108 is drafted, not execution evidence. Current code/test/CI phase remains unchanged120/0/5. AC11, browser selector and full-story completion remain future scope. M1's S1-only baseline is retained.
+
+Verdict: CONDITIONAL_GO for packet decision; implementation scope/contract/test decisions pending; production NO_GO. Kundan and Sandeep reviews are not invented. Gustavo's earlier bounded S1 acceptance is recorded; COMC42 is Done for his action. Current state is reconciled; historical review sections below retain their earlier checkpoints. Full assurance, residual risks and final authority are documented in the linked review. Six retained historical structural warnings remain visible.
+
+---
+
 # Current review — Gustavo assigned queue, November8,2026
 
 Gustavo explicitly accepted the bounded S1 behavior (DEC-GUSTAVO-S1-ACCEPTED-20261108); COMC42 is Done for his action. The fifteen-ticket queue now has concrete audit/private-handoff/contribution/submission/design/readiness artifacts and named remaining gates. [Status and links](../../docs/reviews/Gustavo-work-queue-status-2026-11-08.md). No application/test/schema/CI change; all107 existing protected hashes remain unchanged. S3 design/test-plan deliverable is prepared under the user's queue instruction, not implemented.

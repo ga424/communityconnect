@@ -4,19 +4,19 @@ A community management portal for residents, board members, community managers a
 
 ## Current increment
 
-This branch records Milestone 1 verification through AISE. **AC-1 creation/self-listing, AC-2 validation, and AC-4 request details with AC-6 persisted status are merged. Approved AC-5 verification-only work passed and its evidence PR10 is merged.** Residents can retrieve only their own requests in a community where they hold resident membership. Unknown callers receive401; missing, malformed and unauthorized IDs share404. [AC5 execution evidence](docs/evidence/ac5/README.md) records integrated-main source, actual approval, unchanged tests, 120/0/5 local results, migration rehearsal and cleanup. All current S1 cases pass; named human/full-story acceptance remains pending. S6 is design/test-only. Fixtures are synthetic; no live payments or production authentication.
+M1's S1 resident request creation, validation, self-listing and details are merged. This branch adds the approved later-product **S3-AC12 community-options API**: `GET /manager/communities` returns only the caller's current manager assignments, sorted by community ID, with exactly id/name fields. Known callers without manager assignments receive an empty array; missing/invalid/unknown callers receive401. A valid unit link does not change manager authority. All reads preserve stored data and existing resident access behavior.
 
-See [feature order and owners](docs/features/README.md), [S-1 plan](docs/plans/S-1-plan.md), [S-1 design](docs/design/S-1.md), [S-6 design](docs/design/S-6.md) and [31-AC traceability](docs/traceability.csv). Designs, plans and tests still need team review. [Jira COMC](https://gkms.atlassian.net/jira/software/projects/COMC/boards/34/backlog) tracks that review separately from drafted artifacts.
+Local verification passed **148 tests, zero failures/errors and five planned S6 skips**. The28 new cases were committed before implementation; their actual red baseline had28 missing-route failures and all120 previous passes. [Execution evidence](docs/evidence/s3-ac12/README.md), [approved packet](docs/plans/S-3-AC12-approval.md), [addendum](docs/design/S-3-AC12-contract-addendum.md) and [supplemental traceability](docs/traceability/S-3-AC12.csv) describe this bounded API increment. It is not merged yet. Selected-community request reads (AC11), browser selector, production login/MFA and assignment administration remain future work.
 
-## Latest verification and review
+Gustavo approved scope and confirmed the two review tickets completed; Jira attributes their closures to him. Independently authored teammate sign-offs were not supplied. Result review and merge remain separate; no production release is authorized. Fixtures are synthetic, the identity header is local/test-only, and S6 payments remain intentionally unbuilt.
 
-Gustavo has now explicitly accepted the bounded S1 behavior; COMC-42 is Done for his review. [His assigned work queue](docs/reviews/Gustavo-work-queue-status-2026-11-08.md) records completed audit/handoff/design artifacts and the remaining Kundan/Sandeep reviews, signatures, policy dependencies and final submissions. S3 context design is prepared for contract/test review; no S3 endpoint or UI is implemented.
+## Next review and approval
 
-All six S-1 behaviors pass on merged main `3918cbd9fd015f8325cfc0136180c28ad31c5d01`, including the merged PR11 audit follow-up. A fresh remote clone ran the documented Docker command: **120 passed, zero failures/errors, five exact S-6 skips, exit 0**. [Results](docs/evidence/s1-closeout/summary.json) include all six original S-1 cases and 107 unchanged frozen paths. The dedicated verification project was removed and existing containers were preserved.
+[PR15 review](docs/reviews/PR-15-and-S3-AC11-2026-11-08.md) found no blocking bounded code defect; final PR-head CI verifies the current148/0/5 phase. PR15 remains open for human result/merge decision. The [next packet, S3-AC11 v1](docs/plans/S-3-AC11-approval.md), proposes one selected-community request endpoint and52 tests; it is not implemented or approved. Gustavo owns COMC65, with Kundan COMC66 contract review and Sandeep COMC67 test review pending. The proposed200/0/5 phase is a future target, not the current result.
 
-[Remaining acceptance by owner](docs/reviews/S-1-acceptance-2026-11-08.md) covers named reviews, stale S-1 design text, the missing reviewed gapcheck and independent verification at the final submission SHA. Codex reproduction is supporting evidence, not a teammate signoff. The separate localhost review wrapper remains outside the shipped product UI.
+## Milestone and review context
 
-The next proposed feature is [S-3-CTX-1 packet v1](docs/plans/S-3-context-approval.md): manager community context **design and test-plan documentation only**, tracked under COMC-10. Approval is pending. No application, executable-test or CI change is proposed for that task; M1 still implements only S-1.
+M1's original [31-AC traceability](docs/traceability.csv) remains unchanged. Gustavo accepted bounded S1 behavior (COMC42); named/full-story/course reviews, contributions and submission receipts are tracked separately in the [work queue](docs/reviews/Gustavo-work-queue-status-2026-11-08.md). Historical [S1 evidence](docs/evidence/s1-closeout/summary.json) records120 passes plus5 skips before this later increment. The [S3 sequence](docs/plans/S-3-plan.md) keeps API, browser and full-story acceptance distinct. The separate localhost review wrapper is outside the product UI and is not started by tests.
 
 ## Install and run every test
 
@@ -30,14 +30,15 @@ docker compose run --build --rm test
 
 The last line is the **one command for all tests**: it starts disposable PostgreSQL, applies Liquibase migrations, builds the Python 3.12 test image and runs pytest. Test fixture credentials in Compose are public, local-only examples; no database port is published. Tests clear only the dedicated `cc_test` database. Do not point this scaffold at shared data.
 
-Current expected result: **120 passes, zero failures, five S-6 skips** (125 cases, pytest exit 0). The passes comprise 30 AC-4 details contracts, 8 AC-2 regressions, 72 AC-1 contracts, 4 harness cases and all six original S-1 acceptance tests. S-6 retains its exact AC-18 through AC-22 skip reasons.
+Current expected result: **148 passes, zero failures/errors, five exact S6 skips** (153 cases, pytest exit0): the original120 passing S1/harness cases plus28 AC12 contracts. S6 retains its AC18–AC22 skip reasons.
 
-The approved S-1 gate preserves all 95 prior test IDs and hashes, promotes only the original AC4/AC6 outcomes, and requires the 30 approved additions. It rejects missing/duplicate/extra cases, any failures/errors, changed skips and modified test hashes. Passing is evidence for review of the local prototype; it does not establish production readiness or teammate acceptance. Historical [AC1](docs/evidence/ac1/README.md) and [AC2](docs/evidence/ac2/README.md) manifests/verifiers remain unchanged.
+The new gate requires exactly the frozen125 original expectations plus28 new passes, matching original file hashes and the tests-first AC12 hash. It rejects missing/duplicate/extra cases, failures/errors, changed skips and altered manifests/files. The24 adversarial controls exercise the new gate; historical gates remain unchanged and run against their historical reports.
 
 ```bash
-python scripts/verify_s1_baseline.py
-python scripts/verify_s1_baseline.py --self-test
-# Backward compatibility of historical phases:
+python scripts/verify_s3_ac12_baseline.py
+python scripts/verify_s3_ac12_baseline.py --self-test
+# Compatibility checks use historical results, not the expanded current report:
+python scripts/verify_s1_baseline.py --junit docs/evidence/s1-closeout/fresh-clone-junit.xml
 python scripts/verify_ac1_baseline.py --junit docs/evidence/ac1/local-junit.xml
 python scripts/verify_ac2_baseline.py --junit docs/evidence/ac2/local-junit.xml
 ```
@@ -51,7 +52,7 @@ bash scripts/migration_rehearsal.sh
 docker compose down --volumes --remove-orphans
 ```
 
-`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. Docker Desktop was started during this session. Historical bootstrap runs are documented separately; the current S-1 run must match the phase above. Sandeep’s human review remains pending. If a sandbox cannot write Buildx state under the home directory, set `BUILDX_CONFIG` to a writable temporary directory; the test command is otherwise unchanged.
+`artifacts/` holds test output and JUnit results and is not committed. CI uploads its real results. Docker Desktop was started during this session. Historical bootstrap runs are documented separately; the current full run must match the phase above. Sandeep’s human review remains pending. If a sandbox cannot write Buildx state under the home directory, set `BUILDX_CONFIG` to a writable temporary directory; the test command is otherwise unchanged.
 
 ## Work by feature with AISE
 
@@ -68,7 +69,7 @@ The [pinned AISE source](docs/aise/FRAMEWORK.md) includes its deterministic vali
 - Sandeep: review fixtures/migration recovery, both test specifications and fresh-clone execution.
 - Gustavo: maintain provenance/traceability and coordinate integration and peer review.
 
-Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This workflow checks migrations, AISE structure, the sensitive-data guard and the approved S-1 contract phase; it is not a production security assessment.
+Production identity/MFA, UI/Playwright, provider integrations, security/dependency assurance and deployment remain later work. PostgreSQL and Python image tags need immutable release pinning and dependency/security review before release. This workflow checks migrations, AISE structure, the sensitive-data guard and the approved S-1 plus S3-AC12 contract phase; it is not a production security assessment.
 
 Private interviews, participant identities, consent/recording files and credentials are excluded from this public repository. Team contribution signatures and final submission are not fabricated by automation.
 

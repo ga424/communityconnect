@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-08T16:55:34.882400+00:00",
+  "local_timezone": "America/New_York",
+  "reviewed_packet": "S3-AC12 v1",
+  "source_pr_head": "10056fc1264634cf832921fd588372f90724cff6",
+  "reviews": [
+    {
+      "issue": "COMC-63",
+      "assignee": "Kundan Singh",
+      "status": "To Do",
+      "comments": 0,
+      "comments_all_pages_read": true,
+      "attachments": 0,
+      "acceptance_recorded": false
+    },
+    {
+      "issue": "COMC-64",
+      "assignee": "Sandeep Garg",
+      "status": "To Do",
+      "comments": 0,
+      "comments_all_pages_read": true,
+      "attachments": 0,
+      "acceptance_recorded": false
+    }
+  ],
+  "github_pr14": {
+    "state": "open",
+    "approvals": [
+      {
+        "author": "abreugus",
+        "submitted_at": "2026-11-08T16:04:36Z",
+        "body": ""
+      },
+      {
+        "author": "abreugus",
+        "submitted_at": "2026-11-08T16:54:38Z",
+        "body": ""
+      }
+    ],
+    "interpretation": "Gustavo approvals do not supply Kundan or Sandeep review dispositions"
+  },
+  "scope_approval": "retained; no reconfirmation needed unchanged",
+  "execution_gate_satisfied": false,
+  "implementation_started": false,
+  "new_tests": 0,
+  "ci_phase_changed": false
+}

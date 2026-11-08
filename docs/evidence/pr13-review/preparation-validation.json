@@ -1,0 +1,57 @@
+{
+  "structure": {
+    "exit": 0,
+    "command": [
+      "python3",
+      ".agentic-sdlc/hooks/validate_project.py",
+      "--workspace",
+      ".agentic-sdlc"
+    ],
+    "log": "docs/evidence/pr13-review/structure.txt"
+  },
+  "sensitive_source": {
+    "exit": 0,
+    "command": [
+      "python3",
+      ".agentic-sdlc/hooks/guard_sensitive_data.py",
+      "app",
+      "tests",
+      "db",
+      "docs",
+      "prompts",
+      "scripts",
+      "AGENTS.md",
+      "README.md",
+      "LEDGER.md"
+    ],
+    "log": "docs/evidence/pr13-review/sensitive_source.txt"
+  },
+  "unchanged_phase": {
+    "exit": 0,
+    "command": [
+      "python3",
+      "scripts/verify_s1_baseline.py",
+      "--junit",
+      "docs/evidence/pr13-review/ci-junit.xml"
+    ],
+    "log": "docs/evidence/pr13-review/unchanged_phase.txt"
+  },
+  "whitespace": {
+    "exit": 0,
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "log": "docs/evidence/pr13-review/whitespace.txt"
+  },
+  "protected_hashes_verified": 107,
+  "existing_changes_within_metadata_allowlist": true,
+  "prior_ledger_prefixes_preserved": true,
+  "proposed_unique_test_ids": 28,
+  "existing_manifest_cases": 125,
+  "new_executable_test_file_exists": false,
+  "relative_markdown_links_resolve": true,
+  "source_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "new_local_docker_run": false
+}

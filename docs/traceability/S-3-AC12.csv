@@ -1,0 +1,2 @@
+Story,AC,Source evidence,Assumption,Test,Delivered boundary,Pending boundary
+S-3,AC-12,E-3,A-2,tests/test_s3_community_options.py::test_ac12_manager_lists_only_assigned_communities,Local manager-options API verified,Browser selector and full-story acceptance

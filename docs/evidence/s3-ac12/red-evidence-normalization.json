@@ -1,0 +1,14 @@
+{
+  "red-junit.xml": {
+    "raw_sha256": "8c798682966af34d1793a2a7f29013c820c49272f1bf9d7703ace6b01ef2fb8e",
+    "raw_archive": "red-junit.xml.gz",
+    "normalized_sha256": "4209748603a8dc1b41d9bb94991bf40397745b8e241f04d8b638acce05b71351",
+    "change": "Trailing whitespace removed in readable copy; raw bytes retained in gzip archive"
+  },
+  "ac12-red-output.txt": {
+    "raw_sha256": "6ab1ba1a5c21505774850bf5827091c44d15742e6711016bf82e667bb8609169",
+    "raw_archive": "ac12-red-output.txt.gz",
+    "normalized_sha256": "48fe9746856adb06e7cbd6dbaeb592b48e003ca6437e6f0f724c430e615fa4db",
+    "change": "Trailing whitespace removed in readable copy; raw bytes retained in gzip archive"
+  }
+}

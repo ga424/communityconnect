@@ -20,3 +20,6 @@ Kundan: S-1 requirements/implementation; Sandeep: harness and test specification
 
 ## Branch lifecycle
 The user requires post-merge branch deletion. Keep GitHub delete_branch_on_merge enabled. Before manual cleanup, fetch current refs, confirm the branch's latest head is included in main and has no open PR, then delete that exact remote head with an expected-head lease and delete merged local copies. Never delete main, an unmerged head or a branch with uncommitted work. Preserve evidence with immutable commit/PR links and start new work on a fresh branch from main. A merge is not approval for a subsequent implementation task.
+
+## Approved later local increment — S3-AC12 v1
+Gustavo approved the options-only packet, addendum,28 new tests and additive148/0/5 CI phase. His subsequent completion confirmation and COMC63/64 closures clear this bounded implementation; record those closures as Gustavo's actions, not independently authored teammate sign-offs. Follow docs/plans/S-3-AC12-approval.md and the new S3-AC12 addendum. M1's S1-only submission boundary remains. No AC11, browser UI, production identity or merge is authorized; preserve all original tests and controls.

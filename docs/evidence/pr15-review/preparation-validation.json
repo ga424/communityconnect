@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-08T22:39:08.582635+00:00",
+  "base": "8f993ab6fb96e837315918d0da2b344642a05c57",
+  "protected_paths": 116,
+  "prior_ledger_prefixes": 7,
+  "proposed_unique_cases": 52,
+  "test_groups": 21,
+  "proposed_phase": {
+    "passed": 200,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 205
+  },
+  "current_verified_phase": {
+    "passed": 148,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 153
+  },
+  "new_executable_tests": 0,
+  "app_test_schema_dependency_ci_change": false,
+  "relative_links_checked": 48,
+  "structural": "PASS; seven unchanged historical warnings",
+  "source_guard": "PASS",
+  "whitespace": "PASS",
+  "reviewed_pr15_ci": "42529654327",
+  "preparation_ci": "pending publication"
+}

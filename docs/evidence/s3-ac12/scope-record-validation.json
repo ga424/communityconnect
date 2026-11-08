@@ -1,0 +1,22 @@
+{
+  "structure": {
+    "exit": 0,
+    "log": "docs/evidence/s3-ac12/structure-scope.txt"
+  },
+  "source_guard": {
+    "exit": 0,
+    "log": "docs/evidence/s3-ac12/source_guard-scope.txt"
+  },
+  "whitespace": {
+    "exit": 0,
+    "log": "docs/evidence/s3-ac12/whitespace-scope.txt"
+  },
+  "source_commit": "c698700290b8b41de7187509b8c0acd168a77ceb",
+  "protected_hashes_verified": 107,
+  "prior_ledger_prefixes_preserved": true,
+  "executable_schema_design_ci_changes": false,
+  "new_executable_tests": 0,
+  "local_docker_run": false,
+  "actual_scope_approval": true,
+  "review_gate_satisfied": false
+}

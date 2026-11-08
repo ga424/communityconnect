@@ -489,3 +489,160 @@ evidence: EV-GUSTAVO-QUEUE-HANDOFF-20261108; COMC-4/42/16
 risk: Fourteen assigned tickets remain open for named reviews/signatures/submissions/dependent product implementation; no automatic merge/deployment or live funds. Six retained historical structural warnings have complete current records or explicit gaps.
 
 Entry27 recording checkpoint: 4da9ef69f0757177be75657afa510f272dbb5b7d. Its scoped README update remained unstaged because the helper staged docs/prompts/ledger/state only; the following publication commit includes that already-reviewed README text and this disclosure. No work was lost and no code/test change occurred. Exact follow-up SHA is in the Git provenance note.
+
+
+## Entry 28 — PR13 review and S3-AC12 proposal (November 8, 2026)
+
+artifact: docs/reviews/PR-13-and-S3-AC12-2026-11-08.md; S3-AC12 approval packet, proposed addendum and28-case inventory; observed merge cleanup evidence
+
+tool: OpenAI Codex using pinned AISE0.3.4 review/orchestrate; exact deployed model build/version not exposed in session metadata; November8,2026.
+
+prompts: Exact user request at prompts/2026-11-08-pr13-s3-review.txt
+
+review: Inspected PR13 diff, merged ancestry, existing S3 contract/test plan, schema, ID parsing, fixtures and strict phase gates. Identified valid manager unit-link semantics; proposed clarification without altering protected design. Separated AC12 options from AC11/UI and M1 scope. Reconciled actual prior Gustavo acceptance without inventing named reviews.
+
+checks: Exact-head CI42452643892 reused and reverified at ff6b0f9fd799e160079c3fb9829c0abae9395ef4:120 passed,0 failures/errors,5 exact skips, actual exit0. Merged tree equal;107 frozen hashes and prior prefixes preserved. Clean merged branches removed locally after remote auto-deletion. New preparation checks recorded in docs/evidence/pr13-review/preparation-validation.json; final recording SHA/CI in Git notes. No new local Docker run or executable tests claimed.
+
+evidence: EV-PR13-REVIEW-20261108; EV-S3-AC12-PROPOSAL-20261108; COMC-10/62/39/44/4
+
+risk: S3 scope/contract/test decisions pending. API-only increment cannot complete browser AC12/S3; M1 S1 boundary retained. Production identity, assignment workflow and real volumes excluded. Six historical validator warnings retained; new28 tests and148/0/5 phase are proposals only.
+
+Entry28 recording checkpoint: a38374377ed3a42c4c573f029153203123a80648; preparation PR14 opened. Subsequent read-only preview health check returned curl exit7 and docker ps showed no preview containers running. No preview/container mutation was performed. Current state now records this observation instead of retaining a stale running status. This follow-up changes review/state/provenance only. Jira COMC10/62/39/44/4 descriptions link the concrete packet and preserve named decisions as pending. Final head/CI recorded in Git notes.
+
+
+## Entry 29 — S3-AC12 conditional scope approval (November 8, 2026)
+
+artifact: exact approval prompt, current packet/status and docs/evidence/s3-ac12/approval-review-check.json
+
+tool: OpenAI Codex with pinned AISE0.3.4 orchestration; exact deployed model build/version not exposed; November8,2026 (America/New_York).
+
+prompts: Exact user approval at prompts/2026-11-08-s3-ac12-scope-approval.txt
+
+review: Recorded Gustavo's actual scope/addendum/28-test/CI approval and explicit prerequisite for Kundan/Sandeep reviews. Read PR14 formal reviews/threads/conversation, PR13 timeline, current Jira descriptions and all comments on COMC62/10/39. No actual named dispositions found. Created COMC63 for Kundan and COMC64 for Sandeep, both blocking COMC62; no proxy approvals or deadlines invented.
+
+checks: Metadata/source/hash/prefix checks recorded in docs/evidence/s3-ac12/scope-record-validation.json. Existing source/test/design/schema/CI unchanged; no new executable tests or Docker run. Shell GitHub DNS access failed; connected tools read current state and publish this metadata. Final recording SHA/checks are linked in PR14 and Jira.
+
+evidence: EV-S3-AC12-SCOPE-APPROVAL-20261108; EV-S3-AC12-REVIEW-CHECK-20261108; COMC62/63/64
+
+risk: Actual Kundan and Sandeep review outcomes are still needed before execution; scope approval alone does not satisfy this user-specified gate.28 new tests and148/0/5 remain future execution targets; original M1 scope and peer/provenance gaps remain.
+
+
+## Entry 30 — Recheck Kundan and Sandeep review prerequisites (November 8, 2026)
+
+artifact: docs/evidence/s3-ac12/review-recheck-20261108.json and canonical last-review check
+
+tool: OpenAI Codex, existing pinned AISE0.3.4 record format; exact deployed model build/version not exposed; November8,2026 (America/New_York).
+
+prompts: Exact conditional execution request at prompts/2026-11-08-s3-ac12-review-recheck.txt
+
+review: Read live COMC63/64 descriptions, status, assignees, every comment page and attachments. Both remain To Do with zero comments and zero attachments. Read PR14 timeline and formal reviews: two approvals are by abreugus with empty bodies; neither establishes Kundan/Sandeep acceptance. Gustavo's scope approval remains recorded and does not need repeating.
+
+checks: Structural/source/whitespace,107 protected hashes and prior ledger prefixes verified; details in docs/evidence/s3-ac12/review-recheck-validation.json. No executable/test/design/schema/CI change or new local runtime run. Updated Jira with this actual check; implementation PR not opened because the user's condition remains unsatisfied.
+
+evidence: EV-S3-AC12-RECHECK-20261108; COMC62/63/64; PR14
+
+risk: Named review decisions remain missing in checked sources. Do not treat Gustavo's approvals, ticket status or silence as proxy peer acceptance. Current approved scope persists; all implementation targets remain pending execution.
+
+
+## Entry 31 — AC12 owner completion confirmation and undo checkpoint (November 8, 2026)
+
+artifact: new addendum, scoped AGENTS exception, baseline and context
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Read actual Jira transitions and preserved their actor; no Kundan/Sandeep comments or signatures invented. Scope/addendum already explicitly approved. Fresh main and PR14 ancestry inspected.
+
+checks: All107 historical frozen hashes match before allowed changes; no app/test/CI change. Docker29.9.2 accessible; unrelated containers inventoried.
+
+evidence: EV-S3-AC12-OWNER-CLEARANCE-20261108; COMC62/63/64
+
+risk: Owner-confirmed completion is not independently authored peer evidence; result review and merge remain separate. Synthetic local scope only.
+
+
+## Entry 32 — AC12 tests-first baseline (November 8, 2026)
+
+artifact: new28-case file and actual red JUnit
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Checked fixtures/foreign keys, exact IDs and assertions against approved packet; original tests unchanged. Raw Latin1 header reaches API; no client/setup errors.
+
+checks: Docker full run collected153:120 pass,28 semantic404 failures,0 errors,5 exact old skips; real exit1. All new IDs match proposal.
+
+evidence: EV-S3-AC12-RED-20261108
+
+risk: Endpoint intentionally absent at this checkpoint; no green result or independent teammate authorship claimed. Freeze this file before implementation.
+
+
+## Entry 33 — AC12 implementation and local evidence (November 8, 2026)
+
+artifact: options router, additive verifier/CI, supplemental traceability and runtime reports
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Sequential AI self-review of role/community SQL, typed projection, malformed identity handling, no caching/writes and original resident isolation. Test file and expectations remain frozen; no independent teammate review claimed.
+
+checks: Full Docker153-case suite148/0/5 exit0; migrations update/repeat/rollback/reapply exit0;24 new gate controls rejected defects; historical gates/self-tests pass. Protected hashes and cleanup verified. Raw red traces archived before whitespace normalization.
+
+evidence: EV-S3-AC12-LOCAL-20261108; COMC62
+
+risk: CI/result review still pending at this checkpoint; spoofable local identity and no browser outcome. Six retained structural warnings and existing TestClient advisory remain. No merge or production launch.
+
+
+## Entry 34 — AC12 final local review (November 8, 2026)
+
+artifact: docs/reviews/S-3-AC12-implementation-2026-11-08.md and final-local-validation.json
+
+tool: OpenAI Codex with pinned AISE0.3.4; exact model build and cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Sequential AI self-review, no independent human acceptance claimed; bounded review verdict CONDITIONAL_GO for PR, NO_GO for production.
+
+checks: 108 protected paths, six runtime hashes, seven prior ledger prefixes, relative links, source guard and whitespace pass. Six historical structural warnings retained. No new runtime change after the green run.
+
+evidence: EV-S3-AC12-LOCAL-REVIEW-20261108; EV-S3-AC12-LOCAL-20261108
+
+risk: CI and result review pending publication. Actual final SHA/CI will be attached through Git provenance notes; no merge authorized.
+
+Entry 34 metadata correction: its new code-change record omitted stage and triggered one additional validator warning. CHANGE-S3-AC12-LOCAL-REVIEW-COMPLETE-20261108 supplies stage 07-review as an append-only superseder. Structural validation still passes with seven raw warnings (six historical, one corrected record retained). No runtime or test change.
+
+
+## Entry 35 — AC12 PR publication and CI artifact review (November 8, 2026)
+
+artifact: PR15, CI42529458195, canonical state and provenance notes
+
+tool: OpenAI Codex using pinned AISE0.3.4; exact deployed model build/version not exposed; November8,2026.
+
+prompts: prompts/2026-11-08-s3-ac12-execution-confirmation.txt
+
+review: Read actual job steps and downloaded artifact; merge-ref checkout tree equals PR head. Jira COMC62/10/39/44 linked to implementation and kept In Progress. COMC63/64 remain Done with actual actor retained.
+
+checks: CI148/0/5 exit0,24 controls,migrations/cleanup success; reverified strict gate against downloaded JUnit. No runtime changes after local green.
+
+evidence: EV-S3-AC12-CI-42529458195; PR15; implementation b89fe0bdafa5defff1a84ad891bfd182d00a97a4; reviewed head f76cf3afc2c0c0849f7908c40b3d7815dc4239ec
+
+risk: Result review and merge pending. Existing Actions Node20/Ubuntu migration advisories remain; no dependency/control change. Final publication commit CI will be recorded in Git notes to avoid circular self-SHA claims.
+
+
+## Entry 36 — PR15 review and AC11 approval packet (November 8, 2026)
+
+artifact: docs/reviews/PR-15-and-S3-AC11-2026-11-08.md; docs/plans/S-3-AC11-approval.md; COMC65/66/67
+
+tool: OpenAI Codex with pinned AISE0.3.4 review/api-contract/test workflows; exact model build and token/cost telemetry unavailable. Single agent, no independent reviewer claimed.
+
+prompts: prompts/2026-11-08-pr15-s3-review.txt
+
+review: Reconstructed source→contract→28 tests→route→CI, checked current PR state and actual review attribution. No blocking bounded code findings. PR14/15 remain open with automatic deletion enabled; no branch prematurely removed. New52-case AC11 packet is proposed, not approved.
+
+checks: Freshly downloaded final PR15-head CI42529654327 verifies148/0/5 exit0;24 gate defect controls pass;116 protected paths and old ledger prefixes preserved. No new local Docker run, code/test/CI/schema/dependency edit or inferred human acceptance. Preparation checks recorded separately.
+
+evidence: EV-PR15-REVIEW-20261108; EV-S3-AC11-PACKET-20261108; DEC-S3-AC11-PROPOSED-20261108
+
+risk: PR15 result/merge decision, AC11 scope/contract/test decisions and real concurrency evidence remain pending. COMC62/66/67 block COMC65. API evidence does not complete browser S3 or authorize production. Seven existing structural warnings retained.

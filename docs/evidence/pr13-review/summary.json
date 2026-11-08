@@ -1,0 +1,120 @@
+{
+  "reviewed_pr": 13,
+  "reviewed_head": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+  "merged_main": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+  "merged_source_equal_to_reviewed_head": true,
+  "existing_protected_hashes_verified": 107,
+  "code_test_schema_ci_changed_in_pr": false,
+  "prior_ledger_prefixes_preserved": true,
+  "ci": {
+    "conclusion": "success",
+    "headSha": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+    "jobs": [
+      {
+        "completedAt": "2026-11-08T05:56:28Z",
+        "conclusion": "success",
+        "databaseId": 128644943494,
+        "name": "s1-contract-baseline",
+        "startedAt": "2026-11-08T05:55:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-11-08T05:55:34Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-11-08T05:55:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:55:35Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 2,
+            "startedAt": "2026-11-08T05:55:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:55:36Z",
+            "conclusion": "success",
+            "name": "Validate AISE state and authored source boundaries",
+            "number": 3,
+            "startedAt": "2026-11-08T05:55:35Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:02Z",
+            "conclusion": "success",
+            "name": "Rehearse migrations on disposable PostgreSQL",
+            "number": 4,
+            "startedAt": "2026-11-08T05:55:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:25Z",
+            "conclusion": "success",
+            "name": "Run all tests and require the approved S-1 phase",
+            "number": 5,
+            "startedAt": "2026-11-08T05:56:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:25Z",
+            "conclusion": "success",
+            "name": "Record image inputs",
+            "number": 6,
+            "startedAt": "2026-11-08T05:56:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:26Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+            "number": 7,
+            "startedAt": "2026-11-08T05:56:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:26Z",
+            "conclusion": "success",
+            "name": "Remove disposable test services",
+            "number": 8,
+            "startedAt": "2026-11-08T05:56:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:26Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 16,
+            "startedAt": "2026-11-08T05:56:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-08T05:56:26Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-11-08T05:56:26Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/ga424/communityconnect/actions/runs/42452643892/job/128644943494"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/ga424/communityconnect/actions/runs/42452643892"
+  },
+  "ci_junit_sha256": "1e833ed4d07fb0ee4d1f799999544b340c304dbafbb706b13b755a5ae5dfe25d",
+  "counts": {
+    "passed": 120,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "pytest_exit": 0,
+  "runtime_evidence": "Previously downloaded exact-head CI artifact reused and hash/exact-gate reverified; no new local Docker execution",
+  "github_reviews": "No formal reviews or inline threads returned at current inspection",
+  "human_review": "Gustavo accepted S1 earlier; Kundan/Sandeep S3 decisions remain pending",
+  "new_task_approval": "not granted"
+}

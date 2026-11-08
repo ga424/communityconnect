@@ -1,0 +1,8 @@
+Prior scope approval is preserved in prompts/2026-11-08-s3-ac12-scope-approval.txt.
+
+User messages (verbatim, in order):
+I think we should help move the project along given that both Kundan and Sandeep are offline.
+Check again - these are now completed.
+check again.
+
+Observed Jira on November8,2026: COMC63 changed To Do→Done at17:05:01.436-0500 and COMC64 at17:05:04.727-0500, both by Gustavo Abreu. Zero reviewer comments/attachments. The assistant uses Gustavo's completion confirmation and ticket closures as owner clearance to implement the already-approved bounded scope. This does not establish independently authored Kundan/Sandeep sign-offs or authorize merge. A previous proposed temporary workflow question was not answered; no such waiver is fabricated.

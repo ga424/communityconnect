@@ -1,0 +1,4 @@
+User approval (verbatim):
+Approved for scope: S3-AC12 packet v1, the addendum, 28 tests and CI phase change. Proceed once Kundan and Sandeep’s reviews are recorded. Keep Jira and the AISE ledger updated, and open a PR when ready.
+
+Recorded November 8, 2026 (America/New_York). Scope approval is real and persists. Kundan contract and Sandeep test-plan reviews are explicit execution prerequisites, not approvals supplied by this message.
