@@ -38,5 +38,11 @@
     "individual_peer_acceptance": "not established",
     "delete_branch_on_merge": true,
     "branch_deletion": "not eligible while PRs unmerged"
+  },
+  "preparation_validation": {
+    "unchanged_prior_protected_files": 79,
+    "authorized_current_plan_update": "docs/plans/S-1-plan.md",
+    "all_executable_test_design_feature_workflow_hook_bytes_unchanged": true,
+    "initial_check": "An overbroad 80-file equality check failed on the intentionally updated current S-1 plan; comparison was narrowed to the authorized metadata exception without changing the historical manifest."
   }
 }
