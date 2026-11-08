@@ -4,8 +4,8 @@ The original design/test-plan deliverable is merged in PR13. [COMC-10](https://g
 
 | Order | Bounded work | Status and dependency |
 | --- | --- | --- |
-| 1 | Review S3 contract and tests; decide AC12 addendum | Packet prepared; Kundan contract, Sandeep test and Gustavo scope decisions pending |
-| 2 | [COMC-62 / S3-AC12 v1](S-3-AC12-approval.md): community options API | To Do awaiting approval;28 proposed cases; current CI remains120/0/5 |
+| 1 | Review S3 contract and tests; decide AC12 addendum | Gustavo scope approved; Kundan contract (COMC-63) and Sandeep test (COMC-64) decisions pending |
+| 2 | [COMC-62 / S3-AC12 v1](S-3-AC12-approval.md): community options API | To Do awaiting recorded peer reviews; scope approved,28 tests authorized conditionally; current CI remains120/0/5 |
 | 3 | AC11 selected-community request reads | Not authorized; separate packet must settle transaction-stable membership, denial precedence, fields/status/order and concurrency tests |
 | 4 | Browser selector and selected-request view | Not authorized; separate UI/Playwright packet after API contracts, with actual user-facing AC11/12 evidence |
 | 5 | S3 result acceptance | Named team review of API and UI evidence; no completion from API-only results |

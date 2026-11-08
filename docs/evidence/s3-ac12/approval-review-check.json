@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-11-08T16:05:27.328264+00:00",
+  "packet_version": "S3-AC12 v1",
+  "reviewed_packet_commit": "c698700290b8b41de7187509b8c0acd168a77ceb",
+  "scope_approval": {
+    "owner": "Gustavo",
+    "status": "approved_conditional_on_recorded_reviews",
+    "source_ref": "prompts/2026-11-08-s3-ac12-scope-approval.txt"
+  },
+  "checked_sources": {
+    "github_pr14": {
+      "state": "open",
+      "formal_reviews": 0,
+      "inline_threads": 0,
+      "conversation_comments": 1,
+      "comment_ids": [
+        6718084330
+      ],
+      "finding": "Only previous Codex-authored status under the connected account; no Kundan/Sandeep disposition."
+    },
+    "github_pr13": {
+      "conversation_and_review_timeline_comment_ids": [
+        6717957593,
+        6718075180
+      ],
+      "finding": "Codex bot review and assistant review record; no Kundan/Sandeep disposition."
+    },
+    "jira_COMC62": {
+      "total": 1,
+      "all_pages_read": true,
+      "comment_ids": [
+        "10127"
+      ]
+    },
+    "jira_COMC10": {
+      "total": 5,
+      "all_pages_read": true,
+      "comment_ids": [
+        "10128",
+        "10114",
+        "10110",
+        "10107",
+        "10094"
+      ]
+    },
+    "jira_COMC39": {
+      "total": 7,
+      "all_pages_read": true,
+      "comment_ids": [
+        "10129",
+        "10109",
+        "10091",
+        "10047",
+        "10040",
+        "10030",
+        "10016"
+      ]
+    }
+  },
+  "reviewer_dispositions": {
+    "Kundan": {
+      "status": "not_found_in_checked_sources",
+      "issue": "COMC-63"
+    },
+    "Sandeep": {
+      "status": "not_found_in_checked_sources",
+      "issue": "COMC-64"
+    }
+  },
+  "implementation_issue": "COMC-62",
+  "execution_started": false,
+  "new_executable_tests": 0,
+  "ci_phase_changed": false,
+  "network_note": "Direct shell GitHub fetch failed DNS resolution in this sandbox; connected GitHub tools successfully read current PR/review records. Approval metadata will be published through the GitHub connector."
+}

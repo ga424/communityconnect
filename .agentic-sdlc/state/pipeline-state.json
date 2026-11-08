@@ -33,8 +33,8 @@
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
       "branch": "docs/COMC-10-ac12-review",
-      "commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
-      "commit_context": "Verified merged PR13 baseline; this preparation commit and final CI recorded in Git provenance notes. PR12/13 branches removed after observed merges."
+      "commit": "c698700290b8b41de7187509b8c0acd168a77ceb",
+      "commit_context": "PR14 approved packet reference before scope-record update; remote recording SHA published in PR/Jira. Connector publication used because direct shell network is unavailable."
     },
     "stage_status": [
       {
@@ -680,27 +680,25 @@
       "Kundan/Sandeep design, gap, QA and provenance reviews remain; Gustavo bounded S1 acceptance is recorded and COMC42 closed.",
       "Original AI extraction/summary/gap session provenance and remaining claim/exclusion review are unconfirmed; private source packets are prepared.",
       "Personal statement signatures, real walkthrough, final submission SHA and actual receipts require the named humans.",
-      "S3 AC12 concrete packet awaits Gustavo scope, Kundan contract and Sandeep test decisions; manager unit-link addendum proposed. AC11/UI not authorized. Announcement designation/delivery contract remains.",
+      "S3 AC12 scope/addendum/28 tests/CI approved by Gustavo; actual Kundan contract (COMC-63) and Sandeep specification (COMC-64) reviews remain execution prerequisites. AC11/UI not authorized. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T06:07:17.267293+00:00",
+    "last_updated": "2026-11-08T16:05:27.328264+00:00",
     "scoped_work": {
-      "issue": "COMC-10",
+      "issue": "COMC-62",
       "related_issues": [
-        "COMC-62",
-        "COMC-4",
-        "COMC-39",
-        "COMC-44"
+        "COMC-10",
+        "COMC-63",
+        "COMC-64"
       ],
-      "type": "PR13_review_and_S3_AC12_packet",
-      "status": "reviewed_packet_awaiting_human_decisions",
-      "source_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+      "type": "conditional_scope_approval_record",
+      "status": "scope_approved_waiting_recorded_peer_reviews",
       "application_changes": false,
       "new_executable_tests": 0,
       "ci_phase_change": false,
       "evidence_ids": [
-        "EV-PR13-REVIEW-20261108",
-        "EV-S3-AC12-PROPOSAL-20261108"
+        "EV-S3-AC12-SCOPE-APPROVAL-20261108",
+        "EV-S3-AC12-REVIEW-CHECK-20261108"
       ]
     },
     "next_bounded_task": {
@@ -714,8 +712,8 @@
       "version": 1,
       "id": "S3-AC12",
       "type": "options_api_tests_first",
-      "status": "proposed_awaiting_scope_contract_test_decisions",
-      "decision": "DEC-S3-AC12-PROPOSED-20261108",
+      "status": "scope_approved_awaiting_recorded_peer_reviews",
+      "decision": "DEC-S3-AC12-SCOPE-APPROVED-20261108",
       "approval_owner": "Gustavo",
       "contract_reviewer": "Kundan",
       "test_reviewer": "Sandeep",
@@ -728,9 +726,14 @@
         "skipped": 5
       },
       "m1_scope_expanded": false,
-      "later_product_increment_approval": "pending",
-      "implementation_approval": "not granted",
-      "browser_acceptance": "pending future UI increment"
+      "later_product_increment_approval": "approved_conditional_on_recorded_reviews",
+      "implementation_approval": "conditional; do not execute until Kundan and Sandeep actual reviews permit execution",
+      "browser_acceptance": "pending future UI increment",
+      "scope_approval": "EV-S3-AC12-SCOPE-APPROVAL-20261108",
+      "review_dependencies": {
+        "Kundan": "COMC-63",
+        "Sandeep": "COMC-64"
+      }
     },
     "prior_scoped_work": [
       {
@@ -909,6 +912,25 @@
         "execution_complete": true,
         "source_ref": "docs/design/S-3-context.md",
         "implementation_approval": "not granted; later exact tests/CI/code packet required"
+      },
+      {
+        "issue": "COMC-10",
+        "related_issues": [
+          "COMC-62",
+          "COMC-4",
+          "COMC-39",
+          "COMC-44"
+        ],
+        "type": "PR13_review_and_S3_AC12_packet",
+        "status": "reviewed_packet_awaiting_human_decisions",
+        "source_commit": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+        "application_changes": false,
+        "new_executable_tests": 0,
+        "ci_phase_change": false,
+        "evidence_ids": [
+          "EV-PR13-REVIEW-20261108",
+          "EV-S3-AC12-PROPOSAL-20261108"
+        ]
       }
     ],
     "framework": {

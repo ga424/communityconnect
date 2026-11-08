@@ -1,0 +1,7 @@
+WARN: code change record CHANGE-AC5-RESULT-SHA missing paths
+WARN: code change record CHANGE-M1-PROVENANCE-AUDIT-20261108 missing change_type
+WARN: code change record CHANGE-GUSTAVO-PRIVATE-HANDOFF-20261108 missing change_type
+WARN: code change record CHANGE-GUSTAVO-SUBMISSION-HANDOFF-20261108 missing change_type
+WARN: code change record CHANGE-S3-CONTEXT-DESIGN-20261108 missing change_type
+WARN: evidence record missing claim: {'id': 'EV-REPO-ROOT', 'created_at': '2026-11-04T04:43:55.076606+00:00', 'evidence_state': 'machine_verified', 'source_ref': 'https://github.com/ga424/communityconnect/commit/746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d', 'summary': 'Initial README scope commit created via GitHub connector; clone succeeded'}
+Project validation: PASS

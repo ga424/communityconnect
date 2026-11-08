@@ -1,6 +1,6 @@
 # S3-AC12 contract addendum — proposed v1
 
-**Pending human approval.** This document proposes two clarifications for the options-only increment. It does not modify the protected S-3 contract. After approval, copy these agreed rules into a new `docs/design/S-3-AC12-contract-addendum.md`, preserving the original design. [Packet](S-3-AC12-approval.md); [Jira COMC-62](https://gkms.atlassian.net/browse/COMC-62).
+**Gustavo scope approved on November 8, 2026; Kundan contract and Sandeep specification reviews remain pending.** This document proposes two clarifications for the options-only increment. It does not modify the protected S-3 contract. After the required reviews accept these rules, copy them into a new `docs/design/S-3-AC12-contract-addendum.md`, preserving the original design. [Packet](S-3-AC12-approval.md); [Jira COMC-62](https://gkms.atlassian.net/browse/COMC-62).
 
 ## A1 — Manager authority is independent of a unit link
 
@@ -24,4 +24,4 @@ This supports AC-12's selector data contract only. Browser interaction, identity
 
 ## Review dispositions
 
-Gustavo scope: Pending. Kundan contract: Pending. Sandeep specification: Pending. These are proposed design choices, not interview claims or fabricated teammate approvals.
+Gustavo scope: Approved conditional on recorded reviews; see `prompts/2026-11-08-s3-ac12-scope-approval.txt`. Kundan contract: Pending (COMC-63). Sandeep specification: Pending (COMC-64). These are proposed design choices, not interview claims or fabricated teammate approvals.

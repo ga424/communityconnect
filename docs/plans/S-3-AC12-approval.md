@@ -1,6 +1,6 @@
 # S3-AC12 packet v1 — manager community options
 
-**Decision requested: approve this bounded later-product increment, proposed contract addendum, 28 new contract cases and additive CI phase. Implementation has not started.** Jira [COMC-62](https://gkms.atlassian.net/browse/COMC-62), parent [COMC-10](https://gkms.atlassian.net/browse/COMC-10). Integration owner: Gustavo. Kundan contract and Sandeep test-plan decisions remain pending; record their actual dispositions before the tests-first implementation starts, as required by the existing S-3 test plan.
+**Gustavo approved this bounded later-product scope, addendum, 28 tests and additive CI phase on November 8, 2026, conditional on Kundan and Sandeep’s reviews being recorded. Implementation has not started.** Jira [COMC-62](https://gkms.atlassian.net/browse/COMC-62), parent [COMC-10](https://gkms.atlassian.net/browse/COMC-10). Integration owner: Gustavo. Kundan contract and Sandeep test-plan decisions remain pending; record their actual dispositions before the tests-first implementation starts, as required by the existing S-3 test plan.
 
 Review baseline: merged main `de7e609a63b1caacb7e68b7cb5d82a3335321f98`; PR13 head `ff6b0f9fd799e160079c3fb9829c0abae9395ef4`. [Review](../reviews/PR-13-and-S3-AC12-2026-11-08.md). AISE stays at the recorded merged 0.3.4 pin. PR13 merge is not AC-12 approval.
 
@@ -91,4 +91,4 @@ Protected: every existing test and shared fixture, existing feature files and de
 
 Stop for changed source ACs, disputed addendum, differing test inventory, unexplained old test/hash change, unplanned schema/dependency/UI/security scope, identity or real-volume policy dependency, failing controls, or absent required approvals. Record gaps in Jira and AISE without claiming acceptance.
 
-Gustavo scope approval: **Pending**. Kundan contract: **Pending**. Sandeep test specification: **Pending**. No executable changes authorized by this document alone. Future approval should name **S3-AC12 packet v1**, the addendum,28 tests,153-case CI gate and later-product scope. Exact actual response belongs in a new prompt record; do not prefill a signature.
+Gustavo scope approval: **Approved, conditional on recorded peer reviews**; exact response is in `prompts/2026-11-08-s3-ac12-scope-approval.txt`. Kundan contract: **Pending (COMC-63)**. Sandeep test specification: **Pending (COMC-64)**. Scope approval persists for packet v1, the addendum,28 tests,153-case CI gate and later-product scope; do not request it again unchanged. Executable work waits for the actual reviews and resolution of material findings. See [current review status](../reviews/S-3-AC12-approval-status-2026-11-08.md).

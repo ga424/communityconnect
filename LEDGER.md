@@ -508,3 +508,20 @@ evidence: EV-PR13-REVIEW-20261108; EV-S3-AC12-PROPOSAL-20261108; COMC-10/62/39/4
 risk: S3 scope/contract/test decisions pending. API-only increment cannot complete browser AC12/S3; M1 S1 boundary retained. Production identity, assignment workflow and real volumes excluded. Six historical validator warnings retained; new28 tests and148/0/5 phase are proposals only.
 
 Entry28 recording checkpoint: a38374377ed3a42c4c573f029153203123a80648; preparation PR14 opened. Subsequent read-only preview health check returned curl exit7 and docker ps showed no preview containers running. No preview/container mutation was performed. Current state now records this observation instead of retaining a stale running status. This follow-up changes review/state/provenance only. Jira COMC10/62/39/44/4 descriptions link the concrete packet and preserve named decisions as pending. Final head/CI recorded in Git notes.
+
+
+## Entry 29 — S3-AC12 conditional scope approval (November 8, 2026)
+
+artifact: exact approval prompt, current packet/status and docs/evidence/s3-ac12/approval-review-check.json
+
+tool: OpenAI Codex with pinned AISE0.3.4 orchestration; exact deployed model build/version not exposed; November8,2026 (America/New_York).
+
+prompts: Exact user approval at prompts/2026-11-08-s3-ac12-scope-approval.txt
+
+review: Recorded Gustavo's actual scope/addendum/28-test/CI approval and explicit prerequisite for Kundan/Sandeep reviews. Read PR14 formal reviews/threads/conversation, PR13 timeline, current Jira descriptions and all comments on COMC62/10/39. No actual named dispositions found. Created COMC63 for Kundan and COMC64 for Sandeep, both blocking COMC62; no proxy approvals or deadlines invented.
+
+checks: Metadata/source/hash/prefix checks recorded in docs/evidence/s3-ac12/scope-record-validation.json. Existing source/test/design/schema/CI unchanged; no new executable tests or Docker run. Shell GitHub DNS access failed; connected tools read current state and publish this metadata. Final recording SHA/checks are linked in PR14 and Jira.
+
+evidence: EV-S3-AC12-SCOPE-APPROVAL-20261108; EV-S3-AC12-REVIEW-CHECK-20261108; COMC62/63/64
+
+risk: Actual Kundan and Sandeep review outcomes are still needed before execution; scope approval alone does not satisfy this user-specified gate.28 new tests and148/0/5 remain future execution targets; original M1 scope and peer/provenance gaps remain.
