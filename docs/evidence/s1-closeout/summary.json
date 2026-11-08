@@ -1,0 +1,36 @@
+{
+  "base_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "fresh_clone": true,
+  "actor": "Codex automated verification; not Sandeep signoff",
+  "started_at": "2026-11-08T05:36:25.147835+00:00",
+  "docker_version": "29.2.1",
+  "compose_version": "5.0.2",
+  "project": "cc-s1-closeout-20261108",
+  "command": "docker compose run --build --rm test",
+  "pytest_command_exit_code": 0,
+  "cleanup_exit_code": 0,
+  "finished_at": "2026-11-08T05:37:01.610513+00:00",
+  "existing_containers_preserved": true,
+  "protected_paths_verified": 107,
+  "protected_manifest": "docs/evidence/ac5/protected-baseline.json",
+  "exact_gate": "python3 scripts/verify_s1_baseline.py --junit /private/tmp/communityconnect-s1-closeout-20261108/repo/artifacts/pytest.xml",
+  "exact_gate_exit_code": 0,
+  "counts": {
+    "passed": 120,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 5
+  },
+  "original_s1_cases": [
+    "test_ac1_resident_submits_request_shown_as_open",
+    "test_ac2_blank_description_rejected_and_list_unchanged",
+    "test_ac3_other_community_resident_does_not_see_request",
+    "test_ac4_other_community_direct_id_returns_not_found",
+    "test_ac5_neighbor_in_same_community_does_not_see_request",
+    "test_ac6_resident_sees_in_progress_status"
+  ],
+  "junit_sha256": "42aa4dac2e3f427f16ebd70d64095c688fcf144ab17cf2f1d2ffe58198031240",
+  "test_output_sha256": "1629a48a3b053eb9e2266c3501d853452be45d358d0681a730222f7ac7ebf40d",
+  "final_submission_sha_selected": false,
+  "independent_human_review": "pending; Codex executed this reproduction"
+}

@@ -1,0 +1,637 @@
+{
+  "checkpoint": "06b507315b235162f2dcf64c567c03c3f1910f32",
+  "ledger_entries_at_start": 21,
+  "fully_labelled_at_start": 16,
+  "entry_field_audit": [
+    {
+      "entry": 1,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 2,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 3,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 4,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 5,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 6,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 7,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 8,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 9,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 10,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 11,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 12,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 13,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 14,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 15,
+      "missing_labelled_fields": []
+    },
+    {
+      "entry": 16,
+      "missing_labelled_fields": [
+        "artifact",
+        "tool",
+        "prompts",
+        "review",
+        "checks",
+        "evidence",
+        "risk"
+      ]
+    },
+    {
+      "entry": 17,
+      "missing_labelled_fields": [
+        "artifact",
+        "tool",
+        "prompts",
+        "review",
+        "checks",
+        "evidence",
+        "risk"
+      ]
+    },
+    {
+      "entry": 18,
+      "missing_labelled_fields": [
+        "artifact",
+        "tool",
+        "prompts",
+        "review",
+        "checks",
+        "evidence",
+        "risk"
+      ]
+    },
+    {
+      "entry": 19,
+      "missing_labelled_fields": [
+        "artifact",
+        "tool",
+        "prompts",
+        "review",
+        "checks",
+        "evidence",
+        "risk"
+      ]
+    },
+    {
+      "entry": 20,
+      "missing_labelled_fields": [
+        "artifact",
+        "tool",
+        "prompts",
+        "review",
+        "checks",
+        "evidence",
+        "risk"
+      ]
+    },
+    {
+      "entry": 21,
+      "missing_labelled_fields": []
+    }
+  ],
+  "referenced_exact_prompt_files": 21,
+  "missing_prompt_files": [],
+  "prompt_files": [
+    {
+      "path": "prompts/2026-11-03-docker-available.txt",
+      "sha256": "9be0d2b47da1b4aef85452857abe25097535f93701979feadc6550f9f36f7eec"
+    },
+    {
+      "path": "prompts/2026-11-03-initial-checkins.txt",
+      "sha256": "c827ea300921bb15b2284d63d3810f4a4acc0a922737131f41717a194d34bbec"
+    },
+    {
+      "path": "prompts/2026-11-04-ac1-approval.txt",
+      "sha256": "14fd67b9c5a094df4754607c258f056bf4a4d4ccfb6eec6a701d0e0e4bac2db2"
+    },
+    {
+      "path": "prompts/2026-11-04-ac1-execution.txt",
+      "sha256": "87067386c676c6a80c7dd9858595e8180da30a7c50897f41e65986fe8522c4dc"
+    },
+    {
+      "path": "prompts/2026-11-04-ac2-approval.txt",
+      "sha256": "9aaad0af5257644eb1f67c473969cdcbe035aab5797f462dd55c52158acf4ce4"
+    },
+    {
+      "path": "prompts/2026-11-04-ac2-execution.txt",
+      "sha256": "813b296cf3a186f26c9fbd7a34b11c6c1dd5726582a5d07e473133c1179f58aa"
+    },
+    {
+      "path": "prompts/2026-11-04-pr2-ac1-review.txt",
+      "sha256": "f0b4b4776657824b1d9c1dcc28df77a5c1c59d06b46495fd51cd5ed4edce1363"
+    },
+    {
+      "path": "prompts/2026-11-04-pr4-ac2-review.txt",
+      "sha256": "31c5cf56a1deed2687a0bd1880c58dec3803a368e5c456026836d740eb388682"
+    },
+    {
+      "path": "prompts/2026-11-07-ac4-approval.txt",
+      "sha256": "b7cf655cfb7379979385df9455cdf5c892e7b45f9d22578456329df4da635b9c"
+    },
+    {
+      "path": "prompts/2026-11-07-ac4-execution.txt",
+      "sha256": "80425c4cb668b33f0ffb7acf106cc084fd9bcf3a590cf6be9428f53f7b73daa8"
+    },
+    {
+      "path": "prompts/2026-11-07-aise-next-feature.txt",
+      "sha256": "ba36a06527a1ffc0e8487530122e8eeb3148d7d785b4f8e7a52659511a87caa1"
+    },
+    {
+      "path": "prompts/2026-11-07-docker-retry.txt",
+      "sha256": "791642e8f98bf07494bd9c8976c4081577870fdc606a0205812c8ff8156d8625"
+    },
+    {
+      "path": "prompts/2026-11-07-local-preview.txt",
+      "sha256": "d9141dba059b6f5607fdfccd1c207acf08887443670bb240e91f9db82d9beeed"
+    },
+    {
+      "path": "prompts/2026-11-07-pr8-review.txt",
+      "sha256": "96d490dfb19edbaead35a45071e9aa81e0c3dde2ec88d5b6ec40b324f3737b73"
+    },
+    {
+      "path": "prompts/2026-11-08-ac5-approval.txt",
+      "sha256": "4f985deefc7c1b9b10d38abfd8c0fe939cb693b789478971bc3b3a6b8e036cb7"
+    },
+    {
+      "path": "prompts/2026-11-08-ac5-execution.txt",
+      "sha256": "a3f776eb08967e1b2b1954b52d0b3c36376b7b38f19b272e8a8cea3a48f50c25"
+    },
+    {
+      "path": "prompts/2026-11-08-gustavo-review-decisions.txt",
+      "sha256": "891603c71cabf3e43b4b013e171cbd13b6d3801a118bc6996d2f4df128e78314"
+    },
+    {
+      "path": "prompts/2026-11-08-gustavo-work-queue.txt",
+      "sha256": "0d4a698af17d3d35ef5ec041ede89dff684ee1fa050b185c20d6b683a7a4647d"
+    },
+    {
+      "path": "prompts/2026-11-08-s1-acceptance-next-feature.txt",
+      "sha256": "9457a1ee249c31fa8156e2ec2648f827e07d539a33f1abff4914b47181dfed1b"
+    },
+    {
+      "path": "prompts/2026-11-08-s1-review-execution.txt",
+      "sha256": "6379feaa7579dccbea4d6e21f38fe1333e285f6fbb29a20ecb582fa56a193260"
+    },
+    {
+      "path": "prompts/AC-1-bounded-task-proposed.txt",
+      "sha256": "c83e5ad10b6bf224522c157a2d685595735edc39039ac10c812a400fb1573e25"
+    }
+  ],
+  "specific_risks_in_first15": 15,
+  "commits": [
+    {
+      "sha": "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d",
+      "parents": [],
+      "subject": "docs(COMC-38): establish CommunityConnect milestone scope",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "21ff38c58657bb46f44e8cd703643834362a110e",
+      "parents": [
+        "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d"
+      ],
+      "subject": "chore(COMC-38): initialize pinned AISE governance workspace",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "19eb9ea1c146830b4ccb043e06d646114aa6f7fd",
+      "parents": [
+        "21ff38c58657bb46f44e8cd703643834362a110e"
+      ],
+      "subject": "docs(COMC-41): add S-1 and S-6 feature packets and bounded plan",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "92634ffbc0dffb8c5087577628055f6d7c5638f1",
+      "parents": [
+        "19eb9ea1c146830b4ccb043e06d646114aa6f7fd"
+      ],
+      "subject": "chore(COMC-37): add local PostgreSQL Liquibase and FastAPI scaffold",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "47d553957ec95bb5d6428ef34364862f37cfaf25",
+      "parents": [
+        "92634ffbc0dffb8c5087577628055f6d7c5638f1"
+      ],
+      "subject": "test(COMC-39): add S-1 red tests and deferred S-6 acceptance contracts",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "4af6ba8626262118c9c1eefa5bccfbc5ee3c37b2",
+      "parents": [
+        "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d",
+        "47d553957ec95bb5d6428ef34364862f37cfaf25"
+      ],
+      "subject": "Merge pull request #1 from ga424/feature/COMC-38-m1-aise-bootstrap",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "85e817ab73f8cfad5dc9caf5b950eedbdda614c7",
+      "parents": [
+        "47d553957ec95bb5d6428ef34364862f37cfaf25"
+      ],
+      "subject": "docs(COMC-44): record CI and local tests-first evidence",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "26b084e8ed67150138edfc700d2a56e08b8554f5",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12",
+      "parents": [
+        "4af6ba8626262118c9c1eefa5bccfbc5ee3c37b2",
+        "85e817ab73f8cfad5dc9caf5b950eedbdda614c7"
+      ],
+      "subject": "Merge pull request #2 from ga424/feature/COMC-38-m1-aise-bootstrap",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "8ea0e80759ae06dc80cf5bf4bfa5666313074378",
+      "parents": [
+        "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12"
+      ],
+      "subject": "docs(COMC-54): review PR2 and bound AC1 approval with CI transition",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "c126594aa3512afcac78cb36c1924fc91b5bb64a",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "7eab79e229dd250d45c9041822a7f45f4d94958c",
+      "parents": [
+        "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12",
+        "8ea0e80759ae06dc80cf5bf4bfa5666313074378"
+      ],
+      "subject": "Merge pull request #3 from ga424/review/COMC-54-ac1-approval",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
+      "parents": [
+        "8ea0e80759ae06dc80cf5bf4bfa5666313074378"
+      ],
+      "subject": "test(COMC-54): record approval and AC1 contract red baseline",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "a19a2b4f77390f443f17464b617b3e781394c853",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
+      "parents": [
+        "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d"
+      ],
+      "subject": "feat(COMC-54): implement AC1 resident requests and contract CI gate",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "838dcf495579a3e62db07f206e3b8ef3c558530d",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "0f5562f42081aede341079d723b4848cc604c271",
+      "parents": [
+        "15edff908305ffe51c7b7f7615bc22f87b4ef053"
+      ],
+      "subject": "docs(COMC-54): reconcile AC1 execution and AISE evidence",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "bde23636f356661f070868f1932813ebb72c2e22",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca",
+      "parents": [
+        "0f5562f42081aede341079d723b4848cc604c271"
+      ],
+      "subject": "docs(COMC-54): record passing PR4 CI and review handoff",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "ae4a1a8300567ef8e67602a4f0ac688eed2f2a5d",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+      "parents": [
+        "7eab79e229dd250d45c9041822a7f45f4d94958c",
+        "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca"
+      ],
+      "subject": "Merge pull request #4 from ga424/feature/COMC-54-ac1",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+      "parents": [
+        "3708f9dd02abb43feffa54ebfa4df47aa58bbb74"
+      ],
+      "subject": "docs(COMC-55): review PR4 and propose bounded AC2 validation",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "803d4735d925a89b69d930187cf2bc148e0cbe90",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "661a205dbfb4860d14194e54d75b46edec54cdca",
+      "parents": [
+        "73842903bc1f1388324c0c3e5766cec5d7fa833d"
+      ],
+      "subject": "test(COMC-55): freeze approved AC2 contracts and red baseline",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "fd60b1ec85b75d6fccfa3039fc734f35b70be5a0",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "130af5d22bda7a98c4cff79e78904add49778b35",
+      "parents": [
+        "661a205dbfb4860d14194e54d75b46edec54cdca"
+      ],
+      "subject": "fix(COMC-55): reject unsupported descriptions and promote AC2 CI",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "c21ee67aa7117f5185b9a0fe6503a0592b250e4a",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea",
+      "parents": [
+        "130af5d22bda7a98c4cff79e78904add49778b35"
+      ],
+      "subject": "docs(COMC-55): reconcile AC2 runtime evidence and F1 disposition",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "0736a10226c94126c3d7795962dd326fe071bab4",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "9a96ca40880c53d44a8fc90404f5ce50eb294b29",
+      "parents": [
+        "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea"
+      ],
+      "subject": "docs(COMC-55): record passing AC2 CI and human-review handoff",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "6b2bc97d5c796cbae09a38bad1b7091884ff74a4",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "c0b26c34a1514631ec0825633e25473b570feb05",
+      "parents": [
+        "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+        "9a96ca40880c53d44a8fc90404f5ce50eb294b29"
+      ],
+      "subject": "Merge pull request #6 from ga424/feature/COMC-55-ac2",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "0311d94a5ad9db3f93d88a776dbc967d1e1119b5",
+      "parents": [
+        "c0b26c34a1514631ec0825633e25473b570feb05"
+      ],
+      "subject": "docs(COMC-56): verify AC3 and latest AISE, prepare AC4 packet",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "aae99cea6270d3c1a386fae449fcfb1bf5972ce8",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "6026bdbd71e84081ddcdab96c85869e457299d45",
+      "parents": [
+        "0311d94a5ad9db3f93d88a776dbc967d1e1119b5"
+      ],
+      "subject": "docs(COMC-57): align proposed membership tests with schema",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "10907045e23af3eae1f451673d34e27fc19c69d1",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "62b9df05338fe44a86747197502e088fa0cf45b5",
+      "parents": [
+        "6026bdbd71e84081ddcdab96c85869e457299d45"
+      ],
+      "subject": "docs(COMC-56): record successful local Docker baseline retry",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "06ad58cb28801dee01d4ef288bc37a1563303838",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
+      "parents": [
+        "62b9df05338fe44a86747197502e088fa0cf45b5"
+      ],
+      "subject": "test(COMC-57): freeze 30 approved details contracts and red baseline",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "169b672f2a5a52db6aa41d9f8405e822c8144740",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
+      "parents": [
+        "fb8db8046e3458a14d4c9edf04f019d3fcf7332e"
+      ],
+      "subject": "feat(COMC-57): add scoped request details and green S1 CI phase",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "35f5c5f29d231cd0a4b3fea669c5dcf89a9aadbb",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "354960fb81b55c2081dc3c5264a225be48930cd8",
+      "parents": [
+        "8df963e73801713e3eb6c9b02e7d6ce8092f14f7"
+      ],
+      "subject": "docs(COMC-57): reconcile passing CI and review handoff",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "759c786dabd808eb460b0b043d41d3964d55362f",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "59fd4f570ac20d194e24b6c5e738c2fcf8017b74",
+      "parents": [
+        "354960fb81b55c2081dc3c5264a225be48930cd8"
+      ],
+      "subject": "docs(COMC-58): review PR8 and prepare AC5 verification packet",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "e6bce1dc35cf493c09fef01a7bbc3e26e6b26871",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "f9619f86d0f352eefc4fb18e443019c3d2f4c78e",
+      "parents": [
+        "59fd4f570ac20d194e24b6c5e738c2fcf8017b74"
+      ],
+      "subject": "docs(COMC-58): record scoped planning integrity check",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "ad821511e3bcc1d8eda96452870446c9a6303283",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+      "parents": [
+        "f9619f86d0f352eefc4fb18e443019c3d2f4c78e"
+      ],
+      "subject": "docs: record requested localhost preview and verification",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "44fdc35b1cb315ac4e0c43eb0a0d4efa7d95ad91",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+      "parents": [
+        "c0b26c34a1514631ec0825633e25473b570feb05",
+        "354960fb81b55c2081dc3c5264a225be48930cd8"
+      ],
+      "subject": "Merge pull request #8: approved AC4 details and AC6 status",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "e615d78717c29e1f7d84c031940edf60eab46a53",
+      "parents": [
+        "fc208ec4a093cdd81c6e87158e7a93561822226c",
+        "244026ec788d26688ab5a4fe1c6fa50f2e8203b9"
+      ],
+      "subject": "docs(COMC-58): record AC5 approval and integrated-main checkpoint",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": "b605231c50dec4d9aa398c7d154db0c5ab0834e5",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
+      "parents": [
+        "e615d78717c29e1f7d84c031940edf60eab46a53"
+      ],
+      "subject": "docs(COMC-58): record passing AC5 verification and cleanup",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "e34ada0a66d22e246cd1484fa347c2b159ee0ee7",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
+      "parents": [
+        "77fe12f8266dba5c63fc5a1b499589e139ddc716"
+      ],
+      "subject": "docs(COMC-58): reconcile evidence PR and passing CI",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "00ad87787a5513955fb77ce952907473059221b7",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "b41387f1c63c0b469b2c17026095c47d43932011",
+      "parents": [
+        "fc208ec4a093cdd81c6e87158e7a93561822226c",
+        "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a"
+      ],
+      "subject": "Merge pull request #10 from ga424/verify/COMC-58-ac5",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": null,
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "a9330b87c114fdbe2097fb07582360839aadeed0",
+      "parents": [
+        "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a"
+      ],
+      "subject": "docs(COMC-58): complete append-only result path traceability",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "1d83c2cb24a39f06c81c36a1872b8944228e346d",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "f80f4d7aefd65b8dd3db960c4ebeab2f588603f4",
+      "parents": [
+        "b41387f1c63c0b469b2c17026095c47d43932011",
+        "a9330b87c114fdbe2097fb07582360839aadeed0"
+      ],
+      "subject": "docs(COMC-58): preserve audit addendum after evidence merge",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": "dd3980b0b8f499b69ce3b286d5dd6bbc3ff963a2",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+      "parents": [
+        "b41387f1c63c0b469b2c17026095c47d43932011",
+        "f80f4d7aefd65b8dd3db960c4ebeab2f588603f4"
+      ],
+      "subject": "Merge pull request #11 from ga424/docs/COMC-58-audit-followup",
+      "kind": "merge/platform history; authorship not inferred",
+      "git_provenance_note": "262fdf34dc9b2b01de1e0fbd5b94450c18c703ed",
+      "present_in_ledger_text_before_audit": true
+    },
+    {
+      "sha": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+      "parents": [
+        "3918cbd9fd015f8325cfc0136180c28ad31c5d01"
+      ],
+      "subject": "docs(COMC-42): review S1 acceptance and propose S3 context design",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "44edda5d11831c324bd4acdb58dc61d9e55f67fe",
+      "present_in_ledger_text_before_audit": false
+    },
+    {
+      "sha": "06b507315b235162f2dcf64c567c03c3f1910f32",
+      "parents": [
+        "ec989d1d8370cf2ee4c283d78babfae3bc0ab599"
+      ],
+      "subject": "docs(COMC-43): verify31-row trace and record Gustavo decisions",
+      "kind": "repository change; inspect diff and ledger for authorship",
+      "git_provenance_note": "05f3bb524f8843b92b7b8e696b7f5ca45051577c",
+      "present_in_ledger_text_before_audit": false
+    }
+  ],
+  "limitations": [
+    "This records observed source and existing evidence, not retrospective human review.",
+    "Five narrative entries16\u201320 receive an append-only seven-field supplement.",
+    "Original interview-summary/extraction and gap-check source interaction provenance remains in local/Jira materials; full original session export not established.",
+    "Exact deployed model build/version unavailable; not guessed.",
+    "Final submission SHA and Kundan audit acceptance pending."
+  ]
+}

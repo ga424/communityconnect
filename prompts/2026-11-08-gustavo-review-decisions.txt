@@ -1,0 +1,11 @@
+Question: For COMC-42, please review the S-1 acceptance report in PR #12 and record your own disposition. The fresh clone passed all six criteria; the report still lists design-document and teammate-review gaps. This records your review of the bounded S-1 behavior, not a production release approval.
+Answer: Accept the bounded S-1 behavior
+
+Question: COMC-16 cannot implement manager announcements until the publication rule is settled. What rule has the team or community confirmed?
+Answer: Board approval required for each target community
+
+Question: For COMC-16, who can grant board approval for a target community? This determines the authorization rule before announcement code can be built.
+Answer: One designated board approver
+
+Question: If a notice targets several communities but only some have approved it, what should publication do?
+Answer: Publish only to approved communities and show the remainder as pending

@@ -1,0 +1,89 @@
+{
+  "main": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+  "pr11": {
+    "url": "https://github.com/ga424/communityconnect/pull/11",
+    "number": 11,
+    "state": "closed",
+    "merged": true,
+    "mergeable": false,
+    "draft": false,
+    "body": "PR10 was merged while its final audit addendum was in flight. A supplemental result-SHA ledger entry had omitted its path list. This documentation-only PR appends a complete superseding record, preserves the original audit history, and reconciles the observed PR10/PR9 merges and branch cleanup.\n\n**AC5 verification itself is complete and merged.** The unchanged implementation passed locally and in exact merged-head CI:120 passed, zero failures/errors, five unchanged S6 skips, real exit0. All seven selected controls and six original S1 cases pass. This follow-up changes no application, test, design, schema, dependency, workflow or gate; all107 frozen hashes remain identical.\n\n- [Post-publication proof](https://github.com/ga424/communityconnect/blob/f80f4d7aefd65b8dd3db960c4ebeab2f588603f4/docs/evidence/ac5/post-publication.json)\n- [AC5 evidence and review checklist](https://github.com/ga424/communityconnect/blob/f80f4d7aefd65b8dd3db960c4ebeab2f588603f4/docs/evidence/ac5/README.md)\n- [Merged-head CI42450702977](https://github.com/ga424/communityconnect/actions/runs/42450702977) at722f1ba9bdd42125665ad51f5ecbc6414f7ad07a; downloaded JUnit reverified\n- [COMC-58](https://gkms.atlassian.net/browse/COMC-58)\n\nPR10 merged at b41387f1c63c0b469b2c17026095c47d43932011 by GitHub account abreugus; the assistant did not invoke that merge. GitHub also marked PR9 merged and removed its remote branch; its clean local branch was deleted. The in-flight addendum briefly recreated verify/COMC-58-ac5 after automatic deletion. That ref was renamed remotely and locally to docs/COMC-58-audit-followup, preserving the unmerged commit and removing the merged branch name. This audit checkout starts from merged main and retains the correction as ancestry. No unmerged work was discarded.\n\nValidation:107 frozen hashes, main ledger prefixes, AISE structure, source guard and whitespace pass. The validator still reports the retained incomplete supplemental record because it scans historical lines; the complete superseding record provides current traceability. Historical EV-REPO-ROOT and TestClient warnings remain. No control was weakened.\n\nThe localhost preview remains running. Named acceptance and full-story/course reviews are not inferred from platform merge events. Automatic post-merge deletion remains enabled. This PR is open for audit review; no merge or next feature is authorized. Its exact final CI/commit proof will be appended in Git provenance notes without further branch edits.",
+    "title": "docs(COMC-58): complete AC5 audit provenance after merge",
+    "base": "main",
+    "base_sha": "b41387f1c63c0b469b2c17026095c47d43932011",
+    "head": "docs/COMC-58-audit-followup",
+    "head_sha": "f80f4d7aefd65b8dd3db960c4ebeab2f588603f4",
+    "head_repo_id": 1396839038,
+    "head_repo_full_name": "ga424/communityconnect",
+    "merge_commit_sha": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+    "user": {
+      "login": "abreugus",
+      "name": "abreugus",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1711104?v=4",
+      "id": 1711104
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-11-08T05:27:57Z",
+    "updated_at": "2026-11-08T05:30:32Z",
+    "closed_at": "2026-11-08T05:28:36Z",
+    "merged_at": "2026-11-08T05:28:36Z",
+    "commits": 2,
+    "changed_files": 9,
+    "additions": 71,
+    "deletions": 17,
+    "display_url": "https://github.com/ga424/communityconnect/pull/11",
+    "display_title": "docs(COMC-58): complete AC5 audit provenance after merge"
+  },
+  "review_events": [
+    {
+      "pr": 4,
+      "reviews": []
+    },
+    {
+      "pr": 6,
+      "reviews": []
+    },
+    {
+      "pr": 8,
+      "reviews": [
+        {
+          "state": "APPROVED",
+          "submitted_at": "2026-11-08T04:31:24Z",
+          "author": "abreugus",
+          "body_empty": true
+        },
+        {
+          "state": "APPROVED",
+          "submitted_at": "2026-11-08T04:39:50Z",
+          "author": "abreugus",
+          "body_empty": true
+        },
+        {
+          "state": "APPROVED",
+          "submitted_at": "2026-11-08T04:41:37Z",
+          "author": "abreugus",
+          "body_empty": true
+        },
+        {
+          "state": "COMMENTED",
+          "submitted_at": "2026-11-08T04:46:52Z",
+          "author": "abreugus",
+          "body_empty": false
+        }
+      ]
+    },
+    {
+      "pr": 10,
+      "reviews": []
+    },
+    {
+      "pr": 11,
+      "reviews": []
+    }
+  ],
+  "interpretation": "Platform events and AI comments do not establish named teammate result acceptance."
+}

@@ -1,0 +1,4 @@
+Codex gap-finding prompt executed as part of the authorized work queue on November8,2026.
+Input: docs/design/S-3-context.md and revised S-3 AC11/12 in docs/evidence/s1-closeout/next-feature-source.json.
+You are the engineer who must build this. List every question you would have to guess the answer to. Do not answer them.
+Full generated question response and separate classifications: docs/reviews/S-3-context-gapcheck.md.
