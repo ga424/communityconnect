@@ -629,3 +629,20 @@ checks: CI148/0/5 exit0,24 controls,migrations/cleanup success; reverified stric
 evidence: EV-S3-AC12-CI-42529458195; PR15; implementation b89fe0bdafa5defff1a84ad891bfd182d00a97a4; reviewed head f76cf3afc2c0c0849f7908c40b3d7815dc4239ec
 
 risk: Result review and merge pending. Existing Actions Node20/Ubuntu migration advisories remain; no dependency/control change. Final publication commit CI will be recorded in Git notes to avoid circular self-SHA claims.
+
+
+## Entry 36 — PR15 review and AC11 approval packet (November 8, 2026)
+
+artifact: docs/reviews/PR-15-and-S3-AC11-2026-11-08.md; docs/plans/S-3-AC11-approval.md; COMC65/66/67
+
+tool: OpenAI Codex with pinned AISE0.3.4 review/api-contract/test workflows; exact model build and token/cost telemetry unavailable. Single agent, no independent reviewer claimed.
+
+prompts: prompts/2026-11-08-pr15-s3-review.txt
+
+review: Reconstructed source→contract→28 tests→route→CI, checked current PR state and actual review attribution. No blocking bounded code findings. PR14/15 remain open with automatic deletion enabled; no branch prematurely removed. New52-case AC11 packet is proposed, not approved.
+
+checks: Freshly downloaded final PR15-head CI42529654327 verifies148/0/5 exit0;24 gate defect controls pass;116 protected paths and old ledger prefixes preserved. No new local Docker run, code/test/CI/schema/dependency edit or inferred human acceptance. Preparation checks recorded separately.
+
+evidence: EV-PR15-REVIEW-20261108; EV-S3-AC11-PACKET-20261108; DEC-S3-AC11-PROPOSED-20261108
+
+risk: PR15 result/merge decision, AC11 scope/contract/test decisions and real concurrency evidence remain pending. COMC62/66/67 block COMC65. API evidence does not complete browser S3 or authorize production. Seven existing structural warnings retained.

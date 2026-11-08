@@ -1,3 +1,9 @@
+# Current test state — PR15 review and AC11 proposal
+
+EV-PR15-REVIEW-20261108 reverified148 passes, zero failures/errors and five exact skips at8f993ab from CI42529654327. [Proposed AC11 inventory](../../docs/plans/S-3-AC11-proposed-tests.json) defines52 future cases with R1–R4, exact error/field/state and real concurrency coverage. Target200/0/5 is not a result; no new executable tests or CI edits. COMC67 Sandeep specification approval is pending. Broader production/performance/security/accessibility tests remain excluded and unclaimed.
+
+---
+
 # Current scope — AC5 verification result, November 8, 2026
 
 Gustavo explicitly approved PR8 merge/branch cleanup and AC5 packet v1 verification-only (EV-AC5-APPROVAL-20261108). PR8 is merged into fc208ec; PR7/PR8 branches are removed remotely/locally after checks (EV-PR8-MERGE-CLEANUP-20261108). Evidence-only checkpoint e615d78 preserves approved packet/ledger history and executable source identical to merged main.

@@ -1,13 +1,17 @@
 # S-3 sequence and review gates
 
-COMC63/64 are Done, with closures recorded by Gustavo after his report that the prerequisites were complete. This is owner confirmation; no reviewer-authored dispositions were supplied. COMC62 is In Progress for the actual implementation and review, rather than Done before code exists.
+PR15's AC12 options API is implemented and reviewed at8f993ab; final-head CI42529654327 verifies148 passes and five unchanged skips. No blocking bounded AI-review findings; human result/merge decision remains pending. COMC63/64 are Done with actual Gustavo closure attribution preserved.
 
-| Order | Bounded work | Current state |
+| Order | Bounded work | State |
 | --- | --- | --- |
-| 1 | S3 options contract/addendum and28-case plan | Scope approved; owner-confirmed review-ticket completion; attribution preserved |
-| 2 | COMC62 / S3-AC12 v1 community-options API | Implemented on feature branch; local148/0/5, tests-first and migration/gate evidence; CI/result review pending |
-| 3 | AC11 selected-community request reads | Not authorized; separate bounded packet and authorization/transaction tests |
-| 4 | Browser selector and selected-request view | Not authorized; future UI/Playwright evidence for source AC11/12 outcomes |
-| 5 | S3 acceptance | Full-story result review remains pending; API evidence alone is insufficient |
+| 1 | AC12 options contract and28-case plan | Scope approved; prior owner completion confirmation recorded |
+| 2 | COMC62 / PR15 options API | Implemented, CI verified and AI reviewed; PR open, human result/merge decision pending |
+| 3 | COMC65 / S3-AC11 v1 selected-community request API | [Concrete packet](S-3-AC11-approval.md) proposed;52 tests,200/0/5 target; not implemented or approved |
+| 3a | COMC66 Kundan contract review | Pending own disposition on AC11 addendum/transaction boundary |
+| 3b | COMC67 Sandeep test-plan review | Pending own disposition on52 cases/concurrency/CI |
+| 4 | Browser selector and selected-request view | Separate future UI/Playwright packet; not authorized |
+| 5 | S3 acceptance | Full-story human/browser evidence pending |
 
-M1's S1-only submission boundary and original traceability remain unchanged. This later-product API uses supplemental traceability. No sprint dates/capacity invented; options do not grant request access, and COMC16 authorization prerequisites are not satisfied by an options list alone. No merge or production release authorized.
+Implementation order: PR15 integration → explicit AC11 scope approval and recorded contract/test decisions → undo/tests-first checkpoint → AC11 implementation and result review → separately approved browser increment. No sprint dates or capacity invented. M1 scope and original traceability stay unchanged. Options do not grant request access. Payments, announcements, assignment administration and production identity stay separate.
+
+Both PR14/15 are open at this review; retain their branches until verified merge and cleanup checks. Automatic post-merge deletion is enabled. The AC11 preparation PR is stacked on PR15; retarget it to main during integration cleanup if needed.

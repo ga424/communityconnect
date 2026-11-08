@@ -1,0 +1,5 @@
+# AC11 contract readiness — proposal
+
+COMC65 / S3-AC11 v1 is ready for a scope and specification decision, not execution. FastAPI is provider; the future community-selector UI is consumer; Gustavo owns integration, Kundan contract, Sandeep tests. Local synthetic data only. Additive GET route preserves existing resident and options interfaces; no version removal/deprecation, writes, retry/idempotency or external service integration.
+
+[Proposed contract](../../docs/plans/S-3-AC11-contract-proposed.json), [addendum](../../docs/plans/S-3-AC11-contract-addendum-proposed.md), [52-case plan](../../docs/plans/S-3-AC11-proposed-tests.json). Preconditions, projection, exact errors, role checks, ordering and transaction cleanup have planned assertions. No new test is executed. Real concurrency assertions, independent QA/contract decisions and explicit scope approval remain required. Production identity, rate/volume limits, timeout/SLO policy, observability and consumer browser evidence remain future work; no readiness claim for deployment.
