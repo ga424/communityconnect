@@ -646,3 +646,20 @@ checks: Freshly downloaded final PR15-head CI42529654327 verifies148/0/5 exit0;2
 evidence: EV-PR15-REVIEW-20261108; EV-S3-AC11-PACKET-20261108; DEC-S3-AC11-PROPOSED-20261108
 
 risk: PR15 result/merge decision, AC11 scope/contract/test decisions and real concurrency evidence remain pending. COMC62/66/67 block COMC65. API evidence does not complete browser S3 or authorize production. Seven existing structural warnings retained.
+
+
+## Entry 37 — AC11 review-ticket recheck (November 8, 2026)
+
+artifact: docs/evidence/pr15-review/review-recheck-20261108.json and current packet/state status
+
+tool: OpenAI Codex with existing pinned AISE0.3.4 record format; exact model build and usage/cost telemetry unavailable.
+
+prompts: prompts/2026-11-08-ac11-review-recheck.txt
+
+review: COMC66/67 are Done with closures by Gustavo; zero comments/attachments on each, so no independent Kundan/Sandeep-authored acceptance is invented. PR14/15/16 remain open. Scope approval for AC11 and authorization to merge PR15 are still separate pending decisions at this checkpoint.
+
+checks: Live Jira status/history/comments and GitHub PR timelines read; current heads and automatic branch deletion verified. Protected-file hashes and prior ledger prefixes retained; structural/source/whitespace checks. No new tests or runtime run.
+
+evidence: EV-AC11-REVIEW-TICKETS-DONE-20261108
+
+risk: Ticket completion does not silently approve a new implementation or merge. Preserve open branches until actual verified merge; keep closure attribution accurate. Seven historical structural warnings retained.

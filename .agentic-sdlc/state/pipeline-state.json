@@ -33,8 +33,8 @@
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
       "branch": "docs/COMC-10-ac11-packet",
-      "commit": "8f993ab6fb96e837315918d0da2b344642a05c57",
-      "commit_context": "Reviewed PR15 parent; documentation-only stacked preparation. Final preparation head/CI recorded in Git notes."
+      "commit": "3f79f0c4d4f3b709906046f75715b5fcaea4aea8",
+      "commit_context": "Published packet checkpoint before metadata-only status reconciliation; final update commit in Git notes."
     },
     "stage_status": [
       {
@@ -683,12 +683,12 @@
       "S3 AC12 locally implemented; CI and human result review pending. Reviewer tickets closed by Gustavo; independent authorship unverified. AC11/UI not authorized. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T22:38:29.771180+00:00",
+    "last_updated": "2026-11-08T23:16:13.853785+00:00",
     "scoped_work": {
       "issue": "COMC-65",
       "parent": "COMC-10",
       "type": "PR15_review_and_AC11_packet_preparation",
-      "status": "draft_packet_pending_decisions",
+      "status": "review_tickets_done_scope_and_integration_decisions_pending",
       "application_changes": false,
       "new_executable_tests": 0,
       "ci_phase_change": false,
@@ -702,7 +702,8 @@
       },
       "evidence_ids": [
         "EV-PR15-REVIEW-20261108",
-        "EV-S3-AC11-PACKET-20261108"
+        "EV-S3-AC11-PACKET-20261108",
+        "EV-AC11-REVIEW-TICKETS-DONE-20261108"
       ]
     },
     "next_bounded_task": {
@@ -715,7 +716,7 @@
         "AC11 API projection"
       ],
       "packet": "docs/plans/S-3-AC11-approval.md",
-      "status": "proposed_awaiting_scope_contract_test_decisions",
+      "status": "review_tickets_done_awaiting_scope_and_integration",
       "approval_owner": "Gustavo",
       "contract_reviewer": "Kundan",
       "test_reviewer": "Sandeep",
@@ -736,7 +737,14 @@
       "implementation_approved": false,
       "merge_authorized": false,
       "m1_scope_expanded": false,
-      "browser_acceptance": "separate future UI increment"
+      "browser_acceptance": "separate future UI increment",
+      "last_review_check": {
+        "at": "2026-11-08T23:16:13.853785+00:00",
+        "evidence": "EV-AC11-REVIEW-TICKETS-DONE-20261108",
+        "COMC-66": "Done by Gustavo",
+        "COMC-67": "Done by Gustavo",
+        "independent_reviewer_authorship_verified": false
+      }
     },
     "prior_scoped_work": [
       {

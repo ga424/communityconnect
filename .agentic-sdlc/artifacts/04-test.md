@@ -1,3 +1,9 @@
+# Review-ticket status recheck — November 8, 2026
+
+**Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only. [Evidence](../../docs/evidence/pr15-review/review-recheck-20261108.json).
+
+---
+
 # Current test state — PR15 review and AC11 proposal
 
 EV-PR15-REVIEW-20261108 reverified148 passes, zero failures/errors and five exact skips at8f993ab from CI42529654327. [Proposed AC11 inventory](../../docs/plans/S-3-AC11-proposed-tests.json) defines52 future cases with R1–R4, exact error/field/state and real concurrency coverage. Target200/0/5 is not a result; no new executable tests or CI edits. COMC67 Sandeep specification approval is pending. Broader production/performance/security/accessibility tests remain excluded and unclaimed.

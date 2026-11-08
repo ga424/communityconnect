@@ -1,5 +1,7 @@
 # S3-AC11 packet v1 — selected-community request reads
 
+**Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only.
+
 **Proposed, awaiting approval.** [COMC-65](https://gkms.atlassian.net/browse/COMC-65), parent [COMC-10](https://gkms.atlassian.net/browse/COMC-10). Gustavo owns integration/scope; Kundan reviews the contract in COMC-66; Sandeep reviews the test plan in COMC-67. No review completion or scope approval is implied by this draft or by the AC12 reviews.
 
 ## Outcome

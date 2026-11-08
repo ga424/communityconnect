@@ -12,7 +12,7 @@ Gustavo approved scope and confirmed the two review tickets completed; Jira attr
 
 ## Next review and approval
 
-[PR15 review](docs/reviews/PR-15-and-S3-AC11-2026-11-08.md) found no blocking bounded code defect; final PR-head CI verifies the current148/0/5 phase. PR15 remains open for human result/merge decision. The [next packet, S3-AC11 v1](docs/plans/S-3-AC11-approval.md), proposes one selected-community request endpoint and52 tests; it is not implemented or approved. Gustavo owns COMC65, with Kundan COMC66 contract review and Sandeep COMC67 test review pending. The proposed200/0/5 phase is a future target, not the current result.
+[PR15 review](docs/reviews/PR-15-and-S3-AC11-2026-11-08.md) found no blocking bounded code defect; final PR-head CI verifies the current148/0/5 phase. PR15 remains open for human result/merge decision. The [next packet, S3-AC11 v1](docs/plans/S-3-AC11-approval.md), proposes one selected-community request endpoint and52 tests; it is not implemented or approved. Gustavo owns COMC65, with COMC66/67 review tickets now Done by Gustavo; independent reviewer-authored dispositions were not supplied. Separate AC11 scope and PR15 merge decisions remain pending. The proposed200/0/5 phase is a future target, not the current result.
 
 ## Milestone and review context
 

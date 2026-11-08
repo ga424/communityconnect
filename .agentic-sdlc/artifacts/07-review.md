@@ -1,3 +1,9 @@
+# Review-ticket status recheck — November 8, 2026
+
+**Status recheck, November 8, 2026:** COMC-66 and COMC-67 are now Done, closed by Gustavo at 18:11:58 and 18:12:01 Eastern. Neither ticket has a review comment or attachment; no independent reviewer authorship is claimed. PR15 remains open. Separate approval of this AC11 packet and authorization to merge/integrate PR15 have not yet been recorded. The 52-case plan and executable files are unchanged. Earlier planning language below retains its original checkpoint; this update supersedes ticket-status wording only. [Evidence](../../docs/evidence/pr15-review/review-recheck-20261108.json).
+
+---
+
 # Current review — PR15 and proposed S3-AC11 v1
 
 [Review](../../docs/reviews/PR-15-and-S3-AC11-2026-11-08.md): no blocking bounded code findings at8f993ab; fresh CI artifact148/0/5 and24 gate controls verified. PR15 remains open, human result/merge decision pending. PR14 is also open; automatic deletion after verified merge remains enabled. [Next packet](../../docs/plans/S-3-AC11-approval.md) is unapproved: one route,52 tests, proposed200/0/5. COMC65 is To Do; Kundan66 and Sandeep67 decisions pending. Verdict CONDITIONAL_GO for human integration review, NO_GO for production. No executable or protected contract change in this preparation.
