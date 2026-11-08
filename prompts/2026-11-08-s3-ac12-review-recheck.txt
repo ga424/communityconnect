@@ -1,0 +1,2 @@
+User request (verbatim):
+Let's check COMC-63 and COMC-64 for Kundan and Sandeep’s reviews. If both accept the packet, proceed with S3-AC12 v1, keep Jira and the AISE ledger updated, and open the implementation PR.

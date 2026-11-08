@@ -1,0 +1,23 @@
+{
+  "source_remote_commit": "10056fc1264634cf832921fd588372f90724cff6",
+  "local_verification_base": "7810415aef0356bdefff5494ba0d58c11984d823",
+  "checks": {
+    "structure": {
+      "exit": 0,
+      "warnings": 6
+    },
+    "source_guard": {
+      "exit": 0,
+      "warnings": 0
+    },
+    "whitespace": {
+      "exit": 0,
+      "warnings": 0
+    }
+  },
+  "protected_hashes_verified": 107,
+  "prior_ledger_prefixes_preserved": true,
+  "executable_changes": false,
+  "new_tests": 0,
+  "new_local_runtime_run": false
+}

@@ -525,3 +525,20 @@ checks: Metadata/source/hash/prefix checks recorded in docs/evidence/s3-ac12/sco
 evidence: EV-S3-AC12-SCOPE-APPROVAL-20261108; EV-S3-AC12-REVIEW-CHECK-20261108; COMC62/63/64
 
 risk: Actual Kundan and Sandeep review outcomes are still needed before execution; scope approval alone does not satisfy this user-specified gate.28 new tests and148/0/5 remain future execution targets; original M1 scope and peer/provenance gaps remain.
+
+
+## Entry 30 — Recheck Kundan and Sandeep review prerequisites (November 8, 2026)
+
+artifact: docs/evidence/s3-ac12/review-recheck-20261108.json and canonical last-review check
+
+tool: OpenAI Codex, existing pinned AISE0.3.4 record format; exact deployed model build/version not exposed; November8,2026 (America/New_York).
+
+prompts: Exact conditional execution request at prompts/2026-11-08-s3-ac12-review-recheck.txt
+
+review: Read live COMC63/64 descriptions, status, assignees, every comment page and attachments. Both remain To Do with zero comments and zero attachments. Read PR14 timeline and formal reviews: two approvals are by abreugus with empty bodies; neither establishes Kundan/Sandeep acceptance. Gustavo's scope approval remains recorded and does not need repeating.
+
+checks: Structural/source/whitespace,107 protected hashes and prior ledger prefixes verified; details in docs/evidence/s3-ac12/review-recheck-validation.json. No executable/test/design/schema/CI change or new local runtime run. Updated Jira with this actual check; implementation PR not opened because the user's condition remains unsatisfied.
+
+evidence: EV-S3-AC12-RECHECK-20261108; COMC62/63/64; PR14
+
+risk: Named review decisions remain missing in checked sources. Do not treat Gustavo's approvals, ticket status or silence as proxy peer acceptance. Current approved scope persists; all implementation targets remain pending execution.

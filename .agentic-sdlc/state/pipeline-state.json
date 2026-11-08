@@ -33,8 +33,8 @@
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
       "branch": "docs/COMC-10-ac12-review",
-      "commit": "c698700290b8b41de7187509b8c0acd168a77ceb",
-      "commit_context": "PR14 approved packet reference before scope-record update; remote recording SHA published in PR/Jira. Connector publication used because direct shell network is unavailable."
+      "commit": "10056fc1264634cf832921fd588372f90724cff6",
+      "commit_context": "Remote PR14 approval-record baseline; local verification tree identical. Latest recheck recording commit linked in PR14/Jira."
     },
     "stage_status": [
       {
@@ -683,7 +683,7 @@
       "S3 AC12 scope/addendum/28 tests/CI approved by Gustavo; actual Kundan contract (COMC-63) and Sandeep specification (COMC-64) reviews remain execution prerequisites. AC11/UI not authorized. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T16:05:27.328264+00:00",
+    "last_updated": "2026-11-08T16:55:34.882400+00:00",
     "scoped_work": {
       "issue": "COMC-62",
       "related_issues": [
@@ -698,8 +698,10 @@
       "ci_phase_change": false,
       "evidence_ids": [
         "EV-S3-AC12-SCOPE-APPROVAL-20261108",
-        "EV-S3-AC12-REVIEW-CHECK-20261108"
-      ]
+        "EV-S3-AC12-REVIEW-CHECK-20261108",
+        "EV-S3-AC12-RECHECK-20261108"
+      ],
+      "latest_review_check": "EV-S3-AC12-RECHECK-20261108"
     },
     "next_bounded_task": {
       "issue": "COMC-62",
@@ -733,6 +735,13 @@
       "review_dependencies": {
         "Kundan": "COMC-63",
         "Sandeep": "COMC-64"
+      },
+      "last_review_check": {
+        "at": "2026-11-08T16:55:34.882400+00:00",
+        "evidence": "EV-S3-AC12-RECHECK-20261108",
+        "Kundan": "COMC-63 To Do; zero comments/attachments",
+        "Sandeep": "COMC-64 To Do; zero comments/attachments",
+        "execution_gate_satisfied": false
       }
     },
     "prior_scoped_work": [
