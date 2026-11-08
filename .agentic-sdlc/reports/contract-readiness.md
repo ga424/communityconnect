@@ -1,3 +1,7 @@
+# Current integrated boundary
+
+AC11 API is merged in PR17; COMC65 Done. Final CI42536348447 verifies200/0/5 and main tree matches. Browser/full-story acceptance remains pending; no next feature approved. See docs/evidence/s3-ac11/merge-closeout.json. Earlier checkpoints below are historical.
+
 # Current AC11 contract execution
 
 Gustavo approved the exact addendum/52 tests/CI phase; implementation locally passes200/0/5. No blocking AI code-review finding. COMC66/67 closures are Gustavo's actions, not independent teammate signatures. PR17 implementation CI42536188957 is verified200/0/5. Browser outcome/full-story acceptance and human result review remain separate. See docs/reviews/S3-AC11-implementation-2026-11-08.md. Earlier checkpoints below are historical.
