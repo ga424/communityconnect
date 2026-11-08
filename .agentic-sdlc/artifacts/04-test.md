@@ -20,3 +20,8 @@ Gustavo approved AC2 packet v1 including the representability policy, eight regr
 AC2 red execution completed before application edits: 84 passed, 6 failed, 5 skipped, zero errors. Four new cases fail semantically (three 500s and one wrong error precedence); four new controls pass. This resolves the earlier pending-execution checkpoint without claiming every new test was red. Evidence: EV-AC2-RED. New test hashes and all original expectations are frozen in docs/evidence/ac2/.
 
 AC2 implemented result at `130af5d22bda7a98c4cff79e78904add49778b35`: all eight new cases pass, with full 88/2/5 phase and zero errors. Original test files/hashes and expectations preserved. Stage4 hash equals the implementation-time test hash. This supersedes the red checkpoint only for current outcomes; red evidence remains intact. Human QA acceptance is still pending.
+
+
+## AC4 execution — November 7, 2026
+
+AC4 approval EV-AC4-APPROVAL explicitly covers 30 new contracts and AC6 status. Test-first commit fb8db8046e3458a14d4c9edf04f019d3fcf7332e: 88 pass/32 semantic 501 failures/5 skips, zero errors (EV-AC4-RED). All original 95 outcomes unchanged. Frozen tests/manifest then passed locally at 120/0/5 (EV-AC4-LOCAL). 24 gate rejection controls and historical compatibility pass. Human test review pending; no original tests changed.

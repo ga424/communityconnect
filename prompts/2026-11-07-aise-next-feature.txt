@@ -1,0 +1,10 @@
+User request, November 7, 2026 (America/New_York):
+get the latest aise version and let's try to see if we can tackle the next feature.
+
+Version clarification shown to Gustavo:
+AISE’s latest merged version is still 0.3.4, which CommunityConnect already uses. An unmerged 0.4.0 PR adds LangGraph orchestration and human gates. Which should we use for this next feature?
+
+Actual response:
+Keep the latest merged version (recommended)
+
+Execution boundary: fetch and verify the latest merged AISE source; reconcile merged PRs and branch cleanup; inspect/re-run existing AC-3 contracts without application/test/policy changes; prepare the next bounded feature packet. This is not approval of the AC-4 implementation, new tests or next CI phase. Existing authorization covers Jira/AISE records and a review PR. No merge or deployment.

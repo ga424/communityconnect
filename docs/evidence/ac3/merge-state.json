@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-11-07T21:43:00.161184+00:00",
+  "pull_requests": [
+    {
+      "head": {
+        "ref": "review/COMC-55-ac2-approval",
+        "sha": "73842903bc1f1388324c0c3e5766cec5d7fa833d"
+      },
+      "merge_commit_sha": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+      "merged": true,
+      "merged_at": "2026-11-04T23:23:04Z",
+      "merged_by": "ga424",
+      "number": 5
+    },
+    {
+      "head": {
+        "ref": "feature/COMC-55-ac2",
+        "sha": "9a96ca40880c53d44a8fc90404f5ce50eb294b29"
+      },
+      "merge_commit_sha": "c0b26c34a1514631ec0825633e25473b570feb05",
+      "merged": true,
+      "merged_at": "2026-11-04T23:23:02Z",
+      "merged_by": "ga424",
+      "number": 6
+    }
+  ],
+  "review_submissions_pr6": [],
+  "delete_branch_on_merge": true,
+  "branches_absent_remote_and_deleted_local": [
+    "feature/COMC-55-ac2",
+    "review/COMC-55-ac2-approval"
+  ],
+  "ancestry_checked_against": "c0b26c34a1514631ec0825633e25473b570feb05",
+  "no_open_prs_at_cleanup": true,
+  "untracked_duplicates": "Preserved untouched in original checkout; clean worktree used"
+}

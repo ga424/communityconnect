@@ -1,3 +1,9 @@
+# Latest scope state — AC4/AC6, November 7, 2026
+
+Explicit approval EV-AC4-APPROVAL is recorded. Local implementation passes 120/0/5 with all six S1 acceptance tests green (EV-AC4-LOCAL). Remote CI EV-CI-42419977346 passed at 8df963e; PR8 is ready for human review. Historical pending-CI statements below retain their original checkpoint context. The final AC4 execution section below provides current details; earlier entries preserve historical scopes and states.
+
+---
+
 # AC-2 implemented; human review pending
 
 Gustavo approved packet v1, the text-policy addendum, eight tests and CI phase change (EV-AC2-APPROVAL). Test-first undo `661a205dbfb4860d14194e54d75b46edec54cdca` precedes implementation `130af5d22bda7a98c4cff79e78904add49778b35`. Application change: four-line description representability guard after blank/length and before category. Models, transactions, original tests/designs, migrations, dependencies and controls are unchanged.
@@ -23,3 +29,8 @@ Gustavo explicitly approved packet v1 including contract tests and the CI phase 
 See [execution evidence](../../docs/evidence/ac1/README.md) and append-only code-change/evidence ledgers. [PR #4](https://github.com/ga424/communityconnect/pull/4) merged at 3708f9dd02abb43feffa54ebfa4df47aa58bbb74. Subsequent review found F1; see artifacts/07-review.md. [CI run 41780922018](https://github.com/ga424/communityconnect/actions/runs/41780922018) passed at `0f5562f42081aede341079d723b4848cc604c271`; see EV-CI-41780922018 and docs/evidence/ac1/ci-summary.json. Later recording-head validation is linked through Git provenance notes and Jira. No logs include new body/header/credential logging.
 
 Kundan/Sandeep/Gustavo human implementation acceptance, full S-1 design/gap/test review and final all-S-1-green verification remain pending. Passing AC-2/3/5 from first-write guards does not close their separate Jira reviews. No AC-4/6, S-6 behavior, provider/auth integration, merge or deployment was authorized.
+
+
+## AC4 execution — November 7, 2026
+
+AC4/AC6 bounded implementation locally verified (EV-AC4-LOCAL). Existing GET-by-ID now uses caller-first validation, a parameterized owner/current-resident joined read and existing public response model. No writes/schema changes. 120 pass, zero failures/errors, five S6 skips, pytest exit 0; migrations and 80 protected hashes pass. CI promotion requires exact zero result and 125 IDs, with historical gates retained. Remote CI and human review pending; no merge/deploy.

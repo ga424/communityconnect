@@ -1,11 +1,11 @@
-name: AC-2 validation and incremental baseline
+name: S-1 resident request contract baseline
 on:
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  ac2-contract-baseline:
+  s1-contract-baseline:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -18,7 +18,7 @@ jobs:
           docker compose config --quiet
       - name: Rehearse migrations on disposable PostgreSQL
         run: bash scripts/migration_rehearsal.sh
-      - name: Run all tests and preserve the real nonzero result
+      - name: Run all tests and require the approved S-1 phase
         run: |
           mkdir -p artifacts
           set +e
@@ -26,11 +26,13 @@ jobs:
           result=${PIPESTATUS[0]}
           set -e
           echo "$result" > artifacts/pytest-exit-code.txt
-          test "$result" -eq 1
+          test "$result" -eq 0
           python scripts/verify_ac1_baseline.py --junit docs/evidence/ac1/local-junit.xml
+          python scripts/verify_ac2_baseline.py --junit docs/evidence/ac2/local-junit.xml
           python scripts/verify_ac1_baseline.py --self-test > artifacts/ac1-gate-self-test.json
           python scripts/verify_ac2_baseline.py --self-test > artifacts/ac2-gate-self-test.json
-          python scripts/verify_ac2_baseline.py
+          python scripts/verify_s1_baseline.py --self-test > artifacts/s1-gate-self-test.json
+          python scripts/verify_s1_baseline.py
       - name: Record image inputs
         if: always()
         run: |
@@ -39,7 +41,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
-          name: ac2-contract-baseline
+          name: s1-contract-baseline
           path: artifacts/
       - name: Remove disposable test services
         if: always()

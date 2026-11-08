@@ -1,4 +1,4 @@
-"""AC-1 local resident create/list contract; request details remain deferred."""
+"""Local resident create/list/details contracts for synthetic S-1 fixtures."""
 from datetime import datetime, timezone
 import json
 import re
@@ -100,6 +100,16 @@ def list_requests(community_id: str, request: Request):
         )]
 
 
-@router.get("/requests/{request_id}")
-def get_request(request_id: str):
-    raise HTTPException(501, "S-1 implementation pending approval")
+@router.get("/requests/{request_id}", response_model=RequestResponse)
+def get_request(request_id: str, request: Request):
+    with models.connection() as conn:
+        user_id = _database_id(request.headers.get("X-User-Id"))
+        if user_id is None or not models.user_exists(conn, user_id):
+            raise HTTPException(401, "Unknown user")
+        resolved_id = _database_id(request_id)
+        if resolved_id is None:
+            raise HTTPException(404, "Not found")
+        row = models.own_request(conn, user_id=user_id, request_id=resolved_id)
+        if row is None:
+            raise HTTPException(404, "Not found")
+        return RequestResponse.model_validate(row)
