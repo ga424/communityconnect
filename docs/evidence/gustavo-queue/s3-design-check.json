@@ -1,0 +1,21 @@
+{
+  "design_sha256": "1b394afa3a05559de87c6def1fac7c08114b06bb3b0d235dd7ea36e97d6e3823",
+  "nine_sections": true,
+  "open_question_stop_lines": 2,
+  "required_artifacts": [
+    "docs/design/S-3-context.md",
+    "docs/plans/S-3-context-test-plan.md",
+    "docs/reviews/S-3-context-gapcheck.md"
+  ],
+  "new_executable_tests": 0,
+  "application_changes": false,
+  "ci_phase_change": false,
+  "source_ac_ids": [
+    "AC-11",
+    "AC-12"
+  ],
+  "human_contract_review": "Kundan pending",
+  "human_test_review": "Sandeep pending",
+  "approval_scope": "Gustavo work-queue instruction executes previously presented S3-CTX1 design/test-plan deliverable; future implementation not approved",
+  "page_rendering": "Not rendered to PDF; new S3 draft is not a replacement for either required M1 two-page design"
+}

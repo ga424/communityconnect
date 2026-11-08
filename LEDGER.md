@@ -436,3 +436,20 @@ checks: Confirmed three-person roster; statement tickets had no attachments at i
 evidence: EV-GUSTAVO-SUBMISSION-HANDOFF-20261108; COMC-46/49/51
 
 risk: Gustavo must personally verify/sign/date his draft; Kundan/Sandeep own statements and final team/individual receipts remain unverified.
+
+
+## Entry 25 — COMC-10 S3 context design/test-plan deliverable (November 8, 2026)
+
+artifact: new S3-context design, test-plan and complete gap response with decisions
+
+tool: OpenAI Codex; exact deployed model build/version not exposed in session metadata; date November 8, 2026.
+
+prompts: Work-queue request at prompts/2026-11-08-gustavo-work-queue.txt; exact gap prompt at prompts/2026-11-08-s3-context-gapcheck.txt
+
+review: Inspected existing memberships/schema/resident invariants and source AC11/12. Drafted read-only manager contract with explicit role/denial/context/revocation behavior and preserved OQ1/OQ2; no production facts inferred.
+
+checks: 9 sections,2 explicit open-question stop lines,12 proposed scenario groups and10 complete gap questions; application/tests/schema/CI unchanged. No runtime or page-rendering result claimed.
+
+evidence: EV-S3-CONTEXT-DESIGN-20261108; COMC-10; S3 AC11/12
+
+risk: Kundan contract and Sandeep test review pending; no new endpoint/UI delivered. Production identity and real-volume limits are excluded; implementation beyond M1 requires its own bounded packet.
