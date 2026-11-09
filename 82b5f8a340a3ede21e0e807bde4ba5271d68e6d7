@@ -1,0 +1,40 @@
+{
+  "type": "AISE Entry46 publication verification",
+  "commit": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
+  "pull_request": "https://github.com/ga424/communityconnect/pull/20",
+  "ci": {
+    "verified_at": "2026-11-09T04:02:20.958910+00:00",
+    "run": "https://github.com/ga424/communityconnect/actions/runs/42559403127",
+    "head_sha": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
+    "conclusion": "success",
+    "counts": {
+      "passed": 200,
+      "skipped": 5,
+      "failed": 0,
+      "errors": 0,
+      "total": 205
+    },
+    "pytest_exit": 0,
+    "migration_step": "success",
+    "cleanup_step": "success",
+    "gate_controls": 24,
+    "artifact": "s1-contract-baseline",
+    "artifact_files_sha256": {
+      "ac1-gate-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+      "ac2-gate-self-test.json": "6516eef4958304c1e8e7187cb53816e5fde4189414f9508fb7501e6c3846d63f",
+      "container-images.txt": "4b52e1499d6cec79ccf35ae643b147d412b2fd38ccae84780230530c96b59a42",
+      "pytest-exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "pytest.xml": "eb310726cf87a87f6182141423cac5dcfd736146684f16c429a288fcf085571b",
+      "run.json": "7fce9c7f2727936be331502e492f2681ea5c7f665a23bceab738fe71b6ae0608",
+      "s1-gate-self-test.json": "a4ce8275a772cdfa796985e37483a715447c280551cd31d8be8ce00d7d38d948",
+      "s3-ac11-gate-self-test.json": "e131e035732fa951d8b8e6ad0bc82b5cd1e606fb457cd4e2702b3860cc3433cb",
+      "s3-ac12-gate-self-test.json": "0b6feaf825a5a106785bc68d8c9fd976d4b82506d4d007b87c80c60ee0254cbe",
+      "test-output.txt": "c25861daecf462342e940c8c3a58477b812396fa45e7472ab063c05f53ffde69"
+    },
+    "human_result_acceptance": "pending; not established by CI"
+  },
+  "human_result_acceptance": "pending; no named review/signature/submission inferred",
+  "new_ticket_closures": 0,
+  "browser_implementation_started": false,
+  "merge_performed": false
+}
