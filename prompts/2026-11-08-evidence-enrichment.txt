@@ -1,0 +1,6 @@
+User reply to evidence-location question:
+"Please help me enrich this with the necessary evidence"
+
+Question context: COMC-50 is Done but had no linked final PDF, submission SHA or completion comment; COMC-46 personal signature/submission was unconfirmed.
+
+Execution scope: produce review addendum and unsigned contribution DOCX/PDF, public CI/audit evidence ZIP, hashes and Jira attachments; record actual completion and remaining human evidence. No signature, Canvas receipt, final team acceptance or browser gate is inferred. No message sent to Professor Dale and no Canvas submission.

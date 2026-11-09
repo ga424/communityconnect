@@ -35,11 +35,13 @@ These product outcomes cannot be closed by a documentation audit. The user's bro
 
 - COMC-42 remains Done on Gustavo's recorded bounded S1 acceptance. COMC-62/65 remain Done for the merged manager APIs.
 - COMC-32, COMC-50 and COMC-61 were observed Done. This pass does not reopen them or infer who accepted their outputs from status alone.
-- COMC-50 has no attachments or comments in the inspected Jira record and still refers to an older v2 document. The final reviewed PDF and submission SHA have not been located through that ticket. Their location was requested from Gustavo.
+- COMC-50 now has the three-page evidence addendum (DOCX/PDF10094/10095) and verified support ZIP10096. These review artifacts enrich the previously empty evidence record; final complete team PDF and selected submission SHA remain unconfirmed. Gustavo requested evidence enrichment rather than supplying a receipt.
 - COMC-61 contains the November 3 interim report/support artifacts. Those are not proof of a final M1 submission.
-- COMC-46/47/48 have no statement attachments in the inspected records; COMC-51 has no receipt attachment. This does not prove that files do not exist elsewhere.
+- COMC-46 now has unsigned statement DOCX/PDF10093/10097. COMC-47/48 had no statement attachments and COMC-51 no receipt in the inspected records; this does not prove files do not exist elsewhere. Personal signing/submission remains pending.
 
 ## Review links
+
+- [New review PDF/DOCX artifacts, CI support ZIP and hash manifest](../evidence/gustavo-queue/submission-review-20261108/README.md)
 
 - [Current machine audit](Gustavo-closeout-machine-audit-2026-11-08.md)
 - [Unsigned Gustavo contribution draft](Gustavo-contribution-draft.txt)

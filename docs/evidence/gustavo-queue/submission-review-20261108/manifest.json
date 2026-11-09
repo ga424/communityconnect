@@ -1,0 +1,55 @@
+{
+  "status": "review_package_not_final_submission",
+  "client_date": "2026-11-08",
+  "verified_ci_checkpoint": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
+  "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42559403127",
+  "files": [
+    {
+      "name": "CommunityConnect_Submission_Evidence_Addendum_2026-11-08.docx",
+      "sha256": "510397e4eed2f6e75fd1b97bd828471d311727caaba50e3e7b2e3ea36cb29c6e",
+      "bytes": 41649,
+      "jira": "COMC-50",
+      "jira_attachment_id": 10094
+    },
+    {
+      "name": "CommunityConnect_Submission_Evidence_Addendum_2026-11-08.pdf",
+      "sha256": "7a1253f3a92da3d25c93488b0fd16568b04c8c31b8dbb0cb9cbeb64187becf49",
+      "bytes": 105480,
+      "jira": "COMC-50",
+      "pages": 3,
+      "jira_attachment_id": 10095
+    },
+    {
+      "name": "CommunityConnect_Verified_Evidence_2026-11-08.zip",
+      "sha256": "a1b26708d4bf411b191a303d0b34504e3f25ff9aa4feb719e18d41d4a02ea418",
+      "bytes": 33134,
+      "jira": "COMC-50",
+      "jira_attachment_id": 10096
+    },
+    {
+      "name": "Gustavo_Contribution_Statement_Review_2026-11-08.docx",
+      "sha256": "6932ab8d842a784731b7668239016df66540abbda9a15dab6810877f1d1a5322",
+      "bytes": 40011,
+      "jira": "COMC-46",
+      "jira_attachment_id": 10093
+    },
+    {
+      "name": "Gustavo_Contribution_Statement_Review_2026-11-08.pdf",
+      "sha256": "6ce9d7e4e455393a01f84e3ecb08c6bdab96af1c338330cb9b6f7ee9bc925c18",
+      "bytes": 52492,
+      "jira": "COMC-46",
+      "pages": 2,
+      "jira_attachment_id": 10097
+    }
+  ],
+  "visual_qa": "All five rendered pages inspected after final rebuild; no clipping, overlap or unintended title border. Addendum 3 pages; statement 2 pages.",
+  "pending": [
+    "named teammate reviews",
+    "personal signed statements",
+    "final reviewed team PDF",
+    "selected final submission SHA and fresh-clone output",
+    "actual walkthrough record",
+    "team and individual Canvas confirmations"
+  ],
+  "attachment_verification": "All five filenames, sizes and IDs read back from COMC-46/50 after upload."
+}

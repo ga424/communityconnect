@@ -4,15 +4,19 @@ Current roster: **Kundan Singh, Sandeep Garg, Gustavo Abreu**. Matthew is not on
 
 | Artifact | Actual state | Remaining action |
 | --- | --- | --- |
-| Gustavo statement / COMC-46 | Jira In Progress; refreshed unsigned draft prepared; zero attachments observed November 8 | Gustavo reviews, edits, personally signs/dates and submits his individual statement |
+| Gustavo statement / COMC-46 | Jira In Progress; refreshed unsigned DOCX/PDF attached as10093/10097; personal signature remains pending | Gustavo reviews, edits, personally signs/dates and submits his individual statement |
 | Kundan statement / COMC-47 | Jira To Do; zero attachments observed November 8 | Kundan authors/signs/submits his statement; no authorship inferred from assignment |
 | Sandeep statement / COMC-48 | Jira To Do; zero attachments observed November 8 | Sandeep authors/signs/submits his statement |
 | Team package check / COMC-49 | Current roster and available records checked | Validate three actual signed statements and their individual confirmations once supplied |
-| Final package / COMC-50 | Jira Done; zero attachments/comments observed; description still refers to v2 | Locate and identify the actual final PDF and selected repository SHA; Done status alone does not identify either artifact |
+| Final package / COMC-50 | Jira Done retained; review addendum DOCX/PDF10094/10095 and evidence ZIP10096 attached; final complete PDF/SHA not established | Locate and identify the actual final PDF and selected repository SHA; Done status alone does not identify either artifact |
 | Walkthrough/submission / COMC-51 | Jira In Progress; zero attachments observed; agenda/register prepared | Hold or supply the record of the real walkthrough, resolve gates, identify final SHA/PDF and retain actual receipts |
 | Progress-review package / COMC-61 | Jira Done; November 3 interim report and review-support ZIP are attached | Preserve this interim evidence; do not label it a final Milestone 1 submission receipt |
 
 Absence in the inspected Jira attachments/provided local package is not proof that a teammate has never created a statement elsewhere. No statement is generated or signed for another member. No professor message or Canvas submission is sent by this preparation.
+
+## New review artifacts
+
+[Review package and hashes](../evidence/gustavo-queue/submission-review-20261108/README.md) now link the three-page evidence addendum, two-page unsigned contribution statement and verified CI/audit ZIP. These are review artifacts; no final PDF, signature or Canvas receipt is claimed. All five rendered pages were checked and Jira attachment metadata read back. Earlier no-attachment observations in audit snapshots are historical.
 
 ## Current evidence and submission boundary
 
