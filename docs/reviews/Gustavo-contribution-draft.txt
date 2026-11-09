@@ -1,5 +1,5 @@
 Gustavo Abreu — CommunityConnect Milestone 1 contribution statement
-DRAFT FOR GUSTAVO'S PERSONAL REVIEW — NOT SIGNED OR SUBMITTED
+WORDING CONFIRMED BY GUSTAVO, SUBJECT TO RECORDED FACTUAL UPDATES — NOT SIGNED OR SUBMITTED
 
 Personal authorship
 I supplied the project direction, technical-stack preferences and instructions for using the CommunityConnect GitHub repository, Jira and the AISE workflow. I confirmed my interview participation and the supplied INT-02/INT-04 note-validation and permission facts, corrected the team roster, and reviewed PS-3, PS-4, PS-7 and PS-8 against the original records. I explicitly accepted those four claims and the disclosure for team review. I supplied the bounded implementation approvals recorded in the repository, required merged-branch cleanup, selected a local browser preview, accepted the bounded S-1 behavior on November 8, and confirmed that board approval is required for each target community before manager announcements.
@@ -11,7 +11,7 @@ I must add any additional text or code that I personally wrote, with its source,
 AI-assisted authorship
 I used OpenAI Codex to help extract and organize supplied notes, draft personas and requirements/designs, format the milestone/progress materials, maintain Jira, implement the approved local S-1 API and contract tests, and prepare verification and provenance evidence. The repository records task-specific approvals and actual checks. Relevant ledger records include Entries 1–7 for setup/preparation, Entries 8–15 for approved tests-first AC1/AC2/AC4 work and verification, Entries 16–20 for review, preview and AC5/fresh-clone evidence, and Entries 21–23 for the traceability/provenance/private-evidence handoff. Entry 24 records AI assistance in preparing this contribution draft and submission checklist. Exact final commit references are in the ledger and Git provenance notes. Exact model build/version is unavailable and is not guessed.
 
-Codex also prepared later feature plans and implemented the approved S3-AC12 and S3-AC11 APIs and their tests. Ledger Entries 25–38 record those plans, approval decisions, AC12 execution and AC11 preparation; Entries 39–42 record AC11 tests-first execution, CI evidence and observed integration. Entries 43–44 record PR18 review/merge and conditional browser scope approval. Entry 45 records a coordinator and two AI agents performing read-only browser test/infrastructure preparation. Those agents did not implement the browser, execute its proposed tests, or supply Kundan's or Sandeep's human acceptance. The current contribution and submission refresh is also AI-assisted; I must review its wording before signing.
+Codex also prepared later feature plans and implemented the approved S3-AC12 and S3-AC11 APIs and their tests. Ledger Entries 25–38 record those plans, approval decisions, AC12 execution and AC11 preparation; Entries 39–42 record AC11 tests-first execution, CI evidence and observed integration. Entries 43–44 record PR18 review/merge and conditional browser scope approval. Entry 45 records a coordinator and two AI agents performing read-only browser test/infrastructure preparation. Those agents did not implement the browser, execute its proposed tests, or supply Kundan's or Sandeep's human acceptance. Entries 46–47 record the documentation audit, evidence addendum, unsigned statement, rendered documents and Jira attachments. Entry 48 records the subsequent PR20 review. I confirmed the statement subject to the factual updates identified in that review; signing and individual submission remain separate.
 
 Earlier fictional interview rehearsals were used for question preparation; their answers are excluded from interview evidence. The real-interview notes and reviewer records remain separate. Remaining teammate decisions are not represented as completed.
 
@@ -20,7 +20,7 @@ I reviewed the four assigned persona claims (PS-3/4/7/8) and accepted their sour
 
 Before signing, I will verify every statement, identify any additional actual review I performed and correct anything I cannot personally attest. My signature will not certify the pending team reviews or a production release.
 
-Preparation status, November 8: COMC-46 is In Progress and no statement attachment was observed in that ticket. This unsigned draft is available for my review; it is not an individual submission confirmation.
+Preparation status, November 8: an unsigned review draft is attached to COMC-46. I confirmed its wording subject to the recorded factual updates. Personal signing and individual submission remain pending; this is not an individual submission confirmation.
 
 Printed name: Gustavo Abreu
 Signature: __________________________

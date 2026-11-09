@@ -845,3 +845,19 @@ checks: Fresh GitHub head849f3c1 remains open with successful CI42560364332 and 
 evidence: docs/reviews/PR-20-submission-review-2026-11-08.md; publication SHA in PR/Git notes
 
 risk: Review is not final submission acceptance. Complete PDF/final SHA/fresh-clone, named reviews, actual signing and walkthrough remain; receipts follow actual submission. No merge/deploy or professor message performed.
+
+## Entry 49 — Gustavo contribution wording confirmation (November 8, 2026)
+
+artifact: docs/reviews/Gustavo-contribution-draft.txt
+
+tool: OpenAI Codex; pinned AISE0.3.4
+
+prompts: prompts/2026-11-08-contribution-confirmation.txt
+
+review: Gustavo personally confirmed statement subject to identified factual updates. Replaced historical no-attachment wording and added AI assistance Entries46–48. Confirmation does not constitute signature/submission or teammate acceptance.
+
+checks: Source wording compared with exact reply and existing attachment evidence; signature/date/receipt blanks preserved. Export refresh follows this source commit.
+
+evidence: exact confirmation prompt; COMC46; publication commit in Git/PR
+
+risk: Final PDF/design/named-review gaps remain; no signing or submission fabricated.
