@@ -1,0 +1,129 @@
+{
+  "observed_on": "2026-11-08 America/New_York",
+  "jql": "project = COMC AND assignee = \"712020:1570ffd4-d237-4cb6-9f67-2b2398bb0b3c\" AND statusCategory != Done ORDER BY key ASC",
+  "open_count": 15,
+  "pagination_complete": true,
+  "issues": [
+    {
+      "key": "COMC-4",
+      "summary": "M1 | Progress checkpoints, provenance and final submission",
+      "status": "In Progress",
+      "type": "Epic"
+    },
+    {
+      "key": "COMC-8",
+      "summary": "Product | Conditional dues and late reminders",
+      "status": "To Do",
+      "type": "Epic"
+    },
+    {
+      "key": "COMC-10",
+      "summary": "Product | Assign and switch managed communities with invited accounts",
+      "status": "In Progress",
+      "type": "Story"
+    },
+    {
+      "key": "COMC-16",
+      "summary": "Product | Publish one manager notice to several assigned communities",
+      "status": "In Progress",
+      "type": "Story"
+    },
+    {
+      "key": "COMC-21",
+      "summary": "Product | Fallback: show manager-entered dues balance and reminders",
+      "status": "To Do",
+      "type": "Story"
+    },
+    {
+      "key": "COMC-27",
+      "summary": "D2 | Validate INT-02 on-site condominium manager notes and provenance",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-29",
+      "summary": "D2 | Validate INT-04 accounting/admin coordinator notes and provenance",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-38",
+      "summary": "D8 | Establish AGENTS rules, exact prompts and per-change ledger",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-43",
+      "summary": "D7 | Resolve all 31 traceability rows to actual tests",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-44",
+      "summary": "D8 | Audit >=8 genuine ledger entries and AI-use disclosure",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-46",
+      "summary": "D9 | Gustavo: write, sign and submit own contribution statement",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-49",
+      "summary": "D9 | Validate the three-member contribution package",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-51",
+      "summary": "Turn-in | Team walkthrough and final submission receipts",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-60",
+      "summary": "D2/D8 | Human-review persona claims and correct AI-use provenance",
+      "status": "In Progress",
+      "type": "Task"
+    },
+    {
+      "key": "COMC-68",
+      "summary": "S3-BROWSER-1 v1 — local manager community view (scope approved; reviews pending)",
+      "status": "To Do",
+      "type": "Subtask"
+    }
+  ],
+  "closures_in_this_pass": 0,
+  "closure_rule": "Actual ticket acceptance criteria; no inferred teammate approval, signature, receipt or implementation",
+  "already_done_observed": [
+    "COMC-32",
+    "COMC-42",
+    "COMC-50",
+    "COMC-61",
+    "COMC-62",
+    "COMC-65"
+  ],
+  "statement_attachments_observed": {
+    "COMC-46": 0,
+    "COMC-47": 0,
+    "COMC-48": 0
+  },
+  "final_package_evidence": {
+    "COMC-50": {
+      "status": "Done",
+      "attachment_count": 0,
+      "comment_count": 0,
+      "final_pdf_and_sha": "not identified in inspected ticket"
+    },
+    "COMC-51": {
+      "status": "In Progress",
+      "attachment_count": 0
+    },
+    "COMC-61": {
+      "status": "Done",
+      "evidence": "November3 interim report/support artifacts; not final receipt"
+    }
+  }
+}
