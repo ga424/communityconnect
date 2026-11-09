@@ -1,0 +1,3 @@
+Let's check Kundan and Sandeep’s outstanding reviews and finish the design-document corrections so we can assemble the final Milestone 1 PDF. Keep Jira and the AISE ledger updated.
+
+Bounded scope: factual S1/S6 execution-state corrections and fresh dated AI gap checks; preserve behavior, ACs, tests, schema and prior ledger entries. No human disposition inferred.

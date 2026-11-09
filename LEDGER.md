@@ -861,3 +861,19 @@ checks: Source wording compared with exact reply and existing attachment evidenc
 evidence: exact confirmation prompt; COMC46; publication commit in Git/PR
 
 risk: Final PDF/design/named-review gaps remain; no signing or submission fabricated.
+
+## Entry 50 — Design reconciliation and review recheck (November 9, 2026)
+
+artifact: docs/design/S-1.md, S-6.md and fresh S-1/S-6-gapcheck.md
+
+tool: OpenAI Codex; Jira; pinned AISE0.3.4
+
+prompts: prompts/2026-11-09-design-reconciliation.txt
+
+review: User explicitly requested design-document corrections. COMC33/34/35/36 still To Do with no named acceptance in their full comment records. Related M1 review comments inspected; no independent teammate acceptance found. Fresh AI gap replies/classifications are dated now, not represented as historical transcripts or human decisions.
+
+checks: Six S1 and five S6 function names checked against files; stale empty-repository/planned-test statements corrected. Existing contracts, tests and OQ stop instructions preserved. Structural/source/whitespace checks run for publication; no new runtime result claimed.
+
+evidence: current designs and gap checks; Jira33–36 and50 publication links
+
+risk: Human design/evidence review, two-page rendered-design check, final complete PDF, final SHA/fresh clone and actual signing/walkthrough remain pending. This documentation work does not close those gates or authorize merge/submission.
