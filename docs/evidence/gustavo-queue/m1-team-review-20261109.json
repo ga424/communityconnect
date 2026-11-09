@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-09",
+  "status": "team_review_not_submitted",
+  "source_checkpoint": "5bcf92d",
+  "page_count": 34,
+  "design_pages": {
+    "S-1": [
+      21,
+      22
+    ],
+    "S-6": [
+      23,
+      24
+    ]
+  },
+  "source_preservation": "Interview and persona paragraph text, AC paragraphs, E/A tables and original 31-row traceability matrix checked unchanged against v3. Q2 status reconciled with actual Gustavo decision.",
+  "visual_qa": "All34 pages inspected; unchanged rendered pages compared between final revisions. Final changed page14 inspected separately.",
+  "files": [
+    {
+      "name": "CS690_Milestone1_CommunityConnect_Team_Review_2026-11-09.docx",
+      "bytes": 55725,
+      "sha256": "3a829635e316fccd71bf64cf7d1fd953e8c7fa4d5c9cf757d94298662d8a280f"
+    },
+    {
+      "name": "CS690_Milestone1_CommunityConnect_Team_Review_2026-11-09.pdf",
+      "bytes": 679292,
+      "sha256": "95abeb0d74828208223a5229fbf2fa206a3630bf15cbb37ebab9a348cf451466"
+    }
+  ],
+  "pending": [
+    "Kundan evidence/persona and S1 design/gap review",
+    "Sandeep peer/test and S6 design/gap review",
+    "selected final SHA and fresh-clone output",
+    "personal signatures and walkthrough",
+    "actual submission and receipts"
+  ],
+  "publication_policy": "Full documents retained locally and in requested Jira team-review attachments; raw interview content excluded from Git.",
+  "jira_attachments": {
+    "issue": "COMC-50",
+    "pdf": 10100,
+    "docx": 10101
+  }
+}

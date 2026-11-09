@@ -683,11 +683,11 @@
       "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Gustavo conditionally approved browser scope; COMC68 requires COMC69/70 acceptances and PR19 preparation integration. PR18 is merged. Full-story acceptance remains pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-09T03:29:43.552389+00:00",
+    "last_updated": "2026-11-09T05:25:26.550073+00:00",
     "scoped_work": {
       "issue": "COMC-4",
       "type": "Gustavo_assignment_closeout_preparation",
-      "status": "review_artifacts_attached_human_actions_pending",
+      "status": "complete_review_pdf_assembled_named_reviews_pending",
       "open_assigned_count": 15,
       "new_closures": 0,
       "application_changes": false,
@@ -696,7 +696,8 @@
       "source_commit": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
       "evidence_ids": [
         "EV-GUSTAVO-CLOSEOUT-20261108",
-        "EV-GUSTAVO-EVIDENCE-ENRICHMENT-20261108"
+        "EV-GUSTAVO-EVIDENCE-ENRICHMENT-20261108",
+        "EV-M1-TEAM-REVIEW-PDF-20261109"
       ],
       "parallel_agents": 2,
       "remaining": "Named reviews, personal signed statements, final PDF/SHA/walkthrough/receipts, and scoped product dependencies",
@@ -708,7 +709,8 @@
         10096,
         10097
       ],
-      "verified_ci_run": "https://github.com/ga424/communityconnect/actions/runs/42559403127"
+      "verified_ci_run": "https://github.com/ga424/communityconnect/actions/runs/42559403127",
+      "team_review_pdf_manifest": "docs/evidence/gustavo-queue/m1-team-review-20261109.json"
     },
     "next_bounded_task": {
       "id": "S3-BROWSER-1",
