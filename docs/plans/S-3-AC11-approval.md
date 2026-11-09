@@ -1,3 +1,5 @@
+> Integration update: PR17 merged at `cf1e457052bbbe806a3711194e426181c599165f` by abreugus; final-head CI verifies200/0/5 and both merged branches are removed. COMC65 Done. [Closeout](../evidence/s3-ac11/merge-closeout.json). Earlier pending checkpoints below are historical; no next feature approval is inferred.
+
 > Execution update: AC11 v1 is implemented locally after actual approval. Frozen52 tests pass; full200/0/5 phase verified. See [evidence](../evidence/s3-ac11/README.md). Result review/merge remains pending. The historical preparation and approval checkpoints below retain their original wording.
 
 # S3-AC11 packet v1 — selected-community request reads

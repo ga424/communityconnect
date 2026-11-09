@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-08T23:44:09.990219+00:00",
+  "pull_request": "https://github.com/ga424/communityconnect/pull/17",
+  "merged": true,
+  "merged_by": "abreugus",
+  "merged_at": "2026-11-08T23:41:19Z",
+  "merge_commit": "cf1e457052bbbe806a3711194e426181c599165f",
+  "final_head": "b0f98714922ae10264019f003753e203a34993bc",
+  "verified_ci": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
+  "main_tree_identical_to_verified_head": true,
+  "assistant_invoked_merge": false,
+  "branches_deleted_remote_and_local": [
+    "feat/COMC-65-s3-ac11",
+    "docs/COMC-65-review-status"
+  ],
+  "cleanup_preconditions": "Latest heads ancestry in origin/main, no open PRs, both worktrees clean; status remote removed with expected-head lease. Feature remote auto-deleted by GitHub. Worktrees detached before local deletion.",
+  "jira_status": "COMC-65 Done",
+  "parent_story": "COMC-10 In Progress; browser/full-story acceptance pending",
+  "next_feature_authorized": false,
+  "independent_teammate_authorship_verified": false
+}

@@ -4,7 +4,7 @@ A community management portal for residents, board members, community managers a
 
 ## Current increment
 
-S1 resident request creation, validation, self-listing and details are merged. S3-AC12 manager community options are merged in PR15, along with the AC11 preparation packet in PR16. This branch implements the approved **S3-AC11 selected-community requests API**: `GET /manager/communities/{community_id}/requests` returns all residents' requests in exactly one currently assigned community, with seven public fields ordered by created_at then ID descending.
+S1 resident request creation, validation, self-listing and details are merged. S3-AC12 manager community options are merged in PR15, along with the AC11 preparation packet in PR16. The approved **S3-AC11 selected-community requests API** is also merged and available: `GET /manager/communities/{community_id}/requests` returns all residents' requests in exactly one currently assigned community, with seven public fields ordered by created_at then ID descending.
 
 Each read checks current manager membership and holds it stable through response validation. Invalid/unknown callers receive401; invalid, absent or unassigned communities and nonmanagers receive404; an authorized empty community returns200 `[]`. Responses use no-store. Reads preserve stored data and resident access behavior. See the [approved addendum](docs/design/S-3-AC11-contract-addendum.md), [execution evidence](docs/evidence/s3-ac11/README.md) and [supplemental traceability](docs/traceability/S-3-AC11.csv).
 
@@ -12,7 +12,7 @@ Local verification: **200 passed,zero failures/errors,five planned S6 skips**. T
 
 ## Review status
 
-Gustavo approved AC11 v1, its addendum,52 tests and CI phase. [PR17](https://github.com/ga424/communityconnect/pull/17) is open; COMC65 is In Progress awaiting result review. [Implementation CI](https://github.com/ga424/communityconnect/actions/runs/42536188957) verified200/0/5 from downloaded artifacts. COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Implementation PR merge is a separate decision; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
+Gustavo approved AC11 v1, its addendum,52 tests and CI phase. [PR17](https://github.com/ga424/communityconnect/pull/17) was merged by GitHub account abreugus at23:41:19 UTC; COMC65 is Done. [Final-head CI](https://github.com/ga424/communityconnect/actions/runs/42536348447) verified200/0/5 from downloaded artifacts, and merged main has the identical tree. Both merged feature/status branches are removed. [Integration record](docs/evidence/s3-ac11/merge-closeout.json). COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Independent teammate review and full-story acceptance remain separate; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
 
 ## Milestone and review context
 
