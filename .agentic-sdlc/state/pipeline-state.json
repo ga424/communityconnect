@@ -32,9 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "docs/COMC-10-s3-browser-packet",
-      "commit": "c20147fb217c5a9a1c25fac4eedabb639fec0844",
-      "commit_context": "Approved packet checkpoint; final status publication commit/CI in PR19 and Git provenance notes"
+      "branch": "docs/COMC-4-gustavo-closeout",
+      "commit": "69c986b5d9a320c27f6ceb12da1c31a22b4f8163",
+      "commit_context": "Local integration checkpoint of main and existing PR19 evidence; no PR19 GitHub merge. Publication commit/CI in PR/Jira/Git notes."
     },
     "stage_status": [
       {
@@ -683,36 +683,22 @@
       "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Gustavo conditionally approved browser scope; COMC68 requires COMC69/70 acceptances and PR19 preparation integration. PR18 is merged. Full-story acceptance remains pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-09T02:04:21.203563+00:00",
+    "last_updated": "2026-11-09T03:29:43.552389+00:00",
     "scoped_work": {
-      "issue": "COMC-10",
-      "related_issues": [
-        "COMC-65",
-        "COMC-68",
-        "COMC-69",
-        "COMC-70",
-        "COMC-44"
-      ],
-      "type": "PR18_review_and_browser_packet_preparation",
-      "status": "multi_agent_preparation_complete_named_acceptances_pending",
-      "source_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+      "issue": "COMC-4",
+      "type": "Gustavo_assignment_closeout_preparation",
+      "status": "available_artifacts_refreshed_human_evidence_pending",
+      "open_assigned_count": 15,
+      "new_closures": 0,
       "application_changes": false,
       "new_executable_tests": 0,
-      "dependency_changes": false,
       "ci_phase_change": false,
-      "reviewed_pull_request": "https://github.com/ga424/communityconnect/pull/18",
-      "verified_ci_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
-      "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+      "source_commit": "69c986b5d9a320c27f6ceb12da1c31a22b4f8163",
       "evidence_ids": [
-        "EV-PR18-REVIEW-20261108",
-        "EV-S3-BROWSER-PACKET-20261108",
-        "EV-PR18-MERGE-BROWSER-SCOPE-20261108",
-        "EV-S3-BROWSER-MULTI-RECHECK-20261108"
+        "EV-GUSTAVO-CLOSEOUT-20261108"
       ],
-      "merge_authorized": true,
-      "merge_commit": "b695be6f0b8b381122e663728fd440734ea2335e",
-      "branches_deleted": true,
-      "approval_record": "DEC-S3-BROWSER-SCOPE-CONDITIONAL-20261108"
+      "parallel_agents": 2,
+      "remaining": "Named reviews, personal signed statements, final PDF/SHA/walkthrough/receipts, and scoped product dependencies"
     },
     "next_bounded_task": {
       "id": "S3-BROWSER-1",
@@ -1054,6 +1040,36 @@
         "future_feature_authorized": false,
         "ci_evidence_prior_recorded": "EV-S3-AC11-CI-42536188957",
         "pointer_clarification": "PR18-P1: align latest run/head to its existing integration evidence; older CI proof remains in evidence_ids and append-only ledger"
+      },
+      {
+        "issue": "COMC-10",
+        "related_issues": [
+          "COMC-65",
+          "COMC-68",
+          "COMC-69",
+          "COMC-70",
+          "COMC-44"
+        ],
+        "type": "PR18_review_and_browser_packet_preparation",
+        "status": "multi_agent_preparation_complete_named_acceptances_pending",
+        "source_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+        "application_changes": false,
+        "new_executable_tests": 0,
+        "dependency_changes": false,
+        "ci_phase_change": false,
+        "reviewed_pull_request": "https://github.com/ga424/communityconnect/pull/18",
+        "verified_ci_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+        "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+        "evidence_ids": [
+          "EV-PR18-REVIEW-20261108",
+          "EV-S3-BROWSER-PACKET-20261108",
+          "EV-PR18-MERGE-BROWSER-SCOPE-20261108",
+          "EV-S3-BROWSER-MULTI-RECHECK-20261108"
+        ],
+        "merge_authorized": true,
+        "merge_commit": "b695be6f0b8b381122e663728fd440734ea2335e",
+        "branches_deleted": true,
+        "approval_record": "DEC-S3-BROWSER-SCOPE-CONDITIONAL-20261108"
       }
     ],
     "framework": {

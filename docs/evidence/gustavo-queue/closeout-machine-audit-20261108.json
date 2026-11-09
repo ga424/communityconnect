@@ -1,0 +1,1442 @@
+{
+  "recorded_at_utc": "2026-11-09T03:29:08.994271+00:00",
+  "recorded_at_eastern": "2026-11-08T22:29:08.994271-05:00",
+  "checkpoint": "69c986b5d9a320c27f6ceb12da1c31a22b4f8163",
+  "scope": "Read-only machine audit for COMC-38/43/44; public repository artifacts only",
+  "checkpoint_context": {
+    "kind": "local preparation merge",
+    "parents": [
+      "b695be6f0b8b381122e663728fd440734ea2335e",
+      "7d2ddbd2e3f26c300e5d6a3db70e6ff7f61b165f"
+    ],
+    "not_a_github_or_main_merge": true,
+    "final_submission_sha_selected": false
+  },
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "log",
+        "-1",
+        "--format=%H%n%P%n%s",
+        "69c986b5d9a320c27f6ceb12da1c31a22b4f8163"
+      ],
+      "exit_code": 0,
+      "stdout": "69c986b5d9a320c27f6ceb12da1c31a22b4f8163\nb695be6f0b8b381122e663728fd440734ea2335e 7d2ddbd2e3f26c300e5d6a3db70e6ff7f61b165f\nMerge existing review evidence into Gustavo closeout preparation\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        ".agentic-sdlc/hooks/validate_project.py",
+        "--workspace",
+        ".agentic-sdlc"
+      ],
+      "exit_code": 0,
+      "stdout": "WARN: code change record CHANGE-AC5-RESULT-SHA missing paths\nWARN: code change record CHANGE-M1-PROVENANCE-AUDIT-20261108 missing change_type\nWARN: code change record CHANGE-GUSTAVO-PRIVATE-HANDOFF-20261108 missing change_type\nWARN: code change record CHANGE-GUSTAVO-SUBMISSION-HANDOFF-20261108 missing change_type\nWARN: code change record CHANGE-S3-CONTEXT-DESIGN-20261108 missing change_type\nWARN: code change record CHANGE-S3-AC12-LOCAL-REVIEW-20261108 missing stage\nWARN: evidence record missing claim: {'id': 'EV-REPO-ROOT', 'created_at': '2026-11-04T04:43:55.076606+00:00', 'evidence_state': 'machine_verified', 'source_ref': 'https://github.com/ga424/communityconnect/commit/746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d', 'summary': 'Initial README scope commit created via GitHub connector; clone succeeded'}\nProject validation: PASS\n",
+      "stderr": ""
+    }
+  ],
+  "audit_method": {
+    "source_reads": [
+      "git show <checkpoint>:<path>",
+      "git ls-tree -r --name-only <checkpoint> prompts",
+      "git log --reverse --format=%H%x09%P%x09%s <checkpoint>",
+      "git rev-parse refs/notes/ai-provenance",
+      "git ls-tree -r <notes-ref-object>"
+    ],
+    "ledger_parser": "Regex ^## Entry (\\d+)\\b; each original section checked for ^\\s*(artifact|tool|prompts|review|checks|evidence|risk):; Entries16-20 supplements separately checked.",
+    "prompts": "Every exact prompts/[A-Za-z0-9_.-]+.txt reference in checkpoint LEDGER compared to tracked prompt inventory, read from git object and hashed.",
+    "traceability": "csv.DictReader over checkpoint CSV; unique AC count; split real test names on :: and locate FunctionDef/AsyncFunctionDef via ast.walk; compare bytes with two original audited commits.",
+    "history": "Full reachable SHA/parent/subject inventory with direct full-SHA references in checkpoint LEDGER and Git-note object presence. Neither presence nor absence establishes authorship or human review."
+  },
+  "governance": {
+    "agents_sha256": "20f16156a8b9f30399d368a261559ce5d41e3ca3d3534722acf5859d12a21967",
+    "framework_version": "0.3.4",
+    "new_upstream_version_check": false,
+    "structural_check": "PASS",
+    "historical_warning_count": 7
+  },
+  "ledger": {
+    "numbered_entries": 45,
+    "unique_entry_numbers": 45,
+    "directly_complete_entries": 40,
+    "entry_fields": [
+      {
+        "entry": 1,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 2,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 3,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 4,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 5,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 6,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 7,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 8,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 9,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 10,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 11,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 12,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 13,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 14,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 15,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 16,
+        "missing_original_labels": [
+          "artifact",
+          "tool",
+          "prompts",
+          "review",
+          "checks",
+          "evidence",
+          "risk"
+        ]
+      },
+      {
+        "entry": 17,
+        "missing_original_labels": [
+          "artifact",
+          "tool",
+          "prompts",
+          "review",
+          "checks",
+          "evidence",
+          "risk"
+        ]
+      },
+      {
+        "entry": 18,
+        "missing_original_labels": [
+          "artifact",
+          "tool",
+          "prompts",
+          "review",
+          "checks",
+          "evidence",
+          "risk"
+        ]
+      },
+      {
+        "entry": 19,
+        "missing_original_labels": [
+          "artifact",
+          "tool",
+          "prompts",
+          "review",
+          "checks",
+          "evidence",
+          "risk"
+        ]
+      },
+      {
+        "entry": 20,
+        "missing_original_labels": [
+          "artifact",
+          "tool",
+          "prompts",
+          "review",
+          "checks",
+          "evidence",
+          "risk"
+        ]
+      },
+      {
+        "entry": 21,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 22,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 23,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 24,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 25,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 26,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 27,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 28,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 29,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 30,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 31,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 32,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 33,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 34,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 35,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 36,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 37,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 38,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 39,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 40,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 41,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 42,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 43,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 44,
+        "missing_original_labels": []
+      },
+      {
+        "entry": 45,
+        "missing_original_labels": []
+      }
+    ],
+    "supplements": [
+      {
+        "entry": 16,
+        "missing_supplement_labels": []
+      },
+      {
+        "entry": 17,
+        "missing_supplement_labels": []
+      },
+      {
+        "entry": 18,
+        "missing_supplement_labels": []
+      },
+      {
+        "entry": 19,
+        "missing_supplement_labels": []
+      },
+      {
+        "entry": 20,
+        "missing_supplement_labels": []
+      }
+    ],
+    "specific_residual_risk_examples": [
+      {
+        "entry": 43,
+        "risk": "Browser tooling pins are metadata-verified proposals, not installed/resolved/tested compatibility. Startup and real API/DB harness must work before semantic red evidence. No prototype login/production assurance, next implementation, merge or full-story approval inferred. PR18 branch retained while open. Kundan69/Sandeep70 pending; Gustavo68 To Do."
+      },
+      {
+        "entry": 44,
+        "risk": "Scope approval remains conditional. Browser implementation, dependency installation, CI change, human acceptance and production release have not occurred. Final publication commit/checks will be linked in PR19/Jira and append-only Git notes."
+      },
+      {
+        "entry": 45,
+        "risk": "COMC68 remains To Do; no implementation PR is ready. UI execution must follow actual acceptances and frozen tests. The preparation PR stays open; merged PR18 branch remains deleted."
+      }
+    ],
+    "original_ledger_sha256": "4548ac219b59b6b8cfd24c9afb5ca954cc9d6a0d4d26623299985e2fc958e40a"
+  },
+  "prompts": {
+    "exact_referenced_count": 32,
+    "tracked_txt_count": 32,
+    "missing": [],
+    "inventory": [
+      {
+        "path": "prompts/2026-11-03-docker-available.txt",
+        "sha256": "9be0d2b47da1b4aef85452857abe25097535f93701979feadc6550f9f36f7eec",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-03-initial-checkins.txt",
+        "sha256": "c827ea300921bb15b2284d63d3810f4a4acc0a922737131f41717a194d34bbec",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-ac1-approval.txt",
+        "sha256": "14fd67b9c5a094df4754607c258f056bf4a4d4ccfb6eec6a701d0e0e4bac2db2",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-ac1-execution.txt",
+        "sha256": "87067386c676c6a80c7dd9858595e8180da30a7c50897f41e65986fe8522c4dc",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-ac2-approval.txt",
+        "sha256": "9aaad0af5257644eb1f67c473969cdcbe035aab5797f462dd55c52158acf4ce4",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-ac2-execution.txt",
+        "sha256": "813b296cf3a186f26c9fbd7a34b11c6c1dd5726582a5d07e473133c1179f58aa",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-pr2-ac1-review.txt",
+        "sha256": "f0b4b4776657824b1d9c1dcc28df77a5c1c59d06b46495fd51cd5ed4edce1363",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-04-pr4-ac2-review.txt",
+        "sha256": "31c5cf56a1deed2687a0bd1880c58dec3803a368e5c456026836d740eb388682",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-ac4-approval.txt",
+        "sha256": "b7cf655cfb7379979385df9455cdf5c892e7b45f9d22578456329df4da635b9c",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-ac4-execution.txt",
+        "sha256": "80425c4cb668b33f0ffb7acf106cc084fd9bcf3a590cf6be9428f53f7b73daa8",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-aise-next-feature.txt",
+        "sha256": "ba36a06527a1ffc0e8487530122e8eeb3148d7d785b4f8e7a52659511a87caa1",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-docker-retry.txt",
+        "sha256": "791642e8f98bf07494bd9c8976c4081577870fdc606a0205812c8ff8156d8625",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-local-preview.txt",
+        "sha256": "d9141dba059b6f5607fdfccd1c207acf08887443670bb240e91f9db82d9beeed",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-07-pr8-review.txt",
+        "sha256": "96d490dfb19edbaead35a45071e9aa81e0c3dde2ec88d5b6ec40b324f3737b73",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-ac11-review-recheck.txt",
+        "sha256": "f708fba5bdc6d9d442c3df44601f2f369b7804242e576f95bed8d68d4ac640e4",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-ac5-approval.txt",
+        "sha256": "4f985deefc7c1b9b10d38abfd8c0fe939cb693b789478971bc3b3a6b8e036cb7",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-ac5-execution.txt",
+        "sha256": "a3f776eb08967e1b2b1954b52d0b3c36376b7b38f19b272e8a8cea3a48f50c25",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-browser-multi-agent-recheck.txt",
+        "sha256": "16686aa44742b24e0f2b1c111a64abbaa630d3a755d3dd069a2247c60879d44b",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-gustavo-review-decisions.txt",
+        "sha256": "191c989c16d1714cc6dc3a74a1cbf6e79d1b6a9eb6347714ac8d350362d01369",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-gustavo-work-queue.txt",
+        "sha256": "0d4a698af17d3d35ef5ec041ede89dff684ee1fa050b185c20d6b683a7a4647d",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-pr13-s3-review.txt",
+        "sha256": "3e077dc6aa1ed63f12722d24bf59bbb4c61b0efffc57f83712c60963755a4db6",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-pr15-s3-review.txt",
+        "sha256": "e715f8e99d6d1b4d7f43a13a88194e620f2bcb400df5efbf7c2b57f7cd84e569",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-pr18-browser-planning.txt",
+        "sha256": "49b9dd02752270f874b1165c0fc692079041ef299c25795e2eeccbd4114ca178",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s1-acceptance-next-feature.txt",
+        "sha256": "9457a1ee249c31fa8156e2ec2648f827e07d539a33f1abff4914b47181dfed1b",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s1-review-execution.txt",
+        "sha256": "6379feaa7579dccbea4d6e21f38fe1333e285f6fbb29a20ecb582fa56a193260",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-ac11-approval.txt",
+        "sha256": "d8613b4486a0d11b31c747da671bb227516d1726e6cf3324a75fc65435c58641",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-ac12-execution-confirmation.txt",
+        "sha256": "0e920eceae764243336e7c7ff013d5c991cf0e4e9ea3a673df402d0b25843882",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-ac12-review-recheck.txt",
+        "sha256": "ae460dfce00b2dd59481a2e8e14eafc69eefe1cb7dd9f9547819a2660ed4ea75",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-ac12-scope-approval.txt",
+        "sha256": "b0d17049729e155d95f9d4bad71323ace58d5c7db6da280521407e62a7cb8bd6",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-browser-conditional-approval.txt",
+        "sha256": "12cb520ff78db1890b0b1f951a9822561947daac6f0a87c8c021679a35ee0319",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/2026-11-08-s3-context-gapcheck.txt",
+        "sha256": "d43dced9dd05969eedb7bb7c333baa1e4ee511a0e15d07dcf588b67b5c2574bd",
+        "tracked_at_checkpoint": true
+      },
+      {
+        "path": "prompts/AC-1-bounded-task-proposed.txt",
+        "sha256": "c83e5ad10b6bf224522c157a2d685595735edc39039ac10c812a400fb1573e25",
+        "tracked_at_checkpoint": true
+      }
+    ]
+  },
+  "traceability": {
+    "matrix_path": "docs/traceability.csv",
+    "matrix_sha256": "4aabf844de80e7e3c7f199fa3511b7885c204ac9009608f221da1d539b793a04",
+    "rows": 31,
+    "unique_acs": 31,
+    "resolved_tests": [
+      {
+        "ac": "AC-1",
+        "test": "tests/test_s1_requests.py::test_ac1_resident_submits_request_shown_as_open",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-2",
+        "test": "tests/test_s1_requests.py::test_ac2_blank_description_rejected_and_list_unchanged",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-3",
+        "test": "tests/test_s1_requests.py::test_ac3_other_community_resident_does_not_see_request",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-4",
+        "test": "tests/test_s1_requests.py::test_ac4_other_community_direct_id_returns_not_found",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-5",
+        "test": "tests/test_s1_requests.py::test_ac5_neighbor_in_same_community_does_not_see_request",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-6",
+        "test": "tests/test_s1_requests.py::test_ac6_resident_sees_in_progress_status",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-18",
+        "test": "tests/test_s6_payments.py::test_ac18_schedule_returned_without_token",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-19",
+        "test": "tests/test_s6_payments.py::test_ac19_due_day_charges_exactly_once",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-20",
+        "test": "tests/test_s6_payments.py::test_ac20_restart_mid_run_keeps_one_payment",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-21",
+        "test": "tests/test_s6_payments.py::test_ac21_manual_payment_prevents_scheduled_charge",
+        "function_exists_at_checkpoint": true
+      },
+      {
+        "ac": "AC-22",
+        "test": "tests/test_s6_payments.py::test_ac22_declined_charge_retried_after_delay",
+        "function_exists_at_checkpoint": true
+      }
+    ],
+    "not_yet_written_acs": [
+      "AC-7",
+      "AC-8",
+      "AC-9",
+      "AC-10",
+      "AC-11",
+      "AC-12",
+      "AC-13",
+      "AC-14",
+      "AC-15",
+      "AC-31",
+      "AC-16",
+      "AC-17",
+      "AC-23",
+      "AC-24",
+      "AC-25",
+      "AC-26",
+      "AC-27",
+      "AC-30",
+      "AC-28",
+      "AC-29"
+    ],
+    "original_identity_checks": [
+      {
+        "path": "docs/traceability.csv",
+        "prior_commit": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+        "byte_identical": true,
+        "sha256": "4aabf844de80e7e3c7f199fa3511b7885c204ac9009608f221da1d539b793a04"
+      },
+      {
+        "path": "tests/test_s1_requests.py",
+        "prior_commit": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+        "byte_identical": true,
+        "sha256": "b096a85081f78d12d9f3e07cdaad840623b7a46d1fa900e33b8313e62dc695ef"
+      },
+      {
+        "path": "tests/test_s6_payments.py",
+        "prior_commit": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+        "byte_identical": true,
+        "sha256": "f299482824d293da820fbcd071eef0e2268715837bdf5c6f6b76f98e4eb26cf8"
+      },
+      {
+        "path": "docs/traceability.csv",
+        "prior_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "byte_identical": true,
+        "sha256": "4aabf844de80e7e3c7f199fa3511b7885c204ac9009608f221da1d539b793a04"
+      },
+      {
+        "path": "tests/test_s1_requests.py",
+        "prior_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "byte_identical": true,
+        "sha256": "b096a85081f78d12d9f3e07cdaad840623b7a46d1fa900e33b8313e62dc695ef"
+      },
+      {
+        "path": "tests/test_s6_payments.py",
+        "prior_commit": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "byte_identical": true,
+        "sha256": "f299482824d293da820fbcd071eef0e2268715837bdf5c6f6b76f98e4eb26cf8"
+      }
+    ],
+    "source_document_recompared": false,
+    "source_comparison_limit": "Private revised milestone source/manifest was not reopened; byte identity preserves the prior source-matched checkpoint without claiming a fresh source comparison.",
+    "new_runtime_run": false,
+    "s3_supplements": [
+      {
+        "path": "docs/traceability/S-3-AC11.csv",
+        "sha256": "42177f2dd6edbdafe31ddf5960340a21cfb4ee28e3050704c5e0de7f305a9bc2",
+        "row": {
+          "Story": "S-3",
+          "AC": "AC-11",
+          "Source evidence": "E-3",
+          "Assumption": "A-2",
+          "Test": "tests/test_s3_selected_requests.py::test_ac11_manager_reads_only_selected_community",
+          "Delivered boundary": "Local selected-community requests API verified",
+          "Pending boundary": "Browser selection outcome and full-story acceptance"
+        },
+        "test_function_exists": true
+      },
+      {
+        "path": "docs/traceability/S-3-AC12.csv",
+        "sha256": "4f463a11fa90db407f27bbfd7b81b710cb4bde2f55682dd6bb6d25aad35c3351",
+        "row": {
+          "Story": "S-3",
+          "AC": "AC-12",
+          "Source evidence": "E-3",
+          "Assumption": "A-2",
+          "Test": "tests/test_s3_community_options.py::test_ac12_manager_lists_only_assigned_communities",
+          "Delivered boundary": "Local manager-options API verified",
+          "Pending boundary": "Browser selector and full-story acceptance"
+        },
+        "test_function_exists": true
+      }
+    ],
+    "original_matrix_changed": false
+  },
+  "history": {
+    "reachable_count": 73,
+    "notes_ref_object": "27b3a9043c120d3cfdaba19cdadda922cce9e4f7",
+    "commits_with_note": 45,
+    "full_sha_in_ledger_count": 52,
+    "commits": [
+      {
+        "sha": "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d",
+        "parents": [],
+        "subject": "docs(COMC-38): establish CommunityConnect milestone scope",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "21ff38c58657bb46f44e8cd703643834362a110e",
+        "parents": [
+          "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d"
+        ],
+        "subject": "chore(COMC-38): initialize pinned AISE governance workspace",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "19eb9ea1c146830b4ccb043e06d646114aa6f7fd",
+        "parents": [
+          "21ff38c58657bb46f44e8cd703643834362a110e"
+        ],
+        "subject": "docs(COMC-41): add S-1 and S-6 feature packets and bounded plan",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "92634ffbc0dffb8c5087577628055f6d7c5638f1",
+        "parents": [
+          "19eb9ea1c146830b4ccb043e06d646114aa6f7fd"
+        ],
+        "subject": "chore(COMC-37): add local PostgreSQL Liquibase and FastAPI scaffold",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "47d553957ec95bb5d6428ef34364862f37cfaf25",
+        "parents": [
+          "92634ffbc0dffb8c5087577628055f6d7c5638f1"
+        ],
+        "subject": "test(COMC-39): add S-1 red tests and deferred S-6 acceptance contracts",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "4af6ba8626262118c9c1eefa5bccfbc5ee3c37b2",
+        "parents": [
+          "746a9b2b47a5fd2f9ef4379ad92cc8d5f84f490d",
+          "47d553957ec95bb5d6428ef34364862f37cfaf25"
+        ],
+        "subject": "Merge pull request #1 from ga424/feature/COMC-38-m1-aise-bootstrap",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "85e817ab73f8cfad5dc9caf5b950eedbdda614c7",
+        "parents": [
+          "47d553957ec95bb5d6428ef34364862f37cfaf25"
+        ],
+        "subject": "docs(COMC-44): record CI and local tests-first evidence",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "26b084e8ed67150138edfc700d2a56e08b8554f5"
+      },
+      {
+        "sha": "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12",
+        "parents": [
+          "4af6ba8626262118c9c1eefa5bccfbc5ee3c37b2",
+          "85e817ab73f8cfad5dc9caf5b950eedbdda614c7"
+        ],
+        "subject": "Merge pull request #2 from ga424/feature/COMC-38-m1-aise-bootstrap",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "8ea0e80759ae06dc80cf5bf4bfa5666313074378",
+        "parents": [
+          "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12"
+        ],
+        "subject": "docs(COMC-54): review PR2 and bound AC1 approval with CI transition",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "c126594aa3512afcac78cb36c1924fc91b5bb64a"
+      },
+      {
+        "sha": "7eab79e229dd250d45c9041822a7f45f4d94958c",
+        "parents": [
+          "dafd2ca71b89fd2d2a8fc0fdae6d8209f93dee12",
+          "8ea0e80759ae06dc80cf5bf4bfa5666313074378"
+        ],
+        "subject": "Merge pull request #3 from ga424/review/COMC-54-ac1-approval",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d",
+        "parents": [
+          "8ea0e80759ae06dc80cf5bf4bfa5666313074378"
+        ],
+        "subject": "test(COMC-54): record approval and AC1 contract red baseline",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "a19a2b4f77390f443f17464b617b3e781394c853"
+      },
+      {
+        "sha": "15edff908305ffe51c7b7f7615bc22f87b4ef053",
+        "parents": [
+          "2b73ab0d5f21fb63e9b7c1406446c3cf7043682d"
+        ],
+        "subject": "feat(COMC-54): implement AC1 resident requests and contract CI gate",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "838dcf495579a3e62db07f206e3b8ef3c558530d"
+      },
+      {
+        "sha": "0f5562f42081aede341079d723b4848cc604c271",
+        "parents": [
+          "15edff908305ffe51c7b7f7615bc22f87b4ef053"
+        ],
+        "subject": "docs(COMC-54): reconcile AC1 execution and AISE evidence",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "bde23636f356661f070868f1932813ebb72c2e22"
+      },
+      {
+        "sha": "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca",
+        "parents": [
+          "0f5562f42081aede341079d723b4848cc604c271"
+        ],
+        "subject": "docs(COMC-54): record passing PR4 CI and review handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "ae4a1a8300567ef8e67602a4f0ac688eed2f2a5d"
+      },
+      {
+        "sha": "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+        "parents": [
+          "7eab79e229dd250d45c9041822a7f45f4d94958c",
+          "74bcdd64adbf1b3c3546283acf7f27bbf8bcc9ca"
+        ],
+        "subject": "Merge pull request #4 from ga424/feature/COMC-54-ac1",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "73842903bc1f1388324c0c3e5766cec5d7fa833d",
+        "parents": [
+          "3708f9dd02abb43feffa54ebfa4df47aa58bbb74"
+        ],
+        "subject": "docs(COMC-55): review PR4 and propose bounded AC2 validation",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "803d4735d925a89b69d930187cf2bc148e0cbe90"
+      },
+      {
+        "sha": "661a205dbfb4860d14194e54d75b46edec54cdca",
+        "parents": [
+          "73842903bc1f1388324c0c3e5766cec5d7fa833d"
+        ],
+        "subject": "test(COMC-55): freeze approved AC2 contracts and red baseline",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "fd60b1ec85b75d6fccfa3039fc734f35b70be5a0"
+      },
+      {
+        "sha": "130af5d22bda7a98c4cff79e78904add49778b35",
+        "parents": [
+          "661a205dbfb4860d14194e54d75b46edec54cdca"
+        ],
+        "subject": "fix(COMC-55): reject unsupported descriptions and promote AC2 CI",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "c21ee67aa7117f5185b9a0fe6503a0592b250e4a"
+      },
+      {
+        "sha": "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea",
+        "parents": [
+          "130af5d22bda7a98c4cff79e78904add49778b35"
+        ],
+        "subject": "docs(COMC-55): reconcile AC2 runtime evidence and F1 disposition",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "0736a10226c94126c3d7795962dd326fe071bab4"
+      },
+      {
+        "sha": "9a96ca40880c53d44a8fc90404f5ce50eb294b29",
+        "parents": [
+          "5d2c13ce5a36ce7eedfe5997324a3d214b4706ea"
+        ],
+        "subject": "docs(COMC-55): record passing AC2 CI and human-review handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "6b2bc97d5c796cbae09a38bad1b7091884ff74a4"
+      },
+      {
+        "sha": "c0b26c34a1514631ec0825633e25473b570feb05",
+        "parents": [
+          "3708f9dd02abb43feffa54ebfa4df47aa58bbb74",
+          "9a96ca40880c53d44a8fc90404f5ce50eb294b29"
+        ],
+        "subject": "Merge pull request #6 from ga424/feature/COMC-55-ac2",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "0311d94a5ad9db3f93d88a776dbc967d1e1119b5",
+        "parents": [
+          "c0b26c34a1514631ec0825633e25473b570feb05"
+        ],
+        "subject": "docs(COMC-56): verify AC3 and latest AISE, prepare AC4 packet",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "aae99cea6270d3c1a386fae449fcfb1bf5972ce8"
+      },
+      {
+        "sha": "6026bdbd71e84081ddcdab96c85869e457299d45",
+        "parents": [
+          "0311d94a5ad9db3f93d88a776dbc967d1e1119b5"
+        ],
+        "subject": "docs(COMC-57): align proposed membership tests with schema",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "10907045e23af3eae1f451673d34e27fc19c69d1"
+      },
+      {
+        "sha": "62b9df05338fe44a86747197502e088fa0cf45b5",
+        "parents": [
+          "6026bdbd71e84081ddcdab96c85869e457299d45"
+        ],
+        "subject": "docs(COMC-56): record successful local Docker baseline retry",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "06ad58cb28801dee01d4ef288bc37a1563303838"
+      },
+      {
+        "sha": "fb8db8046e3458a14d4c9edf04f019d3fcf7332e",
+        "parents": [
+          "62b9df05338fe44a86747197502e088fa0cf45b5"
+        ],
+        "subject": "test(COMC-57): freeze 30 approved details contracts and red baseline",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "169b672f2a5a52db6aa41d9f8405e822c8144740"
+      },
+      {
+        "sha": "8df963e73801713e3eb6c9b02e7d6ce8092f14f7",
+        "parents": [
+          "fb8db8046e3458a14d4c9edf04f019d3fcf7332e"
+        ],
+        "subject": "feat(COMC-57): add scoped request details and green S1 CI phase",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "35f5c5f29d231cd0a4b3fea669c5dcf89a9aadbb"
+      },
+      {
+        "sha": "354960fb81b55c2081dc3c5264a225be48930cd8",
+        "parents": [
+          "8df963e73801713e3eb6c9b02e7d6ce8092f14f7"
+        ],
+        "subject": "docs(COMC-57): reconcile passing CI and review handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "759c786dabd808eb460b0b043d41d3964d55362f"
+      },
+      {
+        "sha": "59fd4f570ac20d194e24b6c5e738c2fcf8017b74",
+        "parents": [
+          "354960fb81b55c2081dc3c5264a225be48930cd8"
+        ],
+        "subject": "docs(COMC-58): review PR8 and prepare AC5 verification packet",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "e6bce1dc35cf493c09fef01a7bbc3e26e6b26871"
+      },
+      {
+        "sha": "f9619f86d0f352eefc4fb18e443019c3d2f4c78e",
+        "parents": [
+          "59fd4f570ac20d194e24b6c5e738c2fcf8017b74"
+        ],
+        "subject": "docs(COMC-58): record scoped planning integrity check",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "ad821511e3bcc1d8eda96452870446c9a6303283"
+      },
+      {
+        "sha": "244026ec788d26688ab5a4fe1c6fa50f2e8203b9",
+        "parents": [
+          "f9619f86d0f352eefc4fb18e443019c3d2f4c78e"
+        ],
+        "subject": "docs: record requested localhost preview and verification",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "44fdc35b1cb315ac4e0c43eb0a0d4efa7d95ad91"
+      },
+      {
+        "sha": "fc208ec4a093cdd81c6e87158e7a93561822226c",
+        "parents": [
+          "c0b26c34a1514631ec0825633e25473b570feb05",
+          "354960fb81b55c2081dc3c5264a225be48930cd8"
+        ],
+        "subject": "Merge pull request #8: approved AC4 details and AC6 status",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "e615d78717c29e1f7d84c031940edf60eab46a53",
+        "parents": [
+          "fc208ec4a093cdd81c6e87158e7a93561822226c",
+          "244026ec788d26688ab5a4fe1c6fa50f2e8203b9"
+        ],
+        "subject": "docs(COMC-58): record AC5 approval and integrated-main checkpoint",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "b605231c50dec4d9aa398c7d154db0c5ab0834e5"
+      },
+      {
+        "sha": "77fe12f8266dba5c63fc5a1b499589e139ddc716",
+        "parents": [
+          "e615d78717c29e1f7d84c031940edf60eab46a53"
+        ],
+        "subject": "docs(COMC-58): record passing AC5 verification and cleanup",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "e34ada0a66d22e246cd1484fa347c2b159ee0ee7"
+      },
+      {
+        "sha": "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a",
+        "parents": [
+          "77fe12f8266dba5c63fc5a1b499589e139ddc716"
+        ],
+        "subject": "docs(COMC-58): reconcile evidence PR and passing CI",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "00ad87787a5513955fb77ce952907473059221b7"
+      },
+      {
+        "sha": "b41387f1c63c0b469b2c17026095c47d43932011",
+        "parents": [
+          "fc208ec4a093cdd81c6e87158e7a93561822226c",
+          "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a"
+        ],
+        "subject": "Merge pull request #10 from ga424/verify/COMC-58-ac5",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "a9330b87c114fdbe2097fb07582360839aadeed0",
+        "parents": [
+          "722f1ba9bdd42125665ad51f5ecbc6414f7ad07a"
+        ],
+        "subject": "docs(COMC-58): complete append-only result path traceability",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "1d83c2cb24a39f06c81c36a1872b8944228e346d"
+      },
+      {
+        "sha": "f80f4d7aefd65b8dd3db960c4ebeab2f588603f4",
+        "parents": [
+          "b41387f1c63c0b469b2c17026095c47d43932011",
+          "a9330b87c114fdbe2097fb07582360839aadeed0"
+        ],
+        "subject": "docs(COMC-58): preserve audit addendum after evidence merge",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "dd3980b0b8f499b69ce3b286d5dd6bbc3ff963a2"
+      },
+      {
+        "sha": "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+        "parents": [
+          "b41387f1c63c0b469b2c17026095c47d43932011",
+          "f80f4d7aefd65b8dd3db960c4ebeab2f588603f4"
+        ],
+        "subject": "Merge pull request #11 from ga424/docs/COMC-58-audit-followup",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "262fdf34dc9b2b01de1e0fbd5b94450c18c703ed"
+      },
+      {
+        "sha": "ec989d1d8370cf2ee4c283d78babfae3bc0ab599",
+        "parents": [
+          "3918cbd9fd015f8325cfc0136180c28ad31c5d01"
+        ],
+        "subject": "docs(COMC-42): review S1 acceptance and propose S3 context design",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "44edda5d11831c324bd4acdb58dc61d9e55f67fe"
+      },
+      {
+        "sha": "06b507315b235162f2dcf64c567c03c3f1910f32",
+        "parents": [
+          "ec989d1d8370cf2ee4c283d78babfae3bc0ab599"
+        ],
+        "subject": "docs(COMC-43): verify31-row trace and record Gustavo decisions",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "05f3bb524f8843b92b7b8e696b7f5ca45051577c"
+      },
+      {
+        "sha": "d26209492718272fdbb8bf33a63a2bdb1809128e",
+        "parents": [
+          "06b507315b235162f2dcf64c567c03c3f1910f32"
+        ],
+        "subject": "docs(COMC-44): audit provenance and append field supplements",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "b65ab2539cf36a677e1754a61d198d2bd1d89584"
+      },
+      {
+        "sha": "0616fec438d06fdffee6c479e88fa3837023cf72",
+        "parents": [
+          "d26209492718272fdbb8bf33a63a2bdb1809128e"
+        ],
+        "subject": "docs(COMC-60): reconcile private interview and AI-use handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "72e6c2286609a51dd2b77ec7c63e8327368109c7"
+      },
+      {
+        "sha": "c49fa899bf159521697370a8c6004d06cb3007f1",
+        "parents": [
+          "0616fec438d06fdffee6c479e88fa3837023cf72"
+        ],
+        "subject": "docs(COMC-46): prepare contribution and submission handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "a4836b5fa2c07a64282f1ffdaeea5f0afd0e82d2"
+      },
+      {
+        "sha": "d3a22b8c9526aa5b8835dccc55063800477634aa",
+        "parents": [
+          "c49fa899bf159521697370a8c6004d06cb3007f1"
+        ],
+        "subject": "docs(COMC-10): draft manager community context contract and tests plan",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "1c8db76d6d4471a58ddea600c0584a775be502da"
+      },
+      {
+        "sha": "b8a2723772c84a98ddcf42770e215fa61dcf5881",
+        "parents": [
+          "d3a22b8c9526aa5b8835dccc55063800477634aa"
+        ],
+        "subject": "docs(COMC-16): record board approval and gated product dependencies",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "e8d471acbb286c5ec0c5ac7db85ba0023f1d9c52"
+      },
+      {
+        "sha": "4da9ef69f0757177be75657afa510f272dbb5b7d",
+        "parents": [
+          "b8a2723772c84a98ddcf42770e215fa61dcf5881"
+        ],
+        "subject": "docs(COMC-4): reconcile Gustavo acceptance and queue handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "cd9f1b4a76b5972cb9cb19dccd53fd6346ba7c72"
+      },
+      {
+        "sha": "ff6b0f9fd799e160079c3fb9829c0abae9395ef4",
+        "parents": [
+          "4da9ef69f0757177be75657afa510f272dbb5b7d"
+        ],
+        "subject": "docs(COMC-4): publish queue README handoff",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "6f663439d8735cfa19cdd96bdeaa1d9fddf6fdfe"
+      },
+      {
+        "sha": "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+        "parents": [
+          "3918cbd9fd015f8325cfc0136180c28ad31c5d01",
+          "ff6b0f9fd799e160079c3fb9829c0abae9395ef4"
+        ],
+        "subject": "Merge pull request #13 from ga424/docs/COMC-gustavo-work-queue",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "a38374377ed3a42c4c573f029153203123a80648",
+        "parents": [
+          "de7e609a63b1caacb7e68b7cb5d82a3335321f98"
+        ],
+        "subject": "docs(COMC-62): review PR13 and propose bounded S3 AC12 packet",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "c698700290b8b41de7187509b8c0acd168a77ceb",
+        "parents": [
+          "a38374377ed3a42c4c573f029153203123a80648"
+        ],
+        "subject": "docs: record current preview observation in review state",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "8e5cf74217bdd7dd72ec93d3a8bc8e4711eeca7c"
+      },
+      {
+        "sha": "10056fc1264634cf832921fd588372f90724cff6",
+        "parents": [
+          "c698700290b8b41de7187509b8c0acd168a77ceb"
+        ],
+        "subject": "docs(COMC-62): record scope approval and required peer reviews",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "ba7740354bcc25b2fbcc72e736c15e3c2d128d91",
+        "parents": [
+          "10056fc1264634cf832921fd588372f90724cff6"
+        ],
+        "subject": "docs(COMC-62): record pending Kundan and Sandeep review check",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "6c514dda20b86335af02f7dd0f9146246868eef4",
+        "parents": [
+          "ba7740354bcc25b2fbcc72e736c15e3c2d128d91"
+        ],
+        "subject": "docs(COMC-62): record owner completion confirmation and AC12 undo point",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "5b5a1d6bf775774b58d89e206363919b3cb739bd",
+        "parents": [
+          "6c514dda20b86335af02f7dd0f9146246868eef4"
+        ],
+        "subject": "test(COMC-62): freeze 28 AC12 community-options contract cases",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "b89fe0bdafa5defff1a84ad891bfd182d00a97a4",
+        "parents": [
+          "5b5a1d6bf775774b58d89e206363919b3cb739bd"
+        ],
+        "subject": "feat(COMC-62): add current manager community options and strict AC12 CI",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec",
+        "parents": [
+          "b89fe0bdafa5defff1a84ad891bfd182d00a97a4"
+        ],
+        "subject": "docs(COMC-62): complete review stage metadata without rewriting provenance",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "6485f19ce31ff94f4a63a21a627d2578d8e98b0e"
+      },
+      {
+        "sha": "8f993ab6fb96e837315918d0da2b344642a05c57",
+        "parents": [
+          "f76cf3afc2c0c0849f7908c40b3d7815dc4239ec"
+        ],
+        "subject": "docs(COMC-62): record PR15 publication and verified CI evidence",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "f58f81a5dc54f745bc83081d72ba168bb1b3077e"
+      },
+      {
+        "sha": "3f79f0c4d4f3b709906046f75715b5fcaea4aea8",
+        "parents": [
+          "8f993ab6fb96e837315918d0da2b344642a05c57"
+        ],
+        "subject": "docs(COMC-65): review PR15 and propose bounded S3 AC11 packet",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "74580efb10cb358f35db1941741af9c9a36a6d6b"
+      },
+      {
+        "sha": "23acd10e0c854f48aa4f7f08dc077c62c17665c7",
+        "parents": [
+          "8f993ab6fb96e837315918d0da2b344642a05c57",
+          "3f79f0c4d4f3b709906046f75715b5fcaea4aea8"
+        ],
+        "subject": "Merge pull request #16 from ga424/docs/COMC-10-ac11-packet",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "7d8174e75d1f9a899f6ebb6d694eddf458a295de",
+        "parents": [
+          "de7e609a63b1caacb7e68b7cb5d82a3335321f98",
+          "23acd10e0c854f48aa4f7f08dc077c62c17665c7"
+        ],
+        "subject": "Merge pull request #15 from ga424/feat/COMC-62-s3-ac12",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "8f6736451d71916306fe22edc343d68c66f63548",
+        "parents": [
+          "3f79f0c4d4f3b709906046f75715b5fcaea4aea8"
+        ],
+        "subject": "docs(COMC-65): record completed review tickets and pending scope decision",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "38ccc393c6ade9d3e0090f929a0488694d2cbcdf",
+        "parents": [
+          "8f6736451d71916306fe22edc343d68c66f63548",
+          "7d8174e75d1f9a899f6ebb6d694eddf458a295de"
+        ],
+        "subject": "Merge remote-tracking branch 'origin/main' into docs/COMC-65-review-status",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "85547272a0661c1eaadb4bded9cdc50e620603fd",
+        "parents": [
+          "38ccc393c6ade9d3e0090f929a0488694d2cbcdf"
+        ],
+        "subject": "docs(COMC-65): record AC11 approval, integration and undo point",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
+        "parents": [
+          "85547272a0661c1eaadb4bded9cdc50e620603fd"
+        ],
+        "subject": "test(COMC-65): freeze 52 AC11 contracts with real red baseline",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "026a6c3bdc972a7cf26d6d56ffd336a30097e767",
+        "parents": [
+          "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6"
+        ],
+        "subject": "feat(COMC-65): add current-manager selected-community request reads",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "b0f98714922ae10264019f003753e203a34993bc",
+        "parents": [
+          "026a6c3bdc972a7cf26d6d56ffd336a30097e767"
+        ],
+        "subject": "docs(COMC-65): publish PR17 and verified AC11 CI evidence",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "4d10f3d58e20f87cafcd8dfc801d3c8c10953609"
+      },
+      {
+        "sha": "cf1e457052bbbe806a3711194e426181c599165f",
+        "parents": [
+          "7d8174e75d1f9a899f6ebb6d694eddf458a295de",
+          "b0f98714922ae10264019f003753e203a34993bc"
+        ],
+        "subject": "Merge pull request #17 from ga424/feat/COMC-65-s3-ac11",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "4d10f3d58e20f87cafcd8dfc801d3c8c10953609"
+      },
+      {
+        "sha": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+        "parents": [
+          "cf1e457052bbbe806a3711194e426181c599165f"
+        ],
+        "subject": "docs(COMC-65): record observed AC11 merge and branch cleanup",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": "4d10f3d58e20f87cafcd8dfc801d3c8c10953609"
+      },
+      {
+        "sha": "c20147fb217c5a9a1c25fac4eedabb639fec0844",
+        "parents": [
+          "adc68b806bdf08ba6169a5edc2874fbf66b63dcd"
+        ],
+        "subject": "docs(COMC-68): review PR18 and propose bounded S3 browser packet",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "b71ec74efe2c15660762f37818818a377c8d9a89"
+      },
+      {
+        "sha": "b695be6f0b8b381122e663728fd440734ea2335e",
+        "parents": [
+          "cf1e457052bbbe806a3711194e426181c599165f",
+          "adc68b806bdf08ba6169a5edc2874fbf66b63dcd"
+        ],
+        "subject": "Merge pull request #18 from ga424/docs/COMC-65-ac11-closeout",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": true,
+        "git_note_blob_at_notes_ref": null
+      },
+      {
+        "sha": "9bd3b1f3f9e11089d9a0fc32c36da8a3a366e731",
+        "parents": [
+          "c20147fb217c5a9a1c25fac4eedabb639fec0844"
+        ],
+        "subject": "docs(COMC-68): record PR18 merge and conditional browser approval",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "2a7685fe80b026e57997bfa7431410567ca5d56e"
+      },
+      {
+        "sha": "7d2ddbd2e3f26c300e5d6a3db70e6ff7f61b165f",
+        "parents": [
+          "9bd3b1f3f9e11089d9a0fc32c36da8a3a366e731"
+        ],
+        "subject": "docs(COMC-68): record multi-agent handoff and pending reviews",
+        "kind": "repository change; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": "a2a106856438b834d659659761070b27656d4848"
+      },
+      {
+        "sha": "69c986b5d9a320c27f6ceb12da1c31a22b4f8163",
+        "parents": [
+          "b695be6f0b8b381122e663728fd440734ea2335e",
+          "7d2ddbd2e3f26c300e5d6a3db70e6ff7f61b165f"
+        ],
+        "subject": "Merge existing review evidence into Gustavo closeout preparation",
+        "kind": "merge history; no authorship inferred",
+        "full_sha_in_checkpoint_ledger": false,
+        "git_note_blob_at_notes_ref": null
+      }
+    ]
+  },
+  "jira_observation": {
+    "scope": "Prior read-only audit in this same work session; not a new write or closure",
+    "COMC-38": {
+      "status": "In Progress",
+      "all_comments_read": 5,
+      "recorded_kundan_acceptance_found": false
+    },
+    "COMC-43": {
+      "status": "In Progress",
+      "all_comments_read": 3,
+      "recorded_kundan_acceptance_found": false
+    },
+    "COMC-44": {
+      "status": "In Progress",
+      "all_comments_read": 26,
+      "recorded_kundan_acceptance_found": false
+    }
+  },
+  "human_gates": {
+    "COMC-38": [
+      "Kundan governance review"
+    ],
+    "COMC-43": [
+      "Kundan evidence/assumption mapping review",
+      "Selected final submission SHA and reconciliation"
+    ],
+    "COMC-44": [
+      "Kundan audit acceptance",
+      "Explicit disposition of missing original extraction/summary/full-gap interaction provenance",
+      "Selected final submission SHA and reconciliation"
+    ]
+  },
+  "limitations": [
+    "Machine verification is not human review or ticket completion.",
+    "No private interview records, consent files, original AI session exports or final submission package inspected.",
+    "No exact unavailable model build, author attribution, historical prompt, signature or acceptance invented.",
+    "No original ledger, matrix, test, design, dependency, CI or schema file changed by this audit.",
+    "Seven historical validator warnings remain; controls and prior records were not altered.",
+    "This source checkpoint inventory does not include later recording commits; final publication commits/CI require the coordinator's subsequent ledger/Git-note record.",
+    "S3 supplements prove bounded API mapping, not browser selection/login or full-story acceptance."
+  ]
+}
