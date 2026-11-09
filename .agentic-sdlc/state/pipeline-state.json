@@ -32,9 +32,9 @@
     },
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
-      "branch": "docs/COMC-65-ac11-closeout",
-      "commit": "cf1e457052bbbe806a3711194e426181c599165f",
-      "commit_context": "Verified main integration; this branch records metadata-only closeout"
+      "branch": "docs/COMC-10-s3-browser-packet",
+      "commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+      "commit_context": "Reviewed PR18 checkpoint; final preparation commit/CI published in PR/Jira and Git provenance notes"
     },
     "stage_status": [
       {
@@ -680,97 +680,77 @@
       "Kundan/Sandeep design, gap, QA and provenance reviews remain; Gustavo bounded S1 acceptance is recorded and COMC42 closed.",
       "Original AI extraction/summary/gap session provenance and remaining claim/exclusion review are unconfirmed; private source packets are prepared.",
       "Personal statement signatures, real walkthrough, final submission SHA and actual receipts require the named humans.",
-      "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Independent full-story review and browser outcome remain pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
+      "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Browser COMC68 requires new COMC69/70 decisions, explicit scope approval and PR18/preparation integration. Full-story acceptance remains pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-08T23:44:09.990219+00:00",
+    "last_updated": "2026-11-09T00:01:18.913819+00:00",
     "scoped_work": {
-      "issue": "COMC-65",
-      "type": "S3_AC11_selected_requests_implementation",
-      "status": "merged",
-      "application_changes": true,
-      "new_executable_tests": 52,
-      "ci_phase_change": true,
-      "evidence_ids": [
-        "EV-S3-AC11-APPROVAL-20261108",
-        "EV-S3-AC11-RED-20261108",
-        "EV-S3-AC11-LOCAL-20261108",
-        "EV-S3-AC11-CI-42536188957",
-        "EV-S3-AC11-INTEGRATED-20261108"
+      "issue": "COMC-10",
+      "related_issues": [
+        "COMC-65",
+        "COMC-68",
+        "COMC-69",
+        "COMC-70",
+        "COMC-44"
       ],
-      "counts": {
-        "passed": 200,
-        "failed": 0,
-        "errors": 0,
-        "skipped": 5
-      },
-      "tests_first_commit": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
-      "test_sha256": "ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38",
-      "merge_authorized": false,
-      "implementation_commit": "026a6c3bdc972a7cf26d6d56ffd336a30097e767",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/17",
-      "verified_ci_commit": "b0f98714922ae10264019f003753e203a34993bc",
-      "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
-      "ci_evidence": "EV-S3-AC11-CI-42536188957",
-      "execution_complete": true,
-      "merge_commit": "cf1e457052bbbe806a3711194e426181c599165f",
-      "merge_observed": true,
-      "merged_by": "abreugus",
-      "branches_deleted": true,
-      "jira_status": "Done",
-      "future_feature_authorized": false
+      "type": "PR18_review_and_browser_packet_preparation",
+      "status": "reviewed_draft_awaiting_merge_and_browser_decisions",
+      "source_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+      "application_changes": false,
+      "new_executable_tests": 0,
+      "dependency_changes": false,
+      "ci_phase_change": false,
+      "reviewed_pull_request": "https://github.com/ga424/communityconnect/pull/18",
+      "verified_ci_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+      "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+      "evidence_ids": [
+        "EV-PR18-REVIEW-20261108",
+        "EV-S3-BROWSER-PACKET-20261108"
+      ],
+      "merge_authorized": false
     },
     "next_bounded_task": {
-      "id": "S3-AC11",
+      "id": "S3-BROWSER-1",
       "version": 1,
-      "issue": "COMC-65",
+      "issue": "COMC-68",
       "parent": "COMC-10",
       "story": "S-3",
       "acceptance_criteria": [
-        "AC11 API projection"
+        "AC11 browser selection outcome",
+        "AC12 browser assigned-options outcome"
       ],
-      "packet": "docs/plans/S-3-AC11-approval.md",
-      "status": "merged",
+      "packet": "docs/plans/S-3-browser-approval.md",
+      "status": "proposed_awaiting_human_decisions",
       "approval_owner": "Gustavo",
       "contract_reviewer": "Kundan",
       "test_reviewer": "Sandeep",
       "review_dependencies": {
-        "Kundan": "COMC-66",
-        "Sandeep": "COMC-67"
+        "Kundan": "COMC-69",
+        "Sandeep": "COMC-70"
       },
-      "integration_dependency": "satisfied: main7d8174e includes PR15/16",
-      "proposed_new_tests": 52,
-      "proposed_target_phase": {
+      "integration_dependency": "PR18 and preparation integration before coding; PR18 currently open",
+      "proposed_new_tests": 30,
+      "proposed_browser_scenarios": 24,
+      "proposed_boot_guards": 6,
+      "existing_api_phase": {
         "passed": 200,
         "failed": 0,
         "errors": 0,
         "skipped": 5,
         "total": 205
       },
-      "execution_started": true,
-      "implementation_approved": true,
+      "proposed_browser_phase": {
+        "passed": 30,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "total": 30
+      },
+      "execution_started": false,
+      "implementation_approved": false,
       "merge_authorized": false,
       "m1_scope_expanded": false,
-      "browser_acceptance": "separate future UI increment",
-      "last_review_check": {
-        "at": "2026-11-08T23:16:13.853785+00:00",
-        "evidence": "EV-AC11-REVIEW-TICKETS-DONE-20261108",
-        "COMC-66": "Done by Gustavo",
-        "COMC-67": "Done by Gustavo",
-        "independent_reviewer_authorship_verified": false
-      },
-      "scope_approval": "EV-S3-AC11-APPROVAL-20261108",
-      "decision": "DEC-S3-AC11-EXECUTE-20261108",
-      "independent_reviewer_authorship_verified": false,
-      "execution_complete": true,
-      "implementation_commit": "026a6c3bdc972a7cf26d6d56ffd336a30097e767",
-      "pull_request": "https://github.com/ga424/communityconnect/pull/17",
-      "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
-      "merge_commit": "cf1e457052bbbe806a3711194e426181c599165f",
-      "merge_observed": true,
-      "merged_by": "abreugus",
-      "verified_ci_commit": "b0f98714922ae10264019f003753e203a34993bc",
-      "branches_deleted": true
+      "independent_reviewer_authorship_verified": false
     },
     "prior_scoped_work": [
       {
@@ -1017,6 +997,44 @@
         "review_evidence": "EV-PR15-REVIEW-20261108",
         "merge_observed": true,
         "merge_commit": "7d8174e75d1f9a899f6ebb6d694eddf458a295de"
+      },
+      {
+        "issue": "COMC-65",
+        "type": "S3_AC11_selected_requests_implementation",
+        "status": "merged",
+        "application_changes": true,
+        "new_executable_tests": 52,
+        "ci_phase_change": true,
+        "evidence_ids": [
+          "EV-S3-AC11-APPROVAL-20261108",
+          "EV-S3-AC11-RED-20261108",
+          "EV-S3-AC11-LOCAL-20261108",
+          "EV-S3-AC11-CI-42536188957",
+          "EV-S3-AC11-INTEGRATED-20261108"
+        ],
+        "counts": {
+          "passed": 200,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 5
+        },
+        "tests_first_commit": "359f9e6a8a8633d95ac5fbc22d8746a5f9f529d6",
+        "test_sha256": "ca65fe6833b940901e51025b6f6a93b1550ecdbe8faba17199d2e8e3eaf55d38",
+        "merge_authorized": false,
+        "implementation_commit": "026a6c3bdc972a7cf26d6d56ffd336a30097e767",
+        "pull_request": "https://github.com/ga424/communityconnect/pull/17",
+        "verified_ci_commit": "b0f98714922ae10264019f003753e203a34993bc",
+        "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536348447",
+        "ci_evidence": "EV-S3-AC11-INTEGRATED-20261108",
+        "execution_complete": true,
+        "merge_commit": "cf1e457052bbbe806a3711194e426181c599165f",
+        "merge_observed": true,
+        "merged_by": "abreugus",
+        "branches_deleted": true,
+        "jira_status": "Done",
+        "future_feature_authorized": false,
+        "ci_evidence_prior_recorded": "EV-S3-AC11-CI-42536188957",
+        "pointer_clarification": "PR18-P1: align latest run/head to its existing integration evidence; older CI proof remains in evidence_ids and append-only ledger"
       }
     ],
     "framework": {

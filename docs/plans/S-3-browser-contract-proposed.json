@@ -1,0 +1,55 @@
+{
+  "status": "proposed",
+  "packet": "S3-BROWSER-1 v1",
+  "issue": "COMC-68",
+  "scope": "local/test-only read-only manager page",
+  "route": "/manager",
+  "enable_env": "BROWSER_REVIEW_ENABLED=1",
+  "identity_env": "BROWSER_REVIEW_USER_ID",
+  "identity_parser": "unchanged app.requests._database_id",
+  "identity_model": "fixed per process; synthetic header; no authentication claim or in-page identity switch",
+  "session_route": {
+    "path": "/manager/session",
+    "response": {
+      "mode": "synthetic",
+      "user_id": "positive integer from validated server configuration"
+    }
+  },
+  "assets": [
+    "/manager/assets/manager.js",
+    "/manager/assets/manager.css"
+  ],
+  "api_routes": [
+    "/manager/communities",
+    "/manager/communities/{community_id}/requests"
+  ],
+  "initial_selection": null,
+  "persistent_state": false,
+  "writes": false,
+  "fetch_timeout_ms": 10000,
+  "manual_refresh": "invalidate epoch; clear rows; reload options; preserve previous selection only if still assigned then refetch its requests",
+  "error_rules": {
+    "401": "clear options/selection/rows; review identity unavailable; Refresh retries bootstrap/options",
+    "404_selected": "clear options/selection/rows; community unavailable; Refresh reloads options",
+    "options_500_network_invalid_timeout": "clear options/selection/rows; unable to load communities; manual Refresh",
+    "requests_500_network_invalid_timeout": "clear rows; keep selected label for error context; manual Refresh"
+  },
+  "response_guard": "request epoch and selected ID must still match; abort previous fetch; validate entire response before DOM update",
+  "cache": "no-store on UI/session/assets and fetch requests; no web storage/cookies/service worker",
+  "safe_rendering": "textContent/DOM APIs, no API text through innerHTML, no remote assets",
+  "lifecycle": "pagehide clears rows/options and invalidates requests; pageshow bootstrap resets selection",
+  "visible_revocation_limit": "fresh checks only; no instant revocation or cancellation of already authorized in-flight network delivery guarantee",
+  "source_acs": [
+    "S3 AC11 browser outcome",
+    "S3 AC12 browser outcome"
+  ],
+  "excluded": [
+    "production identity",
+    "onboarding/assignment administration",
+    "request create/edit/details",
+    "status changes",
+    "payments",
+    "deployment",
+    "full-story acceptance"
+  ]
+}

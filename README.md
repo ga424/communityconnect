@@ -14,6 +14,12 @@ Local verification: **200 passed,zero failures/errors,five planned S6 skips**. T
 
 Gustavo approved AC11 v1, its addendum,52 tests and CI phase. [PR17](https://github.com/ga424/communityconnect/pull/17) was merged by GitHub account abreugus at23:41:19 UTC; COMC65 is Done. [Final-head CI](https://github.com/ga424/communityconnect/actions/runs/42536348447) verified200/0/5 from downloaded artifacts, and merged main has the identical tree. Both merged feature/status branches are removed. [Integration record](docs/evidence/s3-ac11/merge-closeout.json). COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Independent teammate review and full-story acceptance remain separate; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
 
+## Next proposed browser increment
+
+[PR18 review](docs/reviews/PR-18-and-S3-browser-2026-11-08.md) found no blocking issue in the documentation closeout; its downloaded CI verifies200/0/5. PR18 remains open pending explicit merge authorization. One minor current-state CI evidence pointer is aligned in this preparation, preserving all historical ledger records.
+
+[S3-BROWSER-1 v1](docs/plans/S-3-browser-approval.md) proposes one local read-only manager page with24 browser scenarios and6 startup guards, isolated Playwright tooling and a separate browser CI job. The existing API suite and gate stay unchanged. COMC68/69/70 are To Do for Gustavo scope, Kundan contract and Sandeep tests. No browser implementation or new executable test has started. The packet fixes error/loading/empty states, stale-response handling, local identity and review-port boundaries before approval.
+
 ## Milestone and review context
 
 M1's original [31-AC traceability](docs/traceability.csv) remains unchanged. Gustavo accepted bounded S1 behavior (COMC42); named/full-story/course reviews, contributions and submission receipts are tracked separately in the [work queue](docs/reviews/Gustavo-work-queue-status-2026-11-08.md). Historical [S1 evidence](docs/evidence/s1-closeout/summary.json) records120 passes plus5 skips before this later increment. The [S3 sequence](docs/plans/S-3-plan.md) keeps API, browser and full-story acceptance distinct. The separate localhost review wrapper is outside the product UI and is not started by tests.

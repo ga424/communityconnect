@@ -1,3 +1,7 @@
+# Current consumer-contract proposal
+
+API AC11/12 remain implemented and verified200/0/5. New local browser consumer addendum S3-BROWSER-1 v1 is proposed, not approved: explicit selection, current assignment options, memory-only state, late-response suppression, exact error behavior and fixed synthetic review identity. COMC69/70 and Gustavo scope pending. Existing API contracts are unchanged. Proposed30-case browser/guard suite is not written. See docs/plans/S-3-browser-contract-addendum-proposed.md. Prior checkpoints below are historical.
+
 # Current integrated boundary
 
 AC11 API is merged in PR17; COMC65 Done. Final CI42536348447 verifies200/0/5 and main tree matches. Browser/full-story acceptance remains pending; no next feature approved. See docs/evidence/s3-ac11/merge-closeout.json. Earlier checkpoints below are historical.

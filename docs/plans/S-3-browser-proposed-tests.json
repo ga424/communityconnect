@@ -1,0 +1,225 @@
+{
+  "status": "proposed_not_executable",
+  "packet": "S3-BROWSER-1 v1",
+  "issue": "COMC-68",
+  "source_head": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+  "existing_api_phase": {
+    "passed": 200,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 5,
+    "total": 205
+  },
+  "proposed_separate_browser_phase": {
+    "passed": 30,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "total": 30
+  },
+  "new_browser_scenarios": 24,
+  "startup_guards": 6,
+  "node_ids": [
+    "browser_tests/test_manager_browser.py::test_browser_only_assigned_communities",
+    "browser_tests/test_manager_browser.py::test_browser_selected_community_only",
+    "browser_tests/test_manager_browser.py::test_browser_all_residents_order_status_utc",
+    "browser_tests/test_manager_browser.py::test_browser_switch_a_b_a",
+    "browser_tests/test_manager_browser.py::test_browser_no_assignments",
+    "browser_tests/test_manager_browser.py::test_browser_empty_requests",
+    "browser_tests/test_manager_browser.py::test_browser_loading_and_explicit_selection",
+    "browser_tests/test_manager_browser.py::test_browser_options_error_and_refresh",
+    "browser_tests/test_manager_browser.py::test_browser_requests_error_and_refresh",
+    "browser_tests/test_manager_browser.py::test_browser_network_failure_and_refresh",
+    "browser_tests/test_manager_browser.py::test_browser_invalid_options_payload",
+    "browser_tests/test_manager_browser.py::test_browser_invalid_or_cross_community_payload",
+    "browser_tests/test_manager_browser.py::test_browser_unknown_identity_401",
+    "browser_tests/test_manager_browser.py::test_browser_committed_revocation",
+    "browser_tests/test_manager_browser.py::test_browser_committed_role_change",
+    "browser_tests/test_manager_browser.py::test_browser_late_selection_response",
+    "browser_tests/test_manager_browser.py::test_browser_late_response_after_refresh",
+    "browser_tests/test_manager_browser.py::test_browser_request_timeout",
+    "browser_tests/test_manager_browser.py::test_browser_untrusted_text_is_literal",
+    "browser_tests/test_manager_browser.py::test_browser_keyboard_and_semantics",
+    "browser_tests/test_manager_browser.py::test_browser_mobile_long_content",
+    "browser_tests/test_manager_browser.py::test_browser_reload_and_page_restore",
+    "browser_tests/test_manager_browser.py::test_browser_two_tabs_independent",
+    "browser_tests/test_manager_browser.py::test_browser_read_only_transport_and_storage",
+    "browser_tests/test_boot_guards.py::test_browser_disabled_by_default",
+    "browser_tests/test_boot_guards.py::test_browser_requires_test_environment",
+    "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[missing]",
+    "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[zero]",
+    "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[leading-zero]",
+    "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[overflow]"
+  ],
+  "browser_cases": [
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_only_assigned_communities",
+      "coverage": "AC12/R1",
+      "assertion": "M2 (102) opens selector; exactly Elm Court is offered (placeholder is not a community). Real options API/DB."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_selected_community_only",
+      "coverage": "AC11/R1",
+      "assertion": "M1 selects Pine Hollow; exact fixture B request, no A/C text, heading Pine Hollow and API path2. Real API/DB."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_all_residents_order_status_utc",
+      "coverage": "AC11/R1/R3",
+      "assertion": "Add A resident3 row and all statuses/tied timestamps; selected A shows both residents in API order with exact status/UTC text, no submitter field."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_switch_a_b_a",
+      "coverage": "R1/R4",
+      "assertion": "A\u2192B\u2192A each produces only matching rows; prior rows disappear immediately at each change."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_no_assignments",
+      "coverage": "R2/R3",
+      "assertion": "Known103 receives options[]; selector disabled, message No assigned communities, no requests read."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_empty_requests",
+      "coverage": "R3",
+      "assertion": "M1 selects assigned empty Birch4; no rows, message No requests in this community, no stale A/B text."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_loading_and_explicit_selection",
+      "coverage": "R1/R3",
+      "assertion": "Hold real options response: loading announced, selector disabled; after release choose-community prompt with no auto-selection/request call. Hold selected read: rows empty and loading announced."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_options_error_and_refresh",
+      "coverage": "R2/R4",
+      "assertion": "Inject options500 only; no rows/options, clear error and enabled Refresh. Restore real route; Refresh recovers options without fabricated successful data."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_requests_error_and_refresh",
+      "coverage": "R2/R4",
+      "assertion": "After A success inject B500; no A/B rows, request error. Restore real route; Refresh reloads options and still-authorized B requests."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_network_failure_and_refresh",
+      "coverage": "R2/R4",
+      "assertion": "Abort selected request in test network layer; clear rows, error; restore then Refresh recovers through real APIs."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_invalid_options_payload",
+      "coverage": "R2/R3",
+      "assertion": "UI-only fault responses (non-array, duplicate IDs, invalid ID/name) rejected as a whole; no selector choices/requests; restore route and Refresh recover."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_invalid_or_cross_community_payload",
+      "coverage": "R2/R3",
+      "assertion": "UI-only fault responses (non-array, missing public fields, invalid status, row for another community) never render partial/mixed rows; restore route and Refresh recover."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_unknown_identity_401",
+      "coverage": "R2",
+      "assertion": "Valid configured but unknown9999 yields real401; all rows/options cleared, review-identity-unavailable message. No real-auth claim."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_committed_revocation",
+      "coverage": "R2/R4",
+      "assertion": "Load A, commit deletion of M1/A via test DB, then change/read A again: real404 clears rows/options; Refresh offers only remaining assignments. Existing visible data need not vanish before a new check."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_committed_role_change",
+      "coverage": "R2/R4",
+      "assertion": "Load A, commit M1/A role=board_member via test DB; subsequent Refresh omits A, clears selection and rows; no manager access gained elsewhere."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_late_selection_response",
+      "coverage": "R2/R4",
+      "assertion": "Async route.fetch obtains authentic A data then holds delivery; select B and complete real B; release A. B remains selected and A cannot reappear. Bounded Events, not sleeps."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_late_response_after_refresh",
+      "coverage": "R2/R4",
+      "assertion": "Hold an authentic prior request response; Refresh starts a new epoch/options read and completes; releasing prior response cannot replace current state."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_request_timeout",
+      "coverage": "R2/R3",
+      "assertion": "Hold selected read beyond the proposed10s client timeout; rows stay empty and timeout error appears; no automatic retries; restore and Refresh succeeds."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_untrusted_text_is_literal",
+      "coverage": "R2/R3",
+      "assertion": "Synthetic community name and request description contain markup/script-like text; text is visible literally, no injected element or execution sentinel; exact authorized data only."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_keyboard_and_semantics",
+      "coverage": "R1/R3",
+      "assertion": "Use keyboard/native select to choose B; visible focus, associated labels, table caption/header relationships and status/alert semantics; no WCAG certification claim."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_mobile_long_content",
+      "coverage": "R3",
+      "assertion": "390\u00d7844 viewport and long synthetic description; readable wrapped text/contained table scrolling, no document horizontal overflow or inaccessible selector."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_reload_and_page_restore",
+      "coverage": "R4",
+      "assertion": "After A selection, reload clears selection and refetches options. pagehide clears DOM and cancels requests; pageshow starts fresh. Controlled lifecycle event exercise is distinguished from actual BFCache support, which is recorded separately in walkthrough."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_two_tabs_independent",
+      "coverage": "R4",
+      "assertion": "Two isolated browser contexts for M1 on same server select A and B; each keeps its own selection and content; no global/shared storage context."
+    },
+    {
+      "id": "browser_tests/test_manager_browser.py::test_browser_read_only_transport_and_storage",
+      "coverage": "R2/R4",
+      "assertion": "During load/select/Refresh: only same-origin static/session/manager GETs, configured synthetic header on API calls, no external calls, no cookies/local/sessionStorage/service worker, no-store on UI/session/assets and existing APIs; five DB tables unchanged. Query user/community values cannot change the fixed identity or initial empty selection."
+    }
+  ],
+  "guard_cases": [
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_disabled_by_default",
+      "assertion": "Without enable flag, /manager,/manager/session and each allowlisted asset return404; existing API remains available."
+    },
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_requires_test_environment",
+      "assertion": "APP_ENV other than test still raises existing factory guard; enabling browser never bypasses it."
+    },
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[missing]",
+      "assertion": "Enabled browser with BROWSER_REVIEW_USER_ID=None rejects startup with explicit configuration error, before serving UI."
+    },
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[zero]",
+      "assertion": "Enabled browser with BROWSER_REVIEW_USER_ID='0' rejects startup with explicit configuration error, before serving UI."
+    },
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[leading-zero]",
+      "assertion": "Enabled browser with BROWSER_REVIEW_USER_ID='0101' rejects startup with explicit configuration error, before serving UI."
+    },
+    {
+      "id": "browser_tests/test_boot_guards.py::test_browser_rejects_invalid_identity[overflow]",
+      "assertion": "Enabled browser with BROWSER_REVIEW_USER_ID='2147483648' rejects startup with explicit configuration error, before serving UI."
+    }
+  ],
+  "new_gate_defect_controls": [
+    "missing browser case",
+    "missing guard case",
+    "duplicate case",
+    "extra case",
+    "unexpected skip/xfail",
+    "case failure",
+    "suite failure",
+    "case error",
+    "suite error",
+    "changed old test on disk",
+    "changed new test on disk",
+    "changed frozen helper on disk",
+    "missing new file on disk",
+    "changed prior source manifest on disk",
+    "changed prior hash in manifest",
+    "changed tests-first commit",
+    "changed approved ID list",
+    "changed new file hash",
+    "weakened required-pass expectation",
+    "extra expectation"
+  ],
+  "source_api_manifest_sha256": "89a11babd2476e7026e1a2503a2bed0fe5515687834a2a65564681f46d40f149"
+}
