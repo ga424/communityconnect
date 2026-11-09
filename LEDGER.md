@@ -765,3 +765,19 @@ checks: Fresh CI42536637694 artifact atadc68b806bdf08ba6169a5edc2874fbf66b63dcd 
 evidence: EV-PR18-REVIEW-20261108; EV-S3-BROWSER-PACKET-20261108
 
 risk: Browser tooling pins are metadata-verified proposals, not installed/resolved/tested compatibility. Startup and real API/DB harness must work before semantic red evidence. No prototype login/production assurance, next implementation, merge or full-story approval inferred. PR18 branch retained while open. Kundan69/Sandeep70 pending; Gustavo68 To Do.
+
+## Entry 44 — Authorized PR18 merge and conditional browser scope (November 8, 2026)
+
+artifact: docs/reviews/S3-browser-approval-status-2026-11-08.md; docs/evidence/pr18-review/merge-and-scope-approval.json; current AISE state and Jira records
+
+tool: OpenAI Codex with pinned AISE0.3.4; GitHub/Jira; no delegated agents or executable changes
+
+prompts: prompts/2026-11-08-s3-browser-conditional-approval.txt
+
+review: Gustavo explicitly authorized PR18 merge/cleanup and approved S3-BROWSER-1 v1 scope after both named reviews accept. COMC69/70 are To Do with zero comments; no acceptance or independent authorship inferred. COMC68 remains To Do. PR19 merge is not authorized by this reply.
+
+checks: PR18 reviewed head adc68b806bdf08ba6169a5edc2874fbf66b63dcd unchanged with passing CI42536637694. Merged at b695be6f0b8b381122e663728fd440734ea2335e; latest head is in main, no open head PR and worktree clean. Remote deletion observed; clean worktree detached and local branch deleted. PR19 retargeted to main. Existing API200/0/5 unchanged; no new browser test run.
+
+evidence: EV-PR18-MERGE-BROWSER-SCOPE-20261108; DEC-S3-BROWSER-SCOPE-CONDITIONAL-20261108
+
+risk: Scope approval remains conditional. Browser implementation, dependency installation, CI change, human acceptance and production release have not occurred. Final publication commit/checks will be linked in PR19/Jira and append-only Git notes.

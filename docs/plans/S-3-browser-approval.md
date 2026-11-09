@@ -1,6 +1,6 @@
 # S3-BROWSER-1 packet v1 — local manager community view
 
-**Proposed, awaiting approval.** [COMC-68](https://gkms.atlassian.net/browse/COMC-68): Gustavo integration/implementation; [COMC-69](https://gkms.atlassian.net/browse/COMC-69): Kundan behavior/contract review; [COMC-70](https://gkms.atlassian.net/browse/COMC-70): Sandeep test/tooling review. All three remain To Do; no prior ticket closure approves this packet.
+**Scope conditionally approved by Gustavo; Kundan/Sandeep acceptances pending.** [COMC-68](https://gkms.atlassian.net/browse/COMC-68): Gustavo integration/implementation; [COMC-69](https://gkms.atlassian.net/browse/COMC-69): Kundan behavior/contract review; [COMC-70](https://gkms.atlassian.net/browse/COMC-70): Sandeep test/tooling review. All three remain To Do. See the [current approval/integration record](../reviews/S3-browser-approval-status-2026-11-08.md). The packet below preserves the proposed implementation boundary; subsequent dated decisions supersede its earlier pending-approval/PR18 status statements.
 
 ## Decision in one page
 

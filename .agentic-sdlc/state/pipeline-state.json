@@ -33,8 +33,8 @@
     "repository": {
       "url": "https://github.com/ga424/communityconnect",
       "branch": "docs/COMC-10-s3-browser-packet",
-      "commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
-      "commit_context": "Reviewed PR18 checkpoint; final preparation commit/CI published in PR/Jira and Git provenance notes"
+      "commit": "c20147fb217c5a9a1c25fac4eedabb639fec0844",
+      "commit_context": "Approved packet checkpoint; final status publication commit/CI in PR19 and Git provenance notes"
     },
     "stage_status": [
       {
@@ -680,10 +680,10 @@
       "Kundan/Sandeep design, gap, QA and provenance reviews remain; Gustavo bounded S1 acceptance is recorded and COMC42 closed.",
       "Original AI extraction/summary/gap session provenance and remaining claim/exclusion review are unconfirmed; private source packets are prepared.",
       "Personal statement signatures, real walkthrough, final submission SHA and actual receipts require the named humans.",
-      "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Browser COMC68 requires new COMC69/70 decisions, explicit scope approval and PR18/preparation integration. Full-story acceptance remains pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
+      "S3 AC12 merged; AC11 merged in PR17, COMC65 Done; final CI verifies200/0/5. Gustavo conditionally approved browser scope; COMC68 requires COMC69/70 acceptances and PR19 preparation integration. PR18 is merged. Full-story acceptance remains pending. Reviewer-ticket closures by Gustavo do not establish independent authorship. Browser and full-story acceptance remain pending. Announcement designation/delivery contract remains.",
       "COMC52 payment include/cut gate not passed; fallback not activated; production identity/payment/privacy assurance unchanged."
     ],
-    "last_updated": "2026-11-09T00:01:18.913819+00:00",
+    "last_updated": "2026-11-09T01:33:21.544169+00:00",
     "scoped_work": {
       "issue": "COMC-10",
       "related_issues": [
@@ -694,7 +694,7 @@
         "COMC-44"
       ],
       "type": "PR18_review_and_browser_packet_preparation",
-      "status": "reviewed_draft_awaiting_merge_and_browser_decisions",
+      "status": "PR18_merged_browser_scope_conditional_reviews_pending",
       "source_commit": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
       "application_changes": false,
       "new_executable_tests": 0,
@@ -705,9 +705,13 @@
       "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
       "evidence_ids": [
         "EV-PR18-REVIEW-20261108",
-        "EV-S3-BROWSER-PACKET-20261108"
+        "EV-S3-BROWSER-PACKET-20261108",
+        "EV-PR18-MERGE-BROWSER-SCOPE-20261108"
       ],
-      "merge_authorized": false
+      "merge_authorized": true,
+      "merge_commit": "b695be6f0b8b381122e663728fd440734ea2335e",
+      "branches_deleted": true,
+      "approval_record": "DEC-S3-BROWSER-SCOPE-CONDITIONAL-20261108"
     },
     "next_bounded_task": {
       "id": "S3-BROWSER-1",
@@ -720,7 +724,7 @@
         "AC12 browser assigned-options outcome"
       ],
       "packet": "docs/plans/S-3-browser-approval.md",
-      "status": "proposed_awaiting_human_decisions",
+      "status": "scope_conditionally_approved_awaiting_named_reviews",
       "approval_owner": "Gustavo",
       "contract_reviewer": "Kundan",
       "test_reviewer": "Sandeep",
@@ -728,7 +732,7 @@
         "Kundan": "COMC-69",
         "Sandeep": "COMC-70"
       },
-      "integration_dependency": "PR18 and preparation integration before coding; PR18 currently open",
+      "integration_dependency": "PR18 merged; PR19 retargeted to main and remains draft awaiting preparation integration",
       "proposed_new_tests": 30,
       "proposed_browser_scenarios": 24,
       "proposed_boot_guards": 6,
@@ -750,7 +754,13 @@
       "implementation_approved": false,
       "merge_authorized": false,
       "m1_scope_expanded": false,
-      "independent_reviewer_authorship_verified": false
+      "independent_reviewer_authorship_verified": false,
+      "scope_approval": "DEC-S3-BROWSER-SCOPE-CONDITIONAL-20261108",
+      "scope_approval_status": "conditional",
+      "review_status": {
+        "COMC-69": "To Do; no acceptance recorded",
+        "COMC-70": "To Do; no acceptance recorded"
+      }
     },
     "prior_scoped_work": [
       {
