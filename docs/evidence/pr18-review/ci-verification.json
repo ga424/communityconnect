@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-11-08T23:53:00.532337+00:00",
+  "run": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+  "head_sha": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+  "conclusion": "success",
+  "counts": {
+    "passed": 200,
+    "skipped": 5,
+    "failed": 0,
+    "errors": 0,
+    "total": 205
+  },
+  "pytest_exit": 0,
+  "migration_step": "success",
+  "cleanup_step": "success",
+  "gate_controls": 24,
+  "artifact": "s1-contract-baseline",
+  "artifact_files_sha256": {
+    "ac1-gate-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+    "ac2-gate-self-test.json": "6516eef4958304c1e8e7187cb53816e5fde4189414f9508fb7501e6c3846d63f",
+    "container-images.txt": "730eaf63cc070d3a1a0a55dfbb259702a6fc8fcc55f38c31731c9cbb865d6e3f",
+    "pytest-exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "pytest.xml": "22beac235793cf1826236cc1fd957c9d441258b2d8da2589b1708b7532e90461",
+    "run.json": "e8eaafab771f2af1458389abdfc3034d8a5a63d40d6e4bf573968132b4f312e2",
+    "s1-gate-self-test.json": "a4ce8275a772cdfa796985e37483a715447c280551cd31d8be8ce00d7d38d948",
+    "s3-ac11-gate-self-test.json": "e131e035732fa951d8b8e6ad0bc82b5cd1e606fb457cd4e2702b3860cc3433cb",
+    "s3-ac12-gate-self-test.json": "0b6feaf825a5a106785bc68d8c9fd976d4b82506d4d007b87c80c60ee0254cbe",
+    "test-output.txt": "9f0cd2a0bdf3a3dbe24789219d7c16e61bea91f33e5ca2415c4f05d512891659"
+  },
+  "human_result_acceptance": "pending; not established by CI"
+}

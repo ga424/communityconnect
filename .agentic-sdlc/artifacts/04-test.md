@@ -1,3 +1,13 @@
+## Current approval status — November 8, 2026
+
+PR18 is merged at `b695be6f0b8b381122e663728fd440734ea2335e`; its remote and local branch names are deleted after verification. PR19 now targets main. Gustavo conditionally approved S3-BROWSER-1 v1, its addendum, 24 browser tests plus six startup guards, isolated tooling and new browser CI job. **Implementation waits for Kundan COMC-69 and Sandeep COMC-70 to accept.** Both remain To Do with no acceptance recorded. COMC-68 stays To Do; the existing 200-pass/five-skip API phase is unchanged. PR19 remains a draft and its merge is not authorized by this reply. Details: `docs/reviews/S3-browser-approval-status-2026-11-08.md`. Earlier checkpoints below are historical.
+
+# Current review and browser proposal — November8,2026
+
+PR18 atadc68b8 reviewed: documentation/state only; fresh CI artifact verifies200/0/5,exit0,24 controls,migration/cleanup. No blocking finding; PR18-P1 minor latest-CI pointer clarification is applied in current state while prior ledger records remain intact. PR18 remains open awaiting merge authorization.
+
+Proposed S3-BROWSER-1 v1 / COMC68:24 browser scenarios plus6 startup guards in a separate30-case phase; original205-case API phase unchanged. Kundan69/Sandeep70 reviews and Gustavo scope decision are pending. No executable/UI/dependency/CI changes made. See docs/plans/S-3-browser-approval.md and docs/reviews/PR-18-and-S3-browser-2026-11-08.md. Earlier execution checkpoints below are historical.
+
 # Current integration — AC11 merged
 
 PR17 merged by abreugus at `cf1e457052bbbe806a3711194e426181c599165f`; COMC65 Done. Final head `b0f98714922ae10264019f003753e203a34993bc` passes CI42536348447,200/0/5; main tree identical. Both feature/status branches removed after safety checks. No next feature is authorized; independent peer/full-story/browser review remains. Earlier execution checkpoints below are historical. Evidence: docs/evidence/s3-ac11/merge-closeout.json.
