@@ -1,0 +1,115 @@
+{
+  "type": "AISE Entry47 publication verification",
+  "commit": "849f3c10416b1dd5866f49fba55b29b80f1bca2a",
+  "pull_request": "https://github.com/ga424/communityconnect/pull/20",
+  "ci": {
+    "verified_at": "2026-11-09T04:39:41.181959+00:00",
+    "run": "https://github.com/ga424/communityconnect/actions/runs/42560364332",
+    "head_sha": "849f3c10416b1dd5866f49fba55b29b80f1bca2a",
+    "conclusion": "success",
+    "counts": {
+      "passed": 200,
+      "skipped": 5,
+      "failed": 0,
+      "errors": 0,
+      "total": 205
+    },
+    "pytest_exit": 0,
+    "migration_step": "success",
+    "cleanup_step": "success",
+    "gate_controls": 24,
+    "artifact": "s1-contract-baseline",
+    "artifact_files_sha256": {
+      "ac1-gate-self-test.json": "c8621f8a528d9f2790d0e5aa805662bbd50e9d1b1b1fb41283be931eb860c09c",
+      "ac2-gate-self-test.json": "6516eef4958304c1e8e7187cb53816e5fde4189414f9508fb7501e6c3846d63f",
+      "container-images.txt": "e8bf642338cdc4e89bfc35a9f1880061c2cc17526a9ccd8dcb19e22d977d57b0",
+      "pytest-exit-code.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "pytest.xml": "9050a5cd0aed74b09e5236ffeace977def37cfab4df4b4b8669af71f5fbf6acf",
+      "run.json": "951bef821398b538eef8f7234e07b1a5a9f1e43344f78cf26e528ed14c7ee8c5",
+      "s1-gate-self-test.json": "a4ce8275a772cdfa796985e37483a715447c280551cd31d8be8ce00d7d38d948",
+      "s3-ac11-gate-self-test.json": "e131e035732fa951d8b8e6ad0bc82b5cd1e606fb457cd4e2702b3860cc3433cb",
+      "s3-ac12-gate-self-test.json": "0b6feaf825a5a106785bc68d8c9fd976d4b82506d4d007b87c80c60ee0254cbe",
+      "test-output.txt": "ae2d2d4be342e89619d3868158c8cbf6858757bf2015b2ef1b273ddcea5338ad"
+    },
+    "human_result_acceptance": "pending; not established by CI"
+  },
+  "human_result_acceptance": "pending; no named review/signature/submission inferred",
+  "new_ticket_closures": 0,
+  "browser_implementation_started": false,
+  "merge_performed": false,
+  "publication_checks": {
+    "base_commit": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
+    "scope": "evidence enrichment before publication",
+    "aise_structural_check": "PASS; seven existing historical warnings retained",
+    "sensitive_source_guard": "PASS",
+    "git_diff_check": "PASS",
+    "protected_files_unchanged": 330,
+    "prior_ledger_prefixes_preserved": 8,
+    "artifact_file_hashes": "PASS; all five deliverable files",
+    "zip_member_hashes": "PASS",
+    "visual_qa": "PASS; three addendum pages and two statement pages inspected after final render",
+    "jira_attachment_readback": "PASS; filenames, sizes and IDs 10093 through 10097",
+    "runtime_changes": false,
+    "new_test_execution_claim": false,
+    "ci_evidence": "Checkpoint 82b5f8a CI42559403127 in evidence ZIP; publication-head checks linked in PR20/Git notes"
+  },
+  "artifact_manifest": {
+    "status": "review_package_not_final_submission",
+    "client_date": "2026-11-08",
+    "verified_ci_checkpoint": "82b5f8a340a3ede21e0e807bde4ba5271d68e6d7",
+    "ci_run": "https://github.com/ga424/communityconnect/actions/runs/42559403127",
+    "files": [
+      {
+        "name": "CommunityConnect_Submission_Evidence_Addendum_2026-11-08.docx",
+        "sha256": "510397e4eed2f6e75fd1b97bd828471d311727caaba50e3e7b2e3ea36cb29c6e",
+        "bytes": 41649,
+        "jira": "COMC-50",
+        "jira_attachment_id": 10094
+      },
+      {
+        "name": "CommunityConnect_Submission_Evidence_Addendum_2026-11-08.pdf",
+        "sha256": "7a1253f3a92da3d25c93488b0fd16568b04c8c31b8dbb0cb9cbeb64187becf49",
+        "bytes": 105480,
+        "jira": "COMC-50",
+        "pages": 3,
+        "jira_attachment_id": 10095
+      },
+      {
+        "name": "CommunityConnect_Verified_Evidence_2026-11-08.zip",
+        "sha256": "a1b26708d4bf411b191a303d0b34504e3f25ff9aa4feb719e18d41d4a02ea418",
+        "bytes": 33134,
+        "jira": "COMC-50",
+        "jira_attachment_id": 10096
+      },
+      {
+        "name": "Gustavo_Contribution_Statement_Review_2026-11-08.docx",
+        "sha256": "6932ab8d842a784731b7668239016df66540abbda9a15dab6810877f1d1a5322",
+        "bytes": 40011,
+        "jira": "COMC-46",
+        "jira_attachment_id": 10093
+      },
+      {
+        "name": "Gustavo_Contribution_Statement_Review_2026-11-08.pdf",
+        "sha256": "6ce9d7e4e455393a01f84e3ecb08c6bdab96af1c338330cb9b6f7ee9bc925c18",
+        "bytes": 52492,
+        "jira": "COMC-46",
+        "pages": 2,
+        "jira_attachment_id": 10097
+      }
+    ],
+    "visual_qa": "All five rendered pages inspected after final rebuild; no clipping, overlap or unintended title border. Addendum 3 pages; statement 2 pages.",
+    "pending": [
+      "named teammate reviews",
+      "personal signed statements",
+      "final reviewed team PDF",
+      "selected final submission SHA and fresh-clone output",
+      "actual walkthrough record",
+      "team and individual Canvas confirmations"
+    ],
+    "attachment_verification": "All five filenames, sizes and IDs read back from COMC-46/50 after upload."
+  },
+  "docx_immutable_repository_links": {
+    "checked": 7,
+    "invalid": 0
+  }
+}
