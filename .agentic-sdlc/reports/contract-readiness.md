@@ -1,3 +1,11 @@
+## Current approval status — November 8, 2026
+
+PR18 is merged at `b695be6f0b8b381122e663728fd440734ea2335e`; its remote and local branch names are deleted after verification. PR19 now targets main. Gustavo conditionally approved S3-BROWSER-1 v1, its addendum, 24 browser tests plus six startup guards, isolated tooling and new browser CI job. **Implementation waits for Kundan COMC-69 and Sandeep COMC-70 to accept.** Both remain To Do with no acceptance recorded. COMC-68 stays To Do; the existing 200-pass/five-skip API phase is unchanged. PR19 remains a draft and its merge is not authorized by this reply. Details: `docs/reviews/S3-browser-approval-status-2026-11-08.md`. Earlier checkpoints below are historical.
+
+# Current consumer-contract proposal
+
+API AC11/12 remain implemented and verified200/0/5. New local browser consumer addendum S3-BROWSER-1 v1 is proposed, not approved: explicit selection, current assignment options, memory-only state, late-response suppression, exact error behavior and fixed synthetic review identity. COMC69/70 and Gustavo scope pending. Existing API contracts are unchanged. Proposed30-case browser/guard suite is not written. See docs/plans/S-3-browser-contract-addendum-proposed.md. Prior checkpoints below are historical.
+
 # Current integrated boundary
 
 AC11 API is merged in PR17; COMC65 Done. Final CI42536348447 verifies200/0/5 and main tree matches. Browser/full-story acceptance remains pending; no next feature approved. See docs/evidence/s3-ac11/merge-closeout.json. Earlier checkpoints below are historical.

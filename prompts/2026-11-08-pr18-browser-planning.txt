@@ -1,0 +1,4 @@
+User request:
+Let's review PR #18 and prepare the next bounded S-3 browser task for approval. Keep Jira and the AISE ledger updated, and delete the branch after merge.
+
+Interpretation: Review and draft preparation authorized; browser implementation and PR18 merge remain separate explicit decisions. Maintain Jira/state and delete only actually merged, verified branch heads. No new executable files in this preparation.

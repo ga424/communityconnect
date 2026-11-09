@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-11-09T01:33:21.544169+00:00",
+  "source_prompt": "prompts/2026-11-08-s3-browser-conditional-approval.txt",
+  "pr18": {
+    "url": "https://github.com/ga424/communityconnect/pull/18",
+    "reviewed_head": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+    "merge_commit": "b695be6f0b8b381122e663728fd440734ea2335e",
+    "merge_authorized_by": "Gustavo",
+    "merge_invoked_by": "Codex after explicit authorization",
+    "head_ci": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+    "latest_head_in_main": true,
+    "open_head_prs_after_merge": 0,
+    "remote_branch_deleted": true,
+    "remote_deletion_method": "GitHub automatic deletion observed",
+    "local_branch_deleted": true,
+    "worktree_clean_before_detach": true,
+    "worktree_preserved_detached_at": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd"
+  },
+  "pr19": {
+    "url": "https://github.com/ga424/communityconnect/pull/19",
+    "base_after_merge": "main",
+    "packet_commit": "c20147fb217c5a9a1c25fac4eedabb639fec0844",
+    "draft": true,
+    "merge_authorized": false
+  },
+  "browser_scope": {
+    "packet": "S3-BROWSER-1 v1",
+    "approved_by": "Gustavo",
+    "approval": "conditional on both named reviews accepting",
+    "tests_proposed": 30,
+    "implementation_started": false,
+    "new_executable_tests": 0,
+    "existing_api_phase": {
+      "passed": 200,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 5
+    }
+  },
+  "reviews_observed": {
+    "COMC-69": {
+      "reviewer": "Kundan",
+      "status": "To Do",
+      "comments": 0,
+      "acceptance": "not recorded"
+    },
+    "COMC-70": {
+      "reviewer": "Sandeep",
+      "status": "To Do",
+      "comments": 0,
+      "acceptance": "not recorded"
+    }
+  },
+  "proposed_contract_hashes": {
+    "docs/plans/S-3-browser-contract-addendum-proposed.md": "89690c7482d8375af241653e5e0e23e280e5edf47d733e071f458d470b92151a",
+    "docs/plans/S-3-browser-contract-proposed.json": "93d1fadffd56814c5f4c462579cf61bc0e38df7094a78867453924e862d22065",
+    "docs/plans/S-3-browser-proposed-tests.json": "32d2f02c81f2c0b9989348faa0b0ce6052231085ab5e159d3ea0abea1d97a90d"
+  },
+  "limitations": "No teammate acceptance, browser test execution, implementation, PR19 merge or production readiness inferred."
+}

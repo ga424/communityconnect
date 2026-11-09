@@ -1,5 +1,9 @@
 # CommunityConnect
 
+## Current approval status — November 8, 2026
+
+PR18 is merged at `b695be6f0b8b381122e663728fd440734ea2335e`; its remote and local branch names are deleted after verification. PR19 now targets main. Gustavo conditionally approved S3-BROWSER-1 v1, its addendum, 24 browser tests plus six startup guards, isolated tooling and new browser CI job. **Implementation waits for Kundan COMC-69 and Sandeep COMC-70 to accept.** Both remain To Do with no acceptance recorded. COMC-68 stays To Do; the existing 200-pass/five-skip API phase is unchanged. PR19 remains a draft and its merge is not authorized by this reply. Details: `docs/reviews/S3-browser-approval-status-2026-11-08.md`. Earlier checkpoints below are historical.
+
 A community management portal for residents, board members, community managers and administrators. Team GKMS: Kundan Singh, Sandeep Garg and Gustavo Abreu.
 
 ## Current increment
@@ -13,6 +17,12 @@ Local verification: **200 passed,zero failures/errors,five planned S6 skips**. T
 ## Review status
 
 Gustavo approved AC11 v1, its addendum,52 tests and CI phase. [PR17](https://github.com/ga424/communityconnect/pull/17) was merged by GitHub account abreugus at23:41:19 UTC; COMC65 is Done. [Final-head CI](https://github.com/ga424/communityconnect/actions/runs/42536348447) verified200/0/5 from downloaded artifacts, and merged main has the identical tree. Both merged feature/status branches are removed. [Integration record](docs/evidence/s3-ac11/merge-closeout.json). COMC66/67 were closed by Gustavo; independently authored teammate sign-offs were not supplied. The [implementation review](docs/reviews/S3-AC11-implementation-2026-11-08.md) records evidence and limits. Independent teammate review and full-story acceptance remain separate; no production release is authorized. Fixtures and identity header are local/test-only. Browser selection, production identity/MFA and assignment administration remain later work.
+
+## Next proposed browser increment
+
+[PR18 review](docs/reviews/PR-18-and-S3-browser-2026-11-08.md) found no blocking issue in the documentation closeout; its downloaded CI verifies200/0/5. PR18 remains open pending explicit merge authorization. One minor current-state CI evidence pointer is aligned in this preparation, preserving all historical ledger records.
+
+[S3-BROWSER-1 v1](docs/plans/S-3-browser-approval.md) proposes one local read-only manager page with24 browser scenarios and6 startup guards, isolated Playwright tooling and a separate browser CI job. The existing API suite and gate stay unchanged. COMC68/69/70 are To Do for Gustavo scope, Kundan contract and Sandeep tests. No browser implementation or new executable test has started. The packet fixes error/loading/empty states, stale-response handling, local identity and review-port boundaries before approval.
 
 ## Milestone and review context
 

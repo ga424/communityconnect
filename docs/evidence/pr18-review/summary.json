@@ -1,0 +1,46 @@
+{
+  "reviewed_at": "2026-11-08T23:59:27.284780+00:00",
+  "pr": "https://github.com/ga424/communityconnect/pull/18",
+  "head": "adc68b806bdf08ba6169a5edc2874fbf66b63dcd",
+  "state": "open",
+  "changed_files": 17,
+  "executable_changes": false,
+  "ci": "https://github.com/ga424/communityconnect/actions/runs/42536637694",
+  "counts": {
+    "passed": 200,
+    "skipped": 5,
+    "failed": 0,
+    "errors": 0,
+    "total": 205
+  },
+  "pytest_exit": 0,
+  "gate_controls": 24,
+  "human_reviews": 0,
+  "automated_github_review": "completed at same head, no code findings; not human or security approval",
+  "verdict": "GO for bounded documentation integration, awaiting merge authorization",
+  "findings": [
+    {
+      "id": "PR18-P1",
+      "priority": "P3",
+      "path": ".agentic-sdlc/state/pipeline-state.json",
+      "finding": "scoped_work.ci_evidence names the earlier implementation CI while ci_run/verified_ci_commit name final CI. The correct final proof is already in evidence_ids/merge-closeout, so no missing test evidence.",
+      "disposition": "Align the current state pointer to EV-S3-AC11-INTEGRATED-20261108 in the separately requested planning/state update; retain all prior ledger records."
+    }
+  ],
+  "protected_files": 304,
+  "new_browser_behavior": "not approved or implemented",
+  "branch_cleanup": "PR18 remains open; keep branch until merge and latest-head ancestry verified",
+  "preparation_checks": {
+    "protected_files": 304,
+    "prior_ledger_prefixes": 7,
+    "unique_proposed_cases": 30,
+    "proposed_gate_controls": 20,
+    "relative_doc_links": "valid",
+    "runtime_changes": false,
+    "new_tests_written": false,
+    "local_docker_rerun": false,
+    "structural_check": "PASS with seven historical warnings",
+    "source_guard": "PASS",
+    "whitespace_check": "PASS"
+  }
+}
