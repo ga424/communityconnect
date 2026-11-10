@@ -1,0 +1,178 @@
+{
+  "source_commit": "3cc67a457771e812bfd011be13b5f62982afd497",
+  "reviewed_package_checkpoint": "3c67f74",
+  "reviewed_package_pr": 20,
+  "files": [
+    {
+      "path": "LEDGER.md",
+      "sha256": "8540bd6eaeee1ef846adbfbb6d28c57573fd26a3c170140b1ef71f2e1b174066",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/LEDGER.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "README.md",
+      "sha256": "91c31c7d244793b9bb324967ee6e99f2e25dc6ec7800e70c46d76d539f46f9ee",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/README.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/design/S-1.md",
+      "sha256": "590c542ee6f0d90842baacf02fdb25dce3ecb9ccd422e598ab1380dff0d0ffe0",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/design/S-1.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/design/S-6.md",
+      "sha256": "2efaaae0b5d6b9a96099ddb0db8ed9ad0793c85cf4104cad9f76ab2358cde882",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/design/S-6.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/design/S-1-gapcheck.md",
+      "sha256": "1f1db317f8d9c678df54c3744353e52cf31c0ab9db4e39b5c0a7839bfe0c9419",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/design/S-1-gapcheck.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/design/S-6-gapcheck.md",
+      "sha256": "3249bf554a8a6651dca59fa45a3282e71c85dd9e8290257757b4d0f7fa75cbef",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/design/S-6-gapcheck.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/plans/S-1-plan.md",
+      "sha256": "ad7a5891bdd0d605b2222f766f023d6ee5cb3aedc12f5cca70411ba9749944ab",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/plans/S-1-plan.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "docs/requirements/traceability.md",
+      "sha256": "3b2a7ce1e438cf78b7059a5db07a8b3bc1447dbe18c7c04540eaa60d794df5e8",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/docs/requirements/traceability.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/14-session-request-2026-11-09.md",
+      "sha256": "37b55ec6d2103d6266c0526d513ed1b8d5527226a79467162fa2cbf70c70be2a",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/14-session-request-2026-11-09.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/15-docs-from-report.md",
+      "sha256": "1306d2ba7439a547f587aa24cb2d6437ab61b498999352391b3dee0812aa73f8",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/15-docs-from-report.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/16-gapcheck-S-1.md",
+      "sha256": "6149f88c75dca76bb9445f4999af90b8fa86e9e110f15425befe1d96aaff655f",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/16-gapcheck-S-1.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/17-gapcheck-S-6.md",
+      "sha256": "c70b4f3baa50014d2775f474d980c12e574d3ec16a6e913ba9fa557dbad06608",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/17-gapcheck-S-6.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/18-gap-triage.md",
+      "sha256": "1445a3be540c4780d7e2b59d9ed86a541c5d8306c3acc5e8e4cd515e59fee850",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/18-gap-triage.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/19-tests-first.md",
+      "sha256": "6e83d866ad323af0d2a8de7cb4f9c2cd9750f1ad758ff333741e8687a50a7792",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/19-tests-first.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/20-plan-S-1.md",
+      "sha256": "a2d9d2aa3c280544140a32de5a35446057049e1e0600c8d0f8d682e34ede9d87",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/20-plan-S-1.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/21-task1-AC-1.md",
+      "sha256": "ef36973ffaa0883529c90ffa86ecc5a921c04edf53674a6b3605036032b722d1",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/21-task1-AC-1.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/22-task2-AC-2.md",
+      "sha256": "cb17d66309e496f3d8fc48cef605a1dbb84f5af6032ebaf19d6b9f5b368fb437",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/22-task2-AC-2.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/23-task3-AC-3.md",
+      "sha256": "0149530ee214fa0b251b3c58180547e1741d804f04b4a9b5591db985497a767e",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/23-task3-AC-3.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/24-task4-AC-4.md",
+      "sha256": "470390098485317871e4e75b0ee67112c96fa40d9d3125eb7fc2c4de66d01afb",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/24-task4-AC-4.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/25-task5-AC-5.md",
+      "sha256": "e404095d0cbd7a98e8393e22f3a9f8e473013068a3535c2df2cdcf8a7f93572d",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/25-task5-AC-5.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/26-task6-AC-6.md",
+      "sha256": "b16da876a8d23b281efe0949e17fa29627c69836dd1f44f9a137da12b097c7eb",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/26-task6-AC-6.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/27-postgresql-and-team-change.md",
+      "sha256": "e4dfd7ba74afbad1852fd4c309d5f6b9a10a39d79dbafdc9d71b8c0e9d1bdb40",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/27-postgresql-and-team-change.md",
+      "disposition": "source snapshot, not adopted authority"
+    },
+    {
+      "path": "prompts/28-task7-postgresql.md",
+      "sha256": "0bc459a435db16f6292791fef63544241d9d563db5d1a4b24bf090f99c9d6ddd",
+      "url": "https://github.com/KKS071/communityconnect/blob/3cc67a457771e812bfd011be13b5f62982afd497/prompts/28-task7-postgresql.md",
+      "disposition": "source snapshot, not adopted authority"
+    }
+  ],
+  "comparisons": [
+    {
+      "path": "docs/design/S-1.md",
+      "reviewed_sha256": "31e387c1f9d50b51732ed5834502d6a5bce497cf9309e478e64d0d27215e7771",
+      "source_sha256": "590c542ee6f0d90842baacf02fdb25dce3ecb9ccd422e598ab1380dff0d0ffe0",
+      "identical": false
+    },
+    {
+      "path": "docs/design/S-6.md",
+      "reviewed_sha256": "d7389ff61be4c0da2698d7e15e2c4e8b9ca68b0ccd188051ac93fc7f3b372eef",
+      "source_sha256": "2efaaae0b5d6b9a96099ddb0db8ed9ad0793c85cf4104cad9f76ab2358cde882",
+      "identical": false
+    },
+    {
+      "path": "docs/design/S-1-gapcheck.md",
+      "reviewed_sha256": "9636b34ac11f1abe7805a3f390b44107f11c569349c634c1b4b66103dccb359b",
+      "source_sha256": "1f1db317f8d9c678df54c3744353e52cf31c0ab9db4e39b5c0a7839bfe0c9419",
+      "identical": false
+    },
+    {
+      "path": "docs/design/S-6-gapcheck.md",
+      "reviewed_sha256": "3181bb071168201981d518201ad6564997d229546d48d00e0d5abce80401e548",
+      "source_sha256": "3249bf554a8a6651dca59fa45a3282e71c85dd9e8290257757b4d0f7fa75cbef",
+      "identical": false
+    }
+  ],
+  "excluded": [
+    "docs/interviews/interviews.md",
+    "docs/requirements/evidence-log.md",
+    "docs/requirements/backlog.md",
+    "all application/test/config files"
+  ],
+  "reason": "Do not republish interview testimony or replace approved runtime/specification; requirements need controlled source review."
+}
