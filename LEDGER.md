@@ -764,3 +764,35 @@ checks: Exact-copy SHA256 checks, protected-path diff, AISE structural validatio
 evidence: docs/contributions/kundan-2026-11-10/manifest.json; source immutable URLs; publication SHA/PR in Git/Jira
 
 risk: Source claims remain unverified; private interview content excluded. Reviewed milestone package, current runtime, tests, contracts and prior ledgers preserved. No merge, deployment or submission.
+
+## Entry K2 — PR21 post-merge conflict review (November 10, 2026)
+
+artifact: docs/contributions/kundan-2026-11-10/resolution-review.md
+
+tool: OpenAI Codex; GitHub/Jira; read-only provenance subagent
+
+prompts: prompts/2026-11-10-pr21-resolution.txt
+
+review: Gustavo directed retention of prior interview dates and confirmed his own referenced review. Exact reviewed SHA not supplied; no teammate acceptance inferred. Concrete API/storage differences documented; retain existing approved package/contracts.
+
+checks: PR21 observed merged909df75; head14d2b51 ancestral; remote branch absent and clean merged local branch deleted. Source hashes/ledger prefixes reverified; structural/whitespace checks run. No runtime rerun.
+
+evidence: resolution-review.md; immutable PR21/source links; actual user replies
+
+risk: Date source discrepancy, named teammate reviews, final SHA/clone/signatures/receipts remain. No package replacement, new merge or submission.
+
+## Entry K3 — PR22 and remaining approval check (November 10, 2026)
+
+artifact: docs/contributions/kundan-2026-11-10/pr22-review.md
+
+tool: OpenAI Codex; GitHub and Jira connectors
+
+prompts: prompts/2026-11-10-pr22-review.txt
+
+review: No blocking defect found in four-file PR22 resolution record. No new named teammate approval in checked records; current dispositions and genuine Gustavo confirmation preserved.
+
+checks: PR22 open at07c3cca, zero reviews; CI42771475136 success observed. PR20 open. Eighteen Jira issues/comments/attachment metadata checked, COMC44 comments fetched separately. No runtime rerun or downloaded JUnit claim.
+
+evidence: pr22-review.md; GitHub run42771475136; COMC33–36,44–51,60
+
+risk: Named approvals and final-SHA/signature/walkthrough/receipt gates remain; no merge or submission. Kundan statement Done has no linked attachment/receipt at inspection.
